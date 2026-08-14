@@ -1,60 +1,71 @@
 {% extends "base.html" %}
 {% block nav_board %}aria-current="page"{% endblock %}
+
+{% block lead %}
+{% if lead %}
+<section class="lead">
+  <div>
+    <div class="kicker">
+      <span class="verbtag {{ lead.type }}">{{ lead.type }}</span>
+      As of {{ today.strftime("%A") }} {{ today | dmy }}
+    </div>
+    <h1>{{ lead.title }}</h1>
+    <div class="body">{{ lead.body_html | safe }}</div>
+    <a class="readlink" href="#changelog">Read the adjudication →</a>
+  </div>
+  {% if lead_slot %}
+  <div class="daybox">
+    <div class="lbl">Day</div>
+    <div class="num{% if lead_slot.is_new %} glow{% endif %}">{{ lead_slot.reign_days }}</div>
+    <div class="lbl">of reign</div>
+  </div>
+  {% endif %}
+</section>
+{% endif %}
+{% endblock %}
+
 {% block content %}
 
-{% set lead = (entries | selectattr("type", "in", ["changed", "challenged", "added"]) | list | first) %}
-<div class="dateline">
-  <div class="asof">As of {{ today.strftime("%A") }} {{ today | dmy }}</div>
-  {% if lead %}
-  <h2>{{ lead.title }}</h2>
-  <p class="lede"><a href="#changelog">Read the adjudication →</a></p>
-  {% endif %}
-</div>
+{% for cat in categories %}
+<section class="board-section" aria-label="{{ cat.label }}">
+  <div class="sec-head"><h2>{{ cat.label }}</h2><span>{{ cat.slots | length }} title{{ "s" if cat.slots | length != 1 }}</span></div>
+  {% for slot in cat.slots %}
+  {% include "_row.html" %}
+  {% endfor %}
+</section>
+{% endfor %}
 
-<section class="board" aria-label="Signal board">
-  {% for cat in categories %}
-  <div class="sec-head"><h3>{{ cat.label }}</h3><span>{{ cat.slots | length }} title{{ "s" if cat.slots | length != 1 }}</span></div>
-  <div class="grid">
-    {% for slot in cat.slots %}
-    {% include "_card.html" %}
-    {% endfor %}
-  </div>
+<section class="changelog" id="changelog">
+  <div class="sec-head"><h2>Changelog</h2><span>every entry is a commit</span></div>
+  {% for entry in entries %}
+  <article class="log-entry">
+    <div class="log-when">{{ entry.date | dmy }}<br><span class="verb {{ entry.type }}">{{ entry.type }}</span></div>
+    <div>
+      <h3>
+        {% if entry.slot %}<a href="/slots/{{ entry.slot }}/">{{ entry.title }}</a>
+        {% else %}{{ entry.title }}{% endif %}
+      </h3>
+      <div class="log-body">{{ entry.body_html | safe }}</div>
+      {% if entry.sources %}
+      <div class="log-meta">evidence: {% for src in entry.sources %}<a href="{{ src }}">[{{ loop.index }}]</a> {% endfor %}</div>
+      {% endif %}
+    </div>
+  </article>
   {% endfor %}
 </section>
 
-<section class="changelog" id="changelog">
-  <div class="sec-head"><h3>Changelog</h3><span>every entry is a commit</span></div>
-  <ul class="log-list">
-    {% for entry in entries %}
-    <li>
-      <div class="log-date">{{ entry.date | dmy }}</div>
-      <div><span class="chip {{ entry.type }}">{{ entry.type }}</span></div>
-      <div>
-        <div class="log-title">
-          {% if entry.slot %}<a href="/slots/{{ entry.slot }}/">{{ entry.title }}</a>
-          {% else %}{{ entry.title }}{% endif %}
-        </div>
-        <div class="log-body">{{ entry.body_html | safe }}</div>
-        {% if entry.sources %}
-        <div class="log-meta">evidence: {% for src in entry.sources %}<a href="{{ src }}">[{{ loop.index }}]</a> {% endfor %}</div>
-        {% endif %}
-      </div>
-    </li>
-    {% endfor %}
-  </ul>
-</section>
-
 <section class="snapshots" id="snapshots">
-  <div class="sec-head"><h3>Snapshots</h3><span>the board, frozen monthly</span></div>
+  <div class="sec-head"><h2>Snapshots</h2><span>the board, frozen monthly</span></div>
   {% if snapshots %}
-  <div class="snap-row">
-    {% for snap in snapshots %}
-    <a class="snap" href="/snapshots/{{ snap.key }}/">
-      <div class="m">{{ snap.label }}</div>
-      <div class="d">frozen {{ snap.frozen | dmy }} · {{ snap.changes }} change{{ "s" if snap.changes != 1 }}</div>
-    </a>
-    {% endfor %}
-  </div>
+  {% for snap in snapshots %}
+  <article class="snap-entry">
+    <div class="when">{{ snap.frozen | dmy }}</div>
+    <div>
+      <h3><a href="/snapshots/{{ snap.key }}/">The state of AI, {{ snap.label }}</a></h3>
+      <div class="meta">{{ snap.slots | length }} titles · {{ snap.changes }} change{{ "s" if snap.changes != 1 }} during the month</div>
+    </div>
+  </article>
+  {% endfor %}
   {% else %}
   <p class="empty">The first monthly snapshot freezes on the 1st of next month. From then
     on, this section becomes a browsable historical record of what was state-of-the-art, when.</p>

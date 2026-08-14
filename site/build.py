@@ -36,6 +36,18 @@ def as_date(value) -> dt.date | None:
     return dt.date.fromisoformat(str(value))
 
 
+def assign_bars(slots: list[dict], today: dt.date) -> None:
+    """Reign bar width = sqrt(days)/sqrt(longest reign), min 4% (design spec).
+    A title held for <= 3 days renders as 'new titleholder' (magenta)."""
+    if not slots:
+        return
+    max_days = max(s["reign_days"] or 1 for s in slots)
+    for s in slots:
+        days = s["reign_days"] or 1
+        s["bar_pct"] = max(4, round((days**0.5) / (max_days**0.5) * 100))
+        s["is_new"] = days <= 3
+
+
 def load_slot(path: Path, today: dt.date) -> dict:
     slot = yaml.safe_load(path.read_text())
     slot["since"] = as_date(slot.get("since"))
@@ -91,11 +103,13 @@ def load_snapshots(today: dt.date) -> list[dict]:
             continue
         meta_path = snap_dir / "meta.yaml"
         meta = yaml.safe_load(meta_path.read_text()) if meta_path.exists() else {}
+        frozen = as_date(meta.get("frozen")) or today
         slots = [
-            load_slot(p, as_date(meta.get("frozen")) or today)
+            load_slot(p, frozen)
             for p in sorted(snap_dir.glob("*.yaml"))
             if p.name != "meta.yaml"
         ]
+        assign_bars(slots, frozen)
         snapshots.append(
             {
                 "key": snap_dir.name,  # YYYY-MM
@@ -113,6 +127,7 @@ def build(out_dir: Path) -> None:
     site = yaml.safe_load((DATA_DIR / "site.yaml").read_text())
 
     slots = [load_slot(p, today) for p in sorted((DATA_DIR / "slots").glob("*.yaml"))]
+    assign_bars(slots, today)
     slots_by_key = {s["slot"]: s for s in slots}
 
     entries = sorted(
@@ -138,7 +153,23 @@ def build(out_dir: Path) -> None:
         lstrip_blocks=True,
     )
     env.filters["dmy"] = lambda d: d.strftime("%-d %b %Y") if d else ""
-    ctx = {"site": site, "today": today, "entries": entries, "snapshots": snapshots}
+
+    # Lead story: the most recent changed/added/challenged entry, plus the slot
+    # it refers to (for the day-of-reign numeral).
+    lead = next(
+        (e for e in entries if e["type"] in ("changed", "added", "challenged")), None
+    )
+    lead_slot = slots_by_key.get(lead.get("slot")) if lead else None
+
+    ctx = {
+        "site": site,
+        "today": today,
+        "entries": entries,
+        "snapshots": snapshots,
+        "slots_count": len(slots),
+        "lead": lead,
+        "lead_slot": lead_slot,
+    }
 
     if out_dir.exists():
         shutil.rmtree(out_dir)

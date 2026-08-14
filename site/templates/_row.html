@@ -1,0 +1,32 @@
+{# One board row. Expects `slot`; set `link=false` on snapshot/slot pages. #}
+<article class="row{% if slot.is_new %} new{% endif %}">
+  <div class="row-cat">
+    <div>{{ slot.title }}</div>
+    {% if slot.is_new %}
+    <div class="tag">New titleholder</div>
+    {% elif slot.provisional %}
+    <div class="tag">Provisional</div>
+    {% endif %}
+  </div>
+  <div class="row-main">
+    {% if link | default(true) %}
+    <h3><a href="/slots/{{ slot.slot }}/">{{ slot.pick.name }}</a></h3>
+    {% else %}
+    <h3>{{ slot.pick.name }}</h3>
+    {% endif %}
+    <p class="row-note">{{ slot.pick.why }}</p>
+    {% if slot.challengers %}
+    <p class="row-chal"><span class="chal-label">Challenger:</span> {{ slot.challengers[0].name }} — {{ slot.challengers[0].note }}</p>
+    {% elif slot.caveats %}
+    <p class="row-chal">{{ slot.caveats }}</p>
+    {% else %}
+    <p class="row-chal">No active challengers.</p>
+    {% endif %}
+    <div class="bar-track"><div class="bar-fill" style="width:{{ slot.bar_pct }}%"></div></div>
+  </div>
+  <div class="row-days">
+    <div class="num">{{ slot.reign_days }}</div>
+    <div class="lbl">day{{ "s" if slot.reign_days != 1 }} of reign</div>
+    <div class="since">since {{ slot.since | dmy }}</div>
+  </div>
+</article>

@@ -4,40 +4,34 @@
 {% block canonical_path %}/slots/{{ slot.slot }}/{% endblock %}
 {% block content %}
 
-<div class="dateline">
-  <div class="asof">{{ slot.title }} · as of {{ today | dmy }}</div>
-  <h2>{{ slot.question }}</h2>
+<div class="slot-head">
+  <div class="kicker">
+    <span class="verbtag {% if slot.is_new %}changed{% else %}held{% endif %}">{{ slot.title }}</span>
+    As of {{ today | dmy }}
+  </div>
+  <h1>{{ slot.question }}</h1>
   <p class="lede">As of {{ today | dmy }}, <b>{{ slot.pick.name }}</b> is the {{ site.name }}
-    pick for {{ slot.title | lower }} — day {{ slot.reign_days }} of its reign.
-    {% if slot.provisional %}<span class="chip provisional">provisional</span>{% endif %}</p>
+    pick for {{ slot.title | lower }} — day {{ slot.reign_days }} of its reign{% if slot.provisional %}
+    (provisional, pending confirmation against the evidence rules){% endif %}.</p>
 </div>
 
-<section class="board">
-  <div class="grid grid-detail">
-    <article class="card">
-      <div class="slot-label"><span>Current pick</span></div>
-      <p class="pick">{% if slot.pick.url %}<a href="{{ slot.pick.url }}">{{ slot.pick.name }}</a>{% else %}{{ slot.pick.name }}{% endif %}</p>
-      <div class="reign">since {{ slot.since | dmy }} · day {{ slot.reign_days }} of reign · licence: {{ slot.pick.licence }}</div>
-      <p class="why">{{ slot.pick.why }}</p>
-      {% if slot.caveats %}<p class="challenger">{{ slot.caveats }}</p>{% endif %}
-    </article>
-    <article class="card">
-      <div class="slot-label"><span>Judged on</span></div>
-      <ul class="criteria">
-        {% for c in slot.criteria %}<li>{{ c }}</li>{% endfor %}
-      </ul>
-      <div class="reign">last reviewed {{ slot.last_reviewed | dmy }}</div>
-      {% if slot.challengers %}
-      {% for ch in slot.challengers %}
-      <p class="challenger">Challenger: <b>{{ ch.name }}</b> — {{ ch.note }}</p>
-      {% endfor %}
-      {% else %}
-      <p class="challenger">No active challengers.</p>
-      {% endif %}
-    </article>
-  </div>
+<section class="board-section">
+  <div class="sec-head"><h2>Current titleholder</h2><span>licence: {{ slot.pick.licence }}</span></div>
+  {% with link = false %}{% include "_row.html" %}{% endwith %}
+</section>
 
-  <div class="sec-head"><h3>Title lineage</h3><span>{{ slot.history | length + 1 }} holder{{ "s" if slot.history | length != 0 }}</span></div>
+<section class="board-section">
+  <div class="sec-head"><h2>Judged on</h2><span>last reviewed {{ slot.last_reviewed | dmy }}</span></div>
+  <ul class="criteria">
+    {% for c in slot.criteria %}<li>{{ c }}</li>{% endfor %}
+  </ul>
+  {% if slot.pick.url %}
+  <p class="reviewed"><a href="{{ slot.pick.url }}">{{ slot.pick.name }} ↗</a></p>
+  {% endif %}
+</section>
+
+<section class="board-section">
+  <div class="sec-head"><h2>Title lineage</h2><span>{{ slot.history | length + 1 }} holder{{ "s" if slot.history | length != 0 }}</span></div>
   <table class="lineage-table">
     <thead><tr><th>Holder</th><th>From</th><th>To</th><th>Reign</th></tr></thead>
     <tbody>
@@ -50,29 +44,31 @@
       </tr>
       {% endfor %}
       <tr class="current-row">
-        <td>{{ slot.pick.name }} <span class="chip held">current</span></td>
+        <td>{{ slot.pick.name }}<span class="mark">current</span></td>
         <td>{{ slot.since | dmy }}</td>
         <td>—</td>
         <td>{{ slot.reign_days }} days</td>
       </tr>
     </tbody>
   </table>
-
-  {% if slot_entries %}
-  <div class="sec-head"><h3>History for this title</h3><span>{{ slot_entries | length }} entr{{ "y" if slot_entries | length == 1 else "ies" }}</span></div>
-  <ul class="log-list">
-    {% for entry in slot_entries %}
-    <li>
-      <div class="log-date">{{ entry.date | dmy }}</div>
-      <div><span class="chip {{ entry.type }}">{{ entry.type }}</span></div>
-      <div>
-        <div class="log-title">{{ entry.title }}</div>
-        <div class="log-body">{{ entry.body_html | safe }}</div>
-      </div>
-    </li>
-    {% endfor %}
-  </ul>
-  {% endif %}
 </section>
+
+{% if slot_entries %}
+<section class="changelog">
+  <div class="sec-head"><h2>History for this title</h2><span>{{ slot_entries | length }} entr{{ "y" if slot_entries | length == 1 else "ies" }}</span></div>
+  {% for entry in slot_entries %}
+  <article class="log-entry">
+    <div class="log-when">{{ entry.date | dmy }}<br><span class="verb {{ entry.type }}">{{ entry.type }}</span></div>
+    <div>
+      <h3>{{ entry.title }}</h3>
+      <div class="log-body">{{ entry.body_html | safe }}</div>
+      {% if entry.sources %}
+      <div class="log-meta">evidence: {% for src in entry.sources %}<a href="{{ src }}">[{{ loop.index }}]</a> {% endfor %}</div>
+      {% endif %}
+    </div>
+  </article>
+  {% endfor %}
+</section>
+{% endif %}
 
 {% endblock %}
