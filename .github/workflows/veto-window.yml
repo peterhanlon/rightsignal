@@ -1,0 +1,36 @@
+# The human-on-the-loop veto window.
+#
+# The private pipeline opens a pull request (labelled `title-change`) for every
+# CHANGED verdict instead of committing it directly. This workflow merges those
+# PRs automatically once they are 24 hours old — closing the PR within the
+# window vetoes the change. HELD/CHALLENGED entries commit directly and never
+# pass through here.
+name: Veto window
+
+on:
+  schedule:
+    - cron: "23 * * * *" # hourly
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  merge-expired:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Merge title-change PRs older than 24h
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+          cutoff=$(date -u -d '24 hours ago' +%Y-%m-%dT%H:%M:%SZ)
+          prs=$(gh pr list --repo "$REPO" --label title-change --state open \
+                --json number,createdAt \
+                --jq ".[] | select(.createdAt < \"$cutoff\") | .number")
+          for pr in $prs; do
+            echo "Veto window expired for #$pr — merging"
+            gh pr merge "$pr" --repo "$REPO" --squash --delete-branch
+          done

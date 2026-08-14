@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+{% block title %}{{ slot.question }} — {{ site.name }}{% endblock %}
+{% block description %}As of {{ today | dmy }}, {{ slot.pick.name }} holds the {{ site.name }} title for {{ slot.title | lower }}.{% endblock %}
+{% block canonical_path %}/slots/{{ slot.slot }}/{% endblock %}
+{% block content %}
+
+<div class="dateline">
+  <div class="asof">{{ slot.title }} · as of {{ today | dmy }}</div>
+  <h2>{{ slot.question }}</h2>
+  <p class="lede">As of {{ today | dmy }}, <b>{{ slot.pick.name }}</b> is the {{ site.name }}
+    pick for {{ slot.title | lower }} — day {{ slot.reign_days }} of its reign.
+    {% if slot.provisional %}<span class="chip provisional">provisional</span>{% endif %}</p>
+</div>
+
+<section class="board">
+  <div class="grid grid-detail">
+    <article class="card">
+      <div class="slot-label"><span>Current pick</span></div>
+      <p class="pick">{% if slot.pick.url %}<a href="{{ slot.pick.url }}">{{ slot.pick.name }}</a>{% else %}{{ slot.pick.name }}{% endif %}</p>
+      <div class="reign">since {{ slot.since | dmy }} · day {{ slot.reign_days }} of reign · licence: {{ slot.pick.licence }}</div>
+      <p class="why">{{ slot.pick.why }}</p>
+      {% if slot.caveats %}<p class="challenger">{{ slot.caveats }}</p>{% endif %}
+    </article>
+    <article class="card">
+      <div class="slot-label"><span>Judged on</span></div>
+      <ul class="criteria">
+        {% for c in slot.criteria %}<li>{{ c }}</li>{% endfor %}
+      </ul>
+      <div class="reign">last reviewed {{ slot.last_reviewed | dmy }}</div>
+      {% if slot.challengers %}
+      {% for ch in slot.challengers %}
+      <p class="challenger">Challenger: <b>{{ ch.name }}</b> — {{ ch.note }}</p>
+      {% endfor %}
+      {% else %}
+      <p class="challenger">No active challengers.</p>
+      {% endif %}
+    </article>
+  </div>
+
+  <div class="sec-head"><h3>Title lineage</h3><span>{{ slot.history | length + 1 }} holder{{ "s" if slot.history | length != 0 }}</span></div>
+  <table class="lineage-table">
+    <thead><tr><th>Holder</th><th>From</th><th>To</th><th>Reign</th></tr></thead>
+    <tbody>
+      {% for h in slot.history %}
+      <tr>
+        <td>{{ h.name }}</td>
+        <td>{{ h.from | dmy }}</td>
+        <td>{{ h.to | dmy }}</td>
+        <td>{{ (h.to - h.from).days }} days</td>
+      </tr>
+      {% endfor %}
+      <tr class="current-row">
+        <td>{{ slot.pick.name }} <span class="chip held">current</span></td>
+        <td>{{ slot.since | dmy }}</td>
+        <td>—</td>
+        <td>{{ slot.reign_days }} days</td>
+      </tr>
+    </tbody>
+  </table>
+
+  {% if slot_entries %}
+  <div class="sec-head"><h3>History for this title</h3><span>{{ slot_entries | length }} entr{{ "y" if slot_entries | length == 1 else "ies" }}</span></div>
+  <ul class="log-list">
+    {% for entry in slot_entries %}
+    <li>
+      <div class="log-date">{{ entry.date | dmy }}</div>
+      <div><span class="chip {{ entry.type }}">{{ entry.type }}</span></div>
+      <div>
+        <div class="log-title">{{ entry.title }}</div>
+        <div class="log-body">{{ entry.body_html | safe }}</div>
+      </div>
+    </li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+</section>
+
+{% endblock %}

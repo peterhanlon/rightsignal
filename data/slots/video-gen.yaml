@@ -1,0 +1,29 @@
+slot: video-gen
+category: image-video
+title: Best video generation
+question: What is the best AI video generation model right now?
+criteria: [visual quality, character consistency, native audio, clip length]
+provisional: true
+since: 2026-06-25
+pick:
+  name: Veo 3.1
+  version: ""
+  url: https://deepmind.google/models/veo/
+  licence: proprietary
+  why: >-
+    Native audio and shot-to-shot character consistency keep it ahead on the
+    eval reel. (Seed data — confirm or replace before launch.)
+caveats: ""
+challengers:
+  - name: Sora 2.5
+    note: Launch demos strong; independent comparisons pending.
+history:
+  - name: Sora
+    from: 2025-12-01
+    to: 2026-03-10
+  - name: Veo 3
+    from: 2026-03-10
+    to: 2026-06-25
+last_reviewed: 2026-08-14
+watch:
+  keywords: [video generation, text-to-video, sora, veo, runway, kling, wan]

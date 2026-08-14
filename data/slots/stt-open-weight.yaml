@@ -1,0 +1,29 @@
+slot: stt-open-weight
+category: speech
+title: Best open-weight STT
+question: What is the best open-weight speech-to-text model right now?
+criteria: [WER on independent leaderboards, throughput, licence, language coverage]
+provisional: true
+since: 2026-05-21
+pick:
+  name: Parakeet TDT-2
+  version: ""
+  url: https://huggingface.co/nvidia
+  licence: CC-BY-4.0
+  why: >-
+    Top open-ASR leaderboard WER at roughly 10x Whisper throughput on the same
+    hardware. (Seed data — confirm or replace before launch.)
+caveats: ""
+challengers:
+  - name: Voxtral 2
+    note: Better on accents; licence still under review.
+history:
+  - name: Whisper large-v3
+    from: 2025-06-01
+    to: 2026-02-10
+  - name: Parakeet TDT 1.1B
+    from: 2026-02-10
+    to: 2026-05-21
+last_reviewed: 2026-08-14
+watch:
+  keywords: [stt, speech-to-text, asr, transcription, whisper, parakeet, voxtral]

@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% block nav_board %}aria-current="page"{% endblock %}
+{% block content %}
+
+{% set lead = (entries | selectattr("type", "in", ["changed", "challenged", "added"]) | list | first) %}
+<div class="dateline">
+  <div class="asof">As of {{ today.strftime("%A") }} {{ today | dmy }}</div>
+  {% if lead %}
+  <h2>{{ lead.title }}</h2>
+  <p class="lede"><a href="#changelog">Read the adjudication →</a></p>
+  {% endif %}
+</div>
+
+<section class="board" aria-label="Signal board">
+  {% for cat in categories %}
+  <div class="sec-head"><h3>{{ cat.label }}</h3><span>{{ cat.slots | length }} title{{ "s" if cat.slots | length != 1 }}</span></div>
+  <div class="grid">
+    {% for slot in cat.slots %}
+    {% include "_card.html" %}
+    {% endfor %}
+  </div>
+  {% endfor %}
+</section>
+
+<section class="changelog" id="changelog">
+  <div class="sec-head"><h3>Changelog</h3><span>every entry is a commit</span></div>
+  <ul class="log-list">
+    {% for entry in entries %}
+    <li>
+      <div class="log-date">{{ entry.date | dmy }}</div>
+      <div><span class="chip {{ entry.type }}">{{ entry.type }}</span></div>
+      <div>
+        <div class="log-title">
+          {% if entry.slot %}<a href="/slots/{{ entry.slot }}/">{{ entry.title }}</a>
+          {% else %}{{ entry.title }}{% endif %}
+        </div>
+        <div class="log-body">{{ entry.body_html | safe }}</div>
+        {% if entry.sources %}
+        <div class="log-meta">evidence: {% for src in entry.sources %}<a href="{{ src }}">[{{ loop.index }}]</a> {% endfor %}</div>
+        {% endif %}
+      </div>
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+
+<section class="snapshots" id="snapshots">
+  <div class="sec-head"><h3>Snapshots</h3><span>the board, frozen monthly</span></div>
+  {% if snapshots %}
+  <div class="snap-row">
+    {% for snap in snapshots %}
+    <a class="snap" href="/snapshots/{{ snap.key }}/">
+      <div class="m">{{ snap.label }}</div>
+      <div class="d">frozen {{ snap.frozen | dmy }} · {{ snap.changes }} change{{ "s" if snap.changes != 1 }}</div>
+    </a>
+    {% endfor %}
+  </div>
+  {% else %}
+  <p class="empty">The first monthly snapshot freezes on the 1st of next month. From then
+    on, this section becomes a browsable historical record of what was state-of-the-art, when.</p>
+  {% endif %}
+</section>
+
+{% endblock %}

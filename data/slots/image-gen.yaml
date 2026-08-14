@@ -1,0 +1,29 @@
+slot: image-gen
+category: image-video
+title: Best image generation
+question: What is the best AI image generation model right now?
+criteria: [photoreal quality, editability, text rendering, instruction following]
+provisional: true
+since: 2026-07-17
+pick:
+  name: Midjourney v8
+  version: ""
+  url: https://www.midjourney.com
+  licence: proprietary
+  why: >-
+    Retook the title on photoreal consistency and editability; text rendering
+    finally competitive. (Seed data — confirm or replace before launch.)
+caveats: ""
+challengers:
+  - name: Nano Banana 2
+    note: Better instruction-following in edits.
+history:
+  - name: Imagen 4
+    from: 2026-01-20
+    to: 2026-04-15
+  - name: Nano Banana
+    from: 2026-04-15
+    to: 2026-07-17
+last_reviewed: 2026-08-14
+watch:
+  keywords: [image generation, text-to-image, midjourney, imagen, flux, diffusion]

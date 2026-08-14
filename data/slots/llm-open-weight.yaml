@@ -1,0 +1,29 @@
+slot: llm-open-weight
+category: language-models
+title: Best open-weight LLM
+question: What is the best open-weight large language model right now?
+criteria: [benchmark quality, serving cost, licence, weights actually released]
+provisional: true
+since: 2026-07-29
+pick:
+  name: DeepSeek V4
+  version: ""
+  url: https://huggingface.co/deepseek-ai
+  licence: MIT
+  why: >-
+    Frontier-adjacent scores at a fraction of serving cost; weights verified on
+    release day. (Seed data — confirm or replace before launch.)
+caveats: ""
+challengers:
+  - name: Qwen4-235B
+    note: Vendor benchmarks pending independent confirmation; in cooldown.
+history:
+  - name: Llama 4
+    from: 2026-01-15
+    to: 2026-04-20
+  - name: Kimi K2
+    from: 2026-04-20
+    to: 2026-07-29
+last_reviewed: 2026-08-14
+watch:
+  keywords: [open weight, open source llm, deepseek, qwen, llama, mistral, glm, kimi]

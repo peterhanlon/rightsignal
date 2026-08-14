@@ -1,0 +1,27 @@
+slot: llm-coding
+category: language-models
+title: Best LLM for coding
+question: What is the best large language model for coding right now?
+criteria: [agentic coding benchmarks, repo-scale task performance, tool-calling reliability]
+provisional: true
+since: 2026-03-03
+pick:
+  name: Claude Opus 5
+  version: ""
+  url: https://www.anthropic.com/claude
+  licence: proprietary
+  why: >-
+    Clear of the field on repo-scale agentic coding benchmarks. (Seed data —
+    confirm or replace before launch.)
+caveats: ""
+challengers: []
+history:
+  - name: Claude Sonnet 4.5
+    from: 2025-10-01
+    to: 2026-01-10
+  - name: GPT-5-Codex
+    from: 2026-01-10
+    to: 2026-03-03
+last_reviewed: 2026-08-14
+watch:
+  keywords: [coding model, code generation, swe-bench, agentic coding, codex, coding benchmark]

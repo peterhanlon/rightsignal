@@ -1,0 +1,26 @@
+{# Renders one slot card. Expects `slot` and `today`; set `link=false` for snapshots. #}
+<article class="card">
+  <div class="slot-label">
+    <span>{{ slot.title }}</span>
+    {% if slot.provisional %}<span class="chip provisional">provisional</span>{% endif %}
+  </div>
+  {% if link | default(true) %}
+  <p class="pick"><a href="/slots/{{ slot.slot }}/">{{ slot.pick.name }}</a></p>
+  {% else %}
+  <p class="pick">{{ slot.pick.name }}</p>
+  {% endif %}
+  <div class="reign">since {{ slot.since | dmy }} · day {{ slot.reign_days }} of reign</div>
+  <div class="lineage" title="Lineage: {% for s in slot.lineage %}{{ s.name }}{% if not loop.last %} → {% endif %}{% endfor %}">
+    {% for s in slot.lineage %}
+    <i {% if s.current %}class="now"{% endif %} style="width:{{ s.pct }}%"></i>
+    {% endfor %}
+  </div>
+  <p class="why">{{ slot.pick.why }}</p>
+  {% if slot.challengers %}
+  <p class="challenger">Challenger: <b>{{ slot.challengers[0].name }}</b> — {{ slot.challengers[0].note }}</p>
+  {% elif slot.caveats %}
+  <p class="challenger">{{ slot.caveats }}</p>
+  {% else %}
+  <p class="challenger">No active challengers.</p>
+  {% endif %}
+</article>

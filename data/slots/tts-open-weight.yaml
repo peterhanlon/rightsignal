@@ -1,0 +1,27 @@
+slot: tts-open-weight
+category: speech
+title: Best open-weight TTS
+question: What is the best open-weight text-to-speech model right now?
+criteria: [output quality (MOS), latency, licence, hardware requirements]
+provisional: true
+since: 2026-08-14
+pick:
+  name: OpenAudio S2
+  version: ""
+  url: https://huggingface.co/fishaudio
+  licence: Apache-2.0
+  why: >-
+    Ahead on blind MOS across English and multilingual sets; Apache-2.0,
+    weights verified downloadable. (Seed data — confirm or replace before launch.)
+caveats: Kokoro-2 remains the recommendation under 1 GB VRAM.
+challengers: []
+history:
+  - name: F5-TTS
+    from: 2025-11-01
+    to: 2026-03-24
+  - name: Kokoro-2
+    from: 2026-03-24
+    to: 2026-08-14
+last_reviewed: 2026-08-14
+watch:
+  keywords: [tts, text-to-speech, speech synthesis, voice cloning, kokoro, xtts]
