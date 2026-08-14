@@ -2,25 +2,34 @@ slot: inference-serving
 category: retrieval-tooling
 title: Best inference serving
 question: What is the best way to serve open-weight LLMs in production right now?
-criteria: [throughput benchmarks, day-0 model support, ecosystem, operational maturity]
+criteria:
+- throughput benchmarks
+- day-0 model support
+- ecosystem
+- operational maturity
 provisional: true
 since: 2024-09-11
 pick:
   name: vLLM
-  version: ""
+  version: ''
   url: https://github.com/vllm-project/vllm
   licence: Apache-2.0
-  why: >-
-    The ecosystem default; every serious model ships day-0 support. Longest
-    reign on the board. (Seed data — confirm or replace before launch.)
-caveats: ""
+  why: The ecosystem default; every serious model ships day-0 support. Longest reign
+    on the board. (Seed data — confirm or replace before launch.)
+caveats: ''
 challengers:
-  - name: SGLang
-    note: Wins some multi-node benchmarks; smaller ecosystem.
+- name: SGLang
+  note: Wins some multi-node benchmarks; smaller ecosystem.
 history:
-  - name: TGI
-    from: 2023-06-01
-    to: 2024-09-11
+- name: TGI
+  from: 2023-06-01
+  to: 2024-09-11
 last_reviewed: 2026-08-14
 watch:
-  keywords: [inference server, vllm, sglang, tensorrt-llm, serving, llm deployment]
+  keywords:
+  - inference server
+  - vllm
+  - sglang
+  - tensorrt-llm
+  - serving
+  - llm deployment

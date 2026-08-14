@@ -2,28 +2,38 @@ slot: llm-overall
 category: language-models
 title: Best overall LLM
 question: What is the best large language model overall right now?
-criteria: [reasoning quality, multimodal capability, long-context reliability, independent benchmarks]
+criteria:
+- reasoning quality
+- multimodal capability
+- long-context reliability
+- independent benchmarks
 provisional: true
 since: 2026-06-12
 pick:
   name: Gemini 3 Pro
-  version: ""
+  version: ''
   url: https://deepmind.google/models/gemini/
   licence: proprietary
-  why: >-
-    Leads independent reasoning and multimodal boards; long-context reliability
+  why: Leads independent reasoning and multimodal boards; long-context reliability
     is the separator. (Seed data — confirm or replace before launch.)
-caveats: ""
+caveats: ''
 challengers:
-  - name: GPT-5.2
-    note: Strong launch evals, awaiting third-party confirmation.
+- name: GPT-5.2
+  note: Strong launch evals, awaiting third-party confirmation.
 history:
-  - name: GPT-5
-    from: 2026-01-08
-    to: 2026-04-02
-  - name: Claude Opus 4.5
-    from: 2026-04-02
-    to: 2026-06-12
+- name: GPT-5
+  from: 2026-01-08
+  to: 2026-04-02
+- name: Claude Opus 4.5
+  from: 2026-04-02
+  to: 2026-06-12
 last_reviewed: 2026-08-14
 watch:
-  keywords: [llm, language model, frontier model, reasoning benchmark, gpt, claude, gemini]
+  keywords:
+  - llm
+  - language model
+  - frontier model
+  - reasoning benchmark
+  - gpt
+  - claude
+  - gemini

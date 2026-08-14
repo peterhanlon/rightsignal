@@ -2,28 +2,36 @@ slot: embeddings
 category: retrieval-tooling
 title: Best text embeddings
 question: What is the best text embedding model right now?
-criteria: [MTEB and retrieval benchmarks, dimension/cost trade-off, multilingual coverage]
+criteria:
+- MTEB and retrieval benchmarks
+- dimension/cost trade-off
+- multilingual coverage
 provisional: true
 since: 2026-08-08
 pick:
   name: voyage-4-large
-  version: ""
+  version: ''
   url: https://www.voyageai.com
   licence: proprietary
-  why: >-
-    Tops MTEB with a 2048-dim option that halves index cost at equal recall.
-    (Seed data — confirm or replace before launch.)
-caveats: ""
+  why: Tops MTEB with a 2048-dim option that halves index cost at equal recall. (Seed
+    data — confirm or replace before launch.)
+caveats: ''
 challengers:
-  - name: Qwen4-Embedding
-    note: Best open option; near-parity on English retrieval.
+- name: Qwen4-Embedding
+  note: Best open option; near-parity on English retrieval.
 history:
-  - name: text-embedding-3-large
-    from: 2025-09-01
-    to: 2026-02-14
-  - name: voyage-3-large
-    from: 2026-02-14
-    to: 2026-08-08
+- name: text-embedding-3-large
+  from: 2025-09-01
+  to: 2026-02-14
+- name: voyage-3-large
+  from: 2026-02-14
+  to: 2026-08-08
 last_reviewed: 2026-08-14
 watch:
-  keywords: [embedding, embeddings, mteb, retrieval, reranker, vector search]
+  keywords:
+  - embedding
+  - embeddings
+  - mteb
+  - retrieval
+  - reranker
+  - vector search

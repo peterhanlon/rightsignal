@@ -2,28 +2,38 @@ slot: llm-small
 category: language-models
 title: Best small / on-device LLM
 question: What is the best small language model to run on-device right now?
-criteria: [quality per GB, tool-calling under quantisation, runs in 16GB RAM]
+criteria:
+- quality per GB
+- tool-calling under quantisation
+- runs in 16GB RAM
 provisional: true
 since: 2026-04-30
 pick:
   name: Qwen3-8B
-  version: ""
+  version: ''
   url: https://huggingface.co/Qwen
   licence: Apache-2.0
-  why: >-
-    Best quality-per-GB under 16 GB of RAM; tool-calling holds up where peers
-    degrade. (Seed data — confirm or replace before launch.)
-caveats: ""
+  why: Best quality-per-GB under 16 GB of RAM; tool-calling holds up where peers degrade.
+    (Seed data — confirm or replace before launch.)
+caveats: ''
 challengers:
-  - name: Gemma 3n E4B
-    note: Stronger on mobile NPUs, weaker on tool use.
+- name: Gemma 3n E4B
+  note: Stronger on mobile NPUs, weaker on tool use.
 history:
-  - name: Phi-4
-    from: 2025-12-12
-    to: 2026-02-20
-  - name: Gemma 3 12B
-    from: 2026-02-20
-    to: 2026-04-30
+- name: Phi-4
+  from: 2025-12-12
+  to: 2026-02-20
+- name: Gemma 3 12B
+  from: 2026-02-20
+  to: 2026-04-30
 last_reviewed: 2026-08-14
 watch:
-  keywords: [small model, on-device, edge model, quantised, gemma, phi, qwen, slm]
+  keywords:
+  - small model
+  - on-device
+  - edge model
+  - quantised
+  - gemma
+  - phi
+  - qwen
+  - slm
