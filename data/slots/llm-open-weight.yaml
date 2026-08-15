@@ -14,19 +14,22 @@ pick:
   version: ''
   url: https://huggingface.co/moonshotai/Kimi-K3
   licence: Kimi K3 License (custom)
-  why: 'A 2.8T-parameter MoE (104B active, 1M context) whose weights shipped on Hugging
-    Face on 27 July. It scores 60 on the Artificial Analysis Intelligence Index —
-    the highest an open-weight model has ever placed — and kimi-k3-max is the highest-ranked
-    open-weights model on the Arena text board (#12, 1489), though Arena classes its
-    custom licence as non-open; the top MIT/Apache entry is GLM-5.2-max at #33. Enormous
-    to self-host, but nothing open matches its quality.'
+  why: 'A 2.8T-parameter MoE (104B active, 1M-token context, native vision) whose
+    weights landed on Hugging Face on 27 July under Moonshot''s own licence. Artificial
+    Analysis scores it 60 on the Intelligence Index, the top open-weights score on
+    that board and two ahead of Qwen3.8-2.4T-A95B; it also took #1 on Arena''s frontend-code
+    leaderboard at launch. It is enormous to self-host and slow at roughly 39 tokens
+    per second even on Moonshot''s own API, but nothing open matches it on quality.'
 caveats: Licence requires attribution above 100M MAU or $20M/month revenue, and a
   separate agreement for large model-as-a-service businesses. The hosted API shipped
   16 July — the reign is dated from the weights landing on 27 July.
 challengers:
 - name: Qwen3.8-2.4T-A95B
-  note: Weights landed 12 Aug; two points behind on the AA Intelligence Index, cheaper
-    and more multimodal — independent evals still settling.
+  note: 'Weights landed on 12 August and score 58 on the AA Intelligence Index, two
+    points behind K3. Be careful with the openness, though: the released checkpoint
+    is text-only with a 262K native context (extensible to ~1M), while vision input
+    and the 1M default stay behind the hosted Qwen3.8-Max. It is leaner to serve at
+    95B active parameters against K3''s 104B, and independent evals are still settling.'
 history:
 - name: Llama 2 70B Chat
   from: 2023-08-01

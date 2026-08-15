@@ -15,9 +15,14 @@ pick:
   url: https://github.com/vllm-project/vllm
   licence: Apache-2.0
   why: 'Still the default production serving engine on ecosystem weight nobody matches:
-    5.6M+ monthly pip installs, 1000+ supported model architectures, PyTorch Foundation
-    governance and a formal two-week release train. 2026 head-to-heads put its throughput
-    within 10-20% of SGLang like-for-like, and ahead on large-batch 70B+ serving.'
+    5.6M+ monthly pip installs, 86K+ GitHub stars, 1000+ supported model architectures
+    and 600+ accelerator types, under PyTorch Foundation governance with a two-week
+    release train gated on CI, nightly performance benchmarks and accuracy evals.
+    Day-0 support for new frontier weights is routine — Qwen3.8-2.4T-A95B landed on
+    release day in August 2026. On like-for-like 70B serving the throughput race is
+    effectively a tie (SGLang edged it by 2.5-4.6% on H100 unique-prompt traffic in
+    March 2026 testing), so pick vLLM for breadth, hardware coverage and release discipline
+    rather than raw speed.'
 caveats: Close to a two-horse race — SGLang leads shared-prefix chat, agent and RAG
   workloads by ~29% on 8B-class models via RadixAttention.
 challengers:

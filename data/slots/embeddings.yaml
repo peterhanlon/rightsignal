@@ -17,12 +17,18 @@ pick:
     board — since 16 July, with 34-language coverage, 32k context and 4096-dim Matryoshka
     vectors. Unlike the proprietary models it displaced, the weights are free under
     a permissive licence, with a 1B variant and NVFP4 quantisation for cheap serving.
-caveats: 'The category splits across boards: Tencent''s KaLM-Embedding-Gemma3-12B
-  still leads the MTEB multilingual task-mean.'
+caveats: 'The category splits across boards: on the official MMTEB multilingual table
+  Tencent''s KaLM-Embedding-Gemma3-12B-2511 still leads on task-mean at 72.32 as of
+  July 2026. Microsoft''s Harrier-OSS-v1 quotes a higher 74.3, but that is the MTEB
+  v2 multilingual split, so the two figures are not directly comparable. Check which
+  board a vendor is citing before treating any single number as the multilingual crown.'
 challengers:
 - name: Gemini Embedding 2
-  note: First natively multimodal embedding model; strong in cross-lingual and long-document
-    testing, but preview-only and weak on dimension truncation.
+  note: Google's first natively multimodal embedding model, mapping text, images,
+    video, audio and PDFs into one shared vector space, and generally available since
+    April 2026 rather than preview-only. Output dimensions are truncatable from 128
+    to 3,072, with non-default sizes returned already L2-normalised. It remains an
+    API-only model, so it is not an option if you need weights you can host yourself.
 history:
 - name: OpenAI text-embedding-ada-002
   from: 2023-08-01

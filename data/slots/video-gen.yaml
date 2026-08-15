@@ -14,17 +14,28 @@ pick:
   version: ''
   url: https://deepmind.google/models/gemini-omni/
   licence: proprietary
-  why: 'Debuted #1 on both the AA text-to-video and image-to-video leaderboards when
-    it opened to developers on 30 June. Still #1 on text-to-video (AA and Arena),
-    though it has slipped to #3 on image-to-video behind Seedance 2.0 and MiniMax
-    H3. Its differentiator is conversational multi-turn video editing with character
-    and scene consistency plus native synced audio.'
-caveats: 'A hold-by-a-nose, not a runaway: the top three are within confidence intervals,
-  rivals offer longer clips (15-30s vs 10s), and Seedance 2.5 is not yet arena-tested.'
+  why: Tops the Artificial Analysis text-to-video board with audio (Elo 1,241 over
+    12,624 samples, statistically tied with MiniMax H3) and leads arena.ai's Text-to-Video
+    Arena at 1,512±11 from 15,930 votes. On AA's image-to-video board with audio it
+    shows third at 1,191, but inside a three-way tie with Seedance 2.0 and MiniMax
+    H3, and it still leads the no-audio image-to-video board at 1,368. Its differentiator
+    is conversational multi-turn editing where each change builds on the last while
+    holding character and scene consistency, with native synced audio on every clip.
+caveats: 'A hold by a nose rather than a runaway: on image-to-video the top three
+  sit within overlapping confidence intervals, though on text-to-video only Gemini
+  Omni Flash and MiniMax H3 are genuinely tied. Output is also capped at 3-10 seconds
+  of 720p at 24 FPS, where MiniMax H3 ships 15 seconds at 2K and Seedance 2.5 claims
+  30 seconds natively. Seedance 2.5 still carries no arena score on either AA board,
+  so treat its launch claims as unverified.'
 challengers:
 - name: MiniMax H3 (Hailuo 3.0)
-  note: Statistically tied on AA text-to-video, with 15s 2K clips, native stereo audio,
-    open weights since 3 Aug, and far lower cost.
+  note: 'Statistically tied with the pick on AA text-to-video (Elo 1,238 against 1,241)
+    and inside the same three-way tie on image-to-video, with 15-second 2K clips and
+    native stereo audio. Weights landed on Hugging Face on 3 August, a few days after
+    the 31 July API launch, so self-hosting and ComfyUI workflows are now on the table.
+    It is not the cheaper option at comparable quality, though: AA lists it at $7.80
+    per minute against $6.00 for Gemini Omni Flash, and only its 768p tier undercuts
+    the pick.'
 history:
 - name: Runway Gen-2
   from: 2023-06-07

@@ -14,16 +14,25 @@ pick:
   version: ''
   url: https://developers.openai.com/api/docs/models/gpt-image-2
   licence: proprietary
-  why: 'Number one on both major boards: top of the Arena text-to-image and image-edit
-    leaderboards and #1 on Artificial Analysis, with clear margins. It took the crown
-    at its 21 April launch — by what Arena called the largest #1-vs-#2 margin ever
-    recorded — on built-in reasoning before generation, reliable small-text rendering,
-    and strong multi-image editing.'
-caveats: ''
+  why: 'Top of both Arena boards: #1 on text-to-image at 1381 Elo, 45 clear of MAI-Image-2.6,
+    and #1 on image edit at 1463. It also leads Artificial Analysis''s text-to-image
+    arena at 1,370, roughly 44 ahead of Reve 2.1, though on that site''s image-editing
+    arena it sits second within the error bars. It has held the top since its 21 April
+    launch on reasoning before generation, reliable small-text rendering and strong
+    multi-image editing.'
+caveats: 'Editing is the closest call: on Artificial Analysis''s image-editing arena
+  GPT Image 2 is second, effectively tied with Reve 2.1 and MAI-Image-2.5. It is also
+  the dearest of the leaders at about $211 per 1,000 images on Artificial Analysis''s
+  pricing, against $48 for MAI-Image-2.5 and $67 for Nano Banana 2. Treat the challenger
+  gap as provisional — MAI-Image-2.6 is still a preview and Grok Imagine Image 2.0''s
+  Arena scores are flagged preliminary.'
 challengers:
 - name: MAI-Image-2.6 (preview)
-  note: Microsoft's nearest rival on the Arena board, ~45 Elo behind; Reve 2.1 is
-    nearest on Artificial Analysis — neither statistically close.
+  note: MAI-Image-2.6 (preview) is the nearest rival on Arena's text-to-image board
+    at 1336, about 45 behind, but on only ~3,500 votes so far against the leader's
+    70,000. Reve 2.1 is second on Artificial Analysis's text-to-image arena, 44 back
+    — yet it tops that site's image-editing arena at 1,261, just ahead of GPT Image
+    2 at 1,258. On editing quality, then, the gap is well within the error bars.
 history:
 - name: Midjourney v5.2
   from: 2023-06-22

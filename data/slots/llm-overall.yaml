@@ -14,14 +14,17 @@ pick:
   version: ''
   url: https://www.anthropic.com/claude/fable
   licence: proprietary
-  why: 'Number one on the LMArena text leaderboard (1506 in the 12 Aug snapshot) and
-    top of the official Terminal-Bench 2.1 board, with a 1M-token context window and
-    always-on adaptive thinking. It debuted at #1 on 9 June, was suspended 12-30 June
-    under US export controls, and has held the Arena top spot continuously since access
-    was restored on 1 July.'
-caveats: Statistically tied at the top — 1506±5 against its own sibling claude-opus-4-6-high
-  at 1505±4 — and the cheaper Claude Opus 5 edges it on the Artificial Analysis Intelligence
-  Index.
+  why: 'Number one on the Arena (formerly LMArena) text leaderboard in the 12 August
+    snapshot, with a 1M-token context window and adaptive thinking that cannot be
+    switched off. It debuted on 9 June, was pulled on 12 June when the US government
+    applied export controls to it and Mythos 5, and came back on 1 July once those
+    controls were lifted. It does not lead Terminal-Bench 2.1, though: independent
+    trackers put GPT-5.6 Sol on top there, with Claude Opus 5 also ahead of Fable.'
+caveats: The top of the Arena text board sits inside its own noise band, so treat
+  Fable's lead over the chasing Claude Opus 4.8, GPT-5.5 Pro and Gemini 3.1 Pro cluster
+  as a tie rather than a win. The cheaper Claude Opus 5 edges it on the Artificial
+  Analysis Intelligence Index, roughly 63.0 against 62.1, at about half the price.
+  On agentic terminal work, GPT-5.6 Sol currently leads Terminal-Bench 2.1.
 challengers:
 - name: Claude Opus 5
   note: Edges Fable on the Artificial Analysis Intelligence Index at half the price;

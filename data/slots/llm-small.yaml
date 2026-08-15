@@ -13,14 +13,17 @@ pick:
   version: ''
   url: https://huggingface.co/google/gemma-4-26B-A4B-it
   licence: Apache-2.0
-  why: A 25.2B-total MoE with only 3.8B active parameters, so 4-bit builds (~13-14GB)
-    fit in 16GB RAM with real context headroom while decoding at small-model speeds.
-    The pick is about deployability — official quantisation-aware GGUFs from Google
-    with quality preserved at 4-bit, native function-calling and multimodal input
-    — not raw benchmark score.
-caveats: Qwen3.6 27B (Reasoning) scores far higher on AA's small open-source board
-  (38 vs 26), but its 4-bit builds run 15.4-15.9GB — inside the letter of the 16GB
-  bar with almost no room left for context. This title is under active review.
+  why: 'A 25.2B-total MoE with only 3.8B active parameters, so it decodes at small-model
+    speed, and Google''s quantisation-aware training keeps 4-bit quality close to
+    bfloat16. The Q4_0 GGUF weighs 14.6GB, so it loads on a 16GB machine but leaves
+    only about a gigabyte for KV cache — plan for modest context, not the full 256K.
+    The pick is about deployability: official Q4_0 QAT builds, native function calling
+    and image input, rather than raw benchmark score.'
+caveats: Qwen3.6 27B (Reasoning) is the quality leader here, scoring 38 on Artificial
+  Analysis's Intelligence Index, and it is Apache-2.0 with a 262k context. But it
+  is a 27.8B dense model, so its 4-bit builds are heavier than a 3.8B-active MoE,
+  and headroom is tight either way — the pick's own Q4_0 GGUF is already 14.6GB on
+  a 16GB box. This title is under active review.
 challengers:
 - name: Qwen3.6 27B (Reasoning)
   note: The quality leader on AA's small open-source board; squeezes into 16GB at

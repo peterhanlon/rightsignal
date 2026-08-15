@@ -13,13 +13,17 @@ pick:
   version: ''
   url: https://www.anthropic.com/claude/opus
   licence: proprietary
-  why: Leads SWE-bench Verified — 97.0% on the independent vals.ai run — tops the
-    Arena WebDev and Fullstack Code arenas, leads the AA Agentic Index and sits joint-first
-    on the rebuilt AA Coding Index, at half the price of Claude Fable 5. Multiple
-    trackers moved their coding crown to it on its 24 July launch day.
-caveats: 'Genuinely contested: the official Terminal-Bench 2.1 board (frozen pre-launch)
-  still lists Fable 5 first, and AA measures GPT-5.6 Sol a hair ahead on Terminal-Bench
-  (89.5 vs 89.1).'
+  why: Tops vals.ai's independent SWE-bench Verified run at 97.0%, the best of 82
+    systems on that board, and sits second on their Terminal-Bench 2.1 table at 84.64%.
+    At $5/$25 per million tokens it is half the price of Claude Fable 5 ($10/$50)
+    for scores within a point or two across the coding suite. Tracker refreshes through
+    mid-August still name it the sensible default for repo-scale agentic work.
+caveats: 'Genuinely contested on terminal work: vals.ai puts GPT-5.6 Sol first on
+  Terminal-Bench 2.1 at 85.77% against Opus 5''s 84.64%, and Opus 5''s figure falls
+  to 81.27% if you count its server-side fallbacks to Opus 4.8 on refused tasks as
+  failures. The SWE-bench Verified lead is narrowing too — DeepSeek V4 Pro (0813)
+  now sits second at 96.40% against 97.0%, as an open-weight model at a fraction of
+  the cost per task.'
 challengers:
 - name: GPT-5.6 Sol
   note: Statistically level on independent measures — AA has it at 89.5 vs 89.1 on
