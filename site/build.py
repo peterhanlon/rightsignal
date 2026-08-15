@@ -348,6 +348,13 @@ def build(out_dir: Path) -> None:
     if static_src.exists():
         shutil.copytree(static_src, out_dir / "static")
 
+    # Root-level passthrough files (search-engine verification etc.)
+    root_src = SITE_DIR / "root"
+    if root_src.exists():
+        for f in root_src.iterdir():
+            if f.is_file():
+                shutil.copy(f, out_dir / f.name)
+
     print(f"Built {len(slots)} slots, {len(entries)} changelog entries, "
           f"{len(snapshots)} snapshots -> {out_dir}")
 
