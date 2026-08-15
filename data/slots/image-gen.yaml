@@ -70,3 +70,5 @@ watch:
   - imagen
   - flux
   - seedream
+short: Image
+rank: 1

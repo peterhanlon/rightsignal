@@ -76,3 +76,5 @@ watch:
   - mistral
   - glm
   - moonshot
+short: Open weight
+rank: 3

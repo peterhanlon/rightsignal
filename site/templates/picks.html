@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}The picks — {{ site.name }}{% endblock %}
+{% block canonical_path %}/picks/{% endblock %}
+{% block nav_picks %}aria-current="page"{% endblock %}
+{% block content %}
+
+<div class="slot-head">
+  <div class="kicker">The board · as of {{ today | dmy }}</div>
+  <h1>The picks</h1>
+  <p class="lede">One current, defensible answer per category — with the reasoning,
+    the challenger, and how long each title has been held. Click any pick for
+    its full history and criteria.</p>
+</div>
+
+{% for cat in categories %}
+<section class="board-section" aria-label="{{ cat.label }}">
+  <div class="sec-head"><h2>{{ cat.label }}</h2><span>{{ cat.slots | length }} title{{ "s" if cat.slots | length != 1 }}</span></div>
+  {% for slot in cat.slots %}
+  {% include "_row.html" %}
+  {% endfor %}
+</section>
+{% endfor %}
+
+{% endblock %}

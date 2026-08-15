@@ -7,15 +7,15 @@
   <meta name="description" content="{% block description %}{{ site.description }}{% endblock %}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&family=Poppins:wght@500;600&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&family=Poppins:wght@400;500;600;700&display=swap">
   <link rel="stylesheet" href="/static/style.css?v={{ css_v }}">
-  <link rel="icon" type="image/svg+xml" href="/static/favicon.svg">
   <link rel="alternate" type="application/rss+xml" title="{{ site.name }} changelog" href="/feed.xml">
+  <link rel="icon" type="image/svg+xml" href="/static/favicon.svg">
   <link rel="canonical" href="{{ site.url }}{% block canonical_path %}/{% endblock %}">
   {% block head %}{% endblock %}
 </head>
 <body>
-<header class="masthead">
+<header class="topbar">
   <a class="wordmark" href="/" aria-label="RightSignal home">
     <span class="wm-right">right</span>
     <svg class="wm-glyph" viewBox="0 0 58 44" width="32" height="24" aria-hidden="true">
@@ -38,46 +38,52 @@
     </svg>
     <span class="wm-signal">signal</span>
   </a>
-  <div class="tagline">{{ site.tagline }}</div>
-  <nav class="mainnav" aria-label="Main">
-    <a href="/#board" {% block nav_board %}{% endblock %}>Signal board</a>
-    <a href="/#changelog">Changelog</a>
-    <a href="/#snapshots">Snapshots</a>
-    <a href="/#method">Method</a>
-    <a href="/feed.xml" class="rss">RSS ↗</a>
+  <nav class="topnav" aria-label="Main">
+    <a href="/picks/" {% block nav_picks %}{% endblock %}>Picks</a>
+    <a href="/radar/" {% block nav_radar %}{% endblock %}>Radar</a>
+    <a href="/changes/" {% block nav_changes %}{% endblock %}>Changes</a>
+    <a href="/history/" {% block nav_history %}{% endblock %}>History</a>
+    <a href="/method/" {% block nav_method %}{% endblock %}>How it works</a>
   </nav>
+  <a class="rss-link" href="/feed.xml" aria-label="RSS feed">
+    <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 11a9 9 0 0 1 9 9"/><path d="M4 4a16 16 0 0 1 16 16"/><circle cx="5" cy="19" r="1.6" fill="currentColor" stroke="none"/></svg>
+  </a>
 </header>
 
-{% block lead %}{% endblock %}
+{% block hero %}{% endblock %}
 
-<main class="wrap" id="board">
+<main class="wrap{% block main_class %}{% endblock %}">
 {% block content %}{% endblock %}
 </main>
 
-<footer class="method wrap" id="method">
-  <div class="method-grid">
-    <div class="method-col">
-      <h4>One working answer</h4>
-      <p>{{ site.name }} keeps a single, current answer per category — the model we'd
-        actually reach for today. The board is reviewed daily against the leaderboards,
-        fresh releases and what practitioners are reporting, and it changes the moment
-        the evidence does.</p>
+<footer class="bigfoot">
+  <div class="wrap bigfoot-grid">
+    <div class="bf-brand">
+      <a class="wordmark small" href="/"><span class="wm-right">right</span><svg class="wm-glyph" viewBox="0 0 58 44" width="26" height="20" aria-hidden="true"><g fill="url(#rsgrad)"><rect x="0" y="20" width="7" height="4" rx="2"/><rect x="11" y="14" width="4" height="16" rx="2"/><rect x="19" y="6" width="4" height="32" rx="2"/><rect x="27" y="0" width="4" height="44" rx="2"/><rect x="35" y="6" width="4" height="32" rx="2"/><rect x="43" y="14" width="4" height="16" rx="2"/><rect x="51" y="20" width="7" height="4" rx="2"/></g></svg><span class="wm-signal">signal</span></a>
+      <p>Independent AI model picks and the current state of AI, continuously adjudicated.</p>
     </div>
-    <div class="method-col">
-      <h4>Evidence rules</h4>
-      <p>Nothing takes a title on launch-day hype. Licences are read from
-        repositories, not press releases. Weights must be verifiably downloadable.
-        A change requires at least one independent, non-vendor evaluation.</p>
+    <div class="bf-col">
+      <h4>Explore</h4>
+      <a href="/picks/">Picks</a>
+      <a href="/radar/">Radar</a>
+      <a href="/changes/">Changes</a>
+      <a href="/history/">History</a>
     </div>
-    <div class="method-col">
-      <h4>Every change on the record</h4>
-      <p>Every title change is dated, cited and kept — the full lineage of each title
-        and monthly frozen snapshots let you see what was state of the art at any
-        point, and check our working.</p>
+    <div class="bf-col">
+      <h4>Resources</h4>
+      <a href="/method/">How it works</a>
+      <a href="/feed.xml">RSS feed</a>
+      <a href="https://github.com/peterhanlon/rightsignal">Board data &amp; full history</a>
+    </div>
+    <div class="bf-stay">
+      <h4>Stay informed</h4>
+      <p>Every title change and new contender lands in the feed the day it happens.</p>
+      <a class="btn-grad" href="/feed.xml">Follow the feed
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
     </div>
   </div>
-  <div class="colophon">
-    <span>{{ site.domain }} · the current state of AI</span>
+  <div class="wrap colophon">
+    <span>© 2026 {{ site.domain }}</span>
     <span>board data: CC BY 4.0</span>
   </div>
 </footer>

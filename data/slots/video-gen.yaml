@@ -72,3 +72,5 @@ watch:
   - minimax
   - kling
   - wan
+short: Video
+rank: 2

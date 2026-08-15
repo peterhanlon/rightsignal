@@ -63,3 +63,5 @@ watch:
   - vector search
   - nemotron
   - voyage
+short: Embeddings
+rank: 1

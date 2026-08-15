@@ -1,19 +1,25 @@
-# Site-wide configuration consumed by site/build.py
 name: RightSignal
 domain: rightsignal.co.uk
 url: https://rightsignal.co.uk
 tagline: The current state of AI, continuously adjudicated.
-description: >-
-  A continuously curated answer to "what is the best AI model or tool right
-  now" — one pick per category, chosen on evidence rather than launch-day
-  hype, with every change dated, cited and kept on the record.
-sweep_time_utc: "06:00"
+description: A continuously curated answer to "what is the best AI model or tool right
+  now" — one pick per category, chosen on evidence rather than launch-day hype, with
+  every change dated, cited and kept on the record.
+sweep_time_utc: 06:00
 categories:
-  - key: language-models
-    label: Language models
-  - key: speech
-    label: Speech
-  - key: image-video
-    label: Image & video
-  - key: retrieval-tooling
-    label: Retrieval & tooling
+- key: language-models
+  label: Language
+  icon: chat
+  accent: '#b06cf9'
+- key: speech
+  label: Speech
+  icon: wave
+  accent: '#ff3d9a'
+- key: image-video
+  label: Create
+  icon: spark
+  accent: '#ff8a3c'
+- key: retrieval-tooling
+  label: Build
+  icon: cube
+  accent: '#9d7bfa'

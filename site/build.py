@@ -11,6 +11,7 @@ from __future__ import annotations
 import argparse
 import datetime as dt
 import hashlib
+import re
 import shutil
 import sys
 from email.utils import format_datetime
@@ -140,10 +141,17 @@ def build(out_dir: Path) -> None:
     )
     for entry in entries:
         entry["slot_title"] = slots_by_key.get(entry.get("slot"), {}).get("title")
+        plain = re.sub(r"<[^>]+>", " ", entry["body_html"])
+        plain = re.sub(r"\s+", " ", plain).strip()
+        first = re.split(r"(?<=[.!?])\s+", plain)[0] if plain else ""
+        entry["teaser"] = first if len(first) <= 140 else first[:137] + "…"
 
     categories = []
     for cat in site["categories"]:
-        cat_slots = [s for s in slots if s["category"] == cat["key"]]
+        cat_slots = sorted(
+            (s for s in slots if s["category"] == cat["key"]),
+            key=lambda s: s.get("rank", 99),
+        )
         if cat_slots:
             categories.append({**cat, "slots": cat_slots})
 
@@ -154,6 +162,7 @@ def build(out_dir: Path) -> None:
     if radar_path.exists():
         for item in yaml.safe_load(radar_path.read_text())["radar"]:
             item["released"] = as_date(item.get("released"))
+            item["slug"] = re.sub(r"[^a-z0-9]+", "-", item["name"].lower()).strip("-")
             radar.append(item)
         radar.sort(key=lambda i: i["released"], reverse=True)
 
@@ -166,6 +175,9 @@ def build(out_dir: Path) -> None:
     env.filters["dmy"] = lambda d: d.strftime("%-d %b %Y") if d else ""
     # Lowercase only the first character — keeps acronyms like "LLM" intact.
     env.filters["lc_first"] = lambda s: s[:1].lower() + s[1:] if s else s
+    env.filters["lc_first_cap"] = lambda s: s[:1].upper() + s[1:] if s else s
+    # Split prose into sentence bullets (used on detail pages).
+    env.filters["sentences"] = lambda s: [x.strip() for x in re.split(r"(?<=[.!?])\s+", s or "") if x.strip()]
 
     # Lead story: the hottest actual news — the newest title change/challenge,
     # or the freshest radar arrival if that's more recent. Never site meta.
@@ -195,6 +207,7 @@ def build(out_dir: Path) -> None:
         "site": site,
         "css_v": css_v,
         "today": today,
+        "last_review": max((s["last_reviewed"] for s in slots if s["last_reviewed"]), default=today),
         "entries": entries,
         "snapshots": snapshots,
         "slots_count": len(slots),
@@ -208,15 +221,46 @@ def build(out_dir: Path) -> None:
     out_dir.mkdir(parents=True)
 
     (out_dir / "index.html").write_text(
-        env.get_template("index.html").render(categories=categories, slots=slots, **ctx)
+        env.get_template("home.html").render(categories=categories, slots=slots, **ctx)
     )
+    for page, template in (
+        ("picks", "picks.html"), ("radar", "radar.html"), ("changes", "changes.html"),
+        ("history", "history.html"), ("method", "method.html"),
+    ):
+        page_dir = out_dir / page
+        page_dir.mkdir(parents=True)
+        (page_dir / "index.html").write_text(
+            env.get_template(template).render(categories=categories, slots=slots, **ctx)
+        )
 
     for slot in slots:
         slot_entries = [e for e in entries if e.get("slot") == slot["slot"]]
+        # Detail-page derivations, all from recorded data:
+        defences = sum(
+            1 for e in slot_entries
+            if e["type"] == "challenged" and e["date"] >= slot["since"]
+        )
+        past_reigns = sum(1 for h in slot["history"] if h["name"] == slot["pick"]["name"])
+        by_new = {e.get("new"): e for e in slot_entries if e.get("new")}
+        hist_rows = []
+        for h in reversed(slot["history"]):  # newest first
+            e = by_new.get(h["name"])
+            hist_rows.append({**h, "days": (h["to"] - h["from"]).days,
+                              "teaser": e["teaser"] if e else ""})
+        evidence, seen = [], set()
+        for e in slot_entries:
+            for src in e.get("sources", []):
+                if src not in seen:
+                    seen.add(src)
+                    evidence.append(src)
         page_dir = out_dir / "slots" / slot["slot"]
         page_dir.mkdir(parents=True)
         (page_dir / "index.html").write_text(
-            env.get_template("slot.html").render(slot=slot, slot_entries=slot_entries, **ctx)
+            env.get_template("slot.html").render(
+                slot=slot, slot_entries=slot_entries, defences=defences,
+                past_reigns=past_reigns, hist_rows=hist_rows,
+                evidence=evidence[:8], categories=categories, **ctx
+            )
         )
 
     for snap in snapshots:

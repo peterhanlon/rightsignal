@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block title %}Changelog — {{ site.name }}{% endblock %}
+{% block description %}Every change to the {{ site.name }} board — title changes, challenges, reviews and milestones — dated, cited and kept on the record back to 2023.{% endblock %}
+{% block canonical_path %}/changes/{% endblock %}
+{% block nav_changes %}aria-current="page"{% endblock %}
+{% block content %}
+
+<div class="slot-head">
+  <div class="kicker">{{ entries | length }} entries · dated, cited, on the record</div>
+  <h1>Changelog</h1>
+  <p class="lede">Every change to the board back to 2023 — who took each title, from
+    whom, and on what evidence. Entries marked retrospective were researched as part
+    of the historical backfill; everything else was recorded as it happened.</p>
+</div>
+
+<section class="changelog">
+  {% for entry in entries %}
+  <article class="log-entry">
+    <div class="log-when">{{ entry.date | dmy }}<br><span class="verb {{ entry.type }}">{{ entry.type }}</span></div>
+    <div>
+      <h3>
+        {% if entry.slot %}<a href="/slots/{{ entry.slot }}/">{{ entry.title }}</a>
+        {% else %}{{ entry.title }}{% endif %}
+      </h3>
+      <div class="log-body">{{ entry.body_html | safe }}</div>
+      {% if entry.sources %}
+      <div class="log-meta">evidence: {% for src in entry.sources %}<a href="{{ src }}">[{{ loop.index }}]</a> {% endfor %}</div>
+      {% endif %}
+    </div>
+  </article>
+  {% endfor %}
+</section>
+
+{% endblock %}

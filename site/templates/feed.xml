@@ -9,7 +9,7 @@
   {% for item in items %}
   <item>
     <title>[{{ item.type | upper }}] {{ item.title }}</title>
-    <link>{{ site.url }}{% if item.slot %}/slots/{{ item.slot }}/{% else %}/#changelog{% endif %}</link>
+    <link>{{ site.url }}{% if item.slot %}/slots/{{ item.slot }}/{% else %}/changes/{% endif %}</link>
     <guid isPermaLink="false">{{ site.url }}/changelog/{{ item.id }}</guid>
     <pubDate>{{ item.rfc822 }}</pubDate>
     <description>{{ item.body_html }}</description>

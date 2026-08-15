@@ -70,3 +70,5 @@ watch:
   - fable
   - gemini
   - grok
+short: Overall LLM
+rank: 1

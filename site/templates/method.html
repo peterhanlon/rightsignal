@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block title %}How it works — {{ site.name }}{% endblock %}
+{% block description %}How {{ site.name }} judges AI models: one pick per category, evidence rules, the radar, and a permanent public record of every change.{% endblock %}
+{% block canonical_path %}/method/{% endblock %}
+{% block nav_method %}aria-current="page"{% endblock %}
+{% block content %}
+
+<div class="slot-head">
+  <div class="kicker">The method</div>
+  <h1>How we judge</h1>
+  <p class="lede">Not another leaderboard. {{ site.name }} keeps a single, current answer
+    per category — the model we&rsquo;d actually reach for today — and shows its working.</p>
+</div>
+
+<section class="board-section">
+  <div class="sec-head"><h2>One working answer</h2></div>
+  <p class="method-p">Each category has exactly one titleholder, judged against criteria
+    published on its page. The board is reviewed daily against the leaderboards, fresh
+    releases and what practitioners are reporting, and it changes the moment the
+    evidence does — not the moment a press release lands.</p>
+
+  <div class="sec-head"><h2>Evidence rules</h2></div>
+  <p class="method-p">Nothing takes a title on launch-day hype. A change requires at
+    least one independent, non-vendor evaluation, and a challenger must hold its case
+    for a week before a title can move. Licences are read from repositories, not press
+    releases; open-weight picks must be verifiably downloadable, linked to the
+    original repository.</p>
+
+  <div class="sec-head" id="radar"><h2>The radar</h2></div>
+  <p class="method-p">New releases are tracked from the day they appear — marked
+    <b>unverified</b> while only the vendor&rsquo;s own figures exist, and
+    <b>early data</b> once the first independent numbers land. Radar entries either
+    graduate into formal challengers (and sometimes titleholders) or age off the
+    board after three weeks.</p>
+
+  <div class="sec-head"><h2>Every change on the record</h2></div>
+  <p class="method-p">Every title change is dated, cited and kept: full lineage tables
+    on each pick&rsquo;s page back to 2023, a complete <a href="/changes/">changelog</a>,
+    and monthly frozen <a href="/history/">snapshots</a>. The board is also re-verified
+    weekly against the live web, and the corrections are published like everything
+    else — you can check our working, back to day one.</p>
+
+  <div class="sec-head"><h2>The sources we watch</h2></div>
+  <p class="method-p">Blind-vote arenas (Arena text, code, image and video boards),
+    composite indexes (Artificial Analysis, LiveBench), task benchmarks (SWE-bench
+    Verified, Terminal-Bench), domain leaderboards (Open ASR, RTEB, the speech
+    arenas), release feeds, and primary sources — repositories, model cards and
+    licences. Vendor numbers are reported as claims until someone independent
+    reproduces them.</p>
+</section>
+
+{% endblock %}

@@ -39,3 +39,5 @@ watch:
   - tensorrt-llm
   - serving
   - llm deployment
+short: Inference
+rank: 2

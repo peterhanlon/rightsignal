@@ -70,3 +70,5 @@ watch:
   - qwen
   - nemotron
   - slm
+short: On device
+rank: 4

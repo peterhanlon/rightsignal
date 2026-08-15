@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block title %}History — {{ site.name }}{% endblock %}
+{% block description %}Monthly frozen snapshots of the {{ site.name }} board — a browsable record of what was state of the art in AI, when.{% endblock %}
+{% block canonical_path %}/history/{% endblock %}
+{% block nav_history %}aria-current="page"{% endblock %}
+{% block content %}
+
+<div class="slot-head">
+  <div class="kicker">The board, frozen monthly</div>
+  <h1>History</h1>
+  <p class="lede">On the 1st of every month the whole board is frozen as a snapshot —
+    building a browsable record of what was state of the art, when. Each title's full
+    lineage back to 2023 also lives on its own page under <a href="/picks/">the picks</a>.</p>
+</div>
+
+<section class="snapshots">
+  {% if snapshots %}
+  {% for snap in snapshots %}
+  <article class="snap-entry">
+    <div class="when">{{ snap.frozen | dmy }}</div>
+    <div>
+      <h3><a href="/snapshots/{{ snap.key }}/">The state of AI, {{ snap.label }}</a></h3>
+      <div class="meta">{{ snap.slots | length }} titles · {{ snap.changes }} change{{ "s" if snap.changes != 1 }} during the month</div>
+    </div>
+  </article>
+  {% endfor %}
+  {% else %}
+  <p class="empty">The first monthly snapshot freezes on the 1st of next month. In the
+    meantime, every title's lineage — back to August 2023 — is on its slot page, and
+    every change is in <a href="/changes/">the changelog</a>.</p>
+  {% endif %}
+</section>
+
+{% endblock %}

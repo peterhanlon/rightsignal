@@ -1,0 +1,164 @@
+{% extends "base.html" %}
+{% macro arrow() %}<svg class="arr" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>{% endmacro %}
+
+{% block hero %}
+<section class="hero wrap">
+  <div class="hero-copy">
+    <div class="hero-live"><span class="live-pill"><i></i>Live</span> Reviewed {{ "today" if last_review == today else "on " + (last_review | dmy) }}, {{ today.strftime("%-d %B") }}</div>
+    <h1>What&rsquo;s actually<br>best in AI.<br><span class="grad-text">Right now.</span></h1>
+    <p class="hero-sub">One current pick for every job.<br>Independently evidenced. Changed when the evidence changes.</p>
+    <div class="hero-ctas">
+      <a class="btn-grad" href="/picks/">Explore the picks {{ arrow() }}</a>
+      <a class="btn-ghost" href="/changes/">What&rsquo;s changing {{ arrow() }}</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><span class="num accent">{{ slots_count }}</span><span class="lbl">Current picks<br><em>Holding their titles</em></span></div>
+      <div class="stat"><span class="num orange">{{ radar | length }}</span><span class="lbl">Contenders on radar<br><em>Could change the board</em></span></div>
+    </div>
+  </div>
+  <div class="hero-art" aria-hidden="true">
+    <svg viewBox="0 0 640 420" preserveAspectRatio="xMidYMid meet">
+      <defs>
+        <linearGradient id="spec" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0" stop-color="#7C3AED"/><stop offset="0.45" stop-color="#FF3D9A"/><stop offset="1" stop-color="#FF8A3C"/>
+        </linearGradient>
+        <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#B06CF9" stop-opacity="0.5"/><stop offset="1" stop-color="#B06CF9" stop-opacity="0"/>
+        </linearGradient>
+        <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+          <feGaussianBlur stdDeviation="7" result="b"/>
+          <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+      </defs>
+      <!-- perspective grid -->
+      <g stroke="url(#fade)" stroke-width="1" opacity="0.6">
+        <path d="M0 300 L640 300"/><path d="M0 330 L640 330"/><path d="M0 368 L640 368"/><path d="M0 415 L640 415"/>
+        <path d="M320 290 L320 420"/><path d="M240 290 L140 420"/><path d="M160 290 L-60 420"/><path d="M80 290 L-260 420"/>
+        <path d="M400 290 L500 420"/><path d="M480 290 L700 420"/><path d="M560 290 L900 420"/>
+      </g>
+      <!-- spectrum bars, mirrored around centre -->
+      <g fill="url(#spec)" filter="url(#glow)" opacity="0.95">
+        {% for h in [18,30,22,46,38,66,54,92,74,120,96,150,120,190,150,230,182,205,158,235,176,210,148,182,120,150,96,118,74,92,54,66,38,46,22,30,14,20,10] %}
+        <rect x="{{ 34 + loop.index0 * 15 }}" y="{{ 285 - h }}" width="6" height="{{ h }}" rx="3"/>
+        {% endfor %}
+      </g>
+      <g fill="#fff" opacity="0.55">
+        <circle cx="150" cy="90" r="1.4"/><circle cx="235" cy="60" r="1.1"/><circle cx="420" cy="75" r="1.4"/>
+        <circle cx="505" cy="120" r="1.1"/><circle cx="560" cy="70" r="1.6"/><circle cx="90" cy="140" r="1.1"/>
+      </g>
+    </svg>
+  </div>
+</section>
+{% endblock %}
+
+{% block main_class %} overview{% endblock %}
+{% block content %}
+
+<section class="panel" id="picks">
+  <div class="panel-head">
+    <div><h2>The picks</h2><p>Our current answer for every category.</p></div>
+    <a class="more" href="/picks/">View all picks {{ arrow() }}</a>
+  </div>
+  <div class="pick-cards">
+    {% for cat in categories %}
+    <div class="pick-card" style="--cat: {{ cat.accent }}">
+      <div class="pick-cat">
+        {% if cat.icon == "chat" %}<svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-8 8H5l-2 2V12a8 8 0 0 1 8-8h2a8 8 0 0 1 8 8Z"/></svg>
+        {% elif cat.icon == "wave" %}<svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor"><rect x="2" y="10" width="2.4" height="4" rx="1.2"/><rect x="6.4" y="7" width="2.4" height="10" rx="1.2"/><rect x="10.8" y="3" width="2.4" height="18" rx="1.2"/><rect x="15.2" y="7" width="2.4" height="10" rx="1.2"/><rect x="19.6" y="10" width="2.4" height="4" rx="1.2"/></svg>
+        {% elif cat.icon == "spark" %}<svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M12 3l2.2 5.8L20 11l-5.8 2.2L12 19l-2.2-5.8L4 11l5.8-2.2Z"/><path d="M19 16l.9 2.1L22 19l-2.1.9L19 22l-.9-2.1L16 19l2.1-.9Z"/></svg>
+        {% else %}<svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M12 2l9 5v10l-9 5-9-5V7Z"/><path d="M12 12l9-5M12 12v10M12 12L3 7"/></svg>
+        {% endif %}
+        {{ cat.label }}
+      </div>
+      {% for slot in cat.slots %}
+      <a class="pick-row" href="/slots/{{ slot.slot }}/">
+        <span class="pr-label">{{ slot.short }}</span>
+        <span class="pr-name">{{ slot.pick.name }}</span>
+        <span class="pr-meta"><span class="chip-pick">Pick</span><span class="pr-days">{{ slot.reign_days }} days</span>{{ arrow() }}</span>
+      </a>
+      {% endfor %}
+    </div>
+    {% endfor %}
+  </div>
+  <div class="panel-strip">
+    <span><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 20V10M10 20V4M16 20v-8M22 20H2"/></svg>
+    Detailed reasoning, benchmarks and history for every pick.</span>
+    <a class="more" href="/picks/">See all picks {{ arrow() }}</a>
+  </div>
+</section>
+
+<section class="panel" id="radar">
+  <div class="panel-head">
+    <div><h2>On the radar</h2><p>New and emerging contenders that could change the board.</p></div>
+    <a class="more" href="/radar/">See all {{ radar | length }} contenders {{ arrow() }}</a>
+  </div>
+  <div class="radar-rail" id="radar-rail">
+    {% for item in radar %}
+    <a class="radar-card {{ 'scored' if item.scored else 'unverified' }}" href="/radar/#{{ item.slug }}">
+      <div class="rc-top">{% if (today - item.released).days <= 1 %}<span class="chip-new">New</span>{% endif %}<span class="rc-date">{{ item.released.strftime("%-d %b") | upper }}</span></div>
+      <h3>{{ item.name }}</h3>
+      <div class="rc-threat">Threatens: {{ item.target | replace("best ", "") | lc_first_cap }}</div>
+      <p>{{ item.card }}</p>
+      <div class="rc-foot">
+        <span class="chip-status">{{ "Early data" if item.scored else "Unverified" }}</span>
+        <span class="rc-why">Why we&rsquo;re watching {{ arrow() }}</span>
+      </div>
+    </a>
+    {% endfor %}
+  </div>
+  <div class="panel-strip">
+    <span><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="1" fill="currentColor"/></svg>
+    We track new releases and early data so you see what could change next.</span>
+    <a class="more" href="/method/#radar">How the radar works {{ arrow() }}</a>
+  </div>
+</section>
+
+<section class="panel" id="changed">
+  <div class="panel-head">
+    <div><h2>What changed</h2><p>The most recent title changes and notable events.</p></div>
+    <a class="more" href="/changes/">View full changelog {{ arrow() }}</a>
+  </div>
+  <div class="changed-list">
+    {% for entry in entries[:3] %}
+    <a class="changed-row" href="/changes/">
+      <span class="cr-date">{{ entry.date.strftime("%-d %b") | upper }}</span>
+      <span class="cr-icon {{ entry.type }}">
+        {% if entry.type == "held" %}<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+        {% elif entry.type == "changed" %}<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M6 11l6-6 6 6"/></svg>
+        {% else %}<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16.5v.01"/></svg>
+        {% endif %}
+      </span>
+      <span class="cr-body"><b>{{ entry.title }}</b><em>{{ entry.teaser }}</em></span>
+      <span class="cr-type {{ entry.type }}">{{ {"held": "Hold", "changed": "Title change", "challenged": "Challenge", "added": "Update", "milestone": "Milestone", "snapshot": "Snapshot", "retired": "Retired"}[entry.type] }}</span>
+      <svg class="arr" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+    </a>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="panel why" id="why">
+  <div class="panel-head">
+    <div><h2>Why RightSignal?</h2><p>We do things differently.</p></div>
+  </div>
+  <div class="why-grid">
+    <div class="why-col">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="1" fill="currentColor"/></svg>
+      <h3>One answer</h3><p>We make the call. No endless leaderboards — just the best choice right now.</p>
+    </div>
+    <div class="why-col">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6Z"/><path d="M8.5 12l2.5 2.5 4.5-4.5"/></svg>
+      <h3>Evidence over hype</h3><p>A vendor announcement isn&rsquo;t enough. We wait for independent evidence.</p>
+    </div>
+    <div class="why-col">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>
+      <h3>Every change recorded</h3><p>The full history of every title — what changed, why, and what replaced it.</p>
+    </div>
+    <div class="why-col">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.8-3.8"/></svg>
+      <h3>Continuously reviewed</h3><p>Reviewed daily, verified weekly. Titles change when the evidence changes.</p>
+    </div>
+  </div>
+  <div class="why-cta"><a class="btn-ghost" href="/method/">How we judge and test models {{ arrow() }}</a></div>
+</section>
+
+{% endblock %}

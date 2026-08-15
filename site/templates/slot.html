@@ -1,74 +1,143 @@
 {% extends "base.html" %}
-{% block title %}{{ slot.question }} — {{ site.name }}{% endblock %}
+{% macro arrow() %}<svg class="arr" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>{% endmacro %}
+{% block title %}{{ slot.pick.name }} — {{ slot.title | lc_first }} — {{ site.name }}{% endblock %}
 {% block description %}As of {{ today | dmy }}, {{ slot.pick.name }} holds the {{ site.name }} title for {{ slot.title | lc_first }}.{% endblock %}
 {% block canonical_path %}/slots/{{ slot.slot }}/{% endblock %}
+{% block nav_picks %}aria-current="page"{% endblock %}
+{% block main_class %} overview detail{% endblock %}
 {% block content %}
 
-<div class="slot-head">
-  <div class="kicker">
-    <span class="verbtag {% if slot.is_new %}changed{% else %}held{% endif %}">{{ slot.title }}</span>
-    As of {{ today | dmy }}
+<nav class="crumbs" aria-label="Breadcrumb"><a href="/picks/">Picks</a> <span>›</span> {{ slot.short }}</nav>
+
+<section class="detail-hero">
+  <div class="dh-left">
+    <div class="dh-chiprow"><span class="chip-pick">Pick</span> <span class="dh-cat">{{ slot.title }}</span></div>
+    <h1>{{ slot.pick.name }}</h1>
+    <p class="dh-sub">{{ (slot.pick.why | sentences)[0] }}</p>
+    <div class="hero-ctas">
+      {% if slot.pick.url %}<a class="btn-grad" href="{{ slot.pick.url }}">View on provider site
+        <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>{% endif %}
+      <a class="btn-ghost" href="/changes/">What&rsquo;s changing {{ arrow() }}</a>
+    </div>
   </div>
-  <h1>{{ slot.question }}</h1>
-  <p class="lede">As of {{ today | dmy }}, <b>{{ slot.pick.name }}</b> is the {{ site.name }}
-    pick for {{ slot.title | lc_first }} — day {{ slot.reign_day }} of its reign{% if slot.provisional %}
-    (provisional, pending confirmation against the evidence rules){% endif %}.</p>
-</div>
-
-<section class="board-section">
-  <div class="sec-head"><h2>Current titleholder</h2><span>licence: {{ slot.pick.licence }}</span></div>
-  {% with link = false %}{% include "_row.html" %}{% endwith %}
-</section>
-
-<section class="board-section">
-  <div class="sec-head"><h2>Judged on</h2><span>last reviewed {{ slot.last_reviewed | dmy }}</span></div>
-  <ul class="criteria">
-    {% for c in slot.criteria %}<li>{{ c }}</li>{% endfor %}
-  </ul>
-  {% if slot.pick.url %}
-  <p class="reviewed"><a href="{{ slot.pick.url }}">{{ slot.pick.name }} ↗</a></p>
-  {% endif %}
-</section>
-
-<section class="board-section">
-  <div class="sec-head"><h2>Title lineage</h2><span>{{ slot.history | length + 1 }} holder{{ "s" if slot.history | length != 0 }}</span></div>
-  <table class="lineage-table">
-    <thead><tr><th>Holder</th><th>From</th><th>To</th><th>Reign</th></tr></thead>
-    <tbody>
-      {% for h in slot.history %}
-      <tr>
-        <td>{{ h.name }}</td>
-        <td>{{ h.from | dmy }}</td>
-        <td>{{ h.to | dmy }}</td>
-        <td>{{ (h.to - h.from).days }} days</td>
-      </tr>
-      {% endfor %}
-      <tr class="current-row">
-        <td>{{ slot.pick.name }}<span class="mark">current</span></td>
-        <td>{{ slot.since | dmy }}</td>
-        <td>—</td>
-        <td>{{ slot.reign_days }} days</td>
-      </tr>
-    </tbody>
-  </table>
-</section>
-
-{% if slot_entries %}
-<section class="changelog">
-  <div class="sec-head"><h2>History for this title</h2><span>{{ slot_entries | length }} entr{{ "y" if slot_entries | length == 1 else "ies" }}</span></div>
-  {% for entry in slot_entries %}
-  <article class="log-entry">
-    <div class="log-when">{{ entry.date | dmy }}<br><span class="verb {{ entry.type }}">{{ entry.type }}</span></div>
-    <div>
-      <h3>{{ entry.title }}</h3>
-      <div class="log-body">{{ entry.body_html | safe }}</div>
-      {% if entry.sources %}
-      <div class="log-meta">evidence: {% for src in entry.sources %}<a href="{{ src }}">[{{ loop.index }}]</a> {% endfor %}</div>
+  <div class="dh-card">
+    <div class="dh-card-top">
+      <div class="dh-pickbox">
+        <span class="dh-trophy"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 21h8M12 17v4M7 4h10v4a5 5 0 0 1-10 0Z"/><path d="M7 5H4v2a3 3 0 0 0 3 3M17 5h3v2a3 3 0 0 1-3 3"/></svg></span>
+        <div><div class="dh-lab accent">Current pick</div><div class="dh-since">since {{ slot.since | dmy }}</div>
+        <div class="dh-big">{{ slot.reign_days }}</div><div class="dh-since">days as pick</div></div>
+      </div>
+      {% if slot.challengers %}
+      <div class="dh-next">
+        <div class="dh-lab">Next best (challenger)</div>
+        <div class="dh-chal-name">{{ slot.challengers[0].name }}</div>
+        <p>{{ slot.challengers[0].note }}</p>
+        <a class="more" href="#caveats">Why it&rsquo;s the challenger {{ arrow() }}</a>
+      </div>
       {% endif %}
     </div>
-  </article>
-  {% endfor %}
+    <div class="dh-reign">
+      <div class="dh-lab">Reign history</div>
+      <div class="dh-stats">
+        <div><b>{{ slot.reign_days }}</b><span>days<br>current reign</span></div>
+        <div><b>{{ defences }}</b><span>challenge{{ "s" if defences != 1 }}<br>held off</span></div>
+        <div><b>{{ slot.since.strftime("%-d %b %Y") | upper }}</b><span>became pick</span></div>
+        <div><b>{{ past_reigns }}</b><span>previous<br>reign{{ "s" if past_reigns != 1 }}</span></div>
+      </div>
+    </div>
+  </div>
 </section>
-{% endif %}
+
+<div class="reviewed-bar">
+  <span><i class="dot-ok"></i>Last reviewed: {{ slot.last_reviewed | dmy }}</span>
+  <span class="rb-note">Reviews are continuous. This pick can change when the evidence changes.</span>
+</div>
+
+<nav class="tabnav" aria-label="Sections">
+  <a href="#why" class="on">Why it&rsquo;s the pick</a>
+  <a href="#evidence">Evidence</a>
+  <a href="#caveats">Caveats &amp; challengers</a>
+  <a href="#history">Title history</a>
+  <a href="/method/">Method</a>
+</nav>
+
+<div class="detail-grid">
+  <section class="panel" id="why">
+    <div class="panel-head"><div><h2>Why {{ slot.pick.name }} is the pick</h2></div></div>
+    <ul class="check-list">
+      {% for s in slot.pick.why | sentences %}
+      <li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8.5 12.5l2.5 2.5 4.5-5"/></svg>{{ s }}</li>
+      {% endfor %}
+    </ul>
+    <div class="judged"><span class="dh-lab">Judged on</span> {{ slot.criteria | join(" · ") }}</div>
+  </section>
+
+  <section class="panel" id="evidence">
+    <div class="panel-head"><div><h2>Evidence</h2><p>The sources behind this title&rsquo;s record.</p></div></div>
+    {% if evidence %}
+    <ul class="evidence-list">
+      {% for src in evidence %}
+      <li><a href="{{ src }}">{{ src | replace("https://", "") | replace("http://", "") | truncate(58) }}
+        <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a></li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+    <p class="method-note">Vendor numbers are treated as claims until independently
+      reproduced — <a href="/method/">how we judge</a>. Structured benchmark
+      comparisons are on the roadmap.</p>
+  </section>
+</div>
+
+<div class="detail-grid">
+  <section class="panel" id="caveats">
+    <div class="panel-head"><div><h2>Caveats &amp; challengers</h2></div></div>
+    {% if slot.caveats %}
+    <ul class="check-list warn">
+      {% for s in slot.caveats | sentences %}
+      <li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16.5v.01"/></svg>{{ s }}</li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+    {% for ch in slot.challengers %}
+    <div class="chal-block"><span class="chip-status">Challenger</span> <b>{{ ch.name }}</b><p>{{ ch.note }}</p></div>
+    {% endfor %}
+    {% if not slot.caveats and not slot.challengers %}<p class="method-note">No active caveats or challengers.</p>{% endif %}
+  </section>
+
+  <section class="panel" id="facts">
+    <div class="panel-head"><div><h2>At a glance</h2></div></div>
+    <dl class="facts">
+      <div><dt>Title</dt><dd>{{ slot.title }}</dd></div>
+      <div><dt>Licence</dt><dd>{{ slot.pick.licence }}</dd></div>
+      <div><dt>Pick since</dt><dd>{{ slot.since | dmy }}</dd></div>
+      <div><dt>Last reviewed</dt><dd>{{ slot.last_reviewed | dmy }}</dd></div>
+      <div><dt>Title holders to date</dt><dd>{{ slot.history | length + 1 }}</dd></div>
+      {% if slot.pick.url %}<div><dt>Official page</dt><dd><a href="{{ slot.pick.url }}">{{ slot.pick.url | replace("https://", "") | truncate(38) }}</a></dd></div>{% endif %}
+    </dl>
+  </section>
+</div>
+
+<section class="panel" id="history">
+  <div class="panel-head">
+    <div><h2>Title history</h2><p>Every change, on the record.</p></div>
+    <a class="more" href="/changes/">View full changelog {{ arrow() }}</a>
+  </div>
+  <div class="hist-list">
+    <div class="hist-row current">
+      <span class="chip-pick">Pick</span>
+      <span class="hr-body"><em>{{ slot.since | dmy }} – present</em><b>{{ slot.pick.name }} <span class="chip-new">Current</span></b>
+        <p>{{ (slot.pick.why | sentences)[0] }}</p></span>
+      <span class="hr-days">{{ slot.reign_days }} days<br><em>as pick</em></span>
+    </div>
+    {% for h in hist_rows %}
+    <div class="hist-row">
+      <span class="chip-pick dim">Pick</span>
+      <span class="hr-body"><em>{{ h.from | dmy }} – {{ h.to | dmy }}</em><b>{{ h.name }}</b>
+        {% if h.teaser %}<p>{{ h.teaser }}</p>{% endif %}</span>
+      <span class="hr-days">{{ h.days }} days<br><em>as pick</em></span>
+    </div>
+    {% endfor %}
+  </div>
+</section>
 
 {% endblock %}

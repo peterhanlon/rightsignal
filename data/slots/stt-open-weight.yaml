@@ -65,3 +65,5 @@ watch:
   - ark-asr
   - moss
   - voxtral
+short: Speech → text
+rank: 1
