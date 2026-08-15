@@ -10,6 +10,7 @@ from __future__ import annotations
 
 import argparse
 import datetime as dt
+import hashlib
 import shutil
 import sys
 from email.utils import format_datetime
@@ -186,8 +187,13 @@ def build(out_dir: Path) -> None:
         lead = {**news, "href": "#changelog", "link_text": "Read the adjudication →"}
         lead_slot = slots_by_key.get(news.get("slot"))
 
+    # Cache-buster: the stylesheet URL changes whenever its content does, so a
+    # cached CSS can never be paired with newer HTML.
+    css_v = hashlib.sha256((SITE_DIR / "static" / "style.css").read_bytes()).hexdigest()[:8]
+
     ctx = {
         "site": site,
+        "css_v": css_v,
         "today": today,
         "entries": entries,
         "snapshots": snapshots,
