@@ -31,16 +31,32 @@ radar:
   maker: Z.ai
   target: best LLM for coding
   released: 2026-08-14
-  status: API only
+  status: subscription only
   scored: false
   note: Z.ai calls it the strongest open-weights coding system it has measured — leading
-    CyberGym (84.5%) and AutomationBench (48.2%) — but the weights are held back roughly
-    two weeks for safety hardening. Reachable today via the GLM Coding Plan, the Z.ai
-    API and ZCode 3.0; the open-weight claim is untestable until the weights land.
+    CyberGym (84.5%) and AutomationBench (48.2%) — but today it is reachable only
+    through the GLM Coding Plan and ZCode 3.0, with API access listed as coming soon.
+    And despite launch coverage calling it open-weight, Z.ai's own documentation announces
+    no weights release at all; its Hugging Face page still stops at GLM-5.2.
   sources:
   - https://decrypt.co/375684/china-z-ai-glm-5-3-top-open-weight-coding-model
   - https://www.unite.ai/z-ai-launches-glm-5-3-with-frontier-coding-and-a-cyber-capability-that-outgrew-its-training/
-  card: Strong launch claims. Weights still pending.
+  card: Launch claims lead the boards. No weights announced.
+- name: Nemotron Labs Teacher (family)
+  maker: NVIDIA
+  target: best open-weight LLM
+  released: 2026-08-14
+  status: weights out
+  scored: false
+  note: Five domain-specialised teachers — STEM, competition coding, general reasoning,
+    instruction following, chat — each 550B total / 55B active, distilled off Nemotron
+    3 Ultra and published under the permissive OpenMDW-1.1 licence. NVIDIA's cards
+    claim parity with DeepSeek V4 Pro on GPQA, MMLU-Pro and LiveCodeBench v6, yet
+    the repos landed to almost nobody's notice — downloads are still in the hundreds.
+    Nothing independent yet.
+  sources:
+  - https://huggingface.co/nvidia/NVIDIA-Nemotron-Labs-Teacher-STEM
+  card: A 550B open teacher family that arrived unnoticed.
 - name: DeepSeek-V4-Pro-0813
   maker: DeepSeek
   target: best overall and open-weight LLM
@@ -83,6 +99,33 @@ radar:
   - https://www.cerebras.ai/blog/accelerating-gpt-5-6-sol-ultrafast-with-openai
   - https://www.hpcwire.com/aiwire/2026/08/14/cerebras-powers-openais-gpt-5-6-sol-ultrafast-mode/
   card: 750 tok/s on Cerebras. Invite-only preview.
+- name: FireRedTTS3
+  maker: FireRed Team
+  target: best open-weight TTS
+  released: 2026-08-13
+  status: weights out
+  scored: false
+  note: Apache-2.0 with zero-shot voice cloning across 24 languages and 21 Chinese
+    dialects; the team reports 3.04% average WER/CER and 78.8% speaker similarity
+    on Seed-TTS-eval. The instruct checkpoint followed a 5 August base release. Vendor
+    numbers only so far — but a direct, permissively licensed run at the open TTS
+    title.
+  sources:
+  - https://huggingface.co/FireRedTeam/FireRedTTS3
+  card: 24-language voice cloning under Apache-2.0.
+- name: Palmyra X6
+  maker: Writer
+  target: best overall LLM
+  released: 2026-08-13
+  status: API only
+  scored: false
+  note: Not a from-scratch frontier run — Writer post-trained Z.ai's open GLM-5.2
+    into its enterprise flagship and paired it with a harness it says roughly halves
+    token spend on routine tasks. Notable less for any benchmark than for the signal
+    that open Chinese base models are now substrate for Western commercial flagships.
+  sources:
+  - https://techcrunch.com/2026/08/13/writer-introduces-new-ai-model-and-upgraded-harness-to-contain-token-costs/
+  card: A GLM-5.2 remix as an enterprise flagship.
 - name: Grok 4.6
   maker: xAI
   target: best overall LLM
@@ -111,6 +154,19 @@ radar:
   - https://huggingface.co/Qwen/Qwen3.8-2.4T-A95B
   - https://datanorth.ai/news/alibaba-releases-qwen3-8-max
   card: First open Qwen-Max class. Early score two behind the titleholder.
+- name: Seed-2.0-Code
+  maker: ByteDance
+  target: best LLM for coding
+  released: 2026-08-12
+  status: API only
+  scored: false
+  note: ByteDance's dedicated coding model — 262K context at $0.50/$3.00 per million
+    tokens, pitched squarely at the Claude Code, Kilo and OpenCode harnesses and on
+    OpenRouter from day one. No independent coding-board score yet, but the price
+    undercuts every frontier coding pick several times over.
+  sources:
+  - https://openrouter.ai/bytedance-seed/seed-2.0-code
+  card: A frontier-coding pitch at a fraction of the price.
 - name: Nemotron 3.5 Lightning 30B-A3B
   maker: NVIDIA
   target: best small / on-device LLM
@@ -120,7 +176,9 @@ radar:
   note: A hybrid Mamba-2 + MoE at 30B total / 3B active with a 1M context, built for
     long-running agents — already on AA's small open-source board at 24, within two
     points of the current titleholder. The agent framing, not the score, is what makes
-    it worth watching.
+    it worth watching — though note its own card quotes MMLU-Pro at 81.9 and GPQA
+    Diamond at 75.4, numbers far above where the independent index has landed so far.
+    That gap is a story in itself.
   sources:
   - https://developer.nvidia.com/blog/nvidia-nemotron-3-5-lightning-delivers-fast-accurate-specialized-task-execution-for-long-running-agents/
   - https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16
@@ -140,16 +198,29 @@ radar:
   - https://huggingface.co/meta-models/Muse-Glimmer-30B
   - https://techcrunch.com/2026/08/10/metas-new-glimmer-ai-model-offers-a-hint-at-zuckerbergs-personal-intelligence-vision/
   card: Meta's agentic 30B. Early score above the titleholder.
+- name: LFM2.5-VL-3B
+  maker: Liquid AI
+  target: best small / on-device LLM
+  released: 2026-08-10
+  status: weights out
+  scored: false
+  note: A 3B vision-language model that runs at 228 tokens per second on an Apple
+    M5 Max in under 3.3GB — and posts 80.7 on ScreenSpot-v2, which points at on-device
+    computer use rather than chat. Weights are on Hugging Face under Liquid's LFM
+    licence. The efficiency figures are Liquid's own.
+  sources:
+  - https://huggingface.co/LiquidAI/LFM2.5-VL-3B
+  card: Vision and tool use in 3.3GB on a laptop.
 - name: Grok Imagine Image 2.0
   maker: xAI
   target: best image generation
   released: 2026-08-07
-  status: API only
+  status: in product
   scored: true
   note: Second on Arena image editing (1439) and third on text-to-image as of 15 Aug
     — Microsoft's MAI preview slipped between them — and the editing kit (region edits,
-    segmentation, five-image blending) is the real jump. Ships inside Grok Quality
-    Mode with no standalone API date.
+    segmentation, five-image blending) is the real jump. Ships inside Grok's Quality
+    Mode on web and mobile with no standalone API date.
   sources:
   - https://datanorth.ai/news/spacexai-releases-grok-imagine-image-2-0
   - https://www.testingcatalog.com/xai-launches-imagine-image-2-0-in-grok-quality-mode/

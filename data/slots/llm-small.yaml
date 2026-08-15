@@ -25,11 +25,14 @@ caveats: Qwen3.6 27B (Reasoning) is the quality leader here, scoring 38 on Artif
   and headroom is tight either way — the pick's own Q4_0 GGUF is already 14.6GB on
   a 16GB box. This title is under active review.
 challengers:
+- name: Muse Glimmer 30B
+  note: Meta's agent-focused 30B, Apache-2.0, already at 35 on the AA index. Its card
+    claims wide margins on agentic suites, but those are vendor-run and benchmarked
+    against Gemma's dense 31B sibling, not this pick — capability rising, efficiency
+    case unproven.
 - name: Qwen3.6 27B (Reasoning)
   note: The quality leader on AA's small open-source board; squeezes into 16GB at
     4-bit with little headroom for context.
-- name: Muse Glimmer 30B
-  note: Meta's agent-focused 30B (AA 35), Apache-2.0 — new, and still settling.
 history:
 - name: Llama 2 13B Chat
   from: 2023-08-01

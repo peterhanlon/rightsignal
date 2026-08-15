@@ -29,9 +29,10 @@ challengers:
 - name: Claude Opus 5
   note: Edges Fable on the Artificial Analysis Intelligence Index at half the price;
     GPT-5.6 Sol is the strongest external rival.
-- name: Grok 4.6
-  note: xAI's 12 Aug flagship matches GPT-5.6 Sol on the AA Intelligence Index (61),
-    one point behind Fable, at $2/$6 per million tokens.
+- name: Muse Spark 1.2
+  note: Meta's frontier entry sits fourth on the Arena text board at 1,498±10 in its
+    xHigh setting — the nearest non-Claude rival to Fable's 1,506, closer than Grok
+    4.6 or GPT-5.6 Sol get on that board.
 history:
 - name: GPT-4
   from: 2023-08-01

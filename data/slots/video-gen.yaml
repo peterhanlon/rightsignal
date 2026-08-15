@@ -36,6 +36,10 @@ challengers:
     It is not the cheaper option at comparable quality, though: AA lists it at $7.80
     per minute against $6.00 for Gemini Omni Flash, and only its 768p tier undercuts
     the pick.'
+- name: FLUX-3 Video
+  note: Black Forest Labs' entry has climbed to second on the Arena text-to-video
+    board at 1,496±17 — inside the leader's error band — without the audio or clip-length
+    tricks the rest of the chasing pack lean on.
 history:
 - name: Runway Gen-2
   from: 2023-06-07

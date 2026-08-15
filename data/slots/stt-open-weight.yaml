@@ -34,6 +34,10 @@ challengers:
 - name: MOSS-Transcribe-preview-2B
   note: 4.87% WER and Apache-2.0, but English-only and RL-tuned on the leaderboard's
     training splits — leaderboard-fitted.
+- name: MOSS-Transcribe-Diarize
+  note: The preview's production sibling at 0.9B — a claimed 5.17% mean WER on the
+    same evaluation, built-in diarisation, and the adoption its sibling never found,
+    at over 200k downloads.
 history:
 - name: Whisper large-v2
   from: 2023-08-01
