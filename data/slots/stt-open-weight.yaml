@@ -27,7 +27,7 @@ history:
 - name: Parakeet TDT 1.1B
   from: 2026-02-10
   to: 2026-05-21
-last_reviewed: 2026-08-14
+last_reviewed: 2026-08-15
 watch:
   keywords:
   - stt

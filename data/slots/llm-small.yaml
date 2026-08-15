@@ -26,7 +26,7 @@ history:
 - name: Gemma 3 12B
   from: 2026-02-20
   to: 2026-04-30
-last_reviewed: 2026-08-14
+last_reviewed: 2026-08-15
 watch:
   keywords:
   - small model

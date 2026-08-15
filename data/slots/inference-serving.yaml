@@ -24,7 +24,7 @@ history:
 - name: TGI
   from: 2023-06-01
   to: 2024-09-11
-last_reviewed: 2026-08-14
+last_reviewed: 2026-08-15
 watch:
   keywords:
   - inference server

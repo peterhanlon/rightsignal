@@ -24,7 +24,7 @@ history:
 - name: GPT-5-Codex
   from: 2026-01-10
   to: 2026-03-03
-last_reviewed: 2026-08-14
+last_reviewed: 2026-08-15
 watch:
   keywords:
   - coding model

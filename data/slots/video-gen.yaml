@@ -27,7 +27,7 @@ history:
 - name: Veo 3
   from: 2026-03-10
   to: 2026-06-25
-last_reviewed: 2026-08-14
+last_reviewed: 2026-08-15
 watch:
   keywords:
   - video generation

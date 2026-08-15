@@ -27,7 +27,7 @@ history:
 - name: Nano Banana
   from: 2026-04-15
   to: 2026-07-17
-last_reviewed: 2026-08-14
+last_reviewed: 2026-08-15
 watch:
   keywords:
   - image generation
