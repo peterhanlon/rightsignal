@@ -1,8 +1,30 @@
 {% extends "base.html" %}
 {% macro arrow() %}<svg class="arr" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>{% endmacro %}
-{% block title %}{{ slot.pick.name }} — {{ slot.title | lc_first }} — {{ site.name }}{% endblock %}
-{% block description %}As of {{ today | dmy }}, {{ slot.pick.name }} holds the {{ site.name }} title for {{ slot.title | lc_first }}.{% endblock %}
+{% block title %}{{ slot.title }} right now: {{ slot.pick.name }} ({{ today.strftime("%b %Y") }}) — {{ site.name }}{% endblock %}
+{% block description %}As of {{ today | dmy }}, {{ slot.pick.name }} is the {{ site.name }} pick for {{ slot.title | lc_first }} — why it leads, who's challenging, and the full title history back to 2023, independently evidenced.{% endblock %}
 {% block canonical_path %}/slots/{{ slot.slot }}/{% endblock %}
+{% block head %}
+<script type="application/ld+json">{{ {
+  "@context": "https://schema.org",
+  "@graph": [
+    {"@type": "BreadcrumbList", "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Picks", "item": site.url ~ "/picks/"},
+      {"@type": "ListItem", "position": 2, "name": slot.title, "item": site.url ~ "/slots/" ~ slot.slot ~ "/"}
+    ]},
+    {"@type": "WebPage", "@id": site.url ~ "/slots/" ~ slot.slot ~ "/",
+     "name": slot.title ~ " right now: " ~ slot.pick.name,
+     "dateModified": slot.last_reviewed.isoformat(),
+     "isPartOf": {"@id": site.url ~ "/#site"}},
+    {"@type": "FAQPage", "mainEntity": [{
+      "@type": "Question", "name": slot.question,
+      "acceptedAnswer": {"@type": "Answer",
+        "text": "As of " ~ (today | dmy) ~ ", " ~ slot.pick.name ~ " is the "
+          ~ site.name ~ " pick for " ~ (slot.title | lc_first) ~ " (held since "
+          ~ (slot.since | dmy) ~ "). " ~ slot.pick.why }
+    }]}
+  ]
+} | tojson }}</script>
+{% endblock %}
 {% block nav_picks %}aria-current="page"{% endblock %}
 {% block main_class %} overview detail{% endblock %}
 {% block content %}
@@ -13,6 +35,8 @@
   <div class="dh-left">
     <div class="dh-chiprow"><span class="chip-pick">Pick</span> <span class="dh-cat">{{ slot.title }}</span></div>
     <h1>{{ slot.pick.name }}</h1>
+    <p class="dh-answer">As of {{ today | dmy }}, <b>{{ slot.pick.name }}</b> is the
+      {{ site.name }} pick for {{ slot.title | lc_first }}.</p>
     <p class="dh-sub">{{ (slot.pick.why | sentences)[0] }}</p>
     <div class="hero-ctas">
       {% if slot.pick.url %}<a class="btn-grad" href="{{ slot.pick.url }}">View on provider site

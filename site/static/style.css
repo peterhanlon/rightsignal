@@ -484,6 +484,8 @@ footer.method {
 .dh-chiprow { display: flex; align-items: center; gap: 10px; }
 .dh-cat { font-family: var(--logo); font-size: 13.5px; color: var(--tert); }
 .detail-hero h1 { font-family: var(--logo); font-size: clamp(30px, 3.4vw, 44px); font-weight: 700; letter-spacing: -0.015em; margin: 12px 0 12px; }
+.dh-answer { font-family: var(--logo); font-size: 14px; color: var(--tert); margin: 0 0 10px; }
+.dh-answer b { color: var(--ink); font-weight: 600; }
 .dh-sub { font-family: var(--logo); font-size: 15.5px; color: var(--body); line-height: 1.55; margin: 0 0 22px; max-width: 46ch; }
 .dh-card { background: rgba(255, 255, 255, 0.025); border: 1px solid var(--hair-row); border-radius: 16px; padding: 20px 22px; }
 .dh-card-top { display: grid; grid-template-columns: 1fr 1.15fr; gap: 20px; border-bottom: 1px solid var(--hair-row); padding-bottom: 16px; }

@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}Page not found — {{ site.name }}{% endblock %}
+{% block canonical_path %}/404.html{% endblock %}
+{% block head %}<meta name="robots" content="noindex">{% endblock %}
+{% block content %}
+<div class="slot-head">
+  <div class="kicker">404</div>
+  <h1>That signal isn&rsquo;t here.</h1>
+  <p class="lede">The page you&rsquo;re after doesn&rsquo;t exist — but the board does.
+    Try <a href="/picks/">the current picks</a>, <a href="/radar/">the radar</a>,
+    or <a href="/changes/">the changelog</a>.</p>
+</div>
+{% endblock %}

@@ -2,6 +2,9 @@
 {% block title %}The picks — {{ site.name }}{% endblock %}
 {% block canonical_path %}/picks/{% endblock %}
 {% block nav_picks %}aria-current="page"{% endblock %}
+{% block head %}
+<script type="application/ld+json">{{ picks_ld | tojson }}</script>
+{% endblock %}
 {% block content %}
 
 <div class="slot-head">

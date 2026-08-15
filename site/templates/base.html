@@ -3,8 +3,17 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{% block title %}{{ site.name }} — the current state of AI{% endblock %}</title>
+  <title>{% block title %}{{ site.name }} — what&rsquo;s actually best in AI, right now{% endblock %}</title>
   <meta name="description" content="{% block description %}{{ site.description }}{% endblock %}">
+  <meta property="og:site_name" content="{{ site.name }}">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{% block og_title %}{{ self.title() }}{% endblock %}">
+  <meta property="og:description" content="{{ self.description() }}">
+  <meta property="og:url" content="{{ site.url }}{{ self.canonical_path() }}">
+  <meta property="og:image" content="{{ site.url }}/static/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&family=Poppins:wght@400;500;600;700&display=swap">
@@ -12,6 +21,16 @@
   <link rel="icon" type="image/svg+xml" href="/static/favicon.svg">
   <link rel="alternate" type="application/rss+xml" title="{{ site.name }} changelog" href="/feed.xml">
   <link rel="canonical" href="{{ site.url }}{% block canonical_path %}/{% endblock %}">
+  <script type="application/ld+json">{{ {
+    "@context": "https://schema.org",
+    "@graph": [
+      {"@type": "Organization", "@id": site.url ~ "/#org", "name": site.name,
+       "url": site.url ~ "/", "logo": site.url ~ "/static/favicon.svg"},
+      {"@type": "WebSite", "@id": site.url ~ "/#site", "name": site.name,
+       "url": site.url ~ "/", "description": site.description,
+       "publisher": {"@id": site.url ~ "/#org"}}
+    ]
+  } | tojson }}</script>
   {% block head %}{% endblock %}
 </head>
 <body>

@@ -203,9 +203,22 @@ def build(out_dir: Path) -> None:
     # cached CSS can never be paired with newer HTML.
     css_v = hashlib.sha256((SITE_DIR / "static" / "style.css").read_bytes()).hexdigest()[:8]
 
+    picks_ld = {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "name": f"{site['name']} — current picks",
+        "itemListElement": [
+            {"@type": "ListItem", "position": i + 1,
+             "name": f"{s['title']}: {s['pick']['name']}",
+             "url": f"{site['url']}/slots/{s['slot']}/"}
+            for i, s in enumerate(slots)
+        ],
+    }
+
     ctx = {
         "site": site,
         "css_v": css_v,
+        "picks_ld": picks_ld,
         "today": today,
         "last_review": max((s["last_reviewed"] for s in slots if s["last_reviewed"]), default=today),
         "entries": entries,
@@ -283,6 +296,52 @@ def build(out_dir: Path) -> None:
         feed_items.append({**e, "rfc822": format_datetime(pub)})
     (out_dir / "feed.xml").write_text(
         env.get_template("feed.xml").render(items=feed_items, **ctx)
+    )
+
+    # --- SEO/GEO machinery: sitemap, robots, llms.txt, 404 ---
+    urls = [("", today)] + [(p, today) for p in ("picks/", "radar/", "changes/", "method/")]
+    urls += [(f"slots/{s['slot']}/", s["last_reviewed"] or today) for s in slots]
+    urls += [(f"snapshots/{sn['key']}/", sn["frozen"] or today) for sn in snapshots]
+    sitemap = ['<?xml version="1.0" encoding="UTF-8"?>',
+               '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
+    for path, lastmod in urls:
+        sitemap.append(
+            f"<url><loc>{site['url']}/{path}</loc>"
+            f"<lastmod>{lastmod.isoformat()}</lastmod></url>"
+        )
+    sitemap.append("</urlset>")
+    (out_dir / "sitemap.xml").write_text("\n".join(sitemap))
+
+    (out_dir / "robots.txt").write_text(
+        "User-agent: *\nAllow: /\n\n"
+        f"Sitemap: {site['url']}/sitemap.xml\n"
+    )
+
+    # llms.txt — a plain-language index for AI crawlers and answer engines.
+    llms = [
+        f"# {site['name']}",
+        f"> {site['description']}",
+        "",
+        f"## Current picks (as of {today.isoformat()})",
+    ]
+    for s in slots:
+        llms.append(
+            f"- {s['title']}: {s['pick']['name']} (since {s['since'].isoformat()}) "
+            f"— {site['url']}/slots/{s['slot']}/"
+        )
+    llms += [
+        "",
+        "## Pages",
+        f"- All picks with reasoning and history: {site['url']}/picks/",
+        f"- New, unverified contenders (the radar): {site['url']}/radar/",
+        f"- Full changelog back to 2023: {site['url']}/changes/",
+        f"- Methodology and evidence rules: {site['url']}/method/",
+        f"- RSS feed: {site['url']}/feed.xml",
+    ]
+    (out_dir / "llms.txt").write_text("\n".join(llms) + "\n")
+
+    (out_dir / "404.html").write_text(
+        env.get_template("404.html").render(**ctx)
     )
 
     static_src = SITE_DIR / "static"
