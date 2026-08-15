@@ -14,13 +14,12 @@ pick:
   version: ''
   url: https://huggingface.co/moonshotai/Kimi-K3
   licence: Kimi K3 License (custom)
-  why: >-
-    A 2.8T-parameter MoE (104B active, 1M context) whose weights shipped on Hugging
+  why: 'A 2.8T-parameter MoE (104B active, 1M context) whose weights shipped on Hugging
     Face on 27 July. It scores 60 on the Artificial Analysis Intelligence Index —
-    the highest an open-weight model has ever placed — and kimi-k3-max is the
-    highest-ranked open-weights model on the Arena text board (#12, 1489), though
-    Arena classes its custom licence as non-open; the top MIT/Apache entry is
-    GLM-5.2-max at #33. Enormous to self-host, but nothing open matches its quality.
+    the highest an open-weight model has ever placed — and kimi-k3-max is the highest-ranked
+    open-weights model on the Arena text board (#12, 1489), though Arena classes its
+    custom licence as non-open; the top MIT/Apache entry is GLM-5.2-max at #33. Enormous
+    to self-host, but nothing open matches its quality.'
 caveats: Licence requires attribution above 100M MAU or $20M/month revenue, and a
   separate agreement for large model-as-a-service businesses. The hosted API shipped
   16 July — the reign is dated from the weights landing on 27 July.

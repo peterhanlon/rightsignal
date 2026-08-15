@@ -14,9 +14,9 @@ pick:
   url: https://www.anthropic.com/claude/opus
   licence: proprietary
   why: Leads SWE-bench Verified — 97.0% on the independent vals.ai run — tops the
-    Arena WebDev and Fullstack Code arenas, leads the AA Agentic Index and sits
-    joint-first on the rebuilt AA Coding Index, at half the price of Claude Fable 5.
-    Multiple trackers moved their coding crown to it on its 24 July launch day.
+    Arena WebDev and Fullstack Code arenas, leads the AA Agentic Index and sits joint-first
+    on the rebuilt AA Coding Index, at half the price of Claude Fable 5. Multiple
+    trackers moved their coding crown to it on its 24 July launch day.
 caveats: 'Genuinely contested: the official Terminal-Bench 2.1 board (frozen pre-launch)
   still lists Fable 5 first, and AA measures GPT-5.6 Sol a hair ahead on Terminal-Bench
   (89.5 vs 89.1).'

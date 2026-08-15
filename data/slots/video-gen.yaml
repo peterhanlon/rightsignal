@@ -16,9 +16,9 @@ pick:
   licence: proprietary
   why: 'Debuted #1 on both the AA text-to-video and image-to-video leaderboards when
     it opened to developers on 30 June. Still #1 on text-to-video (AA and Arena),
-    though it has slipped to #3 on image-to-video behind Seedance 2.0 and MiniMax H3.
-    Its differentiator is conversational multi-turn video editing with character and
-    scene consistency plus native synced audio.'
+    though it has slipped to #3 on image-to-video behind Seedance 2.0 and MiniMax
+    H3. Its differentiator is conversational multi-turn video editing with character
+    and scene consistency plus native synced audio.'
 caveats: 'A hold-by-a-nose, not a runaway: the top three are within confidence intervals,
   rivals offer longer clips (15-30s vs 10s), and Seedance 2.5 is not yet arena-tested.'
 challengers:

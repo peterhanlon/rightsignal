@@ -20,8 +20,8 @@ pick:
     on 22 June and it has led the board since release.
 caveats: NVIDIA Parakeet-TDT-0.6B-v3 remains the throughput king where speed matters
   more than the last point of WER. Dates for the pedants — paper 27 May, weights 22
-  June; the model card self-reports 5.04% on a smaller subset, 4.76% is the live
-  leaderboard average.
+  June; the model card self-reports 5.04% on a smaller subset, 4.76% is the live leaderboard
+  average.
 challengers:
 - name: MOSS-Transcribe-preview-2B
   note: 4.87% WER and Apache-2.0, but English-only and RL-tuned on the leaderboard's

@@ -14,19 +14,16 @@ pick:
   version: ''
   url: https://github.com/vllm-project/vllm
   licence: Apache-2.0
-  why: >-
-    Still the default production serving engine on ecosystem weight nobody
-    matches: 5.6M+ monthly pip installs, 1000+ supported model
-    architectures, PyTorch Foundation governance and a formal two-week
-    release train. 2026 head-to-heads put its throughput within 10-20% of
-    SGLang like-for-like, and ahead on large-batch 70B+ serving.
-caveats: >-
-    Close to a two-horse race — SGLang leads shared-prefix chat, agent and
-    RAG workloads by ~29% on 8B-class models via RadixAttention.
+  why: 'Still the default production serving engine on ecosystem weight nobody matches:
+    5.6M+ monthly pip installs, 1000+ supported model architectures, PyTorch Foundation
+    governance and a formal two-week release train. 2026 head-to-heads put its throughput
+    within 10-20% of SGLang like-for-like, and ahead on large-batch 70B+ serving.'
+caveats: Close to a two-horse race — SGLang leads shared-prefix chat, agent and RAG
+  workloads by ~29% on 8B-class models via RadixAttention.
 challengers:
 - name: SGLang
-  note: Near-parity overall and faster on agentic/structured workloads, with
-    major production adoption (xAI, AMD, LinkedIn, Cursor).
+  note: Near-parity overall and faster on agentic/structured workloads, with major
+    production adoption (xAI, AMD, LinkedIn, Cursor).
 history: []
 last_reviewed: 2026-08-15
 watch:

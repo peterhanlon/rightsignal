@@ -16,8 +16,8 @@ pick:
   why: A 25.2B-total MoE with only 3.8B active parameters, so 4-bit builds (~13-14GB)
     fit in 16GB RAM with real context headroom while decoding at small-model speeds.
     The pick is about deployability — official quantisation-aware GGUFs from Google
-    with quality preserved at 4-bit, native function-calling and multimodal input —
-    not raw benchmark score.
+    with quality preserved at 4-bit, native function-calling and multimodal input
+    — not raw benchmark score.
 caveats: Qwen3.6 27B (Reasoning) scores far higher on AA's small open-source board
   (38 vs 26), but its 4-bit builds run 15.4-15.9GB — inside the letter of the 16GB
   bar with almost no room left for context. This title is under active review.
