@@ -224,8 +224,8 @@ def build(out_dir: Path) -> None:
         env.get_template("home.html").render(categories=categories, slots=slots, **ctx)
     )
     for page, template in (
-        ("picks", "picks.html"), ("radar", "radar.html"), ("changes", "changes.html"),
-        ("history", "history.html"), ("method", "method.html"),
+        ("picks", "picks.html"), ("radar", "radar.html"),
+        ("changes", "changes.html"), ("method", "method.html"),
     ):
         page_dir = out_dir / page
         page_dir.mkdir(parents=True)
@@ -275,15 +275,6 @@ def build(out_dir: Path) -> None:
                 snapshot=snap, categories=[c for c in snap_categories if c["slots"]], **ctx
             )
         )
-
-    # RSS feed of the changelog.
-    feed_items = []
-    for e in entries[:50]:
-        pub = dt.datetime.combine(e["date"], dt.time(6, 0), tzinfo=dt.timezone.utc)
-        feed_items.append({**e, "rfc822": format_datetime(pub)})
-    (out_dir / "feed.xml").write_text(
-        env.get_template("feed.xml").render(items=feed_items, **ctx)
-    )
 
     static_src = SITE_DIR / "static"
     if static_src.exists():
