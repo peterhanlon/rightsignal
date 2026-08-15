@@ -7,26 +7,44 @@ criteria:
 - throughput
 - licence
 - language coverage
-provisional: true
-since: 2026-05-21
+provisional: false
+since: 2026-06-22
 pick:
-  name: Parakeet TDT-2
+  name: ARK-ASR-3B
   version: ''
-  url: https://huggingface.co/nvidia
-  licence: CC-BY-4.0
-  why: Top open-ASR leaderboard WER at roughly 10x Whisper throughput on the same
-    hardware. (Seed data — confirm or replace before launch.)
-caveats: ''
+  url: https://huggingface.co/Audio8/ARK-ASR-3B
+  licence: Apache-2.0
+  why: Number one on the Hugging Face Open ASR Leaderboard at 4.76% average WER, with
+    19-language coverage and a permissive Apache-2.0 licence — a combination Whisper
+    large-v3 and the Parakeet/Canary line no longer match on accuracy. Weights landed
+    on 22 June and it has led the board since release.
+caveats: NVIDIA Parakeet-TDT-0.6B-v3 remains the throughput king where speed matters
+  more than the last point of WER. Dates for the pedants — paper 27 May, weights 22
+  June; the model card self-reports 5.04% on a smaller subset, 4.76% is the live
+  leaderboard average.
 challengers:
-- name: Voxtral 2
-  note: Better on accents; licence still under review.
+- name: MOSS-Transcribe-preview-2B
+  note: 4.87% WER and Apache-2.0, but English-only and RL-tuned on the leaderboard's
+    training splits — leaderboard-fitted.
 history:
+- name: Whisper large-v2
+  from: 2023-08-01
+  to: 2023-11-07
 - name: Whisper large-v3
-  from: 2025-06-01
-  to: 2026-02-10
-- name: Parakeet TDT 1.1B
-  from: 2026-02-10
-  to: 2026-05-21
+  from: 2023-11-07
+  to: 2024-02-07
+- name: Canary 1B
+  from: 2024-02-07
+  to: 2025-05-01
+- name: Parakeet TDT 0.6B v2
+  from: 2025-05-01
+  to: 2025-07-17
+- name: Canary Qwen 2.5B
+  from: 2025-07-17
+  to: 2026-04-29
+- name: Granite Speech 4.1 2B
+  from: 2026-04-29
+  to: 2026-06-22
 last_reviewed: 2026-08-15
 watch:
   keywords:
@@ -36,4 +54,6 @@ watch:
   - transcription
   - whisper
   - parakeet
+  - ark-asr
+  - moss
   - voxtral

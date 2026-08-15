@@ -4,9 +4,9 @@ domain: rightsignal.co.uk
 url: https://rightsignal.co.uk
 tagline: The current state of AI, continuously adjudicated.
 description: >-
-  A continuously maintained answer to "what is the best AI model or tool right
-  now" — tracked per category, adjudicated against published evidence rules,
-  with every change recorded as a dated, auditable changelog entry.
+  A continuously curated answer to "what is the best AI model or tool right
+  now" — one pick per category, chosen on evidence rather than launch-day
+  hype, with every change dated, cited and kept on the record.
 sweep_time_utc: "06:00"
 categories:
   - key: language-models

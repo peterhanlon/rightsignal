@@ -7,32 +7,57 @@ criteria:
 - editability
 - text rendering
 - instruction following
-provisional: true
-since: 2026-07-17
+provisional: false
+since: 2026-04-21
 pick:
-  name: Midjourney v8
+  name: GPT Image 2
   version: ''
-  url: https://www.midjourney.com
+  url: https://developers.openai.com/api/docs/models/gpt-image-2
   licence: proprietary
-  why: Retook the title on photoreal consistency and editability; text rendering finally
-    competitive. (Seed data — confirm or replace before launch.)
+  why: 'Number one on both major boards: top of the Arena text-to-image and image-edit
+    leaderboards and #1 on Artificial Analysis, with clear margins. It took the crown
+    at its 21 April launch — by what Arena called the largest #1-vs-#2 margin ever
+    recorded — on built-in reasoning before generation, reliable small-text rendering,
+    and strong multi-image editing.'
 caveats: ''
 challengers:
-- name: Nano Banana 2
-  note: Better instruction-following in edits.
+- name: MAI-Image-2.6 (preview)
+  note: Microsoft's nearest rival on the Arena board, ~45 Elo behind; Reve 2.1 is
+    nearest on Artificial Analysis — neither statistically close.
 history:
-- name: Imagen 4
-  from: 2026-01-20
-  to: 2026-04-15
+- name: Midjourney v5.2
+  from: 2023-06-22
+  to: 2023-10-01
+- name: DALL-E 3
+  from: 2023-10-01
+  to: 2023-12-21
+- name: Midjourney v6
+  from: 2023-12-21
+  to: 2024-10-30
+- name: Recraft V3
+  from: 2024-10-30
+  to: 2025-03-25
+- name: GPT-4o image generation
+  from: 2025-03-25
+  to: 2025-08-26
 - name: Nano Banana
-  from: 2026-04-15
-  to: 2026-07-17
+  from: 2025-08-26
+  to: 2025-12-16
+- name: GPT Image 1.5
+  from: 2025-12-16
+  to: 2026-02-26
+- name: Nano Banana 2
+  from: 2026-02-26
+  to: 2026-04-21
 last_reviewed: 2026-08-15
 watch:
   keywords:
   - image generation
   - text-to-image
+  - image edit
+  - gpt image
+  - nano banana
   - midjourney
   - imagen
   - flux
-  - diffusion
+  - seedream

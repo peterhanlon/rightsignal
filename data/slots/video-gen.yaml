@@ -7,33 +7,57 @@ criteria:
 - character consistency
 - native audio
 - clip length
-provisional: true
-since: 2026-06-25
+provisional: false
+since: 2026-06-30
 pick:
-  name: Veo 3.1
+  name: Gemini Omni Flash
   version: ''
-  url: https://deepmind.google/models/veo/
+  url: https://deepmind.google/models/gemini-omni/
   licence: proprietary
-  why: Native audio and shot-to-shot character consistency keep it ahead on the eval
-    reel. (Seed data — confirm or replace before launch.)
-caveats: ''
+  why: 'Debuted #1 on both the AA text-to-video and image-to-video leaderboards when
+    it opened to developers on 30 June. Still #1 on text-to-video (AA and Arena),
+    though it has slipped to #3 on image-to-video behind Seedance 2.0 and MiniMax H3.
+    Its differentiator is conversational multi-turn video editing with character and
+    scene consistency plus native synced audio.'
+caveats: 'A hold-by-a-nose, not a runaway: the top three are within confidence intervals,
+  rivals offer longer clips (15-30s vs 10s), and Seedance 2.5 is not yet arena-tested.'
 challengers:
-- name: Sora 2.5
-  note: Launch demos strong; independent comparisons pending.
+- name: MiniMax H3 (Hailuo 3.0)
+  note: Statistically tied on AA text-to-video, with 15s 2K clips, native stereo audio,
+    open weights since 3 Aug, and far lower cost.
 history:
-- name: Sora
-  from: 2025-12-01
-  to: 2026-03-10
+- name: Runway Gen-2
+  from: 2023-06-07
+  to: 2024-06-17
+- name: Runway Gen-3 Alpha
+  from: 2024-06-17
+  to: 2024-12-16
+- name: Veo 2
+  from: 2024-12-16
+  to: 2025-04-15
+- name: Kling 2.0
+  from: 2025-04-15
+  to: 2025-05-20
 - name: Veo 3
-  from: 2026-03-10
-  to: 2026-06-25
+  from: 2025-05-20
+  to: 2025-09-30
+- name: Sora 2
+  from: 2025-09-30
+  to: 2026-02-12
+- name: Seedance 2.0
+  from: 2026-02-12
+  to: 2026-06-30
 last_reviewed: 2026-08-15
 watch:
   keywords:
   - video generation
   - text-to-video
+  - image-to-video
   - sora
   - veo
-  - runway
+  - gemini omni
+  - seedance
+  - hailuo
+  - minimax
   - kling
   - wan

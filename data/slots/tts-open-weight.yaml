@@ -3,28 +3,49 @@ category: speech
 title: Best open-weight TTS
 question: What is the best open-weight text-to-speech model right now?
 criteria:
-- output quality (MOS)
+- output quality (MOS / arena Elo)
 - latency
 - licence
 - hardware requirements
-provisional: true
-since: 2026-08-14
+provisional: false
+since: 2026-03-09
 pick:
-  name: OpenAudio S2
+  name: Fish Audio S2 Pro
   version: ''
-  url: https://huggingface.co/fishaudio
-  licence: Apache-2.0
-  why: Ahead on blind MOS across English and multilingual sets; Apache-2.0, weights
-    verified downloadable. (Seed data — confirm or replace before launch.)
-caveats: Kokoro-2 remains the recommendation under 1 GB VRAM.
-challengers: []
+  url: https://huggingface.co/fishaudio/s2-pro
+  licence: Fish Audio Research License (non-commercial)
+  why: 'Open-sourced on 9 March 2026: a ~4.4B dual-autoregressive model trained on
+    10M+ hours across 80+ languages, currently the highest-ranked open-weights model
+    on the Artificial Analysis TTS leaderboard, with a production SGLang streaming
+    engine (~100ms to first audio on one H200).'
+caveats: >-
+  Open-weight but non-commercial — commercial use needs a licence from Fish
+  Audio, which keeps Apache-licensed rivals relevant for self-hosters. And the
+  open/closed gap is real — S2 Pro sits #24 overall on the AA board, ~115 Elo
+  behind the closed leader.
+challengers:
+- name: Step-Audio-EditX
+  note: Apache-2.0, 13 Elo behind on the same arena, runs on a single 12-16GB GPU
+    — the pick if commercial licensing is a hard requirement.
 history:
+- name: Bark
+  from: 2023-08-01
+  to: 2023-10-31
+- name: XTTS-v2
+  from: 2023-10-31
+  to: 2024-10-07
 - name: F5-TTS
-  from: 2025-11-01
-  to: 2026-03-24
-- name: Kokoro-2
-  from: 2026-03-24
-  to: 2026-08-14
+  from: 2024-10-07
+  to: 2024-12-26
+- name: Kokoro-82M
+  from: 2024-12-26
+  to: 2025-05-28
+- name: Chatterbox
+  from: 2025-05-28
+  to: 2025-11-12
+- name: Step-Audio-EditX
+  from: 2025-11-12
+  to: 2026-03-09
 last_reviewed: 2026-08-15
 watch:
   keywords:
@@ -32,5 +53,6 @@ watch:
   - text-to-speech
   - speech synthesis
   - voice cloning
+  - fish audio
+  - step-audio
   - kokoro
-  - xtts

@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block title %}{{ slot.question }} — {{ site.name }}{% endblock %}
-{% block description %}As of {{ today | dmy }}, {{ slot.pick.name }} holds the {{ site.name }} title for {{ slot.title | lower }}.{% endblock %}
+{% block description %}As of {{ today | dmy }}, {{ slot.pick.name }} holds the {{ site.name }} title for {{ slot.title | lc_first }}.{% endblock %}
 {% block canonical_path %}/slots/{{ slot.slot }}/{% endblock %}
 {% block content %}
 
@@ -11,7 +11,7 @@
   </div>
   <h1>{{ slot.question }}</h1>
   <p class="lede">As of {{ today | dmy }}, <b>{{ slot.pick.name }}</b> is the {{ site.name }}
-    pick for {{ slot.title | lower }} — day {{ slot.reign_days }} of its reign{% if slot.provisional %}
+    pick for {{ slot.title | lc_first }} — day {{ slot.reign_day }} of its reign{% if slot.provisional %}
     (provisional, pending confirmation against the evidence rules){% endif %}.</p>
 </div>
 

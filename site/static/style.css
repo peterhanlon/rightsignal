@@ -18,11 +18,6 @@
   --mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
 }
 
-@keyframes rs-tick { to { transform: translateX(-50%); } }
-@keyframes rs-pulse {
-  0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(63, 214, 242, 0.7); }
-  50% { opacity: 0.5; box-shadow: 0 0 0 7px rgba(63, 214, 242, 0); }
-}
 @keyframes rs-glow {
   0%, 100% { text-shadow: 0 0 16px rgba(255, 61, 154, 0.45); }
   50% { text-shadow: 0 0 36px rgba(255, 61, 154, 0.95); }
@@ -72,30 +67,6 @@ nav.mainnav a[aria-current] { color: var(--ink); }
 nav.mainnav a.rss { color: var(--cyan); }
 nav.mainnav a:hover { color: var(--cyan-hover); }
 
-/* ---- ticker ---- */
-.ticker {
-  display: flex; align-items: center; gap: 16px;
-  border-bottom: 1px solid var(--hair-chrome); overflow: hidden;
-}
-.ticker .live {
-  display: flex; align-items: center; gap: 9px;
-  padding: 9px 0 9px 48px; flex: none;
-  font-family: var(--mono); font-size: 12px; letter-spacing: 0.1em;
-  color: var(--cyan); text-transform: uppercase;
-}
-.ticker .live i {
-  width: 8px; height: 8px; border-radius: 50%; background: var(--cyan);
-  animation: rs-pulse 2s ease-in-out infinite;
-}
-.ticker .track-clip { flex: 1; overflow: hidden; position: relative; }
-.ticker .track {
-  display: flex; width: max-content;
-  animation: rs-tick 28s linear infinite;
-  font-family: var(--mono); font-size: 12px; letter-spacing: 0.08em;
-  color: var(--muted); text-transform: uppercase; padding: 9px 0;
-}
-.ticker .track span { white-space: nowrap; padding-right: 64px; }
-
 /* ---- lead story ---- */
 .lead {
   display: grid; grid-template-columns: 1fr 300px; gap: 56px;
@@ -110,7 +81,7 @@ nav.mainnav a:hover { color: var(--cyan-hover); }
 .verbtag { padding: 3px 9px; }
 .verbtag.changed { color: var(--magenta); border: 1px solid rgba(255, 61, 154, 0.5); }
 .verbtag.added, .verbtag.snapshot { color: var(--cyan); border: 1px solid rgba(63, 214, 242, 0.5); }
-.verbtag.challenged { color: var(--chal); border: 1px solid rgba(224, 138, 180, 0.5); }
+.verbtag.challenged, .verbtag.unverified { color: var(--chal); border: 1px solid rgba(224, 138, 180, 0.5); }
 .verbtag.held, .verbtag.retired { color: var(--muted); border: 1px solid var(--hair-rule); }
 .lead h1 {
   font-size: 64px; line-height: 1.06; font-weight: 700;
@@ -162,6 +133,7 @@ main.wrap { padding-bottom: 40px; }
 .row-note { margin: 0; color: var(--body); max-width: 62ch; }
 .row-chal { margin: 8px 0 0; font-size: 15px; color: var(--chal); }
 .row.new .row-chal { color: var(--body); }
+.row-caveat { margin: 6px 0 0; font-size: 13px; color: var(--muted); }
 .row-chal .chal-label {
   font-family: var(--mono); font-size: 12px;
   letter-spacing: 0.08em; text-transform: uppercase;
@@ -200,8 +172,10 @@ section.changelog { padding: 56px 0; }
 .verb { text-transform: uppercase; }
 .verb.changed { color: var(--magenta); }
 .verb.added, .verb.snapshot { color: var(--cyan); }
-.verb.challenged { color: var(--chal); }
+.verb.challenged, .verb.unverified { color: var(--chal); }
+.radar-target { color: var(--tert); }
 .verb.held, .verb.retired { color: var(--muted); }
+.verb.milestone { color: var(--tert); }
 .log-entry h3 { margin: 0 0 8px; font-size: 22px; font-weight: 700; }
 .log-entry h3 a { color: var(--ink); }
 .log-entry h3 a:hover { color: var(--cyan-hover); }
@@ -275,7 +249,6 @@ footer.method {
   .wrap { padding: 0 20px; }
   header.masthead { flex-wrap: wrap; padding: 18px 20px 14px; gap: 8px 18px; }
   nav.mainnav { margin-left: 0; flex-wrap: wrap; gap: 8px 16px; width: 100%; }
-  .ticker .live { padding-left: 20px; }
   .lead { grid-template-columns: 1fr; gap: 30px; padding: 44px 20px 40px; }
   .lead h1 { font-size: 38px; }
   .daybox { text-align: left; display: flex; align-items: baseline; gap: 12px; }

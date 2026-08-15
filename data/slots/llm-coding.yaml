@@ -6,30 +6,56 @@ criteria:
 - agentic coding benchmarks
 - repo-scale task performance
 - tool-calling reliability
-provisional: true
-since: 2026-03-03
+provisional: false
+since: 2026-07-24
 pick:
   name: Claude Opus 5
   version: ''
-  url: https://www.anthropic.com/claude
+  url: https://www.anthropic.com/claude/opus
   licence: proprietary
-  why: Clear of the field on repo-scale agentic coding benchmarks. (Seed data — confirm
-    or replace before launch.)
-caveats: ''
-challengers: []
+  why: Leads SWE-bench Verified — 97.0% on the independent vals.ai run — tops the
+    Arena WebDev and Fullstack Code arenas, leads the AA Agentic Index and sits
+    joint-first on the rebuilt AA Coding Index, at half the price of Claude Fable 5.
+    Multiple trackers moved their coding crown to it on its 24 July launch day.
+caveats: 'Genuinely contested: the official Terminal-Bench 2.1 board (frozen pre-launch)
+  still lists Fable 5 first, and AA measures GPT-5.6 Sol a hair ahead on Terminal-Bench
+  (89.5 vs 89.1).'
+challengers:
+- name: GPT-5.6 Sol
+  note: Statistically level on independent measures — AA has it at 89.5 vs 89.1 on
+    Terminal-Bench, and joint-first with Opus 5 on the rebuilt AA Coding Index.
 history:
+- name: GPT-4
+  from: 2023-08-01
+  to: 2024-06-20
+- name: Claude 3.5 Sonnet
+  from: 2024-06-20
+  to: 2025-02-24
+- name: Claude 3.7 Sonnet
+  from: 2025-02-24
+  to: 2025-05-22
+- name: Claude Opus 4
+  from: 2025-05-22
+  to: 2025-09-29
 - name: Claude Sonnet 4.5
-  from: 2025-10-01
-  to: 2026-01-10
-- name: GPT-5-Codex
-  from: 2026-01-10
-  to: 2026-03-03
+  from: 2025-09-29
+  to: 2025-11-24
+- name: Claude Opus 4.5
+  from: 2025-11-24
+  to: 2026-02-05
+- name: Claude Opus 4.6
+  from: 2026-02-05
+  to: 2026-07-01
+- name: Claude Fable 5
+  from: 2026-07-01
+  to: 2026-07-24
 last_reviewed: 2026-08-15
 watch:
   keywords:
   - coding model
   - code generation
   - swe-bench
+  - terminal-bench
   - agentic coding
   - codex
   - coding benchmark

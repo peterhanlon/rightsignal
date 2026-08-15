@@ -25,7 +25,7 @@ DATA_DIR = ROOT / "data"
 CHANGELOG_DIR = ROOT / "changelog"
 SNAPSHOTS_DIR = ROOT / "snapshots"
 
-ENTRY_TYPES = ("changed", "challenged", "held", "added", "retired", "snapshot")
+ENTRY_TYPES = ("changed", "challenged", "held", "added", "retired", "snapshot", "milestone")
 
 
 def as_date(value) -> dt.date | None:
@@ -52,7 +52,9 @@ def load_slot(path: Path, today: dt.date) -> dict:
     slot = yaml.safe_load(path.read_text())
     slot["since"] = as_date(slot.get("since"))
     slot["last_reviewed"] = as_date(slot.get("last_reviewed"))
-    slot["reign_days"] = (today - slot["since"]).days + 1 if slot["since"] else None
+    # reign_days = elapsed days (a count); reign_day = ordinal ("day 1" on launch day)
+    slot["reign_days"] = (today - slot["since"]).days if slot["since"] else None
+    slot["reign_day"] = slot["reign_days"] + 1 if slot["reign_days"] is not None else None
 
     # Lineage: past holders plus the current pick, with widths proportional to
     # reign length (clamped so short reigns stay visible).
@@ -146,6 +148,14 @@ def build(out_dir: Path) -> None:
 
     snapshots = load_snapshots(today)
 
+    radar = []
+    radar_path = DATA_DIR / "radar.yaml"
+    if radar_path.exists():
+        for item in yaml.safe_load(radar_path.read_text())["radar"]:
+            item["released"] = as_date(item.get("released"))
+            radar.append(item)
+        radar.sort(key=lambda i: i["released"], reverse=True)
+
     env = Environment(
         loader=FileSystemLoader(SITE_DIR / "templates"),
         autoescape=select_autoescape(["html", "xml"]),
@@ -153,13 +163,28 @@ def build(out_dir: Path) -> None:
         lstrip_blocks=True,
     )
     env.filters["dmy"] = lambda d: d.strftime("%-d %b %Y") if d else ""
+    # Lowercase only the first character — keeps acronyms like "LLM" intact.
+    env.filters["lc_first"] = lambda s: s[:1].lower() + s[1:] if s else s
 
-    # Lead story: the most recent changed/added/challenged entry, plus the slot
-    # it refers to (for the day-of-reign numeral).
-    lead = next(
-        (e for e in entries if e["type"] in ("changed", "added", "challenged")), None
+    # Lead story: the hottest actual news — the newest title change/challenge,
+    # or the freshest radar arrival if that's more recent. Never site meta.
+    news = next(
+        (e for e in entries if e["type"] in ("changed", "challenged") and e.get("slot")),
+        None,
     )
-    lead_slot = slots_by_key.get(lead.get("slot")) if lead else None
+    lead, lead_slot = None, None
+    if radar and (news is None or radar[0]["released"] >= news["date"]):
+        item = radar[0]
+        lead = {
+            "type": "unverified",
+            "title": f'{item["name"]}: a new contender for {item["target"]}',
+            "body_html": markdown.markdown(item["note"]),
+            "href": "#radar",
+            "link_text": "See the radar →",
+        }
+    elif news:
+        lead = {**news, "href": "#changelog", "link_text": "Read the adjudication →"}
+        lead_slot = slots_by_key.get(news.get("slot"))
 
     ctx = {
         "site": site,
@@ -169,6 +194,7 @@ def build(out_dir: Path) -> None:
         "slots_count": len(slots),
         "lead": lead,
         "lead_slot": lead_slot,
+        "radar": radar,
     }
 
     if out_dir.exists():

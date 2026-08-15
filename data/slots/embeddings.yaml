@@ -3,35 +3,57 @@ category: retrieval-tooling
 title: Best text embeddings
 question: What is the best text embedding model right now?
 criteria:
-- MTEB and retrieval benchmarks
+- RTEB / MTEB retrieval benchmarks
 - dimension/cost trade-off
 - multilingual coverage
-provisional: true
-since: 2026-08-08
+provisional: false
+since: 2026-07-16
 pick:
-  name: voyage-4-large
+  name: Nemotron-3-Embed-8B
   version: ''
-  url: https://www.voyageai.com
-  licence: proprietary
-  why: Tops MTEB with a 2048-dim option that halves index cost at equal recall. (Seed
-    data — confirm or replace before launch.)
-caveats: ''
+  url: https://huggingface.co/nvidia/Nemotron-3-Embed-8B-BF16
+  licence: OpenMDW-1.1
+  why: Number one overall on RTEB — the MTEB team's contamination-resistant retrieval
+    board — since 16 July, with 34-language coverage, 32k context and 4096-dim Matryoshka
+    vectors. Unlike the proprietary models it displaced, the weights are free under
+    a permissive licence, with a 1B variant and NVFP4 quantisation for cheap serving.
+caveats: 'The category splits across boards: Tencent''s KaLM-Embedding-Gemma3-12B
+  still leads the MTEB multilingual task-mean.'
 challengers:
-- name: Qwen4-Embedding
-  note: Best open option; near-parity on English retrieval.
+- name: Gemini Embedding 2
+  note: First natively multimodal embedding model; strong in cross-lingual and long-document
+    testing, but preview-only and weak on dimension truncation.
 history:
-- name: text-embedding-3-large
-  from: 2025-09-01
-  to: 2026-02-14
+- name: OpenAI text-embedding-ada-002
+  from: 2023-08-01
+  to: 2023-09-12
+- name: bge-large-en-v1.5
+  from: 2023-09-12
+  to: 2024-01-25
+- name: OpenAI text-embedding-3-large
+  from: 2024-01-25
+  to: 2024-09-18
+- name: voyage-3
+  from: 2024-09-18
+  to: 2025-01-07
 - name: voyage-3-large
-  from: 2026-02-14
-  to: 2026-08-08
+  from: 2025-01-07
+  to: 2025-07-14
+- name: gemini-embedding-001
+  from: 2025-07-14
+  to: 2026-01-15
+- name: voyage-4-large
+  from: 2026-01-15
+  to: 2026-07-16
 last_reviewed: 2026-08-15
 watch:
   keywords:
   - embedding
   - embeddings
   - mteb
+  - rteb
   - retrieval
   - reranker
   - vector search
+  - nemotron
+  - voyage

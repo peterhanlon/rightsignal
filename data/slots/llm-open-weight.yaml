@@ -7,34 +7,70 @@ criteria:
 - serving cost
 - licence
 - weights actually released
-provisional: true
-since: 2026-07-29
+provisional: false
+since: 2026-07-27
 pick:
-  name: DeepSeek V4
+  name: Kimi K3
   version: ''
-  url: https://huggingface.co/deepseek-ai
-  licence: MIT
-  why: Frontier-adjacent scores at a fraction of serving cost; weights verified on
-    release day. (Seed data — confirm or replace before launch.)
-caveats: ''
+  url: https://huggingface.co/moonshotai/Kimi-K3
+  licence: Kimi K3 License (custom)
+  why: >-
+    A 2.8T-parameter MoE (104B active, 1M context) whose weights shipped on Hugging
+    Face on 27 July. It scores 60 on the Artificial Analysis Intelligence Index —
+    the highest an open-weight model has ever placed — and kimi-k3-max is the
+    highest-ranked open-weights model on the Arena text board (#12, 1489), though
+    Arena classes its custom licence as non-open; the top MIT/Apache entry is
+    GLM-5.2-max at #33. Enormous to self-host, but nothing open matches its quality.
+caveats: Licence requires attribution above 100M MAU or $20M/month revenue, and a
+  separate agreement for large model-as-a-service businesses. The hosted API shipped
+  16 July — the reign is dated from the weights landing on 27 July.
 challengers:
-- name: Qwen4-235B
-  note: Vendor benchmarks pending independent confirmation; in cooldown.
+- name: Qwen3.8-2.4T-A95B
+  note: Weights landed 12 Aug; two points behind on the AA Intelligence Index, cheaper
+    and more multimodal — independent evals still settling.
 history:
-- name: Llama 4
-  from: 2026-01-15
-  to: 2026-04-20
-- name: Kimi K2
-  from: 2026-04-20
-  to: 2026-07-29
+- name: Llama 2 70B Chat
+  from: 2023-08-01
+  to: 2023-12-11
+- name: Mixtral 8x7B Instruct
+  from: 2023-12-11
+  to: 2024-04-18
+- name: Llama 3 70B Instruct
+  from: 2024-04-18
+  to: 2024-07-23
+- name: Llama 3.1 405B Instruct
+  from: 2024-07-23
+  to: 2024-12-26
+- name: DeepSeek-V3
+  from: 2024-12-26
+  to: 2025-01-20
+- name: DeepSeek-R1
+  from: 2025-01-20
+  to: 2025-07-11
+- name: Kimi K2 Instruct
+  from: 2025-07-11
+  to: 2025-11-06
+- name: Kimi K2 Thinking
+  from: 2025-11-06
+  to: 2026-02-11
+- name: GLM-5
+  from: 2026-02-11
+  to: 2026-04-22
+- name: DeepSeek-V4-Pro
+  from: 2026-04-22
+  to: 2026-06-16
+- name: GLM-5.2
+  from: 2026-06-16
+  to: 2026-07-27
 last_reviewed: 2026-08-15
 watch:
   keywords:
   - open weight
   - open source llm
+  - kimi
   - deepseek
   - qwen
   - llama
   - mistral
   - glm
-  - kimi
+  - moonshot

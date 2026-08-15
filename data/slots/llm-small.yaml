@@ -6,26 +6,55 @@ criteria:
 - quality per GB
 - tool-calling under quantisation
 - runs in 16GB RAM
-provisional: true
-since: 2026-04-30
+provisional: false
+since: 2026-04-02
 pick:
-  name: Qwen3-8B
+  name: Gemma 4 26B A4B
   version: ''
-  url: https://huggingface.co/Qwen
+  url: https://huggingface.co/google/gemma-4-26B-A4B-it
   licence: Apache-2.0
-  why: Best quality-per-GB under 16 GB of RAM; tool-calling holds up where peers degrade.
-    (Seed data — confirm or replace before launch.)
-caveats: ''
+  why: A 25.2B-total MoE with only 3.8B active parameters, so 4-bit builds (~13-14GB)
+    fit in 16GB RAM with real context headroom while decoding at small-model speeds.
+    The pick is about deployability — official quantisation-aware GGUFs from Google
+    with quality preserved at 4-bit, native function-calling and multimodal input —
+    not raw benchmark score.
+caveats: Qwen3.6 27B (Reasoning) scores far higher on AA's small open-source board
+  (38 vs 26), but its 4-bit builds run 15.4-15.9GB — inside the letter of the 16GB
+  bar with almost no room left for context. This title is under active review.
 challengers:
-- name: Gemma 3n E4B
-  note: Stronger on mobile NPUs, weaker on tool use.
+- name: Qwen3.6 27B (Reasoning)
+  note: The quality leader on AA's small open-source board; squeezes into 16GB at
+    4-bit with little headroom for context.
+- name: Muse Glimmer 30B
+  note: Meta's agent-focused 30B (AA 35), Apache-2.0 — new, and still settling.
 history:
+- name: Llama 2 13B Chat
+  from: 2023-08-01
+  to: 2023-09-27
+- name: Mistral 7B Instruct
+  from: 2023-09-27
+  to: 2024-04-18
+- name: Llama 3 8B Instruct
+  from: 2024-04-18
+  to: 2024-09-19
+- name: Qwen2.5-14B-Instruct
+  from: 2024-09-19
+  to: 2025-01-08
 - name: Phi-4
-  from: 2025-12-12
-  to: 2026-02-20
+  from: 2025-01-08
+  to: 2025-03-12
 - name: Gemma 3 12B
-  from: 2026-02-20
-  to: 2026-04-30
+  from: 2025-03-12
+  to: 2025-04-29
+- name: Qwen3-14B
+  from: 2025-04-29
+  to: 2025-08-05
+- name: gpt-oss-20b
+  from: 2025-08-05
+  to: 2026-03-02
+- name: Qwen3.5-9B
+  from: 2026-03-02
+  to: 2026-04-02
 last_reviewed: 2026-08-15
 watch:
   keywords:
@@ -36,4 +65,5 @@ watch:
   - gemma
   - phi
   - qwen
+  - nemotron
   - slm

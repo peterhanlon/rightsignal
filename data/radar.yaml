@@ -1,0 +1,207 @@
+# "On the radar" — released or announced very recently, a plausible contender
+# for a board title. `scored: true` means at least one independent evaluation
+# exists (shown as "early data"); otherwise the entry is unverified.
+radar:
+- name: dots3-note Preview
+  maker: Dots Studio (Rednote)
+  target: best open-weight LLM
+  released: 2026-08-14
+  status: weights out
+  scored: false
+  note: >-
+    A 280B-total/16B-active MoE under Apache-2.0 with a 512K context — and
+    natively multimodal, taking image, video and audio in. Claims 78.4% on
+    SWE-bench Verified — the lab's own figures, on the first open release in
+    its dots3 family. Explicitly a preview; nothing independent has scored
+    it yet.
+  sources:
+  - https://huggingface.co/dots-studio/dots3-note-prev
+  - https://openrouter.ai/dots-studio/dots-3-note-preview
+- name: Qwen3.8-27B
+  maker: Alibaba (Qwen)
+  target: best small / on-device LLM
+  released: 2026-08-14
+  status: weights out
+  scored: false
+  note: >-
+    Apache-2.0, a 27B hybrid (Gated DeltaNet + Gated Attention) that is
+    natively multimodal over images and video — unusual at single-GPU size.
+    One post-trained checkpoint, now live on OpenRouter at $0.45/$3.20 per
+    million; local-inference support and real quality still being felt out.
+  sources:
+  - https://huggingface.co/Qwen/Qwen3.8-27B
+  - https://kingy.ai/blog/qwen3-8-27b-specs-benchmarks-local-hardware/
+- name: GLM-5.3
+  maker: Z.ai
+  target: best LLM for coding
+  released: 2026-08-14
+  status: API only
+  scored: false
+  note: >-
+    Z.ai calls it the strongest open-weights coding system it has measured —
+    leading CyberGym (84.5%) and AutomationBench (48.2%) — but the weights
+    are held back roughly two weeks for safety hardening. Reachable today
+    via the GLM Coding Plan, the Z.ai API and ZCode 3.0; the open-weight
+    claim is untestable until the weights land.
+  sources:
+  - https://decrypt.co/375684/china-z-ai-glm-5-3-top-open-weight-coding-model
+  - https://www.unite.ai/z-ai-launches-glm-5-3-with-frontier-coding-and-a-cyber-capability-that-outgrew-its-training/
+- name: DeepSeek-V4-Pro-0813
+  maker: DeepSeek
+  target: best overall and open-weight LLM
+  released: 2026-08-13
+  status: weights out
+  scored: true
+  note: >-
+    The V4 flagship leaving preview — 1.6T total / 49B active, 1M context,
+    ~893GB of MIT-licensed weights on Hugging Face the same day. Early
+    independent data has it at 53 on the AA Intelligence Index — behind
+    Kimi K3's 60, so the value case leads, not the crown. No head-to-head
+    against Opus 5 or Sol yet.
+  sources:
+  - https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro
+  - https://www.unite.ai/deepseek-ships-v4-pro-as-its-flagship-model-leaves-preview/
+- name: Gemini 3.7 Flash
+  maker: Google
+  target: best LLM for coding
+  released: 2026-08-13
+  status: API only
+  scored: true
+  note: >-
+    DeepSWE v1.1 jumped from 49.0% to 65.3% over 3.6 Flash, WebDev Arena Elo
+    sits at 1588, the introductory price is half the old one — and early AA
+    data scores it 56. A loud cost-per-quality case for a Flash-tier model
+    pitched at agentic coding.
+  sources:
+  - https://venturebeat.com/technology/googles-gemini-3-7-flash-targets-coding-and-agents-with-a-50-introductory-price-cut
+  - https://9to5google.com/2026/08/13/gemini-3-7-flash-launch/
+- name: GPT-5.6 Sol Ultrafast
+  maker: OpenAI × Cerebras
+  target: the speed crown in hosted inference
+  released: 2026-08-13
+  status: preview
+  scored: false
+  note: >-
+    GPT-5.6 Sol on Cerebras wafer-scale hardware at up to 750 output
+    tokens/sec — up to 14x the standard tier, with identical intelligence
+    claimed. Limited preview, no published price, no GA date, so nobody
+    outside the invite list can benchmark it.
+  sources:
+  - https://www.cerebras.ai/blog/accelerating-gpt-5-6-sol-ultrafast-with-openai
+  - https://www.hpcwire.com/aiwire/2026/08/14/cerebras-powers-openais-gpt-5-6-sol-ultrafast-mode/
+- name: Grok 4.6
+  maker: xAI
+  target: best overall LLM
+  released: 2026-08-12
+  status: API only
+  scored: true
+  note: >-
+    xAI's new flagship scores 61 on the AA Intelligence Index — level with
+    GPT-5.6 Sol and one point behind Claude Fable 5 — at $2/$6 per million,
+    and shipped same-day into Cursor, OpenRouter, Vercel and Cloudflare.
+    The strongest price-per-intelligence claim at the frontier right now.
+  sources:
+  - https://x.ai/news/grok-4-6
+  - https://artificialanalysis.ai/models
+- name: Qwen3.8-2.4T-A95B
+  maker: Alibaba (Qwen)
+  target: best open-weight LLM
+  released: 2026-08-12
+  status: weights out
+  scored: true
+  note: >-
+    The first Qwen-Max-class model in the open — 2.4T total / 95B active,
+    262K context extensible past 1M, BF16 and FP8 builds on stock vLLM and
+    SGLang. Early AA data scores it 58, two behind Kimi K3. Text-only,
+    always reasons, and at this size almost nobody can serve it to verify
+    the flagship claim.
+  sources:
+  - https://huggingface.co/Qwen/Qwen3.8-2.4T-A95B
+  - https://datanorth.ai/news/alibaba-releases-qwen3-8-max
+- name: Nemotron 3.5 Lightning 30B-A3B
+  maker: NVIDIA
+  target: best small / on-device LLM
+  released: 2026-08-11
+  status: weights out
+  scored: true
+  note: >-
+    A hybrid Mamba-2 + MoE at 30B total / 3B active with a 1M context,
+    built for long-running agents — already on AA's small open-source board
+    at 24, within two points of the current titleholder. The agent framing,
+    not the score, is what makes it worth watching.
+  sources:
+  - https://developer.nvidia.com/blog/nvidia-nemotron-3-5-lightning-delivers-fast-accurate-specialized-task-execution-for-long-running-agents/
+  - https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16
+- name: Muse Glimmer 30B
+  maker: Meta
+  target: best small / on-device LLM
+  released: 2026-08-10
+  status: weights out
+  scored: true
+  note: >-
+    Apache-2.0, 30B distilled from Muse Spark via logit distillation, SFT
+    and on-policy distillation with RL, aimed at agentic task completion on
+    a single consumer GPU. Early data: 35 on the AA index — above the
+    current titleholder — and #99 on Arena text. Whether the agentic focus
+    survives long multi-step runs outside Meta's evals is the open question.
+  sources:
+  - https://huggingface.co/meta-models/Muse-Glimmer-30B
+  - https://techcrunch.com/2026/08/10/metas-new-glimmer-ai-model-offers-a-hint-at-zuckerbergs-personal-intelligence-vision/
+- name: Grok Imagine Image 2.0
+  maker: xAI
+  target: best image generation
+  released: 2026-08-07
+  status: API only
+  scored: true
+  note: >-
+    Second on Arena image editing (1439) and third on text-to-image as of
+    15 Aug — Microsoft's MAI preview slipped between them — and the editing
+    kit (region edits, segmentation, five-image blending) is the real jump.
+    Ships inside Grok Quality Mode with no standalone API date.
+  sources:
+  - https://datanorth.ai/news/spacexai-releases-grok-imagine-image-2-0
+  - https://www.testingcatalog.com/xai-launches-imagine-image-2-0-in-grok-quality-mode/
+- name: MiniMax H3 (Hailuo 3.0)
+  maker: MiniMax
+  target: best video generation
+  released: 2026-08-03
+  status: weights out
+  scored: true
+  note: >-
+    Statistically tied with the titleholder on AA text-to-video and ahead of
+    it on image-to-video — with weights on Hugging Face, rare at this rank.
+    Two catches: the open release is H3-Base at 768p (the 2K upscaler is not
+    open-sourced), and the community licence excludes the US, EU, UK and
+    South Korea — so for most Western readers it's effectively API-only.
+  sources:
+  - https://huggingface.co/blog/ResterChed/minimax-h3-hailuo-3-0
+  - https://www.orcarouter.ai/blog/minimax-h3-hailuo-3-explained
+- name: Seedance 2.5
+  maker: ByteDance
+  target: best video generation
+  released: 2026-07-31
+  status: API only
+  scored: false
+  note: >-
+    A 30-second clip with audio in a single run, extendable multi-turn,
+    taking up to 30 images, 10 videos and 10 audio clips as reference in
+    one input — a conditioning budget no rival matches. Access is still
+    mostly Jimeng and Doubao, resolution claims vary by platform, and
+    there is no open weight.
+  sources:
+  - https://seed.bytedance.com/en/blog/one-take-creation-flexible-referencing-introducing-seedance-2-5
+  - https://the-decoder.com/bytedances-seedance-2-5-generates-30-second-video-clips-with-built-in-audio/
+- name: Audio8-TTS-Preview-0.6b
+  maker: Audio8
+  target: best open-weight TTS
+  released: 2026-07-28
+  status: weights out
+  scored: false
+  note: >-
+    Apache-2.0 at just 0.6B, zero-shot voice cloning in 11 languages, an
+    ONNX INT4 build for CPU, and a claimed best-English-WER against models
+    ten times its size — self-reported, from an explicitly preview
+    checkpoint with limited dialect coverage.
+  sources:
+  - https://huggingface.co/Audio8/Audio8-TTS-Preview-0.6b
+  - https://github.com/Audio8-AI/Audio8_TTS

@@ -11,12 +11,12 @@
     </div>
     <h1>{{ lead.title }}</h1>
     <div class="body">{{ lead.body_html | safe }}</div>
-    <a class="readlink" href="#changelog">Read the adjudication →</a>
+    <a class="readlink" href="{{ lead.href }}">{{ lead.link_text }}</a>
   </div>
   {% if lead_slot %}
   <div class="daybox">
     <div class="lbl">Day</div>
-    <div class="num{% if lead_slot.is_new %} glow{% endif %}">{{ lead_slot.reign_days }}</div>
+    <div class="num{% if lead_slot.is_new %} glow{% endif %}">{{ lead_slot.reign_day }}</div>
     <div class="lbl">of reign</div>
   </div>
   {% endif %}
@@ -35,8 +35,27 @@
 </section>
 {% endfor %}
 
+{% if radar %}
+<section class="board-section" id="radar" aria-label="On the radar">
+  <div class="sec-head"><h2>On the radar</h2><span>just released, unverified — possible contenders</span></div>
+  {% for item in radar %}
+  <article class="log-entry">
+    <div class="log-when">{{ item.released | dmy }}<br><span class="verb unverified">{{ "early data" if item.scored else "unverified" }}</span><br>{{ item.status }}</div>
+    <div>
+      <h3>{{ item.name }}</h3>
+      <div class="log-body"><p><span class="radar-target">{{ item.maker }} · could contend for {{ item.target }}.</span>
+        {{ item.note }}</p></div>
+      {% if item.sources %}
+      <div class="log-meta">seen at: {% for src in item.sources %}<a href="{{ src }}">[{{ loop.index }}]</a> {% endfor %}</div>
+      {% endif %}
+    </div>
+  </article>
+  {% endfor %}
+</section>
+{% endif %}
+
 <section class="changelog" id="changelog">
-  <div class="sec-head"><h2>Changelog</h2><span>every entry is a commit</span></div>
+  <div class="sec-head"><h2>Changelog</h2><span>dated, cited, on the record</span></div>
   {% for entry in entries %}
   <article class="log-entry">
     <div class="log-when">{{ entry.date | dmy }}<br><span class="verb {{ entry.type }}">{{ entry.type }}</span></div>

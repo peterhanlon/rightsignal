@@ -7,26 +7,53 @@ criteria:
 - multimodal capability
 - long-context reliability
 - independent benchmarks
-provisional: true
-since: 2026-06-12
+provisional: false
+since: 2026-07-01
 pick:
-  name: Gemini 3 Pro
+  name: Claude Fable 5
   version: ''
-  url: https://deepmind.google/models/gemini/
+  url: https://www.anthropic.com/claude/fable
   licence: proprietary
-  why: Leads independent reasoning and multimodal boards; long-context reliability
-    is the separator. (Seed data — confirm or replace before launch.)
-caveats: ''
+  why: 'Number one on the LMArena text leaderboard (1506 in the 12 Aug snapshot) and
+    top of the official Terminal-Bench 2.1 board, with a 1M-token context window and
+    always-on adaptive thinking. It debuted at #1 on 9 June, was suspended 12-30 June
+    under US export controls, and has held the Arena top spot continuously since access
+    was restored on 1 July.'
+caveats: Statistically tied at the top — 1506±5 against its own sibling claude-opus-4-6-high
+  at 1505±4 — and the cheaper Claude Opus 5 edges it on the Artificial Analysis
+  Intelligence Index.
 challengers:
-- name: GPT-5.2
-  note: Strong launch evals, awaiting third-party confirmation.
+- name: Claude Opus 5
+  note: Edges Fable on the Artificial Analysis Intelligence Index at half the price;
+    GPT-5.6 Sol is the strongest external rival.
+- name: Grok 4.6
+  note: xAI's 12 Aug flagship matches GPT-5.6 Sol on the AA Intelligence Index (61),
+    one point behind Fable, at $2/$6 per million tokens.
 history:
+- name: GPT-4
+  from: 2023-08-01
+  to: 2024-03-26
+- name: Claude 3 Opus
+  from: 2024-03-26
+  to: 2024-05-13
+- name: GPT-4o
+  from: 2024-05-13
+  to: 2024-12-06
+- name: Gemini-Exp-1206
+  from: 2024-12-06
+  to: 2025-03-25
+- name: Gemini 2.5 Pro
+  from: 2025-03-25
+  to: 2025-08-07
 - name: GPT-5
-  from: 2026-01-08
-  to: 2026-04-02
-- name: Claude Opus 4.5
-  from: 2026-04-02
-  to: 2026-06-12
+  from: 2025-08-07
+  to: 2025-11-18
+- name: Gemini 3 Pro
+  from: 2025-11-18
+  to: 2026-02-05
+- name: Claude Opus 4.6
+  from: 2026-02-05
+  to: 2026-07-01
 last_reviewed: 2026-08-15
 watch:
   keywords:
@@ -34,6 +61,9 @@ watch:
   - language model
   - frontier model
   - reasoning benchmark
+  - lmarena
   - gpt
   - claude
+  - fable
   - gemini
+  - grok

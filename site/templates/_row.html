@@ -17,10 +17,11 @@
     <p class="row-note">{{ slot.pick.why }}</p>
     {% if slot.challengers %}
     <p class="row-chal"><span class="chal-label">Challenger:</span> {{ slot.challengers[0].name }} — {{ slot.challengers[0].note }}</p>
-    {% elif slot.caveats %}
-    <p class="row-chal">{{ slot.caveats }}</p>
-    {% else %}
+    {% elif not slot.caveats %}
     <p class="row-chal">No active challengers.</p>
+    {% endif %}
+    {% if slot.caveats %}
+    <p class="row-caveat">{{ slot.caveats }}</p>
     {% endif %}
     <div class="bar-track"><div class="bar-fill" style="width:{{ slot.bar_pct }}%"></div></div>
   </div>

@@ -26,17 +26,6 @@
   </nav>
 </header>
 
-{% set ticker_text %}pipeline sweep daily {{ site.sweep_time_utc }} UTC &nbsp;·&nbsp; as of {{ today | dmy }} &nbsp;·&nbsp; every change is a commit &nbsp;·&nbsp; {{ slots_count }} titles under continuous adjudication &nbsp;·&nbsp;{% endset %}
-<div class="ticker">
-  <div class="live"><i aria-hidden="true"></i>Live</div>
-  <div class="track-clip">
-    <div class="track" aria-hidden="false">
-      <span>{{ ticker_text }}</span>
-      <span aria-hidden="true">{{ ticker_text }}</span>
-    </div>
-  </div>
-</div>
-
 {% block lead %}{% endblock %}
 
 <main class="wrap" id="board">
@@ -46,22 +35,23 @@
 <footer class="method wrap" id="method">
   <div class="method-grid">
     <div class="method-col">
-      <h4>Automated, accountably</h4>
-      <p>{{ site.name }} is maintained by an autonomous editorial pipeline. It ingests
-        releases, benchmarks and papers daily, adjudicates each title against published
-        criteria, and writes every change here. No hand-waving, no silent edits.</p>
+      <h4>One working answer</h4>
+      <p>{{ site.name }} keeps a single, current answer per category — the model we'd
+        actually reach for today. The board is reviewed daily against the leaderboards,
+        fresh releases and what practitioners are reporting, and it changes the moment
+        the evidence does.</p>
     </div>
     <div class="method-col">
       <h4>Evidence rules</h4>
-      <p>Nothing takes a title inside its release cooldown. Licences are read from
+      <p>Nothing takes a title on launch-day hype. Licences are read from
         repositories, not press releases. Weights must be verifiably downloadable.
         A change requires at least one independent, non-vendor evaluation.</p>
     </div>
     <div class="method-col">
-      <h4>Every change is a commit</h4>
-      <p>The board is a public dataset with full history. Each adjudication links its
-        evidence and lands as a commit — you can audit any call this site has ever
-        made, back to day one.</p>
+      <h4>Every change on the record</h4>
+      <p>Every title change is dated, cited and kept — the full lineage of each title
+        and monthly frozen snapshots let you see what was state of the art at any
+        point, and check our working.</p>
     </div>
   </div>
   <div class="colophon">
