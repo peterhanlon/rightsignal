@@ -38,3 +38,27 @@ jobs:
     steps:
       - id: deployment
         uses: actions/deploy-pages@v4
+
+  # Tell IndexNow-participating engines (Bing et al.) the site changed, so
+  # re-crawls happen in minutes rather than days. The key is public by
+  # protocol design — ownership is proven by the key file served at the root.
+  ping-indexnow:
+    needs: deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Submit sitemap URLs to IndexNow
+        run: |
+          set -euo pipefail
+          key="7f6e41accf4e2c1c56c9954aef14daec"
+          urls=$(curl -sf https://rightsignal.co.uk/sitemap.xml \
+            | grep -o '<loc>[^<]*</loc>' | sed 's/<[^>]*>//g' \
+            | jq -R . | jq -s .)
+          jq -n --argjson urls "$urls" --arg key "$key" '{
+              host: "rightsignal.co.uk",
+              key: $key,
+              keyLocation: ("https://rightsignal.co.uk/" + $key + ".txt"),
+              urlList: $urls
+            }' \
+          | curl -s -X POST "https://api.indexnow.org/indexnow" \
+              -H "Content-Type: application/json; charset=utf-8" \
+              -d @- -w "IndexNow HTTP %{http_code}\n"
