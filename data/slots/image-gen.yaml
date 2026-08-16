@@ -14,12 +14,13 @@ pick:
   version: ''
   url: https://developers.openai.com/api/docs/models/gpt-image-2
   licence: proprietary
-  why: 'Top of both Arena boards: #1 on text-to-image at 1381 Elo, 45 clear of MAI-Image-2.6,
-    and #1 on image edit at 1463. It also leads Artificial Analysis''s text-to-image
-    arena at 1,370, roughly 44 ahead of Reve 2.1, though on that site''s image-editing
-    arena it sits second within the error bars. It has held the top since its 21 April
-    launch on reasoning before generation, reliable small-text rendering and strong
-    multi-image editing.'
+  why: 'Top of both Arena boards: #1 on text-to-image at 1381 Elo, 45 clear of MAI-Image-2.6
+    (preview), and #1 on image edit at 1463. It also leads Artificial Analysis''s
+    text-to-image arena at 1,376, about 48 ahead of Reve 2.1, though on that site''s
+    image-editing arena it sits second at 1,257, inside the error bars of Reve 2.1
+    and MAI-Image-2.5. It has held the top since its 21 April launch, on the strength
+    of thinking-mode reasoning before generation, improved multilingual text rendering
+    and more reliable instruction-following.'
 caveats: 'Editing is the closest call: on Artificial Analysis''s image-editing arena
   GPT Image 2 is second, effectively tied with Reve 2.1 and MAI-Image-2.5. It is also
   the dearest of the leaders at about $211 per 1,000 images on Artificial Analysis''s

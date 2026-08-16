@@ -25,11 +25,13 @@ caveats: Licence requires attribution above 100M MAU or $20M/month revenue, and 
   16 July — the reign is dated from the weights landing on 27 July.
 challengers:
 - name: Qwen3.8-2.4T-A95B
-  note: 'Weights landed on 12 August and score 58 on the AA Intelligence Index, two
-    points behind K3. Be careful with the openness, though: the released checkpoint
-    is text-only with a 262K native context (extensible to ~1M), while vision input
-    and the 1M default stay behind the hosted Qwen3.8-Max. It is leaner to serve at
-    95B active parameters against K3''s 104B, and independent evals are still settling.'
+  note: 'Weights landed on 12 August under Alibaba''s own Qwen3.8-Max licence and
+    score 58 on the AA Intelligence Index, two behind K3 and second among open weights
+    on that board. Be careful with the openness: the released checkpoint is text-only
+    with a 262K native context (extensible to roughly 1.01M), while vision input and
+    the 1M default stay behind the hosted Qwen3.8-Max API. It is leaner to serve at
+    95B active parameters against K3''s 104B, and Alibaba has since shipped a much
+    smaller Apache-2.0 Qwen3.8-27B for teams that cannot host either flagship.'
 history:
 - name: Llama 2 70B Chat
   from: 2023-08-01

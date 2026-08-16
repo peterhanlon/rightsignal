@@ -13,10 +13,14 @@ pick:
   version: ''
   url: https://huggingface.co/nvidia/Nemotron-3-Embed-8B-BF16
   licence: OpenMDW-1.1
-  why: Number one overall on RTEB — the MTEB team's contamination-resistant retrieval
-    board — since 16 July, with 34-language coverage, 32k context and 4096-dim Matryoshka
-    vectors. Unlike the proprietary models it displaced, the weights are free under
-    a permissive licence, with a 1B variant and NVFP4 quantisation for cheap serving.
+  why: NVIDIA's launch materials put Nemotron-3-Embed-8B-BF16 at number one on the
+    RTEB multilingual board as of 16 July 2026, scoring 78.5 average NDCG@10 across
+    the benchmark's 16 public tasks. The model card confirms 34 evaluated languages,
+    a 32,768-token context and 4,096-dimension vectors that can be sliced to 2,048
+    or 1,024 and re-normalised, with weights open under OpenMDW-1.1 plus 1B BF16 and
+    1B NVFP4 checkpoints for cheaper serving. The ranking rests on a vendor snapshot
+    and other open-weight entrants have claimed the RTEB top spot too, so re-check
+    the board before quoting it.
 caveats: 'The category splits across boards: on the official MMTEB multilingual table
   Tencent''s KaLM-Embedding-Gemma3-12B-2511 still leads on task-mean at 72.32 as of
   July 2026. Microsoft''s Harrier-OSS-v1 quotes a higher 74.3, but that is the MTEB
@@ -24,11 +28,13 @@ caveats: 'The category splits across boards: on the official MMTEB multilingual 
   board a vendor is citing before treating any single number as the multilingual crown.'
 challengers:
 - name: Gemini Embedding 2
-  note: Google's first natively multimodal embedding model, mapping text, images,
-    video, audio and PDFs into one shared vector space, and generally available since
-    April 2026 rather than preview-only. Output dimensions are truncatable from 128
-    to 3,072, with non-default sizes returned already L2-normalised. It remains an
-    API-only model, so it is not an option if you need weights you can host yourself.
+  note: Google's Gemini Embedding 2 is natively multimodal, mapping text, images,
+    video, audio and PDFs into a single 3,072-dimension vector space, and coverage
+    dates it to March 2026 — we could not confirm a general-availability milestone,
+    so treat it as launched rather than assured GA. Output dimensions are Matryoshka-truncatable,
+    with 128, 768 and 1,536 the sizes usually quoted, at list pricing of about $0.20
+    per million text tokens. It remains an API-only model, so it is not an option
+    if you need weights you can host yourself.
 history:
 - name: OpenAI text-embedding-ada-002
   from: 2023-08-01

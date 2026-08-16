@@ -26,8 +26,11 @@ caveats: 'Genuinely contested on terminal work: vals.ai puts GPT-5.6 Sol first o
   the cost per task.'
 challengers:
 - name: Claude Fable 5
-  note: 'Now #1 on the official Terminal-Bench 2.1 board at 83.8%, ahead of GPT-5.5
-    at 83.1%, with Opus 5 absent from that top five.'
+  note: 'Still tops the official Terminal-Bench 2.1 board at 83.8% with Claude Code,
+    ahead of Codex CLI on GPT-5.5 at 83.1%. That entry dates from 7 June and no top-five
+    submission post-dates Opus 5''s 24 July launch, so Opus 5 is missing for want
+    of a submitted run, not a weaker score. On neutral harnesses the two are close:
+    Vals has Opus 5 at 84.64% against Sol''s 85.77%.'
 - name: GPT-5.6 Sol
   note: Statistically level on independent measures — AA has it at 89.5 vs 89.1 on
     Terminal-Bench, and joint-first with Opus 5 on the rebuilt AA Coding Index.

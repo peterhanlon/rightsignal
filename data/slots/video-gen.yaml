@@ -14,28 +14,30 @@ pick:
   version: ''
   url: https://deepmind.google/models/gemini-omni/
   licence: proprietary
-  why: Tops the Artificial Analysis text-to-video board with audio (Elo 1,241 over
-    12,624 samples, statistically tied with MiniMax H3) and leads arena.ai's Text-to-Video
-    Arena at 1,512±11 from 15,930 votes. On AA's image-to-video board with audio it
-    shows third at 1,191, but inside a three-way tie with Seedance 2.0 and MiniMax
-    H3, and it still leads the no-audio image-to-video board at 1,368. Its differentiator
-    is conversational multi-turn editing where each change builds on the last while
-    holding character and scene consistency, with native synced audio on every clip.
-caveats: 'A hold by a nose rather than a runaway: on image-to-video the top three
-  sit within overlapping confidence intervals, though on text-to-video only Gemini
-  Omni Flash and MiniMax H3 are genuinely tied. Output is also capped at 3-10 seconds
-  of 720p at 24 FPS, where MiniMax H3 ships 15 seconds at 2K and Seedance 2.5 claims
-  30 seconds natively. Seedance 2.5 still carries no arena score on either AA board,
-  so treat its launch claims as unverified.'
+  why: Tops Artificial Analysis's text-to-video board with audio at Elo 1,241 over
+    12,634 samples, statistically tied with MiniMax H3 on 1,238, and leads arena.ai's
+    Text-to-Video Arena at 1,512 with FLUX 3 Video sixteen points back. On AA's image-to-video
+    board with audio it sits third at 1,191, behind Dreamina Seedance 2.0 720p on
+    1,198 and MiniMax H3 on 1,192 — AA ranks Seedance first there, so call it close
+    rather than tied — but it still leads the no-audio image-to-video board at 1,368.
+    Its differentiator is conversational multi-turn editing, where each change builds
+    on the last while holding character and scene consistency, with native synced
+    audio on every clip.
+caveats: 'A hold by a nose rather than a runaway: on text-to-video only Gemini Omni
+  Flash and MiniMax H3 are genuinely tied, while on image-to-video with audio Artificial
+  Analysis ranks Dreamina Seedance 2.0 720p ahead of the pick, 1,198 to 1,191. Output
+  is capped at 3-10 seconds of 720p, where MiniMax H3 ships 15 seconds at 2K, FLUX
+  3 Video does 20 seconds with native audio, and Seedance 2.5 claims 30 seconds natively.
+  Seedance 2.5 still carries no arena score on either AA board, so treat its launch
+  claims as unverified.'
 challengers:
 - name: MiniMax H3 (Hailuo 3.0)
-  note: 'Statistically tied with the pick on AA text-to-video (Elo 1,238 against 1,241)
-    and inside the same three-way tie on image-to-video, with 15-second 2K clips and
-    native stereo audio. Weights landed on Hugging Face on 3 August, a few days after
-    the 31 July API launch, so self-hosting and ComfyUI workflows are now on the table.
-    It is not the cheaper option at comparable quality, though: AA lists it at $7.80
-    per minute against $6.00 for Gemini Omni Flash, and only its 768p tier undercuts
-    the pick.'
+  note: Black Forest Labs' first video model sits second on arena.ai's Text-to-Video
+    Arena at 1,496, sixteen points behind the pick, and fifth on the Image-to-Video
+    Arena at 1,453. Far from skipping the extras, FLUX 3 generates up to 20 seconds
+    of video with a synchronised soundtrack rendered in the same pass, released at
+    720p and 1080p. These are crowd-vote scores from a single arena, so cross-check
+    on your own shots before rebuilding a pipeline around it.
 - name: FLUX-3 Video
   note: Black Forest Labs' entry has climbed to second on the Arena text-to-video
     board at 1,496±17 — inside the leader's error band — without the audio or clip-length

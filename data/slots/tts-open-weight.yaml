@@ -18,10 +18,13 @@ pick:
     10M+ hours across 80+ languages, currently the highest-ranked open-weights model
     on the Artificial Analysis TTS leaderboard, with a production SGLang streaming
     engine (~100ms to first audio on one H200).'
-caveats: 'Open-weight but non-commercial — commercial use needs a licence from Fish
-  Audio, which keeps Apache-licensed rivals relevant for self-hosters. And the open/closed
-  gap is real — S2 Pro sits #24 overall on the AA board, ~115 Elo behind the closed
-  leader.'
+caveats: 'Open-weight but non-commercial: the model card permits research and non-commercial
+  use free of charge, and commercial deployment needs a separate licence from Fish
+  Audio, which keeps Apache-licensed rivals relevant for self-hosters. The open/closed
+  gap is real too - on 16 August 2026 S2 Pro sat 24th overall at 1,124 Elo, about
+  115 behind the closed leader. And Fish''s own newer S2.1 Pro (June 2026, 1,142 Elo,
+  17th) is API-only, so the weights you can download are a generation behind what
+  the vendor now sells.'
 challengers:
 - name: Step-Audio-EditX
   note: Apache-2.0, 13 Elo behind on the same arena, runs on a single 12-16GB GPU

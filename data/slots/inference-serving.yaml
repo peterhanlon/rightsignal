@@ -17,14 +17,19 @@ pick:
   why: 'Still the default production serving engine on ecosystem weight nobody matches:
     5.6M+ monthly pip installs, 86K+ GitHub stars, 1000+ supported model architectures
     and 600+ accelerator types, under PyTorch Foundation governance with a two-week
-    release train gated on CI, nightly performance benchmarks and accuracy evals.
-    Day-0 support for new frontier weights is routine — Qwen3.8-2.4T-A95B landed on
-    release day in August 2026. On like-for-like 70B serving the throughput race is
-    effectively a tie (SGLang edged it by 2.5-4.6% on H100 unique-prompt traffic in
-    March 2026 testing), so pick vLLM for breadth, hardware coverage and release discipline
-    rather than raw speed.'
-caveats: Close to a two-horse race — SGLang leads shared-prefix chat, agent and RAG
-  workloads by ~29% on 8B-class models via RadixAttention.
+    release train gated on full CI, nightly performance benchmarks and accuracy evals.
+    Day-0 support for new frontier weights is routine — the 2.4-trillion-parameter
+    Qwen3.8-2.4T-A95B ran out of the box on release day in August 2026, with FP8/BF16
+    official checkpoints plus NVFP4 and MXFP4 quantised weights. The last published
+    like-for-like 70B H100 comparison put SGLang just 2.5-4.6% ahead on unique-prompt
+    traffic, but that testing was March 2026 and predates vLLM''s Model Runner V2,
+    so pick vLLM for breadth, hardware coverage and release discipline rather than
+    for any current throughput number.'
+caveats: 'Less of a two-horse race than it looks: SGLang leads shared-prefix chat,
+  agent and RAG traffic by roughly 29% on 8B-class models thanks to RadixAttention,
+  while TensorRT-LLM beat vLLM by 8-13% on the same March 2026 H100 70B run once its
+  engine was compiled. Measure your own prefix-overlap before committing, and re-run
+  on current releases — the published figures predate vLLM''s Model Runner V2.'
 challengers:
 - name: SGLang
   note: Near-parity overall and faster on agentic/structured workloads, with major

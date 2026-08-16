@@ -14,21 +14,28 @@ pick:
   version: ''
   url: https://www.anthropic.com/claude/fable
   licence: proprietary
-  why: 'Number one on the Arena (formerly LMArena) text leaderboard in the 12 August
-    snapshot, with a 1M-token context window and adaptive thinking that cannot be
-    switched off. It debuted on 9 June, was pulled on 12 June when the US government
-    applied export controls to it and Mythos 5, and came back on 1 July once those
-    controls were lifted. It does not lead Terminal-Bench 2.1, though: independent
-    trackers put GPT-5.6 Sol on top there, with Claude Opus 5 also ahead of Fable.'
+  why: Number one on the Arena (formerly LMArena) text leaderboard through the August
+    snapshots, with a 1M-token context window. It debuted on 9 June, was pulled on
+    12 June when the US applied export controls to it and Mythos 5, and returned on
+    1 July after the Commerce Department lifted them on 30 June. It also tops the
+    official Terminal-Bench 2.1 board at 83.8% with Claude Code at xhigh effort, just
+    ahead of GPT-5.5 on Codex at 83.1%.
 caveats: The top of the Arena text board sits inside its own noise band, so treat
-  Fable's lead over the chasing Claude Opus 4.8, GPT-5.5 Pro and Gemini 3.1 Pro cluster
-  as a tie rather than a win. The cheaper Claude Opus 5 edges it on the Artificial
-  Analysis Intelligence Index, roughly 63.0 against 62.1, at about half the price.
-  On agentic terminal work, GPT-5.6 Sol currently leads Terminal-Bench 2.1.
+  Fable's lead over the chasing Claude and Gemini cluster as a tie rather than a win,
+  and note that Claude Opus 5, released on 24 July, now belongs in that group. Artificial
+  Analysis scores Opus 5 (max) at 61 against Fable's 60 and calls the two effectively
+  tied, at $5/$25 per million tokens versus Fable's $10/$50 — half the list price,
+  though only about 26% cheaper per Intelligence Index task. On terminal work Fable
+  still holds first place on the official Terminal-Bench 2.1 board, while Artificial
+  Analysis's own runs put GPT-5.6 Sol on top with Opus 5 roughly level, so the answer
+  depends on whose harness you trust.
 challengers:
 - name: Claude Opus 5
-  note: Edges Fable on the Artificial Analysis Intelligence Index at half the price;
-    GPT-5.6 Sol is the strongest external rival.
+  note: 'Meta''s frontier line and the nearest non-Anthropic challenger on user-preference
+    voting, though the exact Arena rating should be read off the live board rather
+    than quoted here. On agentic terminal work it is credible rather than leading:
+    Muse Spark 1.1 scores 76.2% on the official Terminal-Bench 2.1 board with mini-SWE-agent,
+    some seven points behind Fable 5, but at roughly a third of the run cost.'
 - name: Muse Spark 1.2
   note: Meta's frontier entry sits fourth on the Arena text board at 1,498±10 in its
     xHigh setting — the nearest non-Claude rival to Fable's 1,506, closer than Grok
