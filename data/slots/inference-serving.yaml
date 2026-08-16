@@ -30,7 +30,7 @@ challengers:
   note: Near-parity overall and faster on agentic/structured workloads, with major
     production adoption (xAI, AMD, LinkedIn, Cursor).
 history: []
-last_reviewed: 2026-08-15
+last_reviewed: 2026-08-16
 watch:
   keywords:
   - inference server
