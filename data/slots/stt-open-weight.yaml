@@ -61,7 +61,7 @@ history:
 - name: Granite Speech 4.1 2B
   from: 2026-04-29
   to: 2026-06-22
-last_reviewed: 2026-08-17
+last_reviewed: 2026-08-18
 watch:
   keywords:
   - stt
