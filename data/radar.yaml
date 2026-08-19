@@ -256,17 +256,3 @@ radar:
   - https://seed.bytedance.com/en/blog/one-take-creation-flexible-referencing-introducing-seedance-2-5
   - https://the-decoder.com/bytedances-seedance-2-5-generates-30-second-video-clips-with-built-in-audio/
   card: 30-second clips with audio in one run.
-- name: Audio8-TTS-Preview-0.6b
-  maker: Audio8
-  target: best open-weight TTS
-  released: 2026-07-28
-  status: weights out
-  scored: false
-  note: Apache-2.0 at just 0.6B, zero-shot voice cloning in 11 languages, an ONNX
-    INT4 build for CPU, and a claimed best-English-WER against models ten times its
-    size — self-reported, from an explicitly preview checkpoint with limited dialect
-    coverage.
-  sources:
-  - https://huggingface.co/Audio8/Audio8-TTS-Preview-0.6b
-  - https://github.com/Audio8-AI/Audio8_TTS
-  card: 0.6B voice cloning that runs on CPU. Self-reported WER.
