@@ -20,9 +20,10 @@ pick:
     1 July after the Commerce Department lifted them on 30 June. It also tops the
     official Terminal-Bench 2.1 board at 83.8% with Claude Code at xhigh effort, just
     ahead of GPT-5.5 on Codex at 83.1%.
-caveats: The top of the Arena text board sits inside its own noise band, so treat
-  Fable's lead over the chasing Claude and Gemini cluster as a tie rather than a win,
-  and note that Claude Opus 5, released on 24 July, now belongs in that group. Artificial
+caveats: The top of the Arena text board sits inside its own noise band — the leading
+  four, three Claude variants and Meta's Muse Spark 1.2, are one statistical tie —
+  so treat Fable's lead as first-among-equals rather than a win, and note that Claude
+  Opus 5, released on 24 July, now belongs in that chasing group. Artificial
   Analysis scores Opus 5 (max) at 63 against Fable's 62 and calls the two effectively
   tied, at $5/$25 per million tokens versus Fable's $10/$50 — half the list price,
   though only about 26% cheaper per Intelligence Index task. On terminal work Fable
@@ -41,6 +42,11 @@ challengers:
     than quoted here. On agentic terminal work it is credible rather than leading:
     Muse Spark 1.1 scores 76.2% on the official Terminal-Bench 2.1 board with mini-SWE-agent,
     some seven points behind Fable 5, but at roughly a third of the run cost.'
+- name: Kimi K3
+  note: The open-weight titleholder crossing over — 60 on the Artificial Analysis
+    index, two behind Fable at a fraction of the price, and inside the Arena text
+    top ten at 1,490. The closest any open model gets to the overall crown on either
+    axis.
 history:
 - name: GPT-4
   from: 2023-08-01
