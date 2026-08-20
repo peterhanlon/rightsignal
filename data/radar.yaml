@@ -18,17 +18,19 @@ radar:
   target: best small / on-device LLM
   released: 2026-08-14
   status: weights out
-  scored: false
+  scored: true
   note: Apache-2.0, a 27B hybrid (Gated DeltaNet + Gated Attention) that is natively
-    multimodal over images and video — unusual at single-GPU size. One post-trained
-    checkpoint, now live on OpenRouter at $0.45/$3.20 per million. First-day reception
-    is running hot — and it lands just as Bloomberg reports Alibaba's open models
-    passing three billion downloads in six months, more than Meta's or Google's.
+    multimodal over images and video — unusual at single-GPU size. The early independent
+    read matches the hot first-day reception — Artificial Analysis scores it 52, top
+    of the small open-source board and double the current titleholder — and it lands
+    just as Bloomberg reports Alibaba's open models passing three billion downloads
+    in six months, more than Meta's or Google's. On OpenRouter at $0.45/$3.20 per
+    million.
   sources:
   - https://huggingface.co/Qwen/Qwen3.8-27B
-  - https://x.com/kimmonismus/status/2088593968233615608
+  - https://artificialanalysis.ai/models/open-source/small
   - https://www.bloomberg.com/news/articles/2026-08-15/alibaba-ai-models-hit-3-billion-downloads-passing-meta-google
-  card: Single-GPU multimodal. Reception running hot.
+  card: Now top of AA's small open-source board.
 - name: GLM-5.3
   maker: Z.ai
   target: best LLM for coding

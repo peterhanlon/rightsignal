@@ -14,26 +14,23 @@ pick:
   version: ''
   url: https://huggingface.co/Audio8/ARK-ASR-3B
   licence: Apache-2.0
-  why: 'Tops the Hugging Face Open ASR Leaderboard''s English mean-WER table at 4.76%,
-    ahead of MOSS-Transcribe-preview-2B on 4.87%, MOSS-Transcribe-Diarize on 5.17%
-    and Cohere Transcribe on 5.42%, and it is the only model in that group pairing
-    Apache-2.0 with 19-language coverage. Treat the margin over MOSS with care: ARK''s
-    own card reports 5.04% across the seven English sets MOSS also publishes, so on
-    like-for-like sets the two are level at best, while the parakeet-tdt-0.6b-v2 and
-    canary-1b-flash entries sit further back at 6.05% and 6.35%. Read the ranking
-    as public English short-form only — the leaderboard''s private accent and conversational
-    sets are excluded from the default average and reshuffle the top when toggled
-    on.'
+  why: 'The case is a package, not a single number. ARK''s card reports 5.04% mean
+    WER across the Open ASR evaluation''s seven public English sets — level with,
+    or a whisker behind, MOSS-Transcribe-preview-2B''s 4.87% on like-for-like data,
+    with MOSS-Transcribe-Diarize on 5.17% and Cohere Transcribe, the best entry in
+    the leaderboard''s own public export, on 5.42% — and it is the only model in that
+    group pairing Apache-2.0 with 19-language coverage; the MOSS pair are English-only
+    and RL-tuned on the board''s training splits. One caution on provenance: the leaderboard''s
+    public data export does not list ARK-ASR at all, so board-position claims for
+    it rest on the model card and sibling models'' corroborating runs, not on the
+    board itself.'
 caveats: 'NVIDIA''s Parakeet-TDT-0.6B-v3 is still the sensible choice where throughput
   decides the invoice — 25 European languages and 6.34% on the leaderboard''s eight-set
   English average, so you are trading about 1.5 WER points for the speed — but note
-  it ships under CC BY 4.0, not Apache-2.0. The gap between the card''s 5.04% and
-  the board''s 4.76% looks like dataset coverage, not rounding: the card averages
-  seven sets with TED-LIUM absent, while the board entry carries an eighth dataset
-  score, so use 5.04% when comparing against MOSS-preview''s seven-set 4.87%. AutoArk''s
-  own rerun of the seven public splits with the leaderboard scorer lands at 5.13%
-  WER and an overall RTFx of 197, so budget for less headroom than the card''s 490.98
-  implies.'
+  it ships under CC BY 4.0, not Apache-2.0. And treat every ARK figure as card-derived
+  rather than board-verified: AutoArk''s own rerun of the seven public splits with
+  the leaderboard scorer lands at 5.13% WER and an overall RTFx of 197, so budget
+  for less accuracy headroom than the card''s numbers imply.'
 challengers:
 - name: MOSS-Transcribe-preview-2B
   note: 4.87% WER and Apache-2.0, but English-only and RL-tuned on the leaderboard's

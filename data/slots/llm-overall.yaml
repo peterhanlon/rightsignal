@@ -23,7 +23,7 @@ pick:
 caveats: The top of the Arena text board sits inside its own noise band, so treat
   Fable's lead over the chasing Claude and Gemini cluster as a tie rather than a win,
   and note that Claude Opus 5, released on 24 July, now belongs in that group. Artificial
-  Analysis scores Opus 5 (max) at 61 against Fable's 60 and calls the two effectively
+  Analysis scores Opus 5 (max) at 63 against Fable's 62 and calls the two effectively
   tied, at $5/$25 per million tokens versus Fable's $10/$50 — half the list price,
   though only about 26% cheaper per Intelligence Index task. On terminal work Fable
   still holds first place on the official Terminal-Bench 2.1 board, while Artificial
@@ -31,8 +31,8 @@ caveats: The top of the Arena text board sits inside its own noise band, so trea
   depends on whose harness you trust.
 challengers:
 - name: Claude Opus 5
-  note: Effectively tied with Fable on the Artificial Analysis index — 61 against
-    60 — at half the list price, and now inside the chasing cluster on Arena preference
+  note: Effectively tied with Fable on the Artificial Analysis index — 63 against
+    62 — at half the list price, and now inside the chasing cluster on Arena preference
     voting. The strongest like-for-like alternative in the Claude line, and the reason
     this title is a genuine contest.
 - name: Muse Spark 1.2
