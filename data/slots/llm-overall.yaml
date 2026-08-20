@@ -31,15 +31,16 @@ caveats: The top of the Arena text board sits inside its own noise band, so trea
   depends on whose harness you trust.
 challengers:
 - name: Claude Opus 5
+  note: Effectively tied with Fable on the Artificial Analysis index — 61 against
+    60 — at half the list price, and now inside the chasing cluster on Arena preference
+    voting. The strongest like-for-like alternative in the Claude line, and the reason
+    this title is a genuine contest.
+- name: Muse Spark 1.2
   note: 'Meta''s frontier line and the nearest non-Anthropic challenger on user-preference
     voting, though the exact Arena rating should be read off the live board rather
     than quoted here. On agentic terminal work it is credible rather than leading:
     Muse Spark 1.1 scores 76.2% on the official Terminal-Bench 2.1 board with mini-SWE-agent,
     some seven points behind Fable 5, but at roughly a third of the run cost.'
-- name: Muse Spark 1.2
-  note: Meta's frontier entry sits fourth on the Arena text board at 1,498±10 in its
-    xHigh setting — the nearest non-Claude rival to Fable's 1,506, closer than Grok
-    4.6 or GPT-5.6 Sol get on that board.
 history:
 - name: GPT-4
   from: 2023-08-01
