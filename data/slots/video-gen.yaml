@@ -31,6 +31,10 @@ caveats: 'A hold by a nose rather than a runaway: on text-to-video only Gemini O
   Seedance 2.5 still carries no arena score on either AA board, so treat its launch
   claims as unverified.'
 challengers:
+- name: Alibaba Wan 3.0
+  note: 'New #1 on Artificial Analysis''s text-to-video board at 1,247, eight points
+    ahead of Gemini Omni Flash on 1,239 — a narrow, single-board lead with no independent
+    read yet on native audio, clip length or image-to-video.'
 - name: MiniMax H3 (Hailuo 3.0)
   note: Black Forest Labs' first video model sits second on arena.ai's Text-to-Video
     Arena at 1,496, sixteen points behind the pick, and fifth on the Image-to-Video
@@ -64,7 +68,7 @@ history:
 - name: Seedance 2.0
   from: 2026-02-12
   to: 2026-06-30
-last_reviewed: 2026-08-19
+last_reviewed: 2026-08-20
 watch:
   keywords:
   - video generation
