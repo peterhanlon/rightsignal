@@ -23,13 +23,13 @@ pick:
 caveats: The top of the Arena text board sits inside its own noise band — the leading
   four, three Claude variants and Meta's Muse Spark 1.2, are one statistical tie —
   so treat Fable's lead as first-among-equals rather than a win, and note that Claude
-  Opus 5, released on 24 July, now belongs in that chasing group. Artificial
-  Analysis scores Opus 5 (max) at 63 against Fable's 62 and calls the two effectively
-  tied, at $5/$25 per million tokens versus Fable's $10/$50 — half the list price,
-  though only about 26% cheaper per Intelligence Index task. On terminal work Fable
-  still holds first place on the official Terminal-Bench 2.1 board, while Artificial
-  Analysis's own runs put GPT-5.6 Sol on top with Opus 5 roughly level, so the answer
-  depends on whose harness you trust.
+  Opus 5, released on 24 July, now belongs in that chasing group. Artificial Analysis
+  scores Opus 5 (max) at 63 against Fable's 62 and calls the two effectively tied,
+  at $5/$25 per million tokens versus Fable's $10/$50 — half the list price, though
+  only about 26% cheaper per Intelligence Index task. On terminal work Fable still
+  holds first place on the official Terminal-Bench 2.1 board, while Artificial Analysis's
+  own runs put GPT-5.6 Sol on top with Opus 5 roughly level, so the answer depends
+  on whose harness you trust.
 challengers:
 - name: Claude Opus 5
   note: Effectively tied with Fable on the Artificial Analysis index — 63 against
@@ -72,7 +72,7 @@ history:
 - name: Claude Opus 4.6
   from: 2026-02-05
   to: 2026-07-01
-last_reviewed: 2026-08-20
+last_reviewed: 2026-08-21
 watch:
   keywords:
   - llm
