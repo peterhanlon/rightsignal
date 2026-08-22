@@ -244,17 +244,3 @@ radar:
   - https://huggingface.co/blog/ResterChed/minimax-h3-hailuo-3-0
   - https://www.orcarouter.ai/blog/minimax-h3-hailuo-3-explained
   card: Statistically tied with the video titleholder.
-- name: Seedance 2.5
-  maker: ByteDance
-  target: best video generation
-  released: 2026-07-31
-  status: API only
-  scored: false
-  note: A 30-second clip with audio in a single run, extendable multi-turn, taking
-    up to 30 images, 10 videos and 10 audio clips as reference in one input — a conditioning
-    budget no rival matches. Access is still mostly Jimeng and Doubao, resolution
-    claims vary by platform, and there is no open weight.
-  sources:
-  - https://seed.bytedance.com/en/blog/one-take-creation-flexible-referencing-introducing-seedance-2-5
-  - https://the-decoder.com/bytedances-seedance-2-5-generates-30-second-video-clips-with-built-in-audio/
-  card: 30-second clips with audio in one run.

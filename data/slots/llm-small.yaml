@@ -28,10 +28,10 @@ caveats: 'Qwen3.6 27B (Reasoning) is the quality leader here — 38 on Artificia
   Glimmer 30B now outscores the pick on the same index.'
 challengers:
 - name: Qwen3.8 27B
-  note: 'Still #1 on AA''s small open-source board (52 vs this pick''s 26), and quantised
-    GGUF builds are now circulating — but the trending one is a community abliterated
-    remix with no published file sizes, so the 16GB fit and quantised tool-calling
-    remain unverified.'
+  note: Now holds the top three slots on AA's small open-source board (52/44/43 across
+    reasoning efforts) against this pick's 26 — but there is still no official quantised
+    release with published file sizes, so the 16GB fit and tool-calling at 4-bit remain
+    unverified.
 - name: Muse Glimmer 30B
   note: Meta's agent-focused 30B dense model, Apache-2.0, independently scored 35
     on the AA Intelligence Index — comfortably ahead of this pick's 26, though still
@@ -70,7 +70,7 @@ history:
 - name: Qwen3.5-9B
   from: 2026-03-02
   to: 2026-04-02
-last_reviewed: 2026-08-21
+last_reviewed: 2026-08-22
 watch:
   keywords:
   - small model
