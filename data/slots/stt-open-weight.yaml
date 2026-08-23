@@ -32,6 +32,9 @@ caveats: 'NVIDIA''s Parakeet-TDT-0.6B-v3 is still the sensible choice where thro
   the leaderboard scorer lands at 5.13% WER and an overall RTFx of 197, so budget
   for less accuracy headroom than the card''s numbers imply.'
 challengers:
+- name: bosonai/Orze-ASR-3Way
+  note: 'New #1 on Open ASR at 3.81 mean WER, a point clear of ARK — but licence,
+    throughput and language coverage are unverified.'
 - name: MOSS-Transcribe-preview-2B
   note: 4.87% WER and Apache-2.0, but English-only and RL-tuned on the leaderboard's
     training splits — leaderboard-fitted.
@@ -58,7 +61,7 @@ history:
 - name: Granite Speech 4.1 2B
   from: 2026-04-29
   to: 2026-06-22
-last_reviewed: 2026-08-22
+last_reviewed: 2026-08-23
 watch:
   keywords:
   - stt

@@ -32,10 +32,11 @@ caveats: The top of the Arena text board sits inside its own noise band — the 
   on whose harness you trust.
 challengers:
 - name: Claude Opus 5
-  note: Effectively tied with Fable on the Artificial Analysis index — 63 against
-    62 — at half the list price, and now inside the chasing cluster on Arena preference
-    voting. The strongest like-for-like alternative in the Claude line, and the reason
-    this title is a genuine contest.
+  note: 'Now ranked #1 on Vellum''s independent leaderboard at 64.7, with Fable 5
+    absent from the published top five. Combined with an effective tie on the Artificial
+    Analysis index at half the list price, it is the strongest case yet for a change
+    — but a single composite board, and one that may simply not cover Fable, is not
+    enough while Fable still leads Arena text and Terminal-Bench 2.1.'
 - name: Muse Spark 1.2
   note: 'Meta''s frontier line and the nearest non-Anthropic challenger on user-preference
     voting, though the exact Arena rating should be read off the live board rather
@@ -72,7 +73,7 @@ history:
 - name: Claude Opus 4.6
   from: 2026-02-05
   to: 2026-07-01
-last_reviewed: 2026-08-22
+last_reviewed: 2026-08-23
 watch:
   keywords:
   - llm
