@@ -21,20 +21,24 @@ pick:
     1B NVFP4 checkpoints for cheaper serving. The ranking rests on a vendor snapshot
     and other open-weight entrants have claimed the RTEB top spot too, so re-check
     the board before quoting it.
-caveats: 'The category splits across boards: on the official MMTEB multilingual table
-  Tencent''s KaLM-Embedding-Gemma3-12B-2511 still leads on task-mean at 72.32 as of
-  July 2026. Microsoft''s Harrier-OSS-v1 quotes a higher 74.3, but that is the MTEB
-  v2 multilingual split, so the two figures are not directly comparable. Check which
-  board a vendor is citing before treating any single number as the multilingual crown.'
+caveats: 'The multilingual picture is contested, not split across incomparable boards:
+  Microsoft reports Harrier-OSS-v1-27B at 74.3 averaged over the same 131 multilingual
+  MTEB v2 tasks on which it cites the MMTEB leaderboard SOTA of 72.3 — the score Tencent''s
+  KaLM-Embedding-Gemma3-12B-2511 holds at 72.32 — and puts Harrier top on Borda count.
+  That ranking is a vendor snapshot taken in March/April 2026 and can move as submissions
+  land, so check the live table before repeating it. Either way, MMTEB task-mean and
+  our pick''s RTEB NDCG@10 answer different questions: one aggregates all task types,
+  the other is retrieval only.'
 challengers:
 - name: Gemini Embedding 2
   note: Google's Gemini Embedding 2 is natively multimodal, mapping text, images,
-    video, audio and PDFs into a single 3,072-dimension vector space, and coverage
-    dates it to March 2026 — we could not confirm a general-availability milestone,
-    so treat it as launched rather than assured GA. Output dimensions are Matryoshka-truncatable,
-    with 128, 768 and 1,536 the sizes usually quoted, at list pricing of about $0.20
-    per million text tokens. It remains an API-only model, so it is not an option
-    if you need weights you can host yourself.
+    video, audio and documents into one vector space; it went to public preview on
+    10 March 2026 and reached general availability on 22 April 2026 through the Gemini
+    API, Vertex AI and the Gemini Enterprise Agent Platform. Output defaults to 3,072
+    dimensions and is Matryoshka-truncatable from 128 up, with 768, 1,536 and 3,072
+    the recommended sizes, over an 8,192-token context, at list pricing of about $0.20
+    per million text tokens. It remains API-only, so it is not an option if you need
+    weights you can host yourself.
 history:
 - name: OpenAI text-embedding-ada-002
   from: 2023-08-01

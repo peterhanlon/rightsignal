@@ -15,25 +15,28 @@ pick:
   url: https://developers.openai.com/api/docs/models/gpt-image-2
   licence: proprietary
   why: 'Top of both Arena boards: #1 on text-to-image at 1381 Elo, 45 clear of MAI-Image-2.6
-    (preview), and #1 on image edit at 1463. It also leads Artificial Analysis''s
-    text-to-image arena at 1,376, about 48 ahead of Reve 2.1, though on that site''s
-    image-editing arena it sits second at 1,257, inside the error bars of Reve 2.1
-    and MAI-Image-2.5. It has held the top since its 21 April launch, on the strength
-    of thinking-mode reasoning before generation, improved multilingual text rendering
-    and more reliable instruction-following.'
+    (preview), and #1 on single-image edit at 1463, 24 ahead of Grok Imagine Image
+    2.0 (low). It also leads Artificial Analysis''s text-to-image arena at 1,369,
+    about 48 ahead of Reve 2.1, though on that site''s image-editing arena it is only
+    third at 1,256, behind MAI-Image-2.5-Pro at 1,272 and Reve 2.1 at 1,264. It has
+    held the top since its 21 April launch, on the strength of thinking-mode reasoning
+    before generation, improved multilingual text rendering and more reliable instruction-following.'
 caveats: 'Editing is the closest call: on Artificial Analysis''s image-editing arena
-  GPT Image 2 is second, effectively tied with Reve 2.1 and MAI-Image-2.5. It is also
-  the dearest of the leaders at about $211 per 1,000 images on Artificial Analysis''s
-  pricing, against $48 for MAI-Image-2.5 and $67 for Nano Banana 2. Treat the challenger
-  gap as provisional — MAI-Image-2.6 is still a preview and Grok Imagine Image 2.0''s
-  Arena scores are flagged preliminary.'
+  GPT Image 2 is third at 1,256, behind MAI-Image-2.5-Pro at 1,272 and Reve 2.1 at
+  1,264, even though it still tops Arena''s edit board at 1463 from Grok Imagine Image
+  2.0 (low) at 1439. It is also the dearest of the leaders at about $211 per 1,000
+  images on Artificial Analysis''s pricing, against $108.50 for MAI-Image-2.5-Pro,
+  $67 for Nano Banana 2 and $48 for MAI-Image-2.5. Treat the challenger gaps as provisional
+  — MAI-Image-2.6 is still a preview and Grok Imagine Image 2.0''s Arena scores are
+  flagged preliminary.'
 challengers:
 - name: MAI-Image-2.6 (preview)
-  note: MAI-Image-2.6 (preview) is the nearest rival on Arena's text-to-image board
-    at 1336, about 45 behind, but on only ~3,500 votes so far against the leader's
-    70,000. Reve 2.1 is second on Artificial Analysis's text-to-image arena, 44 back
-    — yet it tops that site's image-editing arena at 1,261, just ahead of GPT Image
-    2 at 1,258. On editing quality, then, the gap is well within the error bars.
+  note: 'MAI-Image-2.6 (preview) is the nearest rival on Arena''s text-to-image board
+    at 1336, about 45 behind, but on only ~3,500 votes so far against the leader''s
+    70,000. Over on Artificial Analysis''s image-editing arena the order is different
+    again: Microsoft''s MAI-Image-2.5-Pro leads at 1,272, Reve 2.1 is second at 1,264
+    and GPT Image 2 third at 1,256. On editing quality, then, the pick''s lead is
+    not established at all — treat it as a three-way scrap.'
 history:
 - name: Midjourney v5.2
   from: 2023-06-22

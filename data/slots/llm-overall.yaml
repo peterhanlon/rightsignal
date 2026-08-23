@@ -32,11 +32,14 @@ caveats: The top of the Arena text board sits inside its own noise band — the 
   on whose harness you trust.
 challengers:
 - name: Claude Opus 5
-  note: 'Now ranked #1 on Vellum''s independent leaderboard at 64.7, with Fable 5
-    absent from the published top five. Combined with an effective tie on the Artificial
-    Analysis index at half the list price, it is the strongest case yet for a change
-    — but a single composite board, and one that may simply not cover Fable, is not
-    enough while Fable still leads Arena text and Terminal-Bench 2.1.'
+  note: Vellum publishes per-benchmark charts rather than a composite, and the 64.7
+    is its Humanity's Last Exam board, which Opus 5 tops ahead of Mythos 5 on 64.5;
+    Fable 5 is missing from that chart alone, since Vellum scores it elsewhere at
+    95% on SWE-Bench and first on OSWorld at 85%. The stronger argument is Artificial
+    Analysis, where Opus 5 (max) takes the Intelligence Index at 63 to Fable's 62
+    for $5/$25 against $10/$50, and 26% less per Index task. That is the best case
+    yet for a change, but it is not enough while Fable holds the Arena text top spot
+    and first place on the official Terminal-Bench 2.1 board.
 - name: Muse Spark 1.2
   note: 'Meta''s frontier line and the nearest non-Anthropic challenger on user-preference
     voting, though the exact Arena rating should be read off the live board rather

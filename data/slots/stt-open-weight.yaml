@@ -14,27 +14,28 @@ pick:
   version: ''
   url: https://huggingface.co/Audio8/ARK-ASR-3B
   licence: Apache-2.0
-  why: 'The case is a package, not a single number. ARK''s card reports 5.04% mean
-    WER across the Open ASR evaluation''s seven public English sets — level with,
-    or a whisker behind, MOSS-Transcribe-preview-2B''s 4.87% on like-for-like data,
-    with MOSS-Transcribe-Diarize on 5.17% and Cohere Transcribe, the best entry in
-    the leaderboard''s own public export, on 5.42% — and it is the only model in that
-    group pairing Apache-2.0 with 19-language coverage; the MOSS pair are English-only
-    and RL-tuned on the board''s training splits. One caution on provenance: the leaderboard''s
-    public data export does not list ARK-ASR at all, so board-position claims for
-    it rest on the model card and sibling models'' corroborating runs, not on the
-    board itself.'
+  why: The case is a package, not a single number. ARK-ASR-3B currently heads the
+    Open ASR Leaderboard's public listing at 4.76 mean WER with an RTFx of 490.98,
+    ahead of MOSS-Transcribe-preview-2B on 4.87, MOSS-Transcribe-Diarize on 5.17 and
+    Cohere Transcribe on 5.42, and the entry is board-published with per-dataset results
+    filed in the repo and dated 23 June 2026. The 5.04% on the card is the seven-set
+    average that omits TEDLIUM; add TEDLIUM's 2.79% and you get the board figure.
+    It is also the only model near the top pairing Apache-2.0 with 19-language coverage,
+    the MOSS pair being English-only.
 caveats: 'NVIDIA''s Parakeet-TDT-0.6B-v3 is still the sensible choice where throughput
-  decides the invoice — 25 European languages and 6.34% on the leaderboard''s eight-set
-  English average, so you are trading about 1.5 WER points for the speed — but note
-  it ships under CC BY 4.0, not Apache-2.0. And treat every ARK figure as card-derived
-  rather than board-verified: AutoArk''s own rerun of the seven public splits with
-  the leaderboard scorer lands at 5.13% WER and an overall RTFx of 197, so budget
-  for less accuracy headroom than the card''s numbers imply.'
+  decides the invoice — 25 European languages, automatic language detection and a
+  6.34% average WER, so you are trading roughly 1.5 WER points for the speed — but
+  note it ships under CC BY 4.0, not Apache-2.0. ARK''s headline is board-verified
+  rather than card-only: the leaderboard records 4.76 mean WER at RTFx 490.98, including
+  TEDLIUM at 2.79%. Do budget for less throughput headroom than that suggests, though:
+  AutoArk''s own rerun of the seven public splits on 8x RTX 4090, scored with the
+  leaderboard scorer, lands at 5.13% WER and an overall RTFx of 197.'
 challengers:
 - name: bosonai/Orze-ASR-3Way
-  note: 'New #1 on Open ASR at 3.81 mean WER, a point clear of ARK — but licence,
-    throughput and language coverage are unverified.'
+  note: No entry for this model appears in the Open ASR Leaderboard listing, which
+    is currently headed by ARK-ASR-3B at 4.76 mean WER, so the circulating 3.81 figure
+    cannot be a board result. Treat it as unverified until a leaderboard entry or
+    a model card exists; licence, throughput and language coverage are unknown too.
 - name: MOSS-Transcribe-preview-2B
   note: 4.87% WER and Apache-2.0, but English-only and RL-tuned on the leaderboard's
     training splits — leaderboard-fitted.
