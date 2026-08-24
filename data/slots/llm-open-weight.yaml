@@ -68,7 +68,7 @@ history:
 - name: GLM-5.2
   from: 2026-06-16
   to: 2026-07-27
-last_reviewed: 2026-08-23
+last_reviewed: 2026-08-24
 watch:
   keywords:
   - open weight
