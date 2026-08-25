@@ -229,18 +229,3 @@ radar:
   - https://datanorth.ai/news/spacexai-releases-grok-imagine-image-2-0
   - https://www.testingcatalog.com/xai-launches-imagine-image-2-0-in-grok-quality-mode/
   card: 'Already #2 on the image-editing arena.'
-- name: MiniMax H3 (Hailuo 3.0)
-  maker: MiniMax
-  target: best video generation
-  released: 2026-08-03
-  status: weights out
-  scored: true
-  note: 'Statistically tied with the titleholder on AA text-to-video and ahead of
-    it on image-to-video — with weights on Hugging Face, rare at this rank. Two catches:
-    the open release is H3-Base at 768p (the 2K upscaler is not open-sourced), and
-    the community licence excludes the US, EU, UK and South Korea — so for most Western
-    readers it''s effectively API-only.'
-  sources:
-  - https://huggingface.co/blog/ResterChed/minimax-h3-hailuo-3-0
-  - https://www.orcarouter.ai/blog/minimax-h3-hailuo-3-explained
-  card: Statistically tied with the video titleholder.
