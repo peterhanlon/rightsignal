@@ -31,12 +31,9 @@ caveats: 'Editing is the closest call: on Artificial Analysis''s image-editing a
   flagged preliminary.'
 challengers:
 - name: MAI-Image-2.6 (preview)
-  note: 'MAI-Image-2.6 (preview) is the nearest rival on Arena''s text-to-image board
-    at 1336, about 45 behind, but on only ~3,500 votes so far against the leader''s
-    70,000. Over on Artificial Analysis''s image-editing arena the order is different
-    again: Microsoft''s MAI-Image-2.5-Pro leads at 1,272, Reve 2.1 is second at 1,264
-    and GPT Image 2 third at 1,256. On editing quality, then, the pick''s lead is
-    not established at all — treat it as a three-way scrap.'
+  note: 'Now #2 on Artificial Analysis''s text-to-image arena at 1351, just 20 points
+    behind GPT Image 2 (1371) and ahead of Reve 2.1 (1322) — a narrower gap than at
+    the last review. Still a preview, and no independent edge shown on editing.'
 history:
 - name: Midjourney v5.2
   from: 2023-06-22
@@ -62,7 +59,7 @@ history:
 - name: Nano Banana 2
   from: 2026-02-26
   to: 2026-04-21
-last_reviewed: 2026-08-25
+last_reviewed: 2026-08-26
 watch:
   keywords:
   - image generation
