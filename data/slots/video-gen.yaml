@@ -29,6 +29,11 @@ caveats: 'A hold under real pressure: Wan 3.0 has taken the top of AA''s with-au
   audio, and Seedance 2.5 claims 30 seconds in a single pass. Seedance 2.5 still carries
   no score on either AA board, so treat its launch claims as unverified.'
 challengers:
+- name: Fal MiniMax H3 Max (post-trained by fal)
+  note: 'Entered Artificial Analysis''s with-audio text-to-video board at #3 on 1,235,
+    two points behind the pick (1,237) and five behind Wan 3.0 (1,240) — a statistical
+    tie at the top rather than a lead. No independent read yet on clip length, character
+    consistency or image-to-video.'
 - name: Alibaba Wan 3.0
   note: 'Nominally #1 on Artificial Analysis''s with-audio text-to-video board on
     1,244, six points ahead of Gemini Omni Flash on 1,238 — but AA gives it a ranked
@@ -44,13 +49,6 @@ challengers:
     open release is the 768p base, with the 2K regeneration stage not open-sourced,
     and the community licence''s excluded territories are the EU, UK, US and South
     Korea, though MiniMax runs an application form for those regions.'
-- name: FLUX-3 Video
-  note: Black Forest Labs' first video model sits second on arena.ai's Text-to-Video
-    Arena at 1,494, eighteen points behind the pick, and sixth on the Image-to-Video
-    Arena at 1,449. Far from skipping the extras, FLUX 3 generates up to 20 seconds
-    of video with a synchronised soundtrack rendered in the same pass, released at
-    720p and 1080p. These are crowd-vote scores from a single arena, so cross-check
-    on your own shots before rebuilding a pipeline around it.
 history:
 - name: Runway Gen-2
   from: 2023-06-07
@@ -73,7 +71,7 @@ history:
 - name: Seedance 2.0
   from: 2026-02-12
   to: 2026-06-30
-last_reviewed: 2026-08-26
+last_reviewed: 2026-08-27
 watch:
   keywords:
   - video generation
