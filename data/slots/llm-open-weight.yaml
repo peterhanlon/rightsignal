@@ -26,6 +26,11 @@ caveats: Licence requires attribution above 100M MAU or $20M/month revenue, and 
   separate agreement for large model-as-a-service businesses. The hosted API shipped
   16 July — the reign is dated from the weights landing on 27 July.
 challengers:
+- name: GLM-5.3
+  note: Full weights now public on Hugging Face (25–28 August, licence tagged 'other',
+    not MIT); matches K3 at 60 on the AA Intelligence Index but no independent result
+    yet shows it ahead, and reported local serving needs 8x H200 or 10–12x H100 at
+    FP8.
 - name: GLM-5.3-Flash
   note: MIT-licensed weights on Hugging Face from 25 August with Unsloth GGUFs the
     next day, but it is a Flash-class checkpoint and no independent benchmark score
@@ -72,7 +77,7 @@ history:
 - name: GLM-5.2
   from: 2026-06-16
   to: 2026-07-27
-last_reviewed: 2026-08-27
+last_reviewed: 2026-08-28
 watch:
   keywords:
   - open weight

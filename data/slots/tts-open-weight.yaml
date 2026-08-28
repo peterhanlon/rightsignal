@@ -28,6 +28,9 @@ caveats: 'Open-weight but not open-source: the Fish Audio Research License permi
   Hugging Face org. Budget for an H200-class GPU if you want the quoted streaming
   numbers locally.'
 challengers:
+- name: BreezeBlue Breeze TTS 2 Open Weights
+  note: 'Entered the Artificial Analysis TTS leaderboard at #5 (1,217 Elo), apparently
+    above the current pick — but licence, latency and hardware requirements are unverified.'
 - name: Step-Audio-EditX
   note: Apache-2.0, 13 Elo behind on the same arena, runs on a single 12-16GB GPU
     — the pick if commercial licensing is a hard requirement.
@@ -50,7 +53,7 @@ history:
 - name: Step-Audio-EditX
   from: 2025-11-12
   to: 2026-03-09
-last_reviewed: 2026-08-27
+last_reviewed: 2026-08-28
 watch:
   keywords:
   - tts
