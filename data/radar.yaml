@@ -215,17 +215,3 @@ radar:
   sources:
   - https://huggingface.co/LiquidAI/LFM2.5-VL-3B
   card: Vision and tool use in 3.3GB on a laptop.
-- name: Grok Imagine Image 2.0
-  maker: xAI
-  target: best image generation
-  released: 2026-08-07
-  status: in product
-  scored: true
-  note: Second on Arena image editing (1439) and third on text-to-image as of 15 Aug
-    — Microsoft's MAI preview slipped between them — and the editing kit (region edits,
-    segmentation, five-image blending) is the real jump. Ships inside Grok's Quality
-    Mode on web and mobile with no standalone API date.
-  sources:
-  - https://datanorth.ai/news/spacexai-releases-grok-imagine-image-2-0
-  - https://www.testingcatalog.com/xai-launches-imagine-image-2-0-in-grok-quality-mode/
-  card: 'Already #2 on the image-editing arena.'
