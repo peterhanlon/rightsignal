@@ -14,41 +14,49 @@ pick:
   version: ''
   url: https://deepmind.google/models/gemini-omni/
   licence: proprietary
-  why: 'Tops arena.ai''s Text-to-Video Arena on 1,512, with an updated FLUX 3 Video
-    build sixteen points back on 1,496, and leads Artificial Analysis''s no-audio
-    text-to-video board on 1,322, nineteen points clear of MiniMax H3 on 1,303. Audio
-    is the soft spot: on AA''s with-audio table Alibaba''s Wan 3.0 is first on 1,244
-    with the pick second on 1,238. The differentiator remains conversational multi-turn
-    editing, where each change builds on the last while holding character and scene
-    consistency, with native synced audio on every clip.'
-caveats: 'A hold under real pressure: Wan 3.0 has taken the top of AA''s with-audio
-  text-to-video table on 1,244 to the pick''s 1,238, and on AA''s image-to-video board
-  the pick only leads without audio (1,366), dropping to third with audio behind Dreamina
-  Seedance 2.0 (1,191) and MiniMax H3 (1,184). Clip length is the other limit — MiniMax
-  H3 runs to 15 seconds at 2K, FLUX 3 Video to 20 seconds at 720p and 1080p with native
-  audio, and Seedance 2.5 claims 30 seconds in a single pass. Seedance 2.5 still carries
-  no score on either AA board, so treat its launch claims as unverified.'
+  why: 'Still the top line on arena.ai''s Text-to-Video Arena, though it now appears
+    as two entries: the newer gemini-omni-1.1-flash build leads on 1,515 with the
+    original Omni Flash second on 1,512 and Black Forest Labs'' FLUX 3 Video third
+    on a preliminary 1,495. On Artificial Analysis it leads the no-audio text-to-video
+    board on 1,324, twenty-three points clear of MiniMax H3 on 1,301, but audio is
+    the soft spot: Alibaba''s Wan 3.0 is first on the with-audio table on 1,241 to
+    the pick''s 1,237. The differentiator remains conversational multi-turn editing
+    through the Interactions API, where each change builds on the last while holding
+    character and scene consistency, with native synced audio on every clip.'
+caveats: 'A hold under real pressure: Wan 3.0 leads AA''s with-audio text-to-video
+  table on 1,241 to the pick''s 1,237, and on AA''s image-to-video board the pick
+  only leads without audio (1,365) — with audio it has slipped to fourth on 1,179,
+  behind fal''s Minimax H3 Max (1,202), Dreamina Seedance 2.0 720p (1,190) and MiniMax
+  H3 (1,185). Clip length is the other limit: MiniMax H3 runs to 15 seconds at 2K,
+  FLUX 3 Video to 20 seconds in HD or FHD with native audio, and Seedance 2.5 does
+  30 seconds in a single pass. Seedance 2.5 still carries no score on either AA board,
+  though it has now entered arena.ai''s Text-to-Video Arena fifth on 1,476, below
+  the pick.'
 challengers:
 - name: Fal MiniMax H3 Max (post-trained by fal)
-  note: 'Entered Artificial Analysis''s with-audio text-to-video board at #3 on 1,235,
-    two points behind the pick (1,237) and five behind Wan 3.0 (1,240) — a statistical
-    tie at the top rather than a lead. No independent read yet on clip length, character
-    consistency or image-to-video.'
+  note: Third on AA's with-audio text-to-video board on 1,235, two points behind the
+    pick (1,237) and six behind Wan 3.0 (1,241), with a ranked range of 1-4 — a statistical
+    tie at the top rather than a lead. It has gone one better on image-to-video, where
+    it now leads AA's with-audio board on 1,202, ahead of Dreamina Seedance 2.0 720p
+    (1,190), MiniMax H3 (1,185) and the pick (1,179). Still no independent read on
+    clip length or character consistency.
 - name: Alibaba Wan 3.0
   note: 'Nominally #1 on Artificial Analysis''s with-audio text-to-video board on
-    1,244, six points ahead of Gemini Omni Flash on 1,238 — but AA gives it a ranked
-    range of 1-2, so on current votes it is a statistical tie, not a clear lead. It
-    has around 5,679 votes to the pick''s 16,160, and AA still shows its API pricing
-    as coming soon. There is no independent read yet on clip length or image-to-video.'
+    1,241, four points ahead of Gemini Omni Flash on 1,237 — but AA now gives it a
+    ranked range of 1-3, so on current votes it is a statistical tie rather than a
+    lead. Its sample count has grown to about 6,248 against the pick''s 17,912, and
+    AA now lists its API pricing at $12.00 per minute of 1080p rather than coming
+    soon. It still does not appear on AA''s image-to-video board, and there is no
+    independent read on clip length.'
 - name: MiniMax H3 (Hailuo 3.0)
-  note: 'Second to the pick on AA''s no-audio text-to-video board at 1,303 and third
-    with audio at 1,228, and AA''s top open-weights model on both, with 15-second
+  note: Second to the pick on AA's no-audio text-to-video board on 1,301 and now fourth
+    with audio on 1,227, yet still AA's top open-weights model on both, with 15-second
     2K clips and weights on Hugging Face — rare at this rank. On image-to-video it
-    is second rather than first: AA has it behind Gemini Omni Flash without audio
-    (1,346 v 1,366) and behind Dreamina Seedance 2.0 with audio (1,184 v 1,191). The
-    open release is the 768p base, with the 2K regeneration stage not open-sourced,
-    and the community licence''s excluded territories are the EU, UK, US and South
-    Korea, though MiniMax runs an application form for those regions.'
+    is second without audio (1,347 to the pick's 1,365) and third with audio (1,185),
+    behind fal's post-trained Minimax H3 Max (1,202) and Dreamina Seedance 2.0 720p
+    (1,190). The open release is the 768p base, with the 2K regeneration stage held
+    back, and the community licence's excluded territories are the EU, UK, US and
+    South Korea, though MiniMax runs an application form for those regions.
 history:
 - name: Runway Gen-2
   from: 2023-06-07

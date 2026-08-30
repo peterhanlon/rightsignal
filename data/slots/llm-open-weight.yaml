@@ -36,13 +36,13 @@ challengers:
     next day, but it is a Flash-class checkpoint and no independent benchmark score
     against K3 has appeared yet.
 - name: Qwen3.8-2.4T-A95B
-  note: 'Weights landed on 12 August under Alibaba''s own Qwen3.8-Max licence and
-    score 58 on the AA Intelligence Index, two behind K3 and second among open weights
-    on that board. Be careful with the openness: the released checkpoint is text-only
-    with a 262K native context (extensible to roughly 1.01M), while vision input and
-    the 1M default stay behind the hosted Qwen3.8-Max API. It is leaner to serve at
-    95B active parameters against K3''s 104B, and Alibaba has since shipped a much
-    smaller Apache-2.0 Qwen3.8-27B for teams that cannot host either flagship.'
+  note: 'Weights landed on 12 August: 2.4T total, 95B active, with a 262K native context
+    extensible to roughly 1M, and leaner to serve than K3. Be careful with both the
+    openness and the score — the released checkpoint is text-only, with vision and
+    the 1M default kept behind the hosted Qwen3.8-Max API, and Artificial Analysis''s
+    58 is measured on that hosted API rather than on the downloadable weights. With
+    GLM-5.3''s weights now public at 60, it sits third among open weights on that
+    board, not second.'
 history:
 - name: Llama 2 70B Chat
   from: 2023-08-01

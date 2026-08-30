@@ -14,13 +14,14 @@ pick:
   url: https://huggingface.co/nvidia/Nemotron-3-Embed-8B-BF16
   licence: OpenMDW-1.1
   why: NVIDIA's launch materials put Nemotron-3-Embed-8B-BF16 at number one on the
-    RTEB multilingual board as of 16 July 2026, scoring 78.5 average NDCG@10 across
-    the benchmark's 16 public tasks. The model card confirms 34 evaluated languages,
-    a 32,768-token context and 4,096-dimension vectors that can be sliced to 2,048
-    or 1,024 and re-normalised, with weights open under OpenMDW-1.1 plus 1B BF16 and
-    1B NVFP4 checkpoints for cheaper serving. The ranking rests on a vendor snapshot
-    and other open-weight entrants have claimed the RTEB top spot too, so re-check
-    the board before quoting it.
+    RTEB multilingual board as of 16 July 2026, with a headline RTEB score of 78.5%
+    and 75.5% on MMTEB Retrieval. The model card confirms 34 evaluated languages,
+    a 32,768-token maximum sequence length and 4,096-dimension vectors that can be
+    sliced to 2,048 or 1,024 and re-normalised, with weights open under OpenMDW-1.1
+    plus 1B BF16 and 1B NVFP4 checkpoints for cheaper serving. The RTEB multilingual
+    board now lists 30 tasks over 22 languages and mixes open with closed datasets,
+    and the ranking rests on a vendor snapshot, so re-check the live table before
+    quoting it.
 caveats: 'The multilingual picture is contested, not split across incomparable boards:
   Microsoft reports Harrier-OSS-v1-27B at 74.3 averaged over the same 131 multilingual
   MTEB v2 tasks on which it cites the MMTEB leaderboard SOTA of 72.3 — the score Tencent''s

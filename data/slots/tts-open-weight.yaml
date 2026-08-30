@@ -20,20 +20,30 @@ pick:
     engine (~100ms to first audio on one H200).'
 caveats: 'Open-weight but not open-source: the Fish Audio Research License permits
   research and non-commercial use free of charge, and any commercial deployment needs
-  a separate licence from Fish Audio, which keeps Apache-licensed rivals relevant
-  for self-hosters. The downloadable weights are also a generation behind the hosted
-  product — S2.1 Pro arrived on 23 June 2026 as an API-only model, free under a fair-use
-  policy, with ~70ms time-to-first-audio and a 61% win rate over S2 Pro in Fish''s
-  own blind listening tests, and no S2.1 checkpoints have been published on the fishaudio
-  Hugging Face org. Budget for an H200-class GPU if you want the quoted streaming
-  numbers locally.'
+  a separate licence from Fish Audio, which keeps Apache-licensed rivals such as Step-Audio-EditX
+  relevant for self-hosters. The downloadable weights are also a generation behind
+  the hosted product — S2.1 Pro arrived on 23 June 2026 as an API-only model with
+  roughly 70ms time-to-first-audio and a claimed 61% win rate over S2 Pro, no S2.1
+  checkpoints have appeared on the fishaudio Hugging Face org, and the free s2.1-pro-free
+  tier has only been extended to 31 August 2026. Budget for an H200-class GPU if you
+  want the quoted 0.195 RTF and ~100ms first-audio figures locally.'
 challengers:
 - name: BreezeBlue Breeze TTS 2 Open Weights
-  note: 'Entered the Artificial Analysis TTS leaderboard at #5 (1,217 Elo), apparently
-    above the current pick — but licence, latency and hardware requirements are unverified.'
+  note: 'Now the #1 open-weights model on the Artificial Analysis provider-voice arena
+    at 1,220 Elo against 1,125 for the pick, with weights published on Hugging Face
+    on 25 August 2026. The inference code is Apache-2.0, but the weights, derivatives
+    and self-hosted outputs fall under the BreezeBlue Research and Non-Commercial
+    Licence, so commercial deployment needs written authorisation from RESONIA — the
+    same blocker as the pick. It is English and Chinese only, and BreezeBlue quotes
+    under 40ms time-to-first-audio on an H100 with roughly 7.7GiB for eager inference
+    (12GB GPU minimum, 24GB for the fast path).'
 - name: Step-Audio-EditX
-  note: Apache-2.0, 13 Elo behind on the same arena, runs on a single 12-16GB GPU
-    — the pick if commercial licensing is a hard requirement.
+  note: Apache-2.0 across code and weights, and 24 Elo behind the pick on the same
+    Artificial Analysis arena (1,101 against 1,125). It runs on a single NVIDIA GPU
+    with 12GB VRAM, 16GB recommended, with AWQ 4-bit checkpoints for tighter budgets.
+    It remains the pick if commercial licensing is a hard requirement, since both
+    Fish Audio S2 Pro and Breeze TTS 2 gate their weights behind non-commercial research
+    licences.
 history:
 - name: Bark
   from: 2023-08-01

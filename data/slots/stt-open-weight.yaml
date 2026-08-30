@@ -14,14 +14,14 @@ pick:
   version: ''
   url: https://huggingface.co/Audio8/ARK-ASR-3B
   licence: Apache-2.0
-  why: The case is a package, not a single number. ARK-ASR-3B currently heads the
-    Open ASR Leaderboard's public listing at 4.76 mean WER with an RTFx of 490.98,
-    ahead of MOSS-Transcribe-preview-2B on 4.87, MOSS-Transcribe-Diarize on 5.17 and
-    Cohere Transcribe on 5.42, and the entry is board-published with per-dataset results
-    filed in the repo and dated 23 June 2026. The 5.04% on the card is the seven-set
-    average that omits TEDLIUM; add TEDLIUM's 2.79% and you get the board figure.
-    It is also the only model near the top pairing Apache-2.0 with 19-language coverage,
-    the MOSS pair being English-only.
+  why: 'ARK-ASR-3B heads the Open ASR Leaderboard''s public listing at 4.76 mean WER
+    with an RTFx of 490.98, ahead of MOSS-Transcribe-preview-2B on 4.87, MOSS-Transcribe-Diarize
+    on 5.17 and Cohere Transcribe on 5.42, with per-dataset results filed in the repo
+    and dated 23 June 2026. The 5.04% on the card is the seven-set average that omits
+    TEDLIUM; add TEDLIUM''s 2.79% and you get the board figure. It ships Apache-2.0
+    with 19 languages, but that is not what separates it from MOSS: only the preview-2B
+    is English-only, while MOSS-Transcribe-Diarize is also Apache-2.0 and covers 50+
+    languages, so ARK''s edge there is accuracy rather than licence or reach.'
 caveats: 'NVIDIA''s Parakeet-TDT-0.6B-v3 is still the sensible choice where throughput
   decides the invoice — 25 European languages, automatic language detection and a
   6.34% average WER, so you are trading roughly 1.5 WER points for the speed — but
@@ -32,10 +32,12 @@ caveats: 'NVIDIA''s Parakeet-TDT-0.6B-v3 is still the sensible choice where thro
   leaderboard scorer, lands at 5.13% WER and an overall RTFx of 197.'
 challengers:
 - name: bosonai/Orze-ASR-3Way
-  note: No entry for this model appears in the Open ASR Leaderboard listing, which
-    is currently headed by ARK-ASR-3B at 4.76 mean WER, so the circulating 3.81 figure
-    cannot be a board result. Treat it as unverified until a leaderboard entry or
-    a model card exists; licence, throughput and language coverage are unknown too.
+  note: Boson AI has now published a bosonai/Orze-ASR-3Way repo, so there is a card
+    to read, but no entry for the model appears in the Open ASR Leaderboard listing,
+    which ARK-ASR-3B still heads at 4.76 mean WER. The circulating 3.81 therefore
+    is not a board result, and until it is scored with the leaderboard's own harness
+    it stays unverified. Check the card directly for licence, throughput and language
+    coverage before planning around it.
 - name: MOSS-Transcribe-preview-2B
   note: 4.87% WER and Apache-2.0, but English-only and RL-tuned on the leaderboard's
     training splits — leaderboard-fitted.

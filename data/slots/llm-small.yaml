@@ -15,17 +15,20 @@ pick:
   licence: Apache-2.0
   why: 'A 25.2B-total MoE with only 3.8B active parameters, so it decodes at small-model
     speed, and Google''s quantisation-aware training keeps 4-bit quality close to
-    bfloat16. The Q4_0 GGUF weighs 14.6GB, so it loads on a 16GB machine but leaves
-    only about a gigabyte for KV cache — plan for modest context, not the full 256K.
-    The pick is about deployability: official Q4_0 QAT builds, native function calling
-    and image input, rather than raw benchmark score.'
-caveats: 'Qwen3.6 27B (Reasoning) is the quality leader here — 38 on Artificial Analysis''s
-  Intelligence Index, Apache-2.0, 262k context — but it is a 27.8B dense model whose
-  4-bit GGUFs land between 15.4GB and 16.8GB, which is past what a 16GB machine can
-  usefully host. The pick''s official Q4_0 QAT GGUF is 14.4GB, and that gap is the
-  whole argument for it: it is the only one of the three that loads with anything
-  left for KV cache. This title is under active review, chiefly because Meta''s Muse
-  Glimmer 30B now outscores the pick on the same index.'
+    bfloat16 — take the QAT int4 GGUF at 14.2GB rather than a naive Q4_0 conversion,
+    which Unsloth measured at 70.2% top-1 against 85.6% for their dynamic build. At
+    around 15GB of total memory it loads on a 16GB machine but leaves little room
+    for KV cache, so plan for modest context rather than the full 256K. The pick is
+    about deployability: Apache-2.0 weights, QAT builds sized for laptops, native
+    function calling and image input, rather than raw benchmark score.'
+caveats: Qwen3.8 27B is now the quality leader in this size class — 52 on Artificial
+  Analysis's Intelligence Index at xhigh effort against this pick's 26 — but there
+  is still no official quantised release with published file sizes, so its 16GB fit
+  is unproven; Qwen3.6 27B (38, Apache-2.0, 262k, 27.8B dense) sits behind it and
+  is likewise too heavy at 4-bit for a 16GB machine. The pick's QAT int4 GGUF is 14.2GB
+  and wants roughly 15GB of total memory, and that gap is the whole argument for it.
+  This title is under active review chiefly because Qwen3.8 27B has pushed the ceiling
+  so far above the pick that a verified quantised build would likely take the slot.
 challengers:
 - name: Qwen3.8-Flash-Next
   note: New Qwen release trending on Hugging Face with community GGUFs already available
@@ -38,12 +41,12 @@ challengers:
     release with published file sizes, so the 16GB fit and tool-calling at 4-bit remain
     unverified.
 - name: Muse Glimmer 30B
-  note: Meta's agent-focused 30B dense model, Apache-2.0, independently scored 35
-    on the AA Intelligence Index — comfortably ahead of this pick's 26, though still
-    a little behind Qwen3.6 27B. Meta's own agentic numbers are vendor-run and framed
-    against Gemma's dense 31B sibling and Qwen3.6 rather than this MoE pick, so read
-    them with the usual caution. Capability is plainly rising; the unanswered question
-    for this slot is whether a dense 30B ever lands in 16GB with usable context.
+  note: 'Meta''s agent-focused 30B dense model, Apache-2.0, independently scored 35
+    on the AA Intelligence Index — comfortably ahead of this pick''s 26, though still
+    behind Qwen3.6 27B at 38. Meta''s own agentic numbers are vendor-run and framed
+    against Gemma 4 31B and Qwen3.6 rather than this MoE pick, so read them with the
+    usual caution. For this slot the size question is already settled: Meta''s official
+    4-bit build is sized for 24–32GB of VRAM, so it is not a 16GB candidate today.'
 history:
 - name: Llama 2 13B Chat
   from: 2023-08-01
