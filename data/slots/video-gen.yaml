@@ -71,7 +71,7 @@ history:
 - name: Seedance 2.0
   from: 2026-02-12
   to: 2026-06-30
-last_reviewed: 2026-08-29
+last_reviewed: 2026-08-30
 watch:
   keywords:
   - video generation
