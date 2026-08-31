@@ -26,6 +26,10 @@ caveats: Licence requires attribution above 100M MAU or $20M/month revenue, and 
   separate agreement for large model-as-a-service businesses. The hosted API shipped
   16 July — the reign is dated from the weights landing on 27 July.
 challengers:
+- name: DeepSeek-V4-Flash-Vision-Exp
+  note: MIT-licensed V4-family weights trending on Hugging Face from 31 August with
+    fp8/8-bit variants and native vision, but an explicitly experimental Flash-class
+    checkpoint with no independent benchmark against K3 yet.
 - name: GLM-5.3
   note: Full weights now public on Hugging Face (25–28 August, licence tagged 'other',
     not MIT); matches K3 at 60 on the AA Intelligence Index but no independent result
@@ -35,14 +39,6 @@ challengers:
   note: MIT-licensed weights on Hugging Face from 25 August with Unsloth GGUFs the
     next day, but it is a Flash-class checkpoint and no independent benchmark score
     against K3 has appeared yet.
-- name: Qwen3.8-2.4T-A95B
-  note: 'Weights landed on 12 August: 2.4T total, 95B active, with a 262K native context
-    extensible to roughly 1M, and leaner to serve than K3. Be careful with both the
-    openness and the score — the released checkpoint is text-only, with vision and
-    the 1M default kept behind the hosted Qwen3.8-Max API, and Artificial Analysis''s
-    58 is measured on that hosted API rather than on the downloadable weights. With
-    GLM-5.3''s weights now public at 60, it sits third among open weights on that
-    board, not second.'
 history:
 - name: Llama 2 70B Chat
   from: 2023-08-01
@@ -77,7 +73,7 @@ history:
 - name: GLM-5.2
   from: 2026-06-16
   to: 2026-07-27
-last_reviewed: 2026-08-30
+last_reviewed: 2026-08-31
 watch:
   keywords:
   - open weight
