@@ -1,0 +1,48 @@
+slot: inference-serving
+category: retrieval-tooling
+title: Best inference serving
+question: What is the best way to serve open-weight LLMs in production right now?
+criteria:
+- throughput benchmarks
+- day-0 model support
+- ecosystem
+- operational maturity
+provisional: false
+since: 2023-06-20
+pick:
+  name: vLLM
+  version: ''
+  url: https://github.com/vllm-project/vllm
+  licence: Apache-2.0
+  why: The like-for-like Spheron runs on Llama 3.3 70B FP8 on a single H100 (three-engine,
+    March 2026; two-engine, June 2026) put SGLang between about 1% and 5% ahead of
+    vLLM on unique-prompt traffic, which is inside run-to-run noise. Both used vLLM
+    v0.18.0 on the legacy model runner, before Model Runner V2 became the default
+    for all dense models in v0.25.0 on 11 July 2026, so neither reflects what ships
+    by default today. Pick vLLM for breadth, hardware coverage and release discipline
+    rather than for any current throughput number.
+caveats: 'Less of a two-horse race than it looks: TensorRT-LLM led the same March
+  2026 Spheron H100 70B run by 8-13% at 1-50 concurrent requests and about 16% at
+  100, once its engine was compiled. SGLang''s edge is prefix-driven rather than general
+  — roughly 29% higher throughput on 8B-class ShareGPT-style traffic, and 37% lower
+  TTFT p50 at 50 concurrent requests on a 70B workload with an 80% shared prefix —
+  but turning on vLLM''s --enable-prefix-caching narrows that TTFT gap to about 15-18%
+  for a plain shared system prompt. Measure your own prefix overlap before committing,
+  and re-run on current releases: those runs used vLLM v0.18.0 on the legacy model
+  runner, before Model Runner V2 became the default for dense models in v0.25.0.'
+challengers:
+- name: SGLang
+  note: Near-parity overall and faster on agentic/structured workloads, with major
+    production adoption (xAI, AMD, LinkedIn, Cursor).
+history: []
+last_reviewed: 2026-09-01
+watch:
+  keywords:
+  - inference server
+  - vllm
+  - sglang
+  - tensorrt-llm
+  - serving
+  - llm deployment
+short: Inference
+rank: 2

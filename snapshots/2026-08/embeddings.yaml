@@ -1,0 +1,78 @@
+slot: embeddings
+category: retrieval-tooling
+title: Best text embeddings
+question: What is the best text embedding model right now?
+criteria:
+- RTEB / MTEB retrieval benchmarks
+- dimension/cost trade-off
+- multilingual coverage
+provisional: false
+since: 2026-07-16
+pick:
+  name: Nemotron-3-Embed-8B
+  version: ''
+  url: https://huggingface.co/nvidia/Nemotron-3-Embed-8B-BF16
+  licence: OpenMDW-1.1
+  why: NVIDIA's launch materials put Nemotron-3-Embed-8B-BF16 at number one on the
+    RTEB multilingual board as of 16 July 2026, with a headline RTEB score of 78.5%
+    and 75.5% on MMTEB Retrieval. The model card confirms 34 evaluated languages,
+    a 32,768-token maximum sequence length and 4,096-dimension vectors that can be
+    sliced to 2,048 or 1,024 and re-normalised, with weights open under OpenMDW-1.1
+    plus 1B BF16 and 1B NVFP4 checkpoints for cheaper serving. The RTEB multilingual
+    board now lists 30 tasks over 22 languages and mixes open with closed datasets,
+    and the ranking rests on a vendor snapshot, so re-check the live table before
+    quoting it.
+caveats: 'The multilingual picture is contested, not split across incomparable boards:
+  Microsoft reports Harrier-OSS-v1-27B at 74.3 averaged over the same 131 multilingual
+  MTEB v2 tasks on which it cites the MMTEB leaderboard SOTA of 72.3 — the score Tencent''s
+  KaLM-Embedding-Gemma3-12B-2511 holds at 72.32 — and puts Harrier top on Borda count.
+  That ranking is a vendor snapshot taken in March/April 2026 and can move as submissions
+  land, so check the live table before repeating it. Either way, MMTEB task-mean and
+  our pick''s RTEB NDCG@10 answer different questions: one aggregates all task types,
+  the other is retrieval only.'
+challengers:
+- name: Gemini Embedding 2
+  note: Google's Gemini Embedding 2 is natively multimodal, mapping text, images,
+    video, audio and documents into one vector space; it went to public preview on
+    10 March 2026 and reached general availability on 22 April 2026 through the Gemini
+    API, Vertex AI and the Gemini Enterprise Agent Platform. Output defaults to 3,072
+    dimensions and is Matryoshka-truncatable from 128 up, with 768, 1,536 and 3,072
+    the recommended sizes, over an 8,192-token context, at list pricing of about $0.20
+    per million text tokens. It remains API-only, so it is not an option if you need
+    weights you can host yourself.
+history:
+- name: OpenAI text-embedding-ada-002
+  from: 2023-08-01
+  to: 2023-09-12
+- name: bge-large-en-v1.5
+  from: 2023-09-12
+  to: 2024-01-25
+- name: OpenAI text-embedding-3-large
+  from: 2024-01-25
+  to: 2024-09-18
+- name: voyage-3
+  from: 2024-09-18
+  to: 2025-01-07
+- name: voyage-3-large
+  from: 2025-01-07
+  to: 2025-07-14
+- name: gemini-embedding-001
+  from: 2025-07-14
+  to: 2026-01-15
+- name: voyage-4-large
+  from: 2026-01-15
+  to: 2026-07-16
+last_reviewed: 2026-09-01
+watch:
+  keywords:
+  - embedding
+  - embeddings
+  - mteb
+  - rteb
+  - retrieval
+  - reranker
+  - vector search
+  - nemotron
+  - voyage
+short: Embeddings
+rank: 1

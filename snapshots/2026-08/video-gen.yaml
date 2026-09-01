@@ -1,0 +1,96 @@
+slot: video-gen
+category: image-video
+title: Best video generation
+question: What is the best AI video generation model right now?
+criteria:
+- visual quality
+- character consistency
+- native audio
+- clip length
+provisional: false
+since: 2026-06-30
+pick:
+  name: Gemini Omni Flash
+  version: ''
+  url: https://deepmind.google/models/gemini-omni/
+  licence: proprietary
+  why: 'Still the top line on arena.ai''s Text-to-Video Arena, though it now appears
+    as two entries: the newer gemini-omni-1.1-flash build leads on 1,515 with the
+    original Omni Flash second on 1,512 and Black Forest Labs'' FLUX 3 Video third
+    on a preliminary 1,495. On Artificial Analysis it leads the no-audio text-to-video
+    board on 1,324, twenty-three points clear of MiniMax H3 on 1,301, but audio is
+    the soft spot: Alibaba''s Wan 3.0 is first on the with-audio table on 1,241 to
+    the pick''s 1,237. The differentiator remains conversational multi-turn editing
+    through the Interactions API, where each change builds on the last while holding
+    character and scene consistency, with native synced audio on every clip.'
+caveats: 'A hold under real pressure: Wan 3.0 leads AA''s with-audio text-to-video
+  table on 1,241 to the pick''s 1,237, and on AA''s image-to-video board the pick
+  only leads without audio (1,365) — with audio it has slipped to fourth on 1,179,
+  behind fal''s Minimax H3 Max (1,202), Dreamina Seedance 2.0 720p (1,190) and MiniMax
+  H3 (1,185). Clip length is the other limit: MiniMax H3 runs to 15 seconds at 2K,
+  FLUX 3 Video to 20 seconds in HD or FHD with native audio, and Seedance 2.5 does
+  30 seconds in a single pass. Seedance 2.5 still carries no score on either AA board,
+  though it has now entered arena.ai''s Text-to-Video Arena fifth on 1,476, below
+  the pick.'
+challengers:
+- name: Alibaba Wan 3.0
+  note: 'Now first on Artificial Analysis''s text-to-video board on 1247 to Gemini
+    Omni Flash''s 1239, widening its lead from four points to eight, with MiniMax
+    H3 Open Weights third (1228) and Dreamina Seedance 2.0 720p fourth (1221). Still
+    a single sub-board result: the pick leads AA''s no-audio text-to-video and its
+    image-to-video board without audio, and there is no independent read on Wan''s
+    clip length or character consistency.'
+- name: Fal MiniMax H3 Max (post-trained by fal)
+  note: Third on AA's with-audio text-to-video board on 1,235, two points behind the
+    pick (1,237) and six behind Wan 3.0 (1,241), with a ranked range of 1-4 — a statistical
+    tie at the top rather than a lead. It has gone one better on image-to-video, where
+    it now leads AA's with-audio board on 1,202, ahead of Dreamina Seedance 2.0 720p
+    (1,190), MiniMax H3 (1,185) and the pick (1,179). Still no independent read on
+    clip length or character consistency.
+- name: MiniMax H3 (Hailuo 3.0)
+  note: Second to the pick on AA's no-audio text-to-video board on 1,301 and now fourth
+    with audio on 1,227, yet still AA's top open-weights model on both, with 15-second
+    2K clips and weights on Hugging Face — rare at this rank. On image-to-video it
+    is second without audio (1,347 to the pick's 1,365) and third with audio (1,185),
+    behind fal's post-trained Minimax H3 Max (1,202) and Dreamina Seedance 2.0 720p
+    (1,190). The open release is the 768p base, with the 2K regeneration stage held
+    back, and the community licence's excluded territories are the EU, UK, US and
+    South Korea, though MiniMax runs an application form for those regions.
+history:
+- name: Runway Gen-2
+  from: 2023-06-07
+  to: 2024-06-17
+- name: Runway Gen-3 Alpha
+  from: 2024-06-17
+  to: 2024-12-16
+- name: Veo 2
+  from: 2024-12-16
+  to: 2025-04-15
+- name: Kling 2.0
+  from: 2025-04-15
+  to: 2025-05-20
+- name: Veo 3
+  from: 2025-05-20
+  to: 2025-09-30
+- name: Sora 2
+  from: 2025-09-30
+  to: 2026-02-12
+- name: Seedance 2.0
+  from: 2026-02-12
+  to: 2026-06-30
+last_reviewed: 2026-09-01
+watch:
+  keywords:
+  - video generation
+  - text-to-video
+  - image-to-video
+  - sora
+  - veo
+  - gemini omni
+  - seedance
+  - hailuo
+  - minimax
+  - kling
+  - wan
+short: Video
+rank: 2

@@ -1,0 +1,89 @@
+slot: llm-open-weight
+category: language-models
+title: Best open-weight LLM
+question: What is the best open-weight large language model right now?
+criteria:
+- benchmark quality
+- serving cost
+- licence
+- weights actually released
+provisional: false
+since: 2026-07-27
+pick:
+  name: Kimi K3
+  version: ''
+  url: https://huggingface.co/moonshotai/Kimi-K3
+  licence: Kimi K3 License (custom)
+  why: A 2.8T-parameter MoE (104B active, 1M-token context, native vision) whose weights
+    landed on Hugging Face on 27 July under Moonshot's own licence, and Artificial
+    Analysis still scores it 60 on the Intelligence Index — two ahead of Qwen3.8-2.4T-A95B
+    and the best score of anything you can actually download today. Z.ai's GLM-5.3
+    now matches that 60 on the same board, but its weights are held back by about
+    a fortnight, so K3 keeps the slot for the moment. It is enormous to self-host
+    and slow at roughly 37 tokens per second even on Moonshot's own API, though nothing
+    downloadable beats it on quality yet.
+caveats: Licence requires attribution above 100M MAU or $20M/month revenue, and a
+  separate agreement for large model-as-a-service businesses. The hosted API shipped
+  16 July — the reign is dated from the weights landing on 27 July.
+challengers:
+- name: DeepSeek-V4-Flash-Vision-Exp
+  note: MIT-licensed V4-family weights trending on Hugging Face from 31 August with
+    fp8/8-bit variants and native vision, but an explicitly experimental Flash-class
+    checkpoint with no independent benchmark against K3 yet.
+- name: GLM-5.3
+  note: Full weights now public on Hugging Face (25–28 August, licence tagged 'other',
+    not MIT); matches K3 at 60 on the AA Intelligence Index but no independent result
+    yet shows it ahead, and reported local serving needs 8x H200 or 10–12x H100 at
+    FP8.
+- name: GLM-5.3-Flash
+  note: MIT-licensed weights on Hugging Face from 25 August with Unsloth GGUFs the
+    next day, but it is a Flash-class checkpoint and no independent benchmark score
+    against K3 has appeared yet.
+history:
+- name: Llama 2 70B Chat
+  from: 2023-08-01
+  to: 2023-12-11
+- name: Mixtral 8x7B Instruct
+  from: 2023-12-11
+  to: 2024-04-18
+- name: Llama 3 70B Instruct
+  from: 2024-04-18
+  to: 2024-07-23
+- name: Llama 3.1 405B Instruct
+  from: 2024-07-23
+  to: 2024-12-26
+- name: DeepSeek-V3
+  from: 2024-12-26
+  to: 2025-01-20
+- name: DeepSeek-R1
+  from: 2025-01-20
+  to: 2025-07-11
+- name: Kimi K2 Instruct
+  from: 2025-07-11
+  to: 2025-11-06
+- name: Kimi K2 Thinking
+  from: 2025-11-06
+  to: 2026-02-11
+- name: GLM-5
+  from: 2026-02-11
+  to: 2026-04-22
+- name: DeepSeek-V4-Pro
+  from: 2026-04-22
+  to: 2026-06-16
+- name: GLM-5.2
+  from: 2026-06-16
+  to: 2026-07-27
+last_reviewed: 2026-09-01
+watch:
+  keywords:
+  - open weight
+  - open source llm
+  - kimi
+  - deepseek
+  - qwen
+  - llama
+  - mistral
+  - glm
+  - moonshot
+short: Open weight
+rank: 3

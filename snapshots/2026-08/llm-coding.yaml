@@ -1,0 +1,77 @@
+slot: llm-coding
+category: language-models
+title: Best LLM for coding
+question: What is the best large language model for coding right now?
+criteria:
+- agentic coding benchmarks
+- repo-scale task performance
+- tool-calling reliability
+provisional: false
+since: 2026-07-24
+pick:
+  name: Claude Opus 5
+  version: ''
+  url: https://www.anthropic.com/claude/opus
+  licence: proprietary
+  why: Tops vals.ai's independent SWE-bench Verified run at 97.0%, the best of 82
+    systems on that board, and sits second on their Terminal-Bench 2.1 table at 84.64%.
+    At $5/$25 per million tokens it is half the price of Claude Fable 5 ($10/$50)
+    for scores within a point or two across the coding suite. Tracker refreshes through
+    mid-August still name it the sensible default for repo-scale agentic work.
+caveats: 'Genuinely contested on terminal work: vals.ai puts GPT-5.6 Sol first on
+  Terminal-Bench 2.1 at 85.77% against Opus 5''s 84.64%, and Opus 5''s figure falls
+  to 81.27% if you count its server-side fallbacks to Opus 4.8 on refused tasks as
+  failures. The SWE-bench Verified lead is narrowing too — DeepSeek V4 Pro (0813)
+  now sits second at 96.40% against 97.0%, as an open-weight model at a fraction of
+  the cost per task.'
+challengers:
+- name: Claude Fable 5
+  note: 'Still tops the official Terminal-Bench 2.1 board at 83.8% with Claude Code,
+    ahead of Codex on GPT-5.5 at 83.1%. That run dates from 7 June and no top-five
+    entry post-dates Opus 5''s 24 July launch — Opus 5 has no submitted run on that
+    board at all, so its absence is a submission gap rather than a weaker score. Treat
+    the Anthropic terminal figures with care either way: Vals discloses that both
+    Fable 5''s and Opus 5''s runs on its harness used Opus 4.8 as a refusal fallback.'
+- name: GPT-5.6 Sol
+  note: Statistically level on independent measures — AA has it at 89.5 vs 89.1 on
+    Terminal-Bench, and joint-first with Opus 5 on the rebuilt AA Coding Index.
+- name: Kimi K3
+  note: Second on the Arena WebDev board at 1,674 — above GPT-5.6 Sol's 1,622 and
+    within 20 points of Opus 5 — as an open-weight model.
+history:
+- name: GPT-4
+  from: 2023-08-01
+  to: 2024-06-20
+- name: Claude 3.5 Sonnet
+  from: 2024-06-20
+  to: 2025-02-24
+- name: Claude 3.7 Sonnet
+  from: 2025-02-24
+  to: 2025-05-22
+- name: Claude Opus 4
+  from: 2025-05-22
+  to: 2025-09-29
+- name: Claude Sonnet 4.5
+  from: 2025-09-29
+  to: 2025-11-24
+- name: Claude Opus 4.5
+  from: 2025-11-24
+  to: 2026-02-05
+- name: Claude Opus 4.6
+  from: 2026-02-05
+  to: 2026-07-01
+- name: Claude Fable 5
+  from: 2026-07-01
+  to: 2026-07-24
+last_reviewed: 2026-09-01
+watch:
+  keywords:
+  - coding model
+  - code generation
+  - swe-bench
+  - terminal-bench
+  - agentic coding
+  - codex
+  - coding benchmark
+short: Coding
+rank: 2

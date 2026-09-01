@@ -1,0 +1,80 @@
+slot: stt-open-weight
+category: speech
+title: Best open-weight STT
+question: What is the best open-weight speech-to-text model right now?
+criteria:
+- WER on independent leaderboards
+- throughput
+- licence
+- language coverage
+provisional: false
+since: 2026-06-22
+pick:
+  name: ARK-ASR-3B
+  version: ''
+  url: https://huggingface.co/Audio8/ARK-ASR-3B
+  licence: Apache-2.0
+  why: 'ARK-ASR-3B heads the Open ASR Leaderboard''s public listing at 4.76 mean WER
+    with an RTFx of 490.98, ahead of MOSS-Transcribe-preview-2B on 4.87, MOSS-Transcribe-Diarize
+    on 5.17 and Cohere Transcribe on 5.42, with per-dataset results filed in the repo
+    and dated 23 June 2026. The 5.04% on the card is the seven-set average that omits
+    TEDLIUM; add TEDLIUM''s 2.79% and you get the board figure. It ships Apache-2.0
+    with 19 languages, but that is not what separates it from MOSS: only the preview-2B
+    is English-only, while MOSS-Transcribe-Diarize is also Apache-2.0 and covers 50+
+    languages, so ARK''s edge there is accuracy rather than licence or reach.'
+caveats: 'NVIDIA''s Parakeet-TDT-0.6B-v3 is still the sensible choice where throughput
+  decides the invoice — 25 European languages, automatic language detection and a
+  6.34% average WER, so you are trading roughly 1.5 WER points for the speed — but
+  note it ships under CC BY 4.0, not Apache-2.0. ARK''s headline is board-verified
+  rather than card-only: the leaderboard records 4.76 mean WER at RTFx 490.98, including
+  TEDLIUM at 2.79%. Do budget for less throughput headroom than that suggests, though:
+  AutoArk''s own rerun of the seven public splits on 8x RTX 4090, scored with the
+  leaderboard scorer, lands at 5.13% WER and an overall RTFx of 197.'
+challengers:
+- name: bosonai/Orze-ASR-3Way
+  note: Boson AI has now published a bosonai/Orze-ASR-3Way repo, so there is a card
+    to read, but no entry for the model appears in the Open ASR Leaderboard listing,
+    which ARK-ASR-3B still heads at 4.76 mean WER. The circulating 3.81 therefore
+    is not a board result, and until it is scored with the leaderboard's own harness
+    it stays unverified. Check the card directly for licence, throughput and language
+    coverage before planning around it.
+- name: MOSS-Transcribe-preview-2B
+  note: 4.87% WER and Apache-2.0, but English-only and RL-tuned on the leaderboard's
+    training splits — leaderboard-fitted.
+- name: MOSS-Transcribe-Diarize
+  note: The preview's production sibling at 0.9B — a claimed 5.17% mean WER on the
+    same evaluation, built-in diarisation, and the adoption its sibling never found,
+    at over 200k downloads.
+history:
+- name: Whisper large-v2
+  from: 2023-08-01
+  to: 2023-11-07
+- name: Whisper large-v3
+  from: 2023-11-07
+  to: 2024-02-07
+- name: Canary 1B
+  from: 2024-02-07
+  to: 2025-05-01
+- name: Parakeet TDT 0.6B v2
+  from: 2025-05-01
+  to: 2025-07-17
+- name: Canary Qwen 2.5B
+  from: 2025-07-17
+  to: 2026-04-29
+- name: Granite Speech 4.1 2B
+  from: 2026-04-29
+  to: 2026-06-22
+last_reviewed: 2026-09-01
+watch:
+  keywords:
+  - stt
+  - speech-to-text
+  - asr
+  - transcription
+  - whisper
+  - parakeet
+  - ark-asr
+  - moss
+  - voxtral
+short: Speech → text
+rank: 1

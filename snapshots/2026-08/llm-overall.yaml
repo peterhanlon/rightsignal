@@ -1,0 +1,94 @@
+slot: llm-overall
+category: language-models
+title: Best overall LLM
+question: What is the best large language model overall right now?
+criteria:
+- reasoning quality
+- multimodal capability
+- long-context reliability
+- independent benchmarks
+provisional: false
+since: 2026-07-01
+pick:
+  name: Claude Fable 5
+  version: ''
+  url: https://www.anthropic.com/claude/fable
+  licence: proprietary
+  why: Number one on the Arena (formerly LMArena) text leaderboard through the August
+    snapshots, with a 1M-token context window. It debuted on 9 June, was pulled on
+    12 June when the US applied export controls to it and Mythos 5, and returned on
+    1 July after the Commerce Department lifted them on 30 June. It also tops the
+    official Terminal-Bench 2.1 board at 83.8% with Claude Code at xhigh effort, just
+    ahead of GPT-5.5 on Codex at 83.1%.
+caveats: 'The Arena text board is tight at the top: Fable leads at roughly 1,525 with
+  Claude Opus 4.8, GPT-5.5 Pro and Gemini 3.1 Pro Preview clustered behind it, so
+  treat the lead as first-among-equals and read the exact tie band off the live board.
+  Artificial Analysis now ranks Claude Opus 5 (max and xhigh) first on its Intelligence
+  Index at 63 to Fable''s 62 — a one-point gap rather than a declared tie — at $2.34
+  per Index task against Fable''s $3.14. On terminal work Fable still holds first
+  place on the official Terminal-Bench 2.1 board at 83.8% with Claude Code at xhigh,
+  a board Opus 5 has yet to appear on at all.'
+challengers:
+- name: Claude Opus 5
+  note: Vellum publishes per-benchmark charts rather than a composite, and the 64.7
+    is its Humanity's Last Exam board, which Opus 5 tops ahead of Mythos 5 on 64.5;
+    Fable 5 is missing from that chart alone, since Vellum scores it elsewhere at
+    95% on SWE-Bench and first on OSWorld at 85%. The stronger argument is Artificial
+    Analysis, where Opus 5 (max) takes the Intelligence Index at 63 to Fable's 62
+    for $5/$25 against $10/$50, and 26% less per Index task. That is the best case
+    yet for a change, but it is not enough while Fable holds the Arena text top spot
+    and first place on the official Terminal-Bench 2.1 board.
+- name: Muse Spark 1.2
+  note: 'Meta''s frontier line and a genuine name to watch, though its standing on
+    user-preference voting should be read off the live Arena board rather than asserted
+    here — Artificial Analysis puts Muse Spark 1.2 (xhigh) at 57 on the Intelligence
+    Index, five behind Fable''s 62. On agentic terminal work it is credible rather
+    than leading: Muse Spark 1.1 scores 76.2% on the official Terminal-Bench 2.1 board
+    with mini-SWE-agent, 7.6 points behind Fable 5, but at $198 a run against Fable''s
+    $553.'
+- name: Kimi K3
+  note: 'The open-weight titleholder crossing over: 60 on the Artificial Analysis
+    Intelligence Index, two behind Fable, at $0.84 per Index task against Fable''s
+    $3.14. It has already taken first place on Arena''s frontend code board, though
+    its text Arena rating should be checked live rather than quoted. The closest any
+    open model gets to the overall crown on either axis.'
+history:
+- name: GPT-4
+  from: 2023-08-01
+  to: 2024-03-26
+- name: Claude 3 Opus
+  from: 2024-03-26
+  to: 2024-05-13
+- name: GPT-4o
+  from: 2024-05-13
+  to: 2024-12-06
+- name: Gemini-Exp-1206
+  from: 2024-12-06
+  to: 2025-03-25
+- name: Gemini 2.5 Pro
+  from: 2025-03-25
+  to: 2025-08-07
+- name: GPT-5
+  from: 2025-08-07
+  to: 2025-11-18
+- name: Gemini 3 Pro
+  from: 2025-11-18
+  to: 2026-02-05
+- name: Claude Opus 4.6
+  from: 2026-02-05
+  to: 2026-07-01
+last_reviewed: 2026-09-01
+watch:
+  keywords:
+  - llm
+  - language model
+  - frontier model
+  - reasoning benchmark
+  - lmarena
+  - gpt
+  - claude
+  - fable
+  - gemini
+  - grok
+short: Overall LLM
+rank: 1
