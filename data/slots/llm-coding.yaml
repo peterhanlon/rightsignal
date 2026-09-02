@@ -25,6 +25,10 @@ caveats: 'Genuinely contested on terminal work: vals.ai puts GPT-5.6 Sol first o
   now sits second at 96.40% against 97.0%, as an open-weight model at a fraction of
   the cost per task.'
 challengers:
+- name: Qwen3.8-Max-0902
+  note: 'New #1 on Arena WebDev at 1,691, four points above claude-opus-5-max (1,687)
+    — a tie in practice, and a human-preference web board rather than an agentic or
+    repo-scale measure. No independent SWE-bench or Terminal-Bench run yet.'
 - name: Claude Fable 5
   note: 'Still tops the official Terminal-Bench 2.1 board at 83.8% with Claude Code,
     ahead of Codex on GPT-5.5 at 83.1%. That run dates from 7 June and no top-five
@@ -35,9 +39,6 @@ challengers:
 - name: GPT-5.6 Sol
   note: Statistically level on independent measures — AA has it at 89.5 vs 89.1 on
     Terminal-Bench, and joint-first with Opus 5 on the rebuilt AA Coding Index.
-- name: Kimi K3
-  note: Second on the Arena WebDev board at 1,674 — above GPT-5.6 Sol's 1,622 and
-    within 20 points of Opus 5 — as an open-weight model.
 history:
 - name: GPT-4
   from: 2023-08-01
@@ -63,7 +64,7 @@ history:
 - name: Claude Fable 5
   from: 2026-07-01
   to: 2026-07-24
-last_reviewed: 2026-09-01
+last_reviewed: 2026-09-02
 watch:
   keywords:
   - coding model

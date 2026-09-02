@@ -30,16 +30,17 @@ caveats: Qwen3.8 27B is now the quality leader in this size class — 52 on Arti
   This title is under active review chiefly because Qwen3.8 27B has pushed the ceiling
   so far above the pick that a verified quantised build would likely take the slot.
 challengers:
+- name: Qwen3.8 27B
+  note: Still the quality leader by a wide margin (52/44/43 across efforts on AA's
+    small open-source board against this pick's 26), and community mixed-precision
+    GGUFs from ISTA-DASLab are now trending — but with no published file sizes and
+    no independent quality-retention or tool-calling numbers at 4-bit, the 16GB fit
+    remains unverified.
 - name: Qwen3.8-Flash-Next
   note: New Qwen release trending on Hugging Face with community GGUFs already available
     two days after launch, and multimodal like the pick — but no independent benchmark
     placement yet, no published quantised file sizes to test the 16GB fit, and the
     card lists its licence only as "other".
-- name: Qwen3.8 27B
-  note: Now holds the top three slots on AA's small open-source board (52/44/43 across
-    reasoning efforts) against this pick's 26 — but there is still no official quantised
-    release with published file sizes, so the 16GB fit and tool-calling at 4-bit remain
-    unverified.
 - name: Muse Glimmer 30B
   note: 'Meta''s agent-focused 30B dense model, Apache-2.0, independently scored 35
     on the AA Intelligence Index — comfortably ahead of this pick''s 26, though still
@@ -75,7 +76,7 @@ history:
 - name: Qwen3.5-9B
   from: 2026-03-02
   to: 2026-04-02
-last_reviewed: 2026-09-01
+last_reviewed: 2026-09-02
 watch:
   keywords:
   - small model
