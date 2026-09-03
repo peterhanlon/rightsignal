@@ -76,7 +76,7 @@ history:
 - name: Qwen3.5-9B
   from: 2026-03-02
   to: 2026-04-02
-last_reviewed: 2026-09-02
+last_reviewed: 2026-09-03
 watch:
   keywords:
   - small model

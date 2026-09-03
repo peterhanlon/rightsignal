@@ -34,12 +34,12 @@ caveats: 'A hold under real pressure: Wan 3.0 leads AA''s with-audio text-to-vid
   the pick.'
 challengers:
 - name: Alibaba Wan 3.0
-  note: 'Now first on Artificial Analysis''s text-to-video board on 1247 to Gemini
-    Omni Flash''s 1239, widening its lead from four points to eight, with MiniMax
-    H3 Open Weights third (1228) and Dreamina Seedance 2.0 720p fourth (1221). Still
-    a single sub-board result: the pick leads AA''s no-audio text-to-video and its
-    image-to-video board without audio, and there is no independent read on Wan''s
-    clip length or character consistency.'
+  note: 'Still listed first on Artificial Analysis''s text-to-video board, but the
+    margin has gone: it is now level with Gemini Omni Flash on 1,238 apiece, down
+    from a 1,247-to-1,239 lead on 20 August, with Fal Minimax H3 Max third (1,235),
+    MiniMax H3 Open Weights fourth (1,227) and Dreamina Seedance 2.0 720p fifth (1,221).
+    One tied sub-board result, and still no independent read on Wan''s clip length
+    or character consistency.'
 - name: Fal MiniMax H3 Max (post-trained by fal)
   note: Third on AA's with-audio text-to-video board on 1,235, two points behind the
     pick (1,237) and six behind Wan 3.0 (1,241), with a ranked range of 1-4 — a statistical
@@ -78,7 +78,7 @@ history:
 - name: Seedance 2.0
   from: 2026-02-12
   to: 2026-06-30
-last_reviewed: 2026-09-02
+last_reviewed: 2026-09-03
 watch:
   keywords:
   - video generation
