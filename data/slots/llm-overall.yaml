@@ -29,6 +29,11 @@ caveats: 'The Arena text board is tight at the top: Fable leads at roughly 1,525
   place on the official Terminal-Bench 2.1 board at 83.8% with Claude Code at xhigh,
   a board Opus 5 has yet to appear on at all.'
 challengers:
+- name: GPT-6 Astra
+  note: Reported to have raised Epoch AI's Capability Index record from 163 to 169,
+    but the claim reaches us via social posts rather than the Epoch board, and there
+    is no Arena, Terminal-Bench 2.1 or Artificial Analysis placement yet — access
+    may not even be public.
 - name: Claude Opus 5
   note: Vellum publishes per-benchmark charts rather than a composite, and the 64.7
     is its Humanity's Last Exam board, which Opus 5 tops ahead of Mythos 5 on 64.5;
@@ -46,12 +51,6 @@ challengers:
     than leading: Muse Spark 1.1 scores 76.2% on the official Terminal-Bench 2.1 board
     with mini-SWE-agent, 7.6 points behind Fable 5, but at $198 a run against Fable''s
     $553.'
-- name: Kimi K3
-  note: 'The open-weight titleholder crossing over: 60 on the Artificial Analysis
-    Intelligence Index, two behind Fable, at $0.84 per Index task against Fable''s
-    $3.14. It has already taken first place on Arena''s frontend code board, though
-    its text Arena rating should be checked live rather than quoted. The closest any
-    open model gets to the overall crown on either axis.'
 history:
 - name: GPT-4
   from: 2023-08-01
@@ -77,7 +76,7 @@ history:
 - name: Claude Opus 4.6
   from: 2026-02-05
   to: 2026-07-01
-last_reviewed: 2026-09-03
+last_reviewed: 2026-09-04
 watch:
   keywords:
   - llm
