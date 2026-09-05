@@ -30,10 +30,10 @@ caveats: 'The Arena text board is tight at the top: Fable leads at roughly 1,525
   a board Opus 5 has yet to appear on at all.'
 challengers:
 - name: GPT-6 Astra
-  note: Reported to have raised Epoch AI's Capability Index record from 163 to 169,
-    but the claim reaches us via social posts rather than the Epoch board, and there
-    is no Arena, Terminal-Bench 2.1 or Artificial Analysis placement yet — access
-    may not even be public.
+  note: Now formally launched by OpenAI (3 Sep 2026), which claims state-of-the-art
+    computer use, coding, cybersecurity and science — but the only evidence so far
+    is the vendor's own post, with no Arena, Artificial Analysis or Terminal-Bench
+    2.1 placement yet.
 - name: Claude Opus 5
   note: Vellum publishes per-benchmark charts rather than a composite, and the 64.7
     is its Humanity's Last Exam board, which Opus 5 tops ahead of Mythos 5 on 64.5;
@@ -76,7 +76,7 @@ history:
 - name: Claude Opus 4.6
   from: 2026-02-05
   to: 2026-07-01
-last_reviewed: 2026-09-04
+last_reviewed: 2026-09-05
 watch:
   keywords:
   - llm

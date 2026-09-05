@@ -31,11 +31,11 @@ caveats: Qwen3.8 27B is now the quality leader in this size class — 52 on Arti
   so far above the pick that a verified quantised build would likely take the slot.
 challengers:
 - name: Qwen3.8 27B
-  note: Still the quality leader by a wide margin (52/44/43 across efforts on AA's
-    small open-source board against this pick's 26), and community mixed-precision
-    GGUFs from ISTA-DASLab are now trending — but with no published file sizes and
-    no independent quality-retention or tool-calling numbers at 4-bit, the 16GB fit
-    remains unverified.
+  note: Still the quality leader in this size class, though Artificial Analysis's
+    re-scored board now puts it at 41/35/34 across xhigh/medium/low (down from 52/44/43
+    in August) against this pick's 26, with its non-reasoning mode level at 26. Still
+    no official quantised release with published file sizes, and no independent 4-bit
+    quality-retention or tool-calling numbers, so the 16GB fit remains unverified.
 - name: Qwen3.8-Flash-Next
   note: New Qwen release trending on Hugging Face with community GGUFs already available
     two days after launch, and multimodal like the pick — but no independent benchmark
@@ -76,7 +76,7 @@ history:
 - name: Qwen3.5-9B
   from: 2026-03-02
   to: 2026-04-02
-last_reviewed: 2026-09-04
+last_reviewed: 2026-09-05
 watch:
   keywords:
   - small model
