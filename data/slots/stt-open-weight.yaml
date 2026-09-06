@@ -31,6 +31,11 @@ caveats: 'NVIDIA''s Parakeet-TDT-0.6B-v3 is still the sensible choice where thro
   AutoArk''s own rerun of the seven public splits on 8x RTX 4090, scored with the
   leaderboard scorer, lands at 5.13% WER and an overall RTFx of 197.'
 challengers:
+- name: Qwen3.5 Omni Flash / Plus
+  note: 'Top two on the Artificial Analysis STT board as of 6 Sep 2026, but the listing
+    gives no licence, weight availability, throughput or language coverage, its percentages
+    do not read as a WER ordering (#1 at 13.5%, #5 at 3.1%), and neither variant appears
+    on the Open ASR Leaderboard where ARK-ASR-3B holds at 4.76.'
 - name: bosonai/Orze-ASR-3Way
   note: Boson AI has now published a bosonai/Orze-ASR-3Way repo, so there is a card
     to read, but no entry for the model appears in the Open ASR Leaderboard listing,
@@ -41,10 +46,6 @@ challengers:
 - name: MOSS-Transcribe-preview-2B
   note: 4.87% WER and Apache-2.0, but English-only and RL-tuned on the leaderboard's
     training splits — leaderboard-fitted.
-- name: MOSS-Transcribe-Diarize
-  note: The preview's production sibling at 0.9B — a claimed 5.17% mean WER on the
-    same evaluation, built-in diarisation, and the adoption its sibling never found,
-    at over 200k downloads.
 history:
 - name: Whisper large-v2
   from: 2023-08-01
@@ -64,7 +65,7 @@ history:
 - name: Granite Speech 4.1 2B
   from: 2026-04-29
   to: 2026-06-22
-last_reviewed: 2026-09-05
+last_reviewed: 2026-09-06
 watch:
   keywords:
   - stt

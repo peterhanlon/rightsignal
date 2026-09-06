@@ -25,6 +25,10 @@ caveats: 'Genuinely contested on terminal work: vals.ai puts GPT-5.6 Sol first o
   now sits second at 96.40% against 97.0%, as an open-weight model at a fraction of
   the cost per task.'
 challengers:
+- name: gpt-6-astra-max
+  note: 'New #1 on Arena WebDev at 1,797, 35 points clear of claude-fable-5.1-max
+    (1,762) and well ahead of claude-opus-5-max (1,688) — but a human-preference web
+    board, with no independent SWE-bench Verified or Terminal-Bench run yet.'
 - name: Claude Fable 5.1 Max
   note: 'New #1 on Arena WebDev at 1,765, a clear 77-point lead over qwen3.8-max-0902
     (1,688) and claude-opus-5-max (1,687) — but a human-preference web board, with
@@ -33,13 +37,6 @@ challengers:
   note: 'New #1 on Arena WebDev at 1,691, four points above claude-opus-5-max (1,687)
     — a tie in practice, and a human-preference web board rather than an agentic or
     repo-scale measure. No independent SWE-bench or Terminal-Bench run yet.'
-- name: Claude Fable 5
-  note: 'Still tops the official Terminal-Bench 2.1 board at 83.8% with Claude Code,
-    ahead of Codex on GPT-5.5 at 83.1%. That run dates from 7 June and no top-five
-    entry post-dates Opus 5''s 24 July launch — Opus 5 has no submitted run on that
-    board at all, so its absence is a submission gap rather than a weaker score. Treat
-    the Anthropic terminal figures with care either way: Vals discloses that both
-    Fable 5''s and Opus 5''s runs on its harness used Opus 4.8 as a refusal fallback.'
 history:
 - name: GPT-4
   from: 2023-08-01
@@ -65,7 +62,7 @@ history:
 - name: Claude Fable 5
   from: 2026-07-01
   to: 2026-07-24
-last_reviewed: 2026-09-05
+last_reviewed: 2026-09-06
 watch:
   keywords:
   - coding model
