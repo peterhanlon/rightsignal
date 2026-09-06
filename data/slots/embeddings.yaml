@@ -22,14 +22,14 @@ pick:
     board now lists 30 tasks over 22 languages and mixes open with closed datasets,
     and the ranking rests on a vendor snapshot, so re-check the live table before
     quoting it.
-caveats: 'The multilingual picture is contested, not split across incomparable boards:
-  Microsoft reports Harrier-OSS-v1-27B at 74.3 averaged over the same 131 multilingual
-  MTEB v2 tasks on which it cites the MMTEB leaderboard SOTA of 72.3 — the score Tencent''s
-  KaLM-Embedding-Gemma3-12B-2511 holds at 72.32 — and puts Harrier top on Borda count.
-  That ranking is a vendor snapshot taken in March/April 2026 and can move as submissions
-  land, so check the live table before repeating it. Either way, MMTEB task-mean and
-  our pick''s RTEB NDCG@10 answer different questions: one aggregates all task types,
-  the other is retrieval only.'
+caveats: 'Microsoft''s card for harrier-oss-v1-27b claims state-of-the-art on Multilingual
+  MTEB v2 at release, with a 74.3 average across a 94-language family (0.6b 69.0,
+  270m 66.5), but it gives no task count, no rival scores and no Borda ranking — so
+  treat any head-to-head against Tencent''s KaLM-Embedding-Gemma3-12B-2511 as unconfirmed
+  rather than settled. That card dates from late March 2026 and the model landed in
+  Foundry in April, so pull the live MTEB table before repeating either number. Either
+  way an MTEB v2 task mean and our pick''s RTEB NDCG@10 answer different questions:
+  one aggregates all task types, the other is retrieval only.'
 challengers:
 - name: Gemini Embedding 2
   note: Google's Gemini Embedding 2 is natively multimodal, mapping text, images,

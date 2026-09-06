@@ -15,20 +15,22 @@ pick:
   licence: Apache-2.0
   why: 'A 25.2B-total MoE with only 3.8B active parameters, so it decodes at small-model
     speed, and Google''s quantisation-aware training keeps 4-bit quality close to
-    bfloat16 — take the QAT int4 GGUF at 14.2GB rather than a naive Q4_0 conversion,
-    which Unsloth measured at 70.2% top-1 against 85.6% for their dynamic build. At
-    around 15GB of total memory it loads on a 16GB machine but leaves little room
-    for KV cache, so plan for modest context rather than the full 256K. The pick is
-    about deployability: Apache-2.0 weights, QAT builds sized for laptops, native
-    function calling and image input, rather than raw benchmark score.'
-caveats: Qwen3.8 27B is now the quality leader in this size class — 52 on Artificial
-  Analysis's Intelligence Index at xhigh effort against this pick's 26 — but there
+    bfloat16. Be specific about which file you pull: Unsloth measured a naive Q4_0
+    conversion of the QAT checkpoint at 70.2% top-1 against 85.6% for their dynamic
+    UD-Q4_K_XL build at 14.2GB, so prefer that over Google''s own 14.4GB q4_0 GGUF,
+    and budget the roughly 15GB of total memory it wants — it loads on a 16GB machine
+    but leaves little room for KV cache, so plan for modest context rather than the
+    full 256K. The pick is about deployability: Apache-2.0 weights, QAT builds sized
+    for laptops, native function calling and image input, rather than raw benchmark
+    score.'
+caveats: Qwen3.8 27B is still the quality leader in this size class — Artificial Analysis's
+  re-scored board now puts it at 41 at xhigh effort against this pick's 26 — but there
   is still no official quantised release with published file sizes, so its 16GB fit
-  is unproven; Qwen3.6 27B (38, Apache-2.0, 262k, 27.8B dense) sits behind it and
-  is likewise too heavy at 4-bit for a 16GB machine. The pick's QAT int4 GGUF is 14.2GB
-  and wants roughly 15GB of total memory, and that gap is the whole argument for it.
-  This title is under active review chiefly because Qwen3.8 27B has pushed the ceiling
-  so far above the pick that a verified quantised build would likely take the slot.
+  is unproven; Qwen3.6 27B (38, Apache-2.0, 262k) sits behind it and is likewise too
+  heavy at 4-bit for a 16GB machine. The pick's QAT int4 GGUF is 14.2GB in Unsloth's
+  dynamic build (14.4GB for Google's own q4_0) and wants roughly 15GB of total memory,
+  and that gap is the whole argument for it. The title stays under review because
+  a verified quantised Qwen3.8 build with published sizes would likely take the slot.
 challengers:
 - name: Qwen3.8-Flash-Next
   note: NVIDIA has now published an NVFP4 quantisation on Hugging Face, but it is

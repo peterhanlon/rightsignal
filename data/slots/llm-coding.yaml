@@ -18,25 +18,38 @@ pick:
     At $5/$25 per million tokens it is half the price of Claude Fable 5 ($10/$50)
     for scores within a point or two across the coding suite. Tracker refreshes through
     mid-August still name it the sensible default for repo-scale agentic work.
-caveats: 'Genuinely contested on terminal work: vals.ai puts GPT-5.6 Sol first on
-  Terminal-Bench 2.1 at 85.77% against Opus 5''s 84.64%, and Opus 5''s figure falls
-  to 81.27% if you count its server-side fallbacks to Opus 4.8 on refused tasks as
-  failures. The SWE-bench Verified lead is narrowing too — DeepSeek V4 Pro (0813)
-  now sits second at 96.40% against 97.0%, as an open-weight model at a fraction of
-  the cost per task.'
+caveats: 'vals.ai''s Terminal-Bench 2.1 table now has Opus 5 fourth at 84.64%, behind
+  GPT-6 Astra (87.27%), GPT-5.6 Sol (85.77%) and Claude Fable 5.1 (85.02%), and its
+  own figure drops to 81.27% if you count its server-side fallbacks to Opus 4.8 on
+  refused tasks as failures. The SWE-bench Verified lead is thin as well: DeepSeek
+  V4 Pro (0813) sits second at 96.40% against 97.00%, as an open-weight model costing
+  roughly $0.02 per task against $1.29 for Opus 5. Worth knowing that vals has since
+  dropped SWE-bench Verified from its coding index altogether, calling the benchmark
+  saturated, so lean on terminal and repo-scale evidence rather than that one number.'
 challengers:
 - name: gpt-6-astra-max
-  note: 'New #1 on Arena WebDev at 1,797, 35 points clear of claude-fable-5.1-max
-    (1,762) and well ahead of claude-opus-5-max (1,688) — but a human-preference web
-    board, with no independent SWE-bench Verified or Terminal-Bench run yet.'
+  note: 'Now #1 on Arena WebDev at 1,797, 35 points clear of claude-fable-5.1-max
+    (1,762) and well ahead of claude-opus-5-max (1,688), though on only about 1,199
+    votes so far. This is not just a human-preference result: vals.ai also has GPT-6
+    Astra top of Terminal-Bench 2.1 at 87.27%, ahead of GPT-5.6 Sol (85.77%) and Claude
+    Fable 5.1 (85.02%), and top of Code Migration. No independent SWE-bench Verified
+    run has appeared yet, and it is priced at $10/$50 against Opus 5''s $5/$25.'
 - name: Claude Fable 5.1 Max
-  note: 'New #1 on Arena WebDev at 1,765, a clear 77-point lead over qwen3.8-max-0902
-    (1,688) and claude-opus-5-max (1,687) — but a human-preference web board, with
-    no independent SWE-bench Verified or Terminal-Bench run yet.'
+  note: 'Now second on Arena WebDev at 1,762, passed by gpt-6-astra-max (1,797) and
+    still ahead of claude-opus-5-max (1,688). Independent numbers do exist: vals.ai
+    has Claude Fable 5.1 top of its Vals Index at 68.83% and third on Terminal-Bench
+    2.1 at 85.02%, though that drops to 79.03% once fallback-assisted tasks are scored
+    as failures — refusals on bio- and cyber-adjacent work remain a live operational
+    issue. No independent SWE-bench Verified figure yet, and it costs $10/$50 against
+    Opus 5''s $5/$25.'
 - name: Qwen3.8-Max-0902
-  note: 'New #1 on Arena WebDev at 1,691, four points above claude-opus-5-max (1,687)
-    — a tie in practice, and a human-preference web board rather than an agentic or
-    repo-scale measure. No independent SWE-bench or Terminal-Bench run yet.'
+  note: Now fourth on Arena WebDev at 1,686, a shade below claude-opus-5-max (1,688)
+    and well off gpt-6-astra-max's 1,797, with its score still flagged preliminary
+    on roughly 1,868 votes. Treat that as a tie with Opus 5 rather than a lead, and
+    remember it is a human-preference web board rather than an agentic or repo-scale
+    measure. No independent SWE-bench Verified or Terminal-Bench 2.1 run for this
+    checkpoint yet, though at $2/$6 it is the cheapest model anywhere near the top
+    of the board.
 history:
 - name: GPT-4
   from: 2023-08-01

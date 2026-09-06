@@ -23,13 +23,14 @@ pick:
     rather than for any current throughput number.
 caveats: 'Less of a two-horse race than it looks: TensorRT-LLM led the same March
   2026 Spheron H100 70B run by 8-13% at 1-50 concurrent requests and about 16% at
-  100, once its engine was compiled. SGLang''s edge is prefix-driven rather than general
-  — roughly 29% higher throughput on 8B-class ShareGPT-style traffic, and 37% lower
-  TTFT p50 at 50 concurrent requests on a 70B workload with an 80% shared prefix —
-  but turning on vLLM''s --enable-prefix-caching narrows that TTFT gap to about 15-18%
-  for a plain shared system prompt. Measure your own prefix overlap before committing,
-  and re-run on current releases: those runs used vLLM v0.18.0 on the legacy model
-  runner, before Model Runner V2 became the default for dense models in v0.25.0.'
+  100, once its engine was compiled. SGLang''s edge is prefix-driven rather than general:
+  on Spheron''s June 2026 run with an 80% shared 512-token prefix it cut TTFT p50
+  by 37% at 50 concurrent requests, while on unique prompts the two sat within 1-4%
+  of each other, and enabling vLLM''s --enable-prefix-caching narrowed the gap to
+  roughly 15-18% at 10 concurrent requests, with no APC-enabled figure published at
+  50. Measure your own prefix overlap before committing, and re-run on current releases:
+  those runs used vLLM v0.18.0 on the legacy model runner, before Model Runner V2
+  became the default for dense models in v0.25.0.'
 challengers:
 - name: SGLang
   note: Near-parity overall and faster on agentic/structured workloads, with major

@@ -20,13 +20,14 @@ pick:
     engine (~100ms to first audio on one H200).'
 caveats: 'Open-weight but not open-source: the Fish Audio Research License permits
   research and non-commercial use free of charge, and any commercial deployment needs
-  a separate licence from Fish Audio, which keeps Apache-licensed rivals such as Step-Audio-EditX
+  a separate licence from Fish Audio, which keeps the Apache-2.0-coded Step-Audio-EditX
   relevant for self-hosters. The downloadable weights are also a generation behind
   the hosted product — S2.1 Pro arrived on 23 June 2026 as an API-only model with
   roughly 70ms time-to-first-audio and a claimed 61% win rate over S2 Pro, no S2.1
-  checkpoints have appeared on the fishaudio Hugging Face org, and the free s2.1-pro-free
-  tier has only been extended to 31 August 2026. Budget for an H200-class GPU if you
-  want the quoted 0.195 RTF and ~100ms first-audio figures locally.'
+  checkpoints have appeared on the fishaudio Hugging Face org, and the s2.1-pro-free
+  tier is now documented as an open-ended free development option under fair-use limits
+  rather than a dated trial. Budget for an H200-class GPU if you want the quoted 0.195
+  RTF and ~100ms first-audio figures locally.'
 challengers:
 - name: BreezeBlue Breeze TTS 2 Open Weights
   note: 'Now the #1 open-weights model on the Artificial Analysis provider-voice arena
@@ -38,12 +39,14 @@ challengers:
     under 40ms time-to-first-audio on an H100 with roughly 7.7GiB for eager inference
     (12GB GPU minimum, 24GB for the fast path).'
 - name: Step-Audio-EditX
-  note: Apache-2.0 across code and weights, and 24 Elo behind the pick on the same
-    Artificial Analysis arena (1,101 against 1,125). It runs on a single NVIDIA GPU
-    with 12GB VRAM, 16GB recommended, with AWQ 4-bit checkpoints for tighter budgets.
-    It remains the pick if commercial licensing is a hard requirement, since both
-    Fish Audio S2 Pro and Breeze TTS 2 gate their weights behind non-commercial research
-    licences.
+  note: It sits at 1,104 Elo on the Artificial Analysis provider-voice leaderboard,
+    24 points behind the pick at 1,128 and well behind Breeze TTS 2 at 1,215. StepFun
+    licenses the repository code under Apache 2.0, but the Hugging Face weights repo
+    carries no licence file or metadata of its own, so read that gap carefully before
+    shipping commercially — it is still the least restrictive of the three on paper.
+    It runs on a single NVIDIA GPU with 12GB VRAM (StepFun calls 12GB the critical
+    value and suggests 16GB to be safe, tested on an L40S), with AWQ 4-bit checkpoints
+    for tighter budgets.
 history:
 - name: Bark
   from: 2023-08-01
