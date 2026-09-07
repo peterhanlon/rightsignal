@@ -31,6 +31,11 @@ caveats: 'NVIDIA''s Parakeet-TDT-0.6B-v3 is still the sensible choice where thro
   AutoArk''s own rerun of the seven public splits on 8x RTX 4090, scored with the
   leaderboard scorer, lands at 5.13% WER and an overall RTFx of 197.'
 challengers:
+- name: microsoft/VibeVoice-ASR-Streaming-7B
+  note: Trending on Hugging Face from 2 Sep 2026 as a streaming ASR model tagged for
+    en/zh/es/pt, but the listing shows no licence, no throughput figure and no independent
+    leaderboard WER, and it does not appear on the Open ASR Leaderboard, which ARK-ASR-3B
+    still heads at 4.76.
 - name: Qwen3.5 Omni Flash / Plus
   note: 'Top two on the Artificial Analysis STT board as of 6 Sep 2026, but the listing
     gives no licence, weight availability, throughput or language coverage, its percentages
@@ -43,9 +48,6 @@ challengers:
     is not a board result, and until it is scored with the leaderboard's own harness
     it stays unverified. Check the card directly for licence, throughput and language
     coverage before planning around it.
-- name: MOSS-Transcribe-preview-2B
-  note: 4.87% WER and Apache-2.0, but English-only and RL-tuned on the leaderboard's
-    training splits — leaderboard-fitted.
 history:
 - name: Whisper large-v2
   from: 2023-08-01
@@ -65,7 +67,7 @@ history:
 - name: Granite Speech 4.1 2B
   from: 2026-04-29
   to: 2026-06-22
-last_reviewed: 2026-09-06
+last_reviewed: 2026-09-07
 watch:
   keywords:
   - stt
