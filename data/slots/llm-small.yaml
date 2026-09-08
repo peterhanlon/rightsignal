@@ -32,6 +32,10 @@ caveats: Qwen3.8 27B is still the quality leader in this size class — Artifici
   and that gap is the whole argument for it. The title stays under review because
   a verified quantised Qwen3.8 build with published sizes would likely take the slot.
 challengers:
+- name: MiniCPM5-2B
+  note: 'Trending on Hugging Face with on-device, long-context and tool-calling tags,
+    but the only evidence so far is the model card: no independent benchmark placement,
+    no published quantised file sizes and no tool-calling-under-quantisation numbers.'
 - name: Qwen3.8-Flash-Next
   note: NVIDIA has now published an NVFP4 quantisation on Hugging Face, but it is
     a GPU-oriented format with no listed file size, no independent benchmark placement
@@ -43,13 +47,6 @@ challengers:
     in August) against this pick's 26, with its non-reasoning mode level at 26. Still
     no official quantised release with published file sizes, and no independent 4-bit
     quality-retention or tool-calling numbers, so the 16GB fit remains unverified.
-- name: Muse Glimmer 30B
-  note: 'Meta''s agent-focused 30B dense model, Apache-2.0, independently scored 35
-    on the AA Intelligence Index — comfortably ahead of this pick''s 26, though still
-    behind Qwen3.6 27B at 38. Meta''s own agentic numbers are vendor-run and framed
-    against Gemma 4 31B and Qwen3.6 rather than this MoE pick, so read them with the
-    usual caution. For this slot the size question is already settled: Meta''s official
-    4-bit build is sized for 24–32GB of VRAM, so it is not a 16GB candidate today.'
 history:
 - name: Llama 2 13B Chat
   from: 2023-08-01
@@ -78,7 +75,7 @@ history:
 - name: Qwen3.5-9B
   from: 2026-03-02
   to: 2026-04-02
-last_reviewed: 2026-09-07
+last_reviewed: 2026-09-08
 watch:
   keywords:
   - small model

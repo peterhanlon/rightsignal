@@ -30,9 +30,9 @@ caveats: 'The Arena text board is tight at the top: Fable leads at roughly 1,525
   a board Opus 5 has yet to appear on at all.'
 challengers:
 - name: GPT-6 Astra
-  note: 'Now independently placed rather than vendor-claimed: #2 on the Artificial
-    Analysis Intelligence Index at 55 (max) and #3 at 54 (xhigh), behind Claude Fable
-    5.1 on 57. Still no Arena or Terminal-Bench 2.1 placement.'
+  note: 'Now tied rather than trailing: GPT-6 Astra (max) and (xhigh) both score 53
+    on the Artificial Analysis Intelligence Index, level with the top-ranked Claude
+    Fable 5.1 (xhigh) variant. Still no Arena or Terminal-Bench 2.1 placement.'
 - name: Claude Opus 5
   note: Vellum publishes per-benchmark charts rather than a composite, and the 64.7
     is its Humanity's Last Exam board, which Opus 5 tops ahead of Mythos 5 on 64.5;
@@ -75,7 +75,7 @@ history:
 - name: Claude Opus 4.6
   from: 2026-02-05
   to: 2026-07-01
-last_reviewed: 2026-09-07
+last_reviewed: 2026-09-08
 watch:
   keywords:
   - llm
