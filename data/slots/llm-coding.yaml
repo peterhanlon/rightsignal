@@ -27,6 +27,10 @@ caveats: 'vals.ai''s Terminal-Bench 2.1 table now has Opus 5 fourth at 84.64%, b
   dropped SWE-bench Verified from its coding index altogether, calling the benchmark
   saturated, so lean on terminal and repo-scale evidence rather than that one number.'
 challengers:
+- name: GPT-6 Astra Max
+  note: Tops vals' overall index and sits second on Arena WebDev at 1,764, but trails
+    Astra on Terminal-Bench 2.1 (85.02%) and still refuses bio- and cyber-adjacent
+    tasks.
 - name: gpt-6-astra-max
   note: 'Now #1 on Arena WebDev at 1,797, 35 points clear of claude-fable-5.1-max
     (1,762) and well ahead of claude-opus-5-max (1,688), though on only about 1,199
@@ -42,14 +46,6 @@ challengers:
     as failures — refusals on bio- and cyber-adjacent work remain a live operational
     issue. No independent SWE-bench Verified figure yet, and it costs $10/$50 against
     Opus 5''s $5/$25.'
-- name: Qwen3.8-Max-0902
-  note: Now fourth on Arena WebDev at 1,686, a shade below claude-opus-5-max (1,688)
-    and well off gpt-6-astra-max's 1,797, with its score still flagged preliminary
-    on roughly 1,868 votes. Treat that as a tie with Opus 5 rather than a lead, and
-    remember it is a human-preference web board rather than an agentic or repo-scale
-    measure. No independent SWE-bench Verified or Terminal-Bench 2.1 run for this
-    checkpoint yet, though at $2/$6 it is the cheapest model anywhere near the top
-    of the board.
 history:
 - name: GPT-4
   from: 2023-08-01
@@ -75,7 +71,7 @@ history:
 - name: Claude Fable 5
   from: 2026-07-01
   to: 2026-07-24
-last_reviewed: 2026-09-08
+last_reviewed: 2026-09-09
 watch:
   keywords:
   - coding model

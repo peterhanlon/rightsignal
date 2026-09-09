@@ -1,1 +1,83 @@
-radar: []
+radar:
+- name: ChatGPT Images 2.5
+  maker: OpenAI
+  target: best image generation
+  released: 2026-09-08
+  status: in product
+  scored: false
+  note: OpenAI's image generator inside ChatGPT, pitched at turning sketches and reference
+    photos into more personalised results. The striking part is the emphasis on reference-image
+    fidelity rather than raw prompt following, which is where the current title holder
+    scores. No independent arena or benchmark placement yet, and it is unclear how
+    it relates to the GPT Image 2 API model.
+  sources:
+  - https://openai.com/index/introducing-chatgpt-images-2-5
+  card: ChatGPT's new image model, reference-led
+- name: Claude Mythos 5.1
+  maker: Anthropic
+  target: best overall LLM
+  released: 2026-09-06
+  status: API only
+  scored: true
+  note: A second Anthropic 5.1-generation line appearing alongside Fable 5.1, so far
+    visible only through third-party evaluation. It scores 65% on Vellum's aggregate,
+    level with Fable 5.1 and above Opus 5. Anthropic has published nothing about positioning,
+    pricing or effort settings, and no other board has it yet.
+  sources:
+  - https://www.vellum.ai/llm-leaderboard
+  card: Anthropic's other 5.1 line, spotted on Vellum
+- name: Gemini 3.8 Flash
+  maker: Google DeepMind
+  target: best overall LLM
+  released: 2026-09-02
+  status: API only
+  scored: true
+  note: A new Flash-tier Gemini, announced alongside a cyber-specialised sibling,
+    3.8 Flash Cyber. Shipping a security-hardened variant at the same time as the
+    general model is unusual for this tier. No published evaluations, pricing or context
+    details in the announcement, and nothing on the public boards yet.
+  sources:
+  - https://deepmind.google/blog/introducing-gemini-3-8-flash-and-38-flash-cyber/
+  card: New Flash-tier Gemini, plus a cyber variant
+- name: K2-Horizon-MoVA-36B-A4B
+  maker: IFM
+  target: best open-weight LLM
+  released: 2026-09-01
+  status: weights out
+  scored: false
+  note: 'An open-weight mixture-of-experts model with a custom k2_horizon architecture,
+    36B total parameters and roughly 4B active. The sparsity ratio puts frontier-style
+    routing within reach of a single workstation card. Untested outside its own claims:
+    no independent benchmark placement, and the custom code path means inference support
+    is limited for now.'
+  sources:
+  - https://huggingface.co/IFM/K2-Horizon-MoVA-36B-A4B
+  card: 36B MoE with 4B active, weights published
+- name: hy4-preview
+  maker: Tencent
+  target: best LLM for coding
+  released: 2026-08-31
+  status: preview
+  scored: false
+  note: A preview build of Tencent's next Hunyuan generation, first surfacing through
+    blind web-development voting. It entered the WebDev arena top five on debut at
+    1631 Elo, ahead of several released frontier models. There is no model card, licence
+    or serving detail yet, and it has since slipped down the board as newer entrants
+    arrived.
+  sources:
+  - https://arena.ai/leaderboard/code/webdev
+  card: Tencent preview lands in the WebDev top five
+- name: Spark-X2.5-4B
+  maker: XHToken
+  target: best small / on-device LLM
+  released: 2026-08-24
+  status: weights out
+  scored: false
+  note: A 4B dense chat model on its own spark2_5 architecture, released under Apache
+    2.0 with a matching base checkpoint. Publishing base and instruct together at
+    this size is welcome and rare from a newer lab. Nothing independent yet on reasoning
+    quality, and the custom architecture will need runtime support before it is practical
+    on device.
+  sources:
+  - https://huggingface.co/XHToken/Spark-X2.5-4B
+  card: Apache-2.0 4B chat model from a new lab

@@ -32,6 +32,12 @@ caveats: Qwen3.8 27B is still the quality leader in this size class — Artifici
   and that gap is the whole argument for it. The title stays under review because
   a verified quantised Qwen3.8 build with published sizes would likely take the slot.
 challengers:
+- name: Qwen3.8 27B
+  note: Still the quality leader in this size class — Artificial Analysis's 9 September
+    re-score puts it at 34/31/29 across xhigh/medium/low (down from 41/35/34 in August)
+    against this pick's 17, with non-reasoning at 22. Still no official quantised
+    release with published file sizes, and no independent 4-bit quality-retention
+    or tool-calling-under-quantisation numbers, so the 16GB fit remains unverified.
 - name: MiniCPM5-2B
   note: 'Trending on Hugging Face with on-device, long-context and tool-calling tags,
     but the only evidence so far is the model card: no independent benchmark placement,
@@ -41,12 +47,6 @@ challengers:
     a GPU-oriented format with no listed file size, no independent benchmark placement
     and no tool-calling-under-quantisation numbers, so the 16GB fit is still unverified;
     the base card also lists its licence only as "other".
-- name: Qwen3.8 27B
-  note: Still the quality leader in this size class, though Artificial Analysis's
-    re-scored board now puts it at 41/35/34 across xhigh/medium/low (down from 52/44/43
-    in August) against this pick's 26, with its non-reasoning mode level at 26. Still
-    no official quantised release with published file sizes, and no independent 4-bit
-    quality-retention or tool-calling numbers, so the 16GB fit remains unverified.
 history:
 - name: Llama 2 13B Chat
   from: 2023-08-01
@@ -75,7 +75,7 @@ history:
 - name: Qwen3.5-9B
   from: 2026-03-02
   to: 2026-04-02
-last_reviewed: 2026-09-08
+last_reviewed: 2026-09-09
 watch:
   keywords:
   - small model

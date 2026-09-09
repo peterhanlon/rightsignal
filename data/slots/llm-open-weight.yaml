@@ -27,6 +27,10 @@ caveats: Licence requires attribution above 100M MAU or $20M/month revenue, and 
   separate agreement for large model-as-a-service businesses. The hosted API shipped
   16 July — the reign is dated from the weights landing on 27 July.
 challengers:
+- name: GLM-5.3
+  note: Still level on quality (44 to GLM-5.3's 45 on the AA Intelligence Index) with
+    a 1M-token context and native vision, but roughly 2.5x the cost per Index task
+    and half the throughput.
 - name: DeepSeek-V4-Flash-Vision-Exp
   note: 'MIT-licensed V4-family weights on Hugging Face from 31 August: vision modules
     on the V4-Flash base (284B total, 13B active), shipped as an FP8 checkpoint with
@@ -34,11 +38,6 @@ challengers:
     Analysis has since scored it 42 on Intelligence Index v4.2 against K3''s 50, so
     the case for it is cost and speed (around 122 tokens per second) rather than quality.
     It is still an explicitly experimental Flash-class checkpoint.'
-- name: GLM-5.3
-  note: Full weights now public on Hugging Face (25–28 August, licence tagged 'other',
-    not MIT); matches K3 at 60 on the AA Intelligence Index but no independent result
-    yet shows it ahead, and reported local serving needs 8x H200 or 10–12x H100 at
-    FP8.
 - name: GLM-5.3-Flash
   note: MIT-licensed weights on Hugging Face from 25 August with Unsloth GGUFs the
     next day, but it is a Flash-class checkpoint and no independent benchmark score
@@ -77,7 +76,7 @@ history:
 - name: GLM-5.2
   from: 2026-06-16
   to: 2026-07-27
-last_reviewed: 2026-09-08
+last_reviewed: 2026-09-09
 watch:
   keywords:
   - open weight
