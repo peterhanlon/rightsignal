@@ -2,12 +2,14 @@
 date: 2026-09-09
 slot: llm-open-weight
 type: challenged
-title: GLM-5.3 replaces Kimi K3 as best open-weight LLM
+title: GLM-5.3 challenges Kimi K3 for best open-weight LLM
 old: null
 new: GLM-5.3
 sources:
 - https://artificialanalysis.ai/models
 ---
+GLM-5.3 would take this title on today's evidence, but the case has not yet cleared our bar for a change, so it is recorded as the challenger for now. The adjudicator's reasoning:
+
 Artificial Analysis now lists GLM-5.3 (max) at 45 on its Intelligence Index, one point ahead of Kimi K3 (max) at 44 — the reverse of the 50-vs-49 reading that put K3 in this slot in July ([AA models](https://artificialanalysis.ai/models)).
 
 Treat the quality gap as a tie: one point, in opposite directions across the two readings, is inside the noise. What settles it is the rest of the slot's criteria. GLM-5.3's full weights went public on Hugging Face between 25 and 28 August, so the availability objection that kept it as a challenger is gone. On cost and speed it is not close: roughly $0.9 per Index task against K3's $2.3, and about 84 tokens per second against K3's 41. K3 keeps the bigger context window and native vision, and it remains a serious model, but paying more than twice as much for half the throughput to score level is no longer defensible.
