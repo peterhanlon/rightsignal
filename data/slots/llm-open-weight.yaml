@@ -8,40 +8,21 @@ criteria:
 - licence
 - weights actually released
 provisional: false
-since: 2026-07-27
+since: &id001 2026-09-09
 pick:
-  name: Kimi K3
+  name: GLM-5.3
   version: ''
-  url: https://huggingface.co/moonshotai/Kimi-K3
-  licence: Kimi K3 License (custom)
-  why: 'A 2.8T-parameter MoE (104B active, 1M-token context, native vision) whose
-    weights landed on Hugging Face on 27 July under Moonshot''s own licence, and it
-    still tops Artificial Analysis''s open-weights table on Intelligence Index v4.2
-    at 50 — one ahead of GLM-5.3 (49) and three ahead of Qwen3.8-2.4T-A95B (47). GLM-5.3''s
-    weights went public on 28 August, so the lead is now on merit rather than availability,
-    and it is a slim one: GLM-5.3 costs roughly $0.9 per Index task against K3''s
-    $2.3 and runs at 84 tokens per second against K3''s 41. K3 is rack-scale to self-host
-    and slow at about 41 tokens per second even on Moonshot''s own API, but nothing
-    downloadable scores higher yet.'
+  url: https://huggingface.co/zai-org/GLM-5.3
+  licence: Z.ai open-weights release — licence terms not verified in this dossier
+  why: 'Now ahead of Kimi K3 on the AA Intelligence Index (45 to 44) with weights
+    public since 28 August, and it wins the practical criteria outright: about $0.9
+    per Index task against K3''s $2.3 and roughly 84 tokens per second against 41.
+    The quality lead is narrow and single-board, and you should read the model card
+    yourself on licence terms before committing.'
 caveats: Licence requires attribution above 100M MAU or $20M/month revenue, and a
   separate agreement for large model-as-a-service businesses. The hosted API shipped
   16 July — the reign is dated from the weights landing on 27 July.
-challengers:
-- name: GLM-5.3
-  note: Still level on quality (44 to GLM-5.3's 45 on the AA Intelligence Index) with
-    a 1M-token context and native vision, but roughly 2.5x the cost per Index task
-    and half the throughput.
-- name: DeepSeek-V4-Flash-Vision-Exp
-  note: 'MIT-licensed V4-family weights on Hugging Face from 31 August: vision modules
-    on the V4-Flash base (284B total, 13B active), shipped as an FP8 checkpoint with
-    FP4 expert weights at roughly 168GB — much the lightest lift on this list. Artificial
-    Analysis has since scored it 42 on Intelligence Index v4.2 against K3''s 50, so
-    the case for it is cost and speed (around 122 tokens per second) rather than quality.
-    It is still an explicitly experimental Flash-class checkpoint.'
-- name: GLM-5.3-Flash
-  note: MIT-licensed weights on Hugging Face from 25 August with Unsloth GGUFs the
-    next day, but it is a Flash-class checkpoint and no independent benchmark score
-    against K3 has appeared yet.
+challengers: []
 history:
 - name: Llama 2 70B Chat
   from: 2023-08-01
@@ -76,7 +57,10 @@ history:
 - name: GLM-5.2
   from: 2026-06-16
   to: 2026-07-27
-last_reviewed: 2026-09-09
+- name: Kimi K3
+  from: 2026-07-27
+  to: *id001
+last_reviewed: *id001
 watch:
   keywords:
   - open weight
