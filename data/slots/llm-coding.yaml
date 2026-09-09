@@ -29,10 +29,10 @@ caveats: 'vals.ai''s Terminal-Bench 2.1 table now has Opus 5 fourth at 84.64%, b
 challengers:
 - name: GPT-6 Astra
   note: First on Terminal-Bench 2.1 at 58.2% against Opus 5's 51.8%, and first on
-    Arena WebDev at 1796 against 1688 — the agentic and tool-use evidence points one
-    way on both boards. Costs more ($10/$50 versus $5/$25) and has no independent
-    SWE-bench Verified run yet, so keep Opus 5 in mind for cheaper repo-scale batch
-    work.
+    Arena WebDev at 1796 against 1688 — the agentic and tool-use evidence points the
+    same way on both boards. It costs more ($10/$50 versus $5/$25) and has no independent
+    SWE-bench Verified run yet, so Opus 5 stays the cheaper option for repo-scale
+    batch work.
 - name: GPT-6 Astra Max
   note: Tops vals' overall index and sits second on Arena WebDev at 1,764, but trails
     Astra on Terminal-Bench 2.1 (85.02%) and still refuses bio- and cyber-adjacent
