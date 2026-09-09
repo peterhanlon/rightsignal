@@ -17,9 +17,8 @@ pick:
   why: Number one on the Arena (formerly LMArena) text leaderboard through the August
     snapshots, with a 1M-token context window. It debuted on 9 June, was pulled on
     12 June when the US applied export controls to it and Mythos 5, and returned on
-    1 July after the Commerce Department lifted them on 30 June. It also tops the
-    official Terminal-Bench 2.1 board at 83.8% with Claude Code at xhigh effort, just
-    ahead of GPT-5.5 on Codex at 83.1%.
+    1 July after the Commerce Department lifted them on 30 June. On the official Terminal-Bench board, now on version 4.0, it has slipped
+    to third at 44.5% behind Fable 5.1 (57.9%) and Opus 5 (51.8%).
 caveats: 'The Arena text board is tight at the top: on the 2 September snapshot Fable
   5 leads at 1507 with a rank spread of 1-6, with Claude Opus 4.6 (high) on 1505,
   Claude Fable 5.1 (max) on 1504 and Meta''s Muse Spark 1.2 (xHigh) on 1499, so treat
