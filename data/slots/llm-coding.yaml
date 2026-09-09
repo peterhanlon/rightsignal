@@ -7,20 +7,18 @@ criteria:
 - repo-scale task performance
 - tool-calling reliability
 provisional: false
-since: 2026-07-24
+since: &id001 2026-09-09
 pick:
-  name: Claude Opus 5
+  name: GPT-6 Astra
   version: ''
-  url: https://www.anthropic.com/claude/opus
+  url: https://developers.openai.com/api/docs/models/gpt-6-astra
   licence: proprietary
-  why: Opus 5 still leads vals.ai's independent SWE-bench Verified run at 97.00%,
-    the best of the 86 systems on that board, though vals has retired that benchmark
-    from its coding index as saturated. On the boards vals still weights it is fourth
-    on Terminal-Bench 2.1 at 84.64%, behind GPT-6 Astra (87.27%), GPT-5.6 Sol (85.77%)
-    and Claude Fable 5.1 (85.02%), and second on the Vals Index at 67.21% behind Fable
-    5.1 on 68.83%. At half Claude Fable 5's list price it is still the cheaper Anthropic
-    flagship for repo-scale batch work, but it is no longer the outright leader on
-    agentic evidence.
+  why: First on the official Terminal-Bench 4.0 board at 58.2% against Opus 5's 51.8%,
+    and corroborated by vals.ai, which has it top of its Terminal-Bench 2.1 table and
+    of Code Migration.
+    Its max tier leads Arena WebDev at 1796 against claude-opus-5-max's 1688. It has
+    no independent SWE-bench Verified run yet and costs $10/$50 per million tokens,
+    so Opus 5 is still the cheaper option for high-volume repo-scale batches.
 caveats: 'vals.ai''s Terminal-Bench 2.1 table now has Opus 5 fourth at 84.64%, behind
   GPT-6 Astra (87.27%), GPT-5.6 Sol (85.77%) and Claude Fable 5.1 (85.02%), and its
   own figure drops to 81.27% if you count its server-side fallbacks to Opus 4.8 on
@@ -29,24 +27,7 @@ caveats: 'vals.ai''s Terminal-Bench 2.1 table now has Opus 5 fourth at 84.64%, b
   roughly $0.02 per task against $1.29 for Opus 5. Worth knowing that vals has since
   dropped SWE-bench Verified from its coding index altogether, calling the benchmark
   saturated, so lean on terminal and repo-scale evidence rather than that one number.'
-challengers:
-- name: GPT-6 Astra
-  note: First on Terminal-Bench 2.1 at 58.2% against Opus 5's 51.8%, and first on
-    Arena WebDev at 1796 against 1688 — the agentic and tool-use evidence points the
-    same way on both boards. It costs more ($10/$50 versus $5/$25) and has no independent
-    SWE-bench Verified run yet, so Opus 5 stays the cheaper option for repo-scale
-    batch work.
-- name: GPT-6 Astra Max
-  note: Tops vals' overall index and sits second on Arena WebDev at 1,764, but trails
-    Astra on Terminal-Bench 2.1 (85.02%) and still refuses bio- and cyber-adjacent
-    tasks.
-- name: gpt-6-astra-max
-  note: 'Now #1 on Arena WebDev at 1,797, 35 points clear of claude-fable-5.1-max
-    (1,762) and well ahead of claude-opus-5-max (1,688), though on only about 1,199
-    votes so far. This is not just a human-preference result: vals.ai also has GPT-6
-    Astra top of Terminal-Bench 2.1 at 87.27%, ahead of GPT-5.6 Sol (85.77%) and Claude
-    Fable 5.1 (85.02%), and top of Code Migration. No independent SWE-bench Verified
-    run has appeared yet, and it is priced at $10/$50 against Opus 5''s $5/$25.'
+challengers: []
 history:
 - name: GPT-4
   from: 2023-08-01
@@ -72,7 +53,10 @@ history:
 - name: Claude Fable 5
   from: 2026-07-01
   to: 2026-07-24
-last_reviewed: 2026-09-09
+- name: Claude Opus 5
+  from: 2026-07-24
+  to: *id001
+last_reviewed: *id001
 watch:
   keywords:
   - coding model
