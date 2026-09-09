@@ -30,9 +30,10 @@ caveats: 'Open-weight but not open-source: the Fish Audio Research License permi
   RTF and ~100ms first-audio figures locally.'
 challengers:
 - name: BreezeBlue Breeze TTS 2 Open Weights
-  note: Still the broadest multilingual open-weights option at 80+ languages, but
-    no longer in the Artificial Analysis top ten and needs an H200-class GPU for its
-    quoted ~100ms first-audio figure.
+  note: 'Now #7 on the Artificial Analysis TTS leaderboard at 1215 Elo, well clear
+    of the pick at 1128, which has fallen out of the top ten. Title change pending
+    confirmation of its official weights repo and licence terms; the quoted ~100ms
+    first-audio figure still assumes an H200-class GPU.'
 - name: Step-Audio-EditX
   note: It sits at 1,104 Elo on the Artificial Analysis provider-voice leaderboard,
     24 points behind the pick at 1,128 and well behind Breeze TTS 2 at 1,215. StepFun
