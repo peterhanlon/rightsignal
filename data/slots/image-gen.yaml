@@ -32,6 +32,10 @@ caveats: 'Editing is where the ground has shifted: on Arena''s single-image edit
   Analysis''s pricing, against $108.50 for MAI-Image-2.5-Pro, $67 for Nano Banana
   2 and $38.90 for MAI-Image-2.6.'
 challengers:
+- name: GPT-Image-2.5-Sunburst
+  note: Leads both Arena boards over the incumbent — text-to-image 1421 vs 1381, single-image
+    edit 1520 vs 1461 — but not yet rated by Artificial Analysis, where GPT Image
+    2 (high) still sits first on 1178.
 - name: MAI-Image-2.6 (preview)
   note: Second on Artificial Analysis's text-to-image arena at 1,149, 29 behind GPT
     Image 2 (high) on 1,178, and it now leads that site's image-editing arena at 1,122,
