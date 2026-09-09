@@ -22,23 +22,24 @@ pick:
     MAI-Image-2.6 (1,129) and MAI-Image-2.6-Flash (1,120). It has held the generation
     crown since its 21 April launch, on the strength of prompt adherence, photorealism
     and text rendering.'
-caveats: 'Editing is where the lead has gone: on Artificial Analysis''s image-editing
-  arena GPT Image 2 (high) is third at 1,117, behind MAI-Image-2.6 (1,129) and MAI-Image-2.6-Flash
-  (1,120), and on Arena''s single-image edit board its 1461 is only 22 clear of MAI-Image-2.6
-  and Grok Imagine Image 2.0 (low), both on 1439. It is also by some distance the
-  dearest of the leaders at $211 per 1,000 images on Artificial Analysis''s pricing,
-  against $108.50 for MAI-Image-2.5-Pro, $67 for Nano Banana 2 and $38.90 for MAI-Image-2.6
-  itself. Grok Imagine Image 2.0''s Arena scores are still flagged preliminary on
-  both boards, so treat that particular gap as provisional.'
+caveats: 'Editing is where the ground has shifted: on Arena''s single-image edit board
+  GPT Image 2 (medium) is now third on 1461, behind GPT-Image-2.5-Sunburst (1520)
+  and GPT-Image-2.5-Flare (1491), with Grok Imagine Image 2.0 (low) fourth on 1439
+  and MAI-Image-2.6 fifth on 1434. Artificial Analysis''s editing arena tells a similar
+  story, putting GPT Image 2 (high) second on 1,117 just behind MAI-Image-2.6 on 1,122,
+  with Muse Image (1,105) and MAI-Image-2.6-Flash (1,104) close behind. It is also
+  by some distance the dearest of the leaders at $211 per 1,000 images on Artificial
+  Analysis''s pricing, against $108.50 for MAI-Image-2.5-Pro, $67 for Nano Banana
+  2 and $38.90 for MAI-Image-2.6.'
 challengers:
 - name: MAI-Image-2.6 (preview)
-  note: Second on Artificial Analysis's text-to-image arena at 1,145, 27 behind GPT
-    Image 2 (high) on 1,172, and second on Arena's text-to-image board at 1332 against
-    1382. It now leads Artificial Analysis's image-editing arena at 1,129, ahead of
-    GPT Image 2 (high) on 1,117, and has climbed to second on Arena's single-image
-    edit board at 1439, 22 behind the leader. It moved to public preview on Microsoft
-    Foundry on 4 September and Artificial Analysis lists it at $38.90 per 1,000 images,
-    so it is now both the stronger editor and much the cheaper buy.
+  note: Second on Artificial Analysis's text-to-image arena at 1,149, 29 behind GPT
+    Image 2 (high) on 1,178, and it now leads that site's image-editing arena at 1,122,
+    a slim 5 ahead of GPT Image 2 (high) on 1,117. On Arena it is fourth in text-to-image
+    on 1331 and fifth in single-image edit on 1434, behind Grok Imagine Image 2.0
+    (low) on 1439 and both GPT-Image-2.5 models. It went to public preview on Microsoft
+    Foundry in early September and Artificial Analysis lists it at $38.90 per 1,000
+    images, so it remains much the cheaper buy.
 history:
 - name: Midjourney v5.2
   from: 2023-06-22

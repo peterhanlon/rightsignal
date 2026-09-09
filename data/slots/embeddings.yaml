@@ -13,15 +13,16 @@ pick:
   version: ''
   url: https://huggingface.co/nvidia/Nemotron-3-Embed-8B-BF16
   licence: OpenMDW-1.1
-  why: NVIDIA's launch materials put Nemotron-3-Embed-8B-BF16 at number one on the
-    RTEB multilingual board as of 16 July 2026, with a headline RTEB score of 78.5%
-    and 75.5% on MMTEB Retrieval. The model card confirms 34 evaluated languages,
-    a 32,768-token maximum sequence length and 4,096-dimension vectors that can be
-    sliced to 2,048 or 1,024 and re-normalised, with weights open under OpenMDW-1.1
-    plus 1B BF16 and 1B NVFP4 checkpoints for cheaper serving. The RTEB multilingual
-    board now lists 30 tasks over 22 languages and mixes open with closed datasets,
-    and the ranking rests on a vendor snapshot, so re-check the live table before
-    quoting it.
+  why: 'NVIDIA''s launch materials put Nemotron-3-Embed-8B-BF16 top of the RTEB multilingual
+    board as of 16 July 2026, on a headline 78.46 average NDCG@10 across the 16 public
+    RTEB tasks its model card actually reports, plus 75.45 on MMTEB Retrieval. The
+    card confirms 34 evaluated languages, a 32,768-token maximum sequence length and
+    4,096-dimension vectors you can slice to 2,048 or 1,024 and re-normalise, with
+    weights under OpenMDW-1.1 and 1B BF16 and NVFP4 checkpoints for cheaper serving.
+    Mind the basis before you quote it: the live RTEB(beta) multilingual board lists
+    30 tasks over 22 languages, ranks by Borda count of per-task ranks rather than
+    by mean score, and has had its private column temporarily removed since January
+    2026, so the placing rests on a vendor snapshot of an open-task view.'
 caveats: 'Microsoft''s card for harrier-oss-v1-27b claims state-of-the-art on Multilingual
   MTEB v2 at release, with a 74.3 average across a 94-language family (0.6b 69.0,
   270m 66.5), but it gives no task count, no rival scores and no Borda ranking — so

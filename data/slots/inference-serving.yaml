@@ -26,11 +26,12 @@ caveats: 'Less of a two-horse race than it looks: TensorRT-LLM led the same Marc
   100, once its engine was compiled. SGLang''s edge is prefix-driven rather than general:
   on Spheron''s June 2026 run with an 80% shared 512-token prefix it cut TTFT p50
   by 37% at 50 concurrent requests, while on unique prompts the two sat within 1-4%
-  of each other, and enabling vLLM''s --enable-prefix-caching narrowed the gap to
-  roughly 15-18% at 10 concurrent requests, with no APC-enabled figure published at
-  50. Measure your own prefix overlap before committing, and re-run on current releases:
-  those runs used vLLM v0.18.0 on the legacy model runner, before Model Runner V2
-  became the default for dense models in v0.25.0.'
+  of each other, and enabling vLLM''s --enable-prefix-caching narrowed the TTFT gap
+  to roughly 15-18% at 10 concurrent requests, though at 50 Spheron still puts APC-on
+  vLLM at 2,100 effective tok/s against SGLang''s 2,550. Measure your own prefix overlap
+  before committing, and re-run on current releases: those runs used vLLM v0.18.0
+  on the legacy model runner, before Model Runner V2 became the default for dense
+  models in v0.25.0.'
 challengers:
 - name: SGLang
   note: Near-parity overall and faster on agentic/structured workloads, with major

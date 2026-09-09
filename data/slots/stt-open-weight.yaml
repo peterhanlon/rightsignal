@@ -32,10 +32,13 @@ caveats: 'NVIDIA''s Parakeet-TDT-0.6B-v3 is still the sensible choice where thro
   leaderboard scorer, lands at 5.13% WER and an overall RTFx of 197.'
 challengers:
 - name: microsoft/VibeVoice-ASR-Streaming-7B
-  note: Trending on Hugging Face from 2 Sep 2026 as a streaming ASR model tagged for
-    en/zh/es/pt, but the listing shows no licence, no throughput figure and no independent
-    leaderboard WER, and it does not appear on the Open ASR Leaderboard, which ARK-ASR-3B
-    still heads at 4.76.
+  note: 'Microsoft has now filled in the gaps: the 7B card ships under MIT, and the
+    streaming technical report (arXiv 2609.02812) quotes a real-time factor at or
+    below 0.104 on an A100, with ten languages supported rather than the four originally
+    tagged. The accuracy numbers are still the authors'' own — it does not appear
+    on the Open ASR Leaderboard, which ARK-ASR-3B continues to head at 4.76 mean WER.
+    Worth a look if you need streaming speaker-attributed transcription, but you cannot
+    yet compare it like-for-like on WER.'
 - name: Qwen3.5 Omni Flash / Plus
   note: 'Top two on the Artificial Analysis STT board as of 6 Sep 2026, but the listing
     gives no licence, weight availability, throughput or language coverage, its percentages

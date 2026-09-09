@@ -23,17 +23,23 @@ caveats: 'Open-weight but not open-source: the Fish Audio Research License permi
   a separate licence from Fish Audio, which keeps the Apache-2.0-coded Step-Audio-EditX
   relevant for self-hosters. The downloadable weights are also a generation behind
   the hosted product — S2.1 Pro arrived on 23 June 2026 as an API-only model with
-  roughly 70ms time-to-first-audio and a claimed 61% win rate over S2 Pro, no S2.1
-  checkpoints have appeared on the fishaudio Hugging Face org, and the s2.1-pro-free
-  tier is now documented as an open-ended free development option under fair-use limits
-  rather than a dated trial. Budget for an H200-class GPU if you want the quoted 0.195
-  RTF and ~100ms first-audio figures locally.'
+  roughly 70ms time-to-first-audio on a single request (about 90ms on standard calls)
+  and a claimed 61% win rate over S2 Pro, and no S2.1 checkpoints have appeared on
+  the fishaudio Hugging Face org. The s2.1-pro-free tier is currently listed at $0.00
+  with no hard character cap under a Fair Use Policy, but Fish still frames it as
+  an initial period with advance notice before changes, so don''t build a budget on
+  it; and budget for an H200-class GPU if you want the quoted 0.195 RTF and ~100ms
+  first-audio figures locally.'
 challengers:
 - name: BreezeBlue Breeze TTS 2 Open Weights
-  note: 'Now #7 on the Artificial Analysis TTS leaderboard at 1215 Elo, well clear
-    of the pick at 1128, which has fallen out of the top ten. Title change pending
-    confirmation of its official weights repo and licence terms; the quoted ~100ms
-    first-audio figure still assumes an H200-class GPU.'
+  note: 'Now #7 overall on the Artificial Analysis provider-voice leaderboard at 1215
+    Elo and top of the open-weight field, well clear of the pick at 1128, which has
+    slipped to 25th. The weights went up on Hugging Face on 25 August 2026: inference
+    code is Apache 2.0, but the checkpoints carry BreezeBlue''s research-and-non-commercial
+    licence, so it is no easier to ship commercially than the pick. BreezeBlue quotes
+    under 40ms time-to-first-audio and 0.32 RTF on a warmed-up H100, with roughly
+    7.7 GiB for eager inference on a 12GB card, though it covers English and Chinese
+    only.'
 - name: Step-Audio-EditX
   note: It sits at 1,104 Elo on the Artificial Analysis provider-voice leaderboard,
     24 points behind the pick at 1,128 and well behind Breeze TTS 2 at 1,215. StepFun
