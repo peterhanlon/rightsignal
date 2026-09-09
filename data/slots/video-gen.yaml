@@ -14,32 +14,31 @@ pick:
   version: ''
   url: https://deepmind.google/models/gemini-omni/
   licence: proprietary
-  why: 'Still the top line on arena.ai''s Text-to-Video Arena, though it now appears
-    as two entries: the newer gemini-omni-1.1-flash build leads on 1,515 with the
-    original Omni Flash second on 1,512 and Black Forest Labs'' FLUX 3 Video third
-    on a preliminary 1,495. On Artificial Analysis it leads the no-audio text-to-video
-    board on 1,324, twenty-three points clear of MiniMax H3 on 1,301, but audio is
-    the soft spot: Alibaba''s Wan 3.0 is first on the with-audio table on 1,241 to
-    the pick''s 1,237. The differentiator remains conversational multi-turn editing
-    through the Interactions API, where each change builds on the last while holding
-    character and scene consistency, with native synced audio on every clip.'
-caveats: 'A hold under real pressure: Wan 3.0 leads AA''s with-audio text-to-video
-  table on 1,241 to the pick''s 1,237, and on AA''s image-to-video board the pick
-  only leads without audio (1,365) — with audio it has slipped to fourth on 1,179,
-  behind fal''s Minimax H3 Max (1,202), Dreamina Seedance 2.0 720p (1,190) and MiniMax
-  H3 (1,185). Clip length is the other limit: MiniMax H3 runs to 15 seconds at 2K,
-  FLUX 3 Video to 20 seconds in HD or FHD with native audio, and Seedance 2.5 does
-  30 seconds in a single pass. Seedance 2.5 still carries no score on either AA board,
-  though it has now entered arena.ai''s Text-to-Video Arena fifth on 1,476, below
-  the pick.'
+  why: 'Google''s own material still frames Omni Flash as the video-first, natively
+    multimodal option: the model card now covers both the original Omni Flash and
+    the newer Gemini Omni 1.1 Flash, and outputs are high-resolution video with audio
+    rather than silent clips needing a separate pass. The differentiator remains step-by-step
+    conversational editing, where each turn builds on the last — available in the
+    Gemini app, Google Flow and YouTube, and buildable in AI Studio against gemini-omni-1.1-flash;
+    there is no product called the Interactions API. Temper the consistency pitch:
+    Google''s own known limitations say holding complete consistency across edits
+    is still a challenge, so multi-turn work needs checking shot by shot.'
+caveats: 'A hold under real pressure rather than a sweep: on Artificial Analysis''s
+  with-audio tables the pick is level with or behind Wan 3.0 on text-to-video and
+  behind fal''s post-trained Minimax H3 Max on image-to-video, so audio remains the
+  weakest part of the case. Clip length is the other limit — rivals quote longer single-pass
+  outputs, and Google''s standard output is 720p with 1080p or 4K arriving via a separate
+  upscale, so "15 seconds at 2K" claims are not like-for-like. Google''s own model
+  card also lists complete consistency across edits as an open limitation, which matters
+  given we sell this pick on multi-turn editing.'
 challengers:
 - name: Alibaba Wan 3.0
-  note: 'Still listed first on Artificial Analysis''s text-to-video board, but the
-    margin has gone: it is now level with Gemini Omni Flash on 1,238 apiece, down
-    from a 1,247-to-1,239 lead on 20 August, with Fal Minimax H3 Max third (1,235),
-    MiniMax H3 Open Weights fourth (1,227) and Dreamina Seedance 2.0 720p fifth (1,221).
-    One tied sub-board result, and still no independent read on Wan''s clip length
-    or character consistency.'
+  note: Wan 3.0 still sits at the top of Artificial Analysis's with-audio text-to-video
+    table, but the gap to Gemini Omni Flash is inside the noise rather than a clear
+    lead — the ranked range at the top spans several models, including fal's post-trained
+    Minimax H3 Max. Treat first place here as a statistical tie, not a win, and re-read
+    the board before quoting a margin. There is still no independent read on Wan's
+    clip length or character consistency, which are two of our four criteria.
 - name: Fal MiniMax H3 Max (post-trained by fal)
   note: Third on AA's with-audio text-to-video board on 1,235, two points behind the
     pick (1,237) and six behind Wan 3.0 (1,241), with a ranked range of 1-4 — a statistical

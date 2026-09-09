@@ -20,36 +20,43 @@ pick:
     1 July after the Commerce Department lifted them on 30 June. It also tops the
     official Terminal-Bench 2.1 board at 83.8% with Claude Code at xhigh effort, just
     ahead of GPT-5.5 on Codex at 83.1%.
-caveats: 'The Arena text board is tight at the top: Fable leads at roughly 1,525 with
-  Claude Opus 4.8, GPT-5.5 Pro and Gemini 3.1 Pro Preview clustered behind it, so
-  treat the lead as first-among-equals and read the exact tie band off the live board.
-  Artificial Analysis now ranks Claude Opus 5 (max and xhigh) first on its Intelligence
-  Index at 63 to Fable''s 62 — a one-point gap rather than a declared tie — at $2.34
-  per Index task against Fable''s $3.14. On terminal work Fable still holds first
-  place on the official Terminal-Bench 2.1 board at 83.8% with Claude Code at xhigh,
-  a board Opus 5 has yet to appear on at all.'
+caveats: 'The Arena text board is tight at the top: on the 2 September snapshot Fable
+  5 leads at 1507 with a rank spread of 1-6, with Claude Opus 4.6 (high) on 1505,
+  Claude Fable 5.1 (max) on 1504 and Meta''s Muse Spark 1.2 (xHigh) on 1499, so treat
+  the lead as first-among-equals and read the exact tie band off the live board. Artificial
+  Analysis has re-based its Intelligence Index twice this month, and on v4.3 Claude
+  Fable 5.1 (max) and GPT-6 Astra (max) share first place on 53, ahead of Claude Opus
+  5 on 51 and Fable 5 itself on 50, with Astra costing $3.26 per Index task against
+  Fable 5.1''s $7.63. Terminal-Bench has moved on too: the official board now runs
+  v4.0, where Fable 5.1 leads on 57.9%, Opus 5 scores 51.8% and Fable 5 44.5%, so
+  the old 83.8% figure from the 2.1 board no longer describes current terminal work.'
 challengers:
 - name: GPT-6 Astra
-  note: 'Now tied rather than trailing: GPT-6 Astra (max) and (xhigh) both score 53
-    on the Artificial Analysis Intelligence Index, level with the top-ranked Claude
-    Fable 5.1 (xhigh) variant. Still no Arena or Terminal-Bench 2.1 placement.'
+  note: On the current Artificial Analysis Intelligence Index (v4.3), GPT-6 Astra
+    (max) and (xhigh) both score 53, level with Claude Fable 5.1 at the top of the
+    board and ahead of Claude Opus 5 on 51 and Fable 5 on 50. It is also much cheaper
+    per unit of measured intelligence, at $3.26 per Index task against Fable 5.1's
+    $7.63, and it now leads Artificial Analysis's Terminal-Bench v4.0 runs at 59.1%
+    against 52.0% for Fable 5.1. It still has no Arena text placement, so read it
+    as a co-leader on independent composites rather than on user preference.
 - name: Claude Opus 5
-  note: Vellum publishes per-benchmark charts rather than a composite, and the 64.7
-    is its Humanity's Last Exam board, which Opus 5 tops ahead of Mythos 5 on 64.5;
-    Fable 5 is missing from that chart alone, since Vellum scores it elsewhere at
-    95% on SWE-Bench and first on OSWorld at 85%. The stronger argument is Artificial
-    Analysis, where Opus 5 (max) takes the Intelligence Index at 63 to Fable's 62
-    for $5/$25 against $10/$50, and 26% less per Index task. That is the best case
-    yet for a change, but it is not enough while Fable holds the Arena text top spot
-    and first place on the official Terminal-Bench 2.1 board.
+  note: Artificial Analysis re-based its Intelligence Index on 7 September, and on
+    v4.3 Opus 5 (max) sits third on 51, behind the joint leaders Claude Fable 5.1
+    (max) and GPT-6 Astra (max) on 53 and just ahead of Fable 5 on 50 — the earlier
+    63-to-62 reading was the retired scale. It stays the cheaper Anthropic option
+    at $5/$25 against $10/$50, and on the official Terminal-Bench v4.0 board it scores
+    51.8%, above Fable 5's 44.5% but below Fable 5.1's 57.9%. The Terminal-Bench 2.1
+    argument no longer holds, so the live threat to this slot is Fable 5's own successor
+    rather than Opus 5.
 - name: Muse Spark 1.2
-  note: 'Meta''s frontier line and a genuine name to watch, though its standing on
-    user-preference voting should be read off the live Arena board rather than asserted
-    here — Artificial Analysis puts Muse Spark 1.2 (xhigh) at 57 on the Intelligence
-    Index, five behind Fable''s 62. On agentic terminal work it is credible rather
-    than leading: Muse Spark 1.1 scores 76.2% on the official Terminal-Bench 2.1 board
-    with mini-SWE-agent, 7.6 points behind Fable 5, but at $198 a run against Fable''s
-    $553.'
+  note: 'Meta''s frontier line and a genuine name to watch: on the 2 September Arena
+    text snapshot Muse Spark 1.2 (xHigh) is fifth at 1499, inside the top band and
+    only eight points off Fable 5''s 1507. On the re-based Artificial Analysis Index
+    (v4.3) Meta''s newest variant, Muse Spark 1.3 (max), scores 48 against the 53
+    shared by Claude Fable 5.1 and GPT-6 Astra, so the older 57-versus-62 comparison
+    is no longer on the board''s scale. Terminal-Bench has also moved to v4.0 on the
+    official board, so quote that rather than the retired 2.1 runs when judging its
+    agentic work.'
 history:
 - name: GPT-4
   from: 2023-08-01

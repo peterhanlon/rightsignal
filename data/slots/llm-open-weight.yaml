@@ -23,9 +23,13 @@ pick:
     $2.3 and runs at 84 tokens per second against K3''s 41. K3 is rack-scale to self-host
     and slow at about 41 tokens per second even on Moonshot''s own API, but nothing
     downloadable scores higher yet.'
-caveats: Licence requires attribution above 100M MAU or $20M/month revenue, and a
-  separate agreement for large model-as-a-service businesses. The hosted API shipped
-  16 July — the reign is dated from the weights landing on 27 July.
+caveats: Both code and weights ship under Moonshot's own Kimi K3 Licence rather than
+  a standard open licence, so check the attribution and model-as-a-service conditions
+  in the repo before commercial deployment; we have not re-verified the specific user
+  and revenue thresholds this week. The hosted API shipped 16 July and the weights
+  landed on Hugging Face on 27 July, which is where the reign is dated from. Note
+  also that Artificial Analysis has moved to Intelligence Index v4.3, so any v4.2
+  scores are no longer comparable.
 challengers:
 - name: GLM-5.3
   note: Still level on quality (44 to GLM-5.3's 45 on the AA Intelligence Index) with
@@ -33,11 +37,13 @@ challengers:
     and half the throughput.
 - name: DeepSeek-V4-Flash-Vision-Exp
   note: 'MIT-licensed V4-family weights on Hugging Face from 31 August: vision modules
-    on the V4-Flash base (284B total, 13B active), shipped as an FP8 checkpoint with
-    FP4 expert weights at roughly 168GB — much the lightest lift on this list. Artificial
-    Analysis has since scored it 42 on Intelligence Index v4.2 against K3''s 50, so
-    the case for it is cost and speed (around 122 tokens per second) rather than quality.
-    It is still an explicitly experimental Flash-class checkpoint.'
+    on the V4-Flash base, shipped as an FP8 checkpoint with a reference implementation
+    alongside, and much the lightest lift on this list. The scores previously quoted
+    here were on the retired Intelligence Index v4.2; Artificial Analysis has since
+    moved to v4.3, where K3 and GLM-5.3 lead the open weights on 44 and this checkpoint
+    does not appear among the ranked leaders. It remains an explicitly experimental
+    Flash-class release, so the case for it is licence and footprint rather than measured
+    quality.'
 - name: GLM-5.3-Flash
   note: MIT-licensed weights on Hugging Face from 25 August with Unsloth GGUFs the
     next day, but it is a Flash-class checkpoint and no independent benchmark score
