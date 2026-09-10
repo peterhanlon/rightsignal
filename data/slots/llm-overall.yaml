@@ -8,18 +8,18 @@ criteria:
 - long-context reliability
 - independent benchmarks
 provisional: false
-since: 2026-07-01
+since: &id001 2026-09-10
 pick:
-  name: Claude Fable 5
+  name: Claude Fable 5.1
   version: ''
   url: https://www.anthropic.com/claude/fable
   licence: proprietary
-  why: Number one on the Arena (formerly LMArena) text leaderboard through the August
-    snapshots, with a 1M-token context window. It debuted on 9 June, was pulled on
-    12 June when the US applied export controls to it and Mythos 5, and returned on
-    1 July after the Commerce Department lifted them on 30 June. On the official Terminal-Bench
-    board, now on version 4.0, it has slipped to third at 44.5% behind Fable 5.1 (57.9%)
-    and Opus 5 (51.8%).
+  why: Joint first on the re-based Artificial Analysis Intelligence Index v4.3 (53,
+    level with GPT-6 Astra), first on the official Terminal-Bench v4.0 board at 57.9%,
+    and first on Vellum's quality/speed/cost composite at 65%. On Arena text it sits
+    at 1504 inside a 1-6 tie band with the rest of the Anthropic top group. Costs
+    more per Index task than GPT-6 Astra ($7.63 against $3.26), so price the alternative
+    if volume matters.
 caveats: 'The Arena text board is tight at the top: on the 2 September snapshot Fable
   5 leads at 1507 with a rank spread of 1-6, with Claude Opus 4.6 (high) on 1505,
   Claude Fable 5.1 (max) on 1504 and Meta''s Muse Spark 1.2 (xHigh) on 1499, so treat
@@ -30,33 +30,7 @@ caveats: 'The Arena text board is tight at the top: on the 2 September snapshot 
   Fable 5.1''s $7.63. Terminal-Bench has moved on too: the official board now runs
   v4.0, where Fable 5.1 leads on 57.9%, Opus 5 scores 51.8% and Fable 5 44.5%, so
   the old 83.8% figure from the 2.1 board no longer describes current terminal work.'
-challengers:
-- name: GPT-6 Astra
-  note: On the current Artificial Analysis Intelligence Index (v4.3), GPT-6 Astra
-    (max) and (xhigh) both score 53, level with Claude Fable 5.1 at the top of the
-    board and ahead of Claude Opus 5 on 51 and Fable 5 on 50. It is also much cheaper
-    per unit of measured intelligence, at $3.26 per Index task against Fable 5.1's
-    $7.63, and it now leads Artificial Analysis's Terminal-Bench v4.0 runs at 59.1%
-    against 52.0% for Fable 5.1. It still has no Arena text placement, so read it
-    as a co-leader on independent composites rather than on user preference.
-- name: Claude Opus 5
-  note: Artificial Analysis re-based its Intelligence Index on 7 September, and on
-    v4.3 Opus 5 (max) sits third on 51, behind the joint leaders Claude Fable 5.1
-    (max) and GPT-6 Astra (max) on 53 and just ahead of Fable 5 on 50 — the earlier
-    63-to-62 reading was the retired scale. It stays the cheaper Anthropic option
-    at $5/$25 against $10/$50, and on the official Terminal-Bench v4.0 board it scores
-    51.8%, above Fable 5's 44.5% but below Fable 5.1's 57.9%. The Terminal-Bench 2.1
-    argument no longer holds, so the live threat to this slot is Fable 5's own successor
-    rather than Opus 5.
-- name: Muse Spark 1.2
-  note: 'Meta''s frontier line and a genuine name to watch: on the 2 September Arena
-    text snapshot Muse Spark 1.2 (xHigh) is fifth at 1499, inside the top band and
-    only eight points off Fable 5''s 1507. On the re-based Artificial Analysis Index
-    (v4.3) Meta''s newest variant, Muse Spark 1.3 (max), scores 48 against the 53
-    shared by Claude Fable 5.1 and GPT-6 Astra, so the older 57-versus-62 comparison
-    is no longer on the board''s scale. Terminal-Bench has also moved to v4.0 on the
-    official board, so quote that rather than the retired 2.1 runs when judging its
-    agentic work.'
+challengers: []
 history:
 - name: GPT-4
   from: 2023-08-01
@@ -82,7 +56,10 @@ history:
 - name: Claude Opus 4.6
   from: 2026-02-05
   to: 2026-07-01
-last_reviewed: 2026-09-10
+- name: Claude Fable 5
+  from: 2026-07-01
+  to: *id001
+last_reviewed: *id001
 watch:
   keywords:
   - llm
