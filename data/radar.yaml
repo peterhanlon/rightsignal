@@ -1,4 +1,32 @@
 radar:
+- name: DeepSeek-V4.1-Flash
+  maker: DeepSeek
+  target: best open-weight LLM
+  released: 2026-09-10
+  status: weights out
+  scored: false
+  note: A multimodal open-weight release from DeepSeek, published under an MIT licence
+    with image-text-to-text support and FP8/8-bit checkpoints ready for standard endpoints.
+    The striking part is the permissive licence on a vision-capable Flash-class model
+    shipped in FP8 from day one. No independent evaluation yet, and how it compares
+    with the earlier V4 Flash vision experiment on reasoning or coding remains unknown.
+  sources:
+  - https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash
+  card: MIT-licensed multimodal Flash model, FP8 weights
+- name: Nex-N2.5-Pro
+  maker: Nex AGI
+  target: best open-weight LLM
+  released: 2026-09-08
+  status: weights out
+  scored: false
+  note: 'A text-generation model from a comparatively unknown lab, released on Hugging
+    Face under Apache 2.0. The licence is the notable fact: fully permissive for commercial
+    use, with transformers-compatible weights and no gated access. Nothing else is
+    verified — no published benchmarks, no parameter count in the listing, and no
+    third-party testing.'
+  sources:
+  - https://huggingface.co/nex-agi/Nex-N2.5-Pro
+  card: Apache-2.0 open-weight LLM from a newcomer lab
 - name: ChatGPT Images 2.5
   maker: OpenAI
   target: best image generation

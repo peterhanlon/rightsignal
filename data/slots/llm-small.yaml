@@ -33,6 +33,11 @@ caveats: Qwen3.8 27B is still the quality leader in this size class — on Artif
   and that gap is the whole argument for it. The title stays under review because
   a verified 4-bit Qwen3.8 build with published file sizes would likely take the slot.
 challengers:
+- name: MiniCPM5-2B
+  note: OpenBMB has now published an official GGUF build tagged for tool-calling and
+    on-device use, so the deployability gap is narrowing — but no file sizes, no independent
+    4-bit retention figures and no tool-calling-under-quantisation numbers, and at
+    15 on Artificial Analysis it still sits below this pick's 17.
 - name: Qwen3.8 27B
   note: Still the quality leader in this size class — Artificial Analysis's re-based
     v4.3 index puts it at 34/31/29 across xhigh/medium/low against this pick's 17,
@@ -40,14 +45,6 @@ challengers:
     a 30.9GB GPU-oriented repo; there is no official 4-bit or GGUF build, no independent
     4-bit quality-retention numbers and nothing on tool-calling under quantisation.
     Community 4-bit GGUFs sit around 17GB for Q4_K_M, so the 16GB fit stays unverified.
-- name: MiniCPM5-2B
-  note: 'It now has an independent placement: Artificial Analysis scores MiniCPM5-2B
-    at 15 on the Intelligence Index, the highest of any open-weights model under 4B
-    total parameters, a point behind Ling 3.0 Tiny (16) and four clear of Granite
-    4.2 3B (11). That is a genuine Pareto point for its size, but it is still two
-    rungs below this slot''s pick on the same board. There are no published quantised
-    file sizes and no tool-calling-under-quantisation numbers, so the on-device story
-    remains untested rather than merely unproven.'
 - name: Qwen3.8-Flash-Next
   note: NVIDIA has now published an NVFP4 quantisation on Hugging Face, but it is
     a GPU-oriented format with no listed file size, no independent benchmark placement
@@ -81,7 +78,7 @@ history:
 - name: Qwen3.5-9B
   from: 2026-03-02
   to: 2026-04-02
-last_reviewed: 2026-09-09
+last_reviewed: 2026-09-10
 watch:
   keywords:
   - small model
