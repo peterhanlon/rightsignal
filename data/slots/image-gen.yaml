@@ -33,9 +33,12 @@ caveats: 'Editing is where the ground has shifted: on Arena''s single-image edit
   2 and $38.90 for MAI-Image-2.6.'
 challengers:
 - name: GPT-Image-2.5-Sunburst
-  note: Leads both Arena boards over the incumbent — text-to-image 1421 vs 1381, single-image
-    edit 1520 vs 1461 — but not yet rated by Artificial Analysis, where GPT Image
-    2 (high) still sits first on 1178.
+  note: Tops Arena on both the text-to-image board (1421 vs 1381 for GPT Image 2)
+    and the single-image edit board (1520 vs 1461), and sits second on Artificial
+    Analysis's text-to-image arena at 1180, ahead of the former pick on 1171. That
+    combination of prompt adherence and editing strength makes it the best all-round
+    choice, though stablemate GPT-Image-2.5-Flare is 7 Elo ahead of it on Artificial
+    Analysis and far cheaper rivals exist for editing at volume.
 - name: MAI-Image-2.6 (preview)
   note: Second on Artificial Analysis's text-to-image arena at 1,149, 29 behind GPT
     Image 2 (high) on 1,178, and it now leads that site's image-editing arena at 1,122,
@@ -69,7 +72,7 @@ history:
 - name: Nano Banana 2
   from: 2026-02-26
   to: 2026-04-21
-last_reviewed: 2026-09-10
+last_reviewed: 2026-09-11
 watch:
   keywords:
   - image generation

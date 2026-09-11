@@ -55,7 +55,7 @@ history:
 - name: Fish Audio S2 Pro
   from: 2026-03-09
   to: *id001
-last_reviewed: *id001
+last_reviewed: 2026-09-11
 watch:
   keywords:
   - tts
