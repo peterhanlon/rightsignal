@@ -58,7 +58,7 @@ history:
 - name: Claude Opus 5
   from: 2026-07-24
   to: *id001
-last_reviewed: 2026-09-11
+last_reviewed: 2026-09-12
 watch:
   keywords:
   - coding model
