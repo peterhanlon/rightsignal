@@ -33,11 +33,12 @@ caveats: 'A hold under real pressure rather than a sweep: on Artificial Analysis
   given we sell this pick on multi-turn editing.'
 challengers:
 - name: Alibaba Wan 3.0
-  note: 'Now clear #1 on Artificial Analysis''s text-to-video board at 1242 Elo, five
-    points above the pick''s 1237 — a lead that has widened across three successive
-    reads (1239 level, then 1240 v 1239). The pick still tops AA''s no-audio text-to-video
-    and image-to-video boards, and there is still no independent read on Wan 3.0''s
-    clip length or character consistency, two of our four criteria.'
+  note: 'Holds #1 on Artificial Analysis''s with-audio text-to-video board at 1242,
+    five points above the pick''s 1237 — a lead now sustained and widened across three
+    successive reads (level at 1239, then 1240 v 1239). The pick still tops AA''s
+    no-audio text-to-video board and leads image-to-video without audio on 1365, and
+    there is still no independent read on Wan 3.0''s clip length or character consistency,
+    two of our four criteria.'
 - name: Fal MiniMax H3 Max (post-trained by fal)
   note: Third on AA's with-audio text-to-video board on 1,235, two points behind the
     pick (1,237) and six behind Wan 3.0 (1,241), with a ranked range of 1-4 — a statistical
@@ -76,7 +77,7 @@ history:
 - name: Seedance 2.0
   from: 2026-02-12
   to: 2026-06-30
-last_reviewed: 2026-09-12
+last_reviewed: 2026-09-13
 watch:
   keywords:
   - video generation

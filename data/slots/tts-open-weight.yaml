@@ -32,7 +32,10 @@ caveats: 'Open-weight but not open-source: the Fish Audio Research License permi
   an initial period with advance notice before changes, so don''t build a budget on
   it; and budget for an H200-class GPU if you want the quoted 0.195 RTF and ~100ms
   first-audio figures locally.'
-challengers: []
+challengers:
+- name: StepFun StepAudio 2.5 TTS (Aug 2026)
+  note: Leads the pick 1207 to 1202 on aa-tts, but open-weight availability and licence
+    for this release are unconfirmed.
 history:
 - name: Bark
   from: 2023-08-01
@@ -55,7 +58,7 @@ history:
 - name: Fish Audio S2 Pro
   from: 2026-03-09
   to: *id001
-last_reviewed: 2026-09-12
+last_reviewed: 2026-09-13
 watch:
   keywords:
   - tts
