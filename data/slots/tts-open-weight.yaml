@@ -16,26 +16,29 @@ pick:
   licence: Apache-2.0 inference code; weights under BreezeBlue research/non-commercial
     licence
   why: Top open-weight model on the Artificial Analysis provider-voice leaderboard
-    at 1215 Elo (7th overall), well clear of the previous pick at 1128. Under 40ms
-    time-to-first-audio and 0.32 RTF on a warmed H100, with about 7.7 GiB for eager
-    inference so a 12GB card suffices. English and Chinese only, and the weights are
-    research/non-commercial, so commercial use still needs a separate licence.
-caveats: 'Open-weight but not open-source: the Fish Audio Research License permits
-  research and non-commercial use free of charge, and any commercial deployment needs
-  a separate licence from Fish Audio, which keeps the Apache-2.0-coded Step-Audio-EditX
-  relevant for self-hosters. The downloadable weights are also a generation behind
-  the hosted product — S2.1 Pro arrived on 23 June 2026 as an API-only model with
-  roughly 70ms time-to-first-audio on a single request (about 90ms on standard calls)
-  and a claimed 61% win rate over S2 Pro, and no S2.1 checkpoints have appeared on
-  the fishaudio Hugging Face org. The s2.1-pro-free tier is currently listed at $0.00
-  with no hard character cap under a Fair Use Policy, but Fish still frames it as
-  an initial period with advance notice before changes, so don''t build a budget on
-  it; and budget for an H200-class GPU if you want the quoted 0.195 RTF and ~100ms
-  first-audio figures locally.'
+    at 1202 Elo, ninth overall and 82 points clear of the next open-weight model,
+    Fish Audio S2 Pro at 1120. BreezeBlue quotes under 40ms time-to-first-audio and
+    a 0.32 RTF on a warmed H100, but those numbers come from the --fast-all path,
+    which wants about 14.4 GiB and a 24GB card; plain eager inference fits in roughly
+    7.7 GiB, so 12GB is the practical floor. English and Chinese only, and the weights
+    sit under the BreezeBlue Research and Non-Commercial Licence, so commercial self-hosting
+    still needs a separate arrangement.
+caveats: 'Open-weight but not open-source: the inference code is Apache-2.0, but the
+  weights, derivatives and self-hosted outputs fall under the BreezeBlue Research
+  and Non-Commercial Licence, and a paid breezeblue.ai subscription only covers outputs
+  from the hosted API — not anything you generate locally. That keeps Apache-2.0 Step
+  Audio EditX (1099 Elo on the same board) the pragmatic fallback if you need commercial
+  self-hosting. The lead is also board-specific and language-limited: on Artificial
+  Analysis''s controlled-voices arena Breeze ranks third among open-weight models
+  at 1002, behind Mistral''s Voxtral TTS at 1010, and the model speaks English and
+  Chinese only.'
 challengers:
 - name: StepFun StepAudio 2.5 TTS (Aug 2026)
-  note: Leads the pick 1207 to 1202 on aa-tts, but open-weight availability and licence
-    for this release are unconfirmed.
+  note: Leads the pick 1207 to 1202 on the Artificial Analysis provider-voice board,
+    seventh overall against ninth. It is proprietary and API-only on StepFun's platform
+    at about $85 per 1M characters, though, with no weights published, so it doesn't
+    displace the pick for self-hosters. StepFun's open-weight audio line remains Step-Audio-EditX
+    and Step-Audio-2-mini.
 history:
 - name: Bark
   from: 2023-08-01

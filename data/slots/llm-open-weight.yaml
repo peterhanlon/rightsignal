@@ -14,20 +14,20 @@ pick:
   version: ''
   url: https://huggingface.co/zai-org/GLM-5.3
   licence: glm-5.3 licence (Z.ai custom)
-  why: Level with or one point ahead of Kimi K3 at the top of Artificial Analysis's
-    open-weights table on Intelligence Index v4.3 (45 vs 44 on the 9 September leaderboard;
-    both at 44 on AA's 7 September open-weights page), with weights on Hugging Face
-    since 28 August. It is the cheaper and faster of the two to serve — roughly $0.9
-    per Index task against K3's $2.3, and about 84 tokens per second against 41 —
-    which decides the slot now that the quality gap has closed. It ships under Z.ai's
-    own glm-5.3 licence rather than a standard open one, and unlike K3 it is text-only.
-caveats: Both code and weights ship under Moonshot's own Kimi K3 Licence rather than
-  a standard open licence, so check the attribution and model-as-a-service conditions
-  in the repo before commercial deployment; we have not re-verified the specific user
-  and revenue thresholds this week. The hosted API shipped 16 July and the weights
-  landed on Hugging Face on 27 July, which is where the reign is dated from. Note
-  also that Artificial Analysis has moved to Intelligence Index v4.3, so any v4.2
-  scores are no longer comparable.
+  why: GLM-5.3 (max) tops Artificial Analysis's open-weights table on Intelligence
+    Index v4.3 with 45, one point clear of Kimi K3 (max) on 44, and the weights have
+    been on Hugging Face since 28 August. On cost the two are effectively level —
+    about $2.01 per Index task against K3's $2.00 — so the separator is throughput,
+    with GLM-5.3 measured at roughly 66 output tokens per second against K3's 37.
+    It ships under Z.ai's own glm-5.3 licence rather than a standard open one, and
+    it takes text-only inputs.
+caveats: GLM-5.3 ships under Z.ai's own glm-5.3 licence rather than MIT or Apache-2.0,
+  and providers above $10bn in revenue need a Z.ai security review before commercial
+  use, so read the LICENSE file in the repo before deploying. The weights landed on
+  Hugging Face on 28 August, about two weeks after the 14 August API launch, and the
+  reign here is dated from 10 September. Artificial Analysis moved to Intelligence
+  Index v4.3 on 7 September, so any v4.2 scores or cost-per-task figures are no longer
+  comparable.
 challengers: []
 history:
 - name: Llama 2 70B Chat

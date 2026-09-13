@@ -14,13 +14,13 @@ pick:
   version: ''
   url: https://github.com/vllm-project/vllm
   licence: Apache-2.0
-  why: The like-for-like Spheron runs on Llama 3.3 70B FP8 on a single H100 (three-engine,
-    March 2026; two-engine, June 2026) put SGLang between about 1% and 5% ahead of
-    vLLM on unique-prompt traffic, which is inside run-to-run noise. Both used vLLM
-    v0.18.0 on the legacy model runner, before Model Runner V2 became the default
-    for all dense models in v0.25.0 on 11 July 2026, so neither reflects what ships
-    by default today. Pick vLLM for breadth, hardware coverage and release discipline
-    rather than for any current throughput number.
+  why: 'The like-for-like Spheron runs on Llama 3.3 70B FP8 on a single H100 (three-engine,
+    March 2026; two-engine, June 2026) put SGLang 1-4% ahead of vLLM on unique-prompt
+    traffic, which Spheron itself calls run-to-run variance. Both ran vLLM v0.18.0
+    on the legacy model runner: Model Runner V2 only became the default for dense
+    models in v0.25.0 (11 July 2026) and for every model in v0.29.0 (9 September 2026),
+    so neither run reflects what ships by default today. Pick vLLM for breadth, hardware
+    coverage and release discipline rather than for any current throughput number.'
 caveats: 'Less of a two-horse race than it looks: TensorRT-LLM led the same March
   2026 Spheron H100 70B run by 8-13% at 1-50 concurrent requests and about 16% at
   100, once its engine was compiled. SGLang''s edge is prefix-driven rather than general:
@@ -30,8 +30,8 @@ caveats: 'Less of a two-horse race than it looks: TensorRT-LLM led the same Marc
   to roughly 15-18% at 10 concurrent requests, though at 50 Spheron still puts APC-on
   vLLM at 2,100 effective tok/s against SGLang''s 2,550. Measure your own prefix overlap
   before committing, and re-run on current releases: those runs used vLLM v0.18.0
-  on the legacy model runner, before Model Runner V2 became the default for dense
-  models in v0.25.0.'
+  on the legacy runner, whereas Model Runner V2 has been the default for dense models
+  since v0.25.0 and for every model since v0.29.0 (9 September 2026).'
 challengers:
 - name: SGLang
   note: Near-parity overall and faster on agentic/structured workloads, with major

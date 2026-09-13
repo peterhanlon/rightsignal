@@ -13,11 +13,13 @@ pick:
   version: ''
   url: https://developers.openai.com/api/docs/models/gpt-6-astra
   licence: proprietary
-  why: First on the official Terminal-Bench 4.0 board at 58.2% against Opus 5's 51.8%,
-    and corroborated by vals.ai, which has it top of its Terminal-Bench 2.1 table
-    and of Code Migration. Its max tier leads Arena WebDev at 1796 against claude-opus-5-max's
-    1688. It has no independent SWE-bench Verified run yet and costs $10/$50 per million
-    tokens, so Opus 5 is still the cheaper option for high-volume repo-scale batches.
+  why: GPT-6 Astra tops Artificial Analysis's independent Terminal-Bench v4.0 run
+    at 59.6% on xhigh and 59.1% on max, with Claude Fable 5.1 next at 55.1% and Opus
+    5 absent from the published top three. Vals.ai has it first on Terminal-Bench
+    2.1 too, at 87.3% ahead of GPT-5.6 Sol (85.8%), Fable 5.1 (85.0%) and Opus 5 (84.6%).
+    It has no independent SWE-bench Verified run — Vals archived that board as saturated
+    — and it lists at $10/$50 per million tokens, 2.5x GPT-5.6 Sol, so price the high-volume
+    repo-scale batches carefully.
 caveats: 'vals.ai''s Terminal-Bench 2.1 table now has Opus 5 fourth at 84.64%, behind
   GPT-6 Astra (87.27%), GPT-5.6 Sol (85.77%) and Claude Fable 5.1 (85.02%), and its
   own figure drops to 81.27% if you count its server-side fallbacks to Opus 4.8 on
@@ -28,8 +30,11 @@ caveats: 'vals.ai''s Terminal-Bench 2.1 table now has Opus 5 fourth at 84.64%, b
   saturated, so lean on terminal and repo-scale evidence rather than that one number.'
 challengers:
 - name: Claude Opus 5
-  note: First on the independent SWE-bench Verified aggregate at 96%, a board GPT-6
-    Astra has not been run on; still third on Terminal-Bench 4.0 at 51.8%.
+  note: Still the leader on Vals.ai's independent SWE-bench Verified run at 97.00%,
+    against the 96.0% Anthropic self-reports in the Opus 5 system card, on a board
+    Vals has now archived as saturated and never ran GPT-6 Astra on. On Vals' Terminal-Bench
+    2.1 it sits fourth at 84.6%, behind Astra, GPT-5.6 Sol and Claude Fable 5.1, and
+    it does not appear in the published Terminal-Bench 4.0 top three.
 history:
 - name: GPT-4
   from: 2023-08-01

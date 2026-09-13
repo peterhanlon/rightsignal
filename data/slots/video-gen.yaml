@@ -15,46 +15,55 @@ pick:
   url: https://deepmind.google/models/gemini-omni/
   licence: proprietary
   why: 'Google''s own material still frames Omni Flash as the video-first, natively
-    multimodal option: the model card now covers both the original Omni Flash and
-    the newer Gemini Omni 1.1 Flash, and outputs are high-resolution video with audio
-    rather than silent clips needing a separate pass. The differentiator remains step-by-step
-    conversational editing, where each turn builds on the last — available in the
-    Gemini app, Google Flow and YouTube, and buildable in AI Studio against gemini-omni-1.1-flash;
-    there is no product called the Interactions API. Temper the consistency pitch:
-    Google''s own known limitations say holding complete consistency across edits
-    is still a challenge, so multi-turn work needs checking shot by shot.'
-caveats: 'A hold under real pressure rather than a sweep: on Artificial Analysis''s
-  with-audio tables the pick is level with or behind Wan 3.0 on text-to-video and
-  behind fal''s post-trained Minimax H3 Max on image-to-video, so audio remains the
-  weakest part of the case. Clip length is the other limit — rivals quote longer single-pass
-  outputs, and Google''s standard output is 720p with 1080p or 4K arriving via a separate
-  upscale, so "15 seconds at 2K" claims are not like-for-like. Google''s own model
-  card also lists complete consistency across edits as an open limitation, which matters
-  given we sell this pick on multi-turn editing.'
+    multimodal option: the model card covers both the original Omni Flash and Gemini
+    Omni 1.1 Flash, and clips arrive with audio generated in the same pass rather
+    than needing a separate sound job. The differentiator is step-by-step conversational
+    editing, which Google''s API docs say is enabled by the Interactions API, chaining
+    turns with previous_interaction_id against gemini-omni-1.1-flash, and the same
+    model is surfaced in the Gemini app, Google Flow and YouTube. Temper both the
+    resolution and the consistency pitch: output defaults to 720p with 1080p and 4K
+    offered as upscales, and Google''s known limitations still say holding complete
+    consistency through edits is a challenge, so multi-turn work needs checking shot
+    by shot.'
+caveats: 'This is a trailing position on most of Artificial Analysis''s boards rather
+  than a hold: Wan 3.0 leads text-to-video both with audio (1242 to the pick''s 1238)
+  and without (1334 to 1325), the pick is fifth on image-to-video with audio (1179),
+  and it has slipped to third on the video editing board (1121) behind Wan 3.0 (1197)
+  and MiniMax H3 (1129), which is awkward given we sell this pick on multi-turn editing.
+  Its only surviving board lead is image-to-video without audio, 1365 to Wan 3.0''s
+  1362, and that sits inside the margin. On output, Gemini Omni 1.1 Flash defaults
+  to 720p with 1080p and 4K served as upscales and extends in 10-second steps to a
+  40-second total, so rivals'' single-pass 30-second or native-2K numbers are not
+  like-for-like.'
 challengers:
 - name: Alibaba Wan 3.0
-  note: 'Holds #1 on Artificial Analysis''s with-audio text-to-video board at 1242,
-    five points above the pick''s 1237 — a lead now sustained and widened across three
-    successive reads (level at 1239, then 1240 v 1239). The pick still tops AA''s
-    no-audio text-to-video board and leads image-to-video without audio on 1365, and
-    there is still no independent read on Wan 3.0''s clip length or character consistency,
-    two of our four criteria.'
+  note: 'Now #1 on Artificial Analysis''s with-audio text-to-video board on 1242 to
+    the pick''s 1238, and it has taken the no-audio board too, 1334 to 1325, so the
+    pick tops neither. Both sit in a ranked range of 1-2 with audio, so read the four
+    points as a tie rather than a lead; Wan 3.0 also leads the video editing board
+    on 1197, with the pick third. Independent same-seed testing now covers two of
+    our criteria: up to 30 seconds in a single job at 480p, 720p or 1080p, strong
+    identity hold for a lone subject, but uncommanded camera cuts and identities bleeding
+    when characters share the frame.'
 - name: Fal MiniMax H3 Max (post-trained by fal)
-  note: Third on AA's with-audio text-to-video board on 1,235, two points behind the
-    pick (1,237) and six behind Wan 3.0 (1,241), with a ranked range of 1-4 — a statistical
-    tie at the top rather than a lead. It has gone one better on image-to-video, where
-    it now leads AA's with-audio board on 1,202, ahead of Dreamina Seedance 2.0 720p
-    (1,190), MiniMax H3 (1,185) and the pick (1,179). Still no independent read on
-    clip length or character consistency.
+  note: Third on AA's with-audio text-to-video board on 1231, seven points behind
+    the pick (1238) and eleven behind Wan 3.0 (1242), on a ranked range of 2-4 against
+    the pick's 1-2, so no longer a tie at the top. It does lead image-to-video with
+    audio on 1207, ahead of Dreamina Seedance 2.0 720p (1196), MiniMax H3 (1190) and
+    HiDream-O1-Video (1186), with the pick fifth on 1179. Still no independent read
+    on its clip length or character consistency beyond the MiniMax H3 base it is post-trained
+    from.
 - name: MiniMax H3 (Hailuo 3.0)
-  note: Second to the pick on AA's no-audio text-to-video board on 1,301 and now fourth
-    with audio on 1,227, yet still AA's top open-weights model on both, with 15-second
-    2K clips and weights on Hugging Face — rare at this rank. On image-to-video it
-    is second without audio (1,347 to the pick's 1,365) and third with audio (1,185),
-    behind fal's post-trained Minimax H3 Max (1,202) and Dreamina Seedance 2.0 720p
-    (1,190). The open release is the 768p base, with the 2K regeneration stage held
-    back, and the community licence's excluded territories are the EU, UK, US and
-    South Korea, though MiniMax runs an application form for those regions.
+  note: Third on AA's no-audio text-to-video board on 1304, behind Wan 3.0 (1334)
+    and the pick (1325), and fourth with audio on 1225, yet still AA's top open-weights
+    model on both, with 4-15 second 2K clips and weights on Hugging Face, rare at
+    this rank. On image-to-video it is third both without audio (1351, to Wan 3.0's
+    1362 and the pick's 1365) and with audio (1190, behind fal's post-trained H3 Max
+    on 1207 and Dreamina Seedance 2.0 720p on 1196), and it now sits second on the
+    video editing board on 1129, ahead of the pick. The open release is the 768px
+    base with the 2K regeneration stage held back, and the community licence's excluded
+    territories are the EU, UK, US and South Korea, though MiniMax takes applications
+    from those regions.
 history:
 - name: Runway Gen-2
   from: 2023-06-07
