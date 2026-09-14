@@ -25,12 +25,28 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           REPO: ${{ github.repository }}
         run: |
-          set -euo pipefail
+          set -uo pipefail
           cutoff=$(date -u -d '24 hours ago' +%Y-%m-%dT%H:%M:%SZ)
-          prs=$(gh pr list --repo "$REPO" --label title-change --state open \
-                --json number,createdAt \
-                --jq ".[] | select(.createdAt < \"$cutoff\") | .number")
-          for pr in $prs; do
-            echo "Veto window expired for #$pr — merging"
-            gh pr merge "$pr" --repo "$REPO" --squash --delete-branch
+          gh pr list --repo "$REPO" --label title-change --state open \
+                --json number,createdAt,mergeStateStatus \
+                --jq ".[] | select(.createdAt < \"$cutoff\") | \"\(.number) \(.mergeStateStatus)\"" \
+          | while read -r pr state; do
+            case "$state" in
+              DIRTY)
+                # Main moved under it (typically the same title changed by
+                # another route). It cannot merge and its content is stale.
+                echo "PR #$pr conflicts with main — closing as stale"
+                gh pr close "$pr" --repo "$REPO" --delete-branch --comment \
+                  "Closed automatically: this change went stale because main moved under it. If the case still stands, the next sweep will propose it again against the current board." \
+                  || echo "could not close #$pr; will retry next hour"
+                ;;
+              UNKNOWN|"")
+                echo "PR #$pr mergeability not computed yet — retry next hour"
+                ;;
+              *)
+                echo "Veto window expired for #$pr — merging"
+                gh pr merge "$pr" --repo "$REPO" --squash --delete-branch \
+                  || echo "merge of #$pr failed; will retry next hour"
+                ;;
+            esac
           done
