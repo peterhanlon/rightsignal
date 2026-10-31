@@ -30,7 +30,10 @@ caveats: 'The Arena text board is tight at the top: on the 2 September snapshot 
   Fable 5.1''s $7.63. Terminal-Bench has moved on too: the official board now runs
   v4.0, where Fable 5.1 leads on 57.9%, Opus 5 scores 51.8% and Fable 5 44.5%, so
   the old 83.8% figure from the 2.1 board no longer describes current terminal work.'
-challengers: []
+challengers:
+- name: Gemini 4 Carbon (High)
+  note: First on the 31 Oct Artificial Analysis Intelligence Index (59), with Fable
+    5.1 now outside the top five — but it is a single, fresh board reading.
 history:
 - name: GPT-4
   from: 2023-08-01
@@ -59,7 +62,7 @@ history:
 - name: Claude Fable 5
   from: 2026-07-01
   to: *id001
-last_reviewed: *id001
+last_reviewed: 2026-10-31
 watch:
   keywords:
   - llm

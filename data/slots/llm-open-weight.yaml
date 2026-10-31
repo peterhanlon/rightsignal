@@ -28,7 +28,10 @@ caveats: GLM-5.3 ships under Z.ai's own glm-5.3 licence rather than MIT or Apach
   reign here is dated from 10 September. Artificial Analysis moved to Intelligence
   Index v4.3 on 7 September, so any v4.2 scores or cost-per-task figures are no longer
   comparable.
-challengers: []
+challengers:
+- name: DeepSeek-V4.1-Flash-1017
+  note: MIT-licensed, weights out and broadly served in vLLM/SGLang, but no independent
+    index score against GLM-5.3 yet.
 history:
 - name: Llama 2 70B Chat
   from: 2023-08-01
@@ -66,7 +69,7 @@ history:
 - name: Kimi K3
   from: 2026-07-27
   to: *id001
-last_reviewed: 2026-09-13
+last_reviewed: 2026-10-31
 watch:
   keywords:
   - open weight

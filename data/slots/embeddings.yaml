@@ -32,6 +32,10 @@ caveats: 'Microsoft''s card for harrier-oss-v1-27b claims state-of-the-art on Mu
   way an MTEB v2 task mean and our pick''s RTEB NDCG@10 answer different questions:
   one aggregates all task types, the other is retrieval only.'
 challengers:
+- name: EmbeddingGemma 2
+  note: Google's open, lightweight multimodal embedding model, announced 6 October
+    2026; no RTEB or MTEB retrieval scores published alongside the launch post yet,
+    so the comparison with Nemotron-3-Embed-8B is untested.
 - name: Gemini Embedding 2
   note: Google's Gemini Embedding 2 is natively multimodal, mapping text, images,
     video, audio and documents into one vector space; it went to public preview on
@@ -63,7 +67,7 @@ history:
 - name: voyage-4-large
   from: 2026-01-15
   to: 2026-07-16
-last_reviewed: 2026-09-13
+last_reviewed: 2026-10-31
 watch:
   keywords:
   - embedding
