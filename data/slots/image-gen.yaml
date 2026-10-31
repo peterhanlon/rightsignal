@@ -8,20 +8,19 @@ criteria:
 - text rendering
 - instruction following
 provisional: false
-since: 2026-04-21
+since: &id001 2026-10-31
 pick:
-  name: GPT Image 2
+  name: GPT-Image-2.5-Sunburst
   version: ''
-  url: https://developers.openai.com/api/docs/models/gpt-image-2
+  url: https://developers.openai.com/api/docs/models/gpt-image-2.5-sunburst
   licence: proprietary
-  why: 'Still top of both Arena boards: #1 on text-to-image at 1382, 50 clear of MAI-Image-2.6
-    on 1332, and #1 on single-image edit at 1461, 22 clear of MAI-Image-2.6 and Grok
-    Imagine Image 2.0 (low), which are level on 1439. It also leads Artificial Analysis''s
-    text-to-image arena at 1,172, 27 ahead of MAI-Image-2.6 and 45 ahead of Reve 2.1,
-    though on that site''s editing arena it has slipped to third at 1,117, behind
-    MAI-Image-2.6 (1,129) and MAI-Image-2.6-Flash (1,120). It has held the generation
-    crown since its 21 April launch, on the strength of prompt adherence, photorealism
-    and text rendering.'
+  why: Top of Artificial Analysis's text-to-image arena at 1,222, 36 clear of GPT
+    Image 2 (high) on 1,186, and top of that site's editing arena at 1,167 with GPT
+    Image 2 fifth on 1,114. It also leads both Arena boards — text-to-image 1421 v
+    1381 and single-image edit 1520 v 1461 — though those scores are still marked
+    preliminary on a few thousand votes. At $210.70 per 1,000 images it is no dearer
+    than the model it replaces, but MAI-Image-2.6 ($38.90) remains far cheaper for
+    editing at volume.
 caveats: 'Editing is no longer a GPT Image 2 story: on Arena''s single-image edit
   board it sits third on 1461, behind GPT-Image-2.5-Sunburst (1520) and GPT-Image-2.5-Flare
   (1491), with Grok Imagine Image 2.0 (low) fourth on 1439 and MAI-Image-2.6 fifth
@@ -31,24 +30,7 @@ caveats: 'Editing is no longer a GPT Image 2 story: on Arena''s single-image edi
   models rather than uniquely dear at $211 per 1,000 images against $210.70 for both
   GPT-Image-2.5 variants, though still far above $67 for Nano Banana 2 and $38.90
   for MAI-Image-2.6.'
-challengers:
-- name: GPT-Image-2.5-Sunburst
-  note: Tops Arena on both the text-to-image board (1421 vs 1381 for GPT Image 2)
-    and the single-image edit board (1520 vs 1461), and leads Artificial Analysis's
-    editing arena at 1,167, well clear of MAI-Image-2.6 on 1,124. On Artificial Analysis's
-    text-to-image arena it is second on 1,179, eight behind stablemate GPT-Image-2.5-Flare
-    (1,187) and eight ahead of GPT Image 2 (high) on 1,171. Both Arena scores are
-    still marked preliminary on a few thousand votes, and at $210.70 per 1,000 images
-    there are far cheaper options for editing at volume.
-- name: MAI-Image-2.6 (preview)
-  note: Fourth on Artificial Analysis's text-to-image arena at 1,144, behind GPT-Image-2.5-Flare
-    (1,187), GPT-Image-2.5-Sunburst (1,179) and GPT Image 2 (high) (1,171), and third
-    on that site's editing arena at 1,124 — ten ahead of GPT Image 2 (high) on 1,114,
-    but well adrift of Sunburst on 1,167. On Arena it is fourth in text-to-image on
-    1331 and fifth in single-image edit on 1434, behind Grok Imagine Image 2.0 (low)
-    on 1439 and both GPT-Image-2.5 models. It reached public preview on Microsoft
-    Foundry in early September and Artificial Analysis lists it at $38.90 per 1,000
-    images, so it remains much the cheaper buy.
+challengers: []
 history:
 - name: Midjourney v5.2
   from: 2023-06-22
@@ -74,7 +56,10 @@ history:
 - name: Nano Banana 2
   from: 2026-02-26
   to: 2026-04-21
-last_reviewed: 2026-10-31
+- name: GPT Image 2
+  from: 2026-04-21
+  to: *id001
+last_reviewed: *id001
 watch:
   keywords:
   - image generation
