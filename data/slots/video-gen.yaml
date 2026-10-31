@@ -57,7 +57,7 @@ history:
 - name: Gemini Omni Flash
   from: 2026-06-30
   to: *id001
-last_reviewed: *id001
+last_reviewed: 2026-10-31
 watch:
   keywords:
   - video generation

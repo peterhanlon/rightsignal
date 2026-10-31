@@ -32,8 +32,9 @@ caveats: 'The Arena text board is tight at the top: on the 2 September snapshot 
   the old 83.8% figure from the 2.1 board no longer describes current terminal work.'
 challengers:
 - name: Gemini 4 Carbon (High)
-  note: First on the 31 Oct Artificial Analysis Intelligence Index (59), with Fable
-    5.1 now outside the top five — but it is a single, fresh board reading.
+  note: Tops the 31 Oct Artificial Analysis Intelligence Index on 59 with Fable 5.1
+    out of the top five; still a single board on a single date, and absent from Arena
+    text and Vellum's top ten.
 history:
 - name: GPT-4
   from: 2023-08-01
