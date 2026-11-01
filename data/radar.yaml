@@ -48,7 +48,7 @@ radar:
   target: best open-weight LLM
   released: 2026-10-17
   status: weights out
-  scored: false
+  scored: true
   note: 'A multimodal MoE from DeepSeek shipped under MIT licence with FP8 weights
     in the box. Serving frameworks moved quickly: SGLang added a cookbook entry for
     it and vLLM pins an NVFP4 evaluation against it in CI, so the deployment path
@@ -58,3 +58,19 @@ radar:
   - https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017
   - https://github.com/sgl-project/sglang/releases/tag/v0.5.21
   card: MIT-licensed FP8 MoE, image and text input
+- name: Audio8-TTS-Realistic-0.6b
+  maker: Edge0
+  target: best open-weight TTS
+  released: 2026-10-14
+  status: weights out
+  scored: false
+  note: 'A compact 0.6B text-to-speech model published with safetensors weights and
+    custom modelling code, advertising zero-shot voice cloning across multiple languages
+    with a Chinese-language focus. The striking part is the size: voice cloning at
+    well under a billion parameters, where most open cloning systems sit several times
+    larger. Nothing independent yet on intelligibility, speaker similarity or how
+    it holds up outside Chinese, and the publisher is unfamiliar, so treat the multilingual
+    claim as unverified.'
+  sources:
+  - https://huggingface.co/Edge0/Audio8-TTS-Realistic-0.6b
+  card: 0.6B open TTS claiming zero-shot voice cloning

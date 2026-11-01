@@ -69,7 +69,7 @@ history:
 - name: Kimi K3
   from: 2026-07-27
   to: *id001
-last_reviewed: 2026-10-31
+last_reviewed: 2026-11-01
 watch:
   keywords:
   - open weight

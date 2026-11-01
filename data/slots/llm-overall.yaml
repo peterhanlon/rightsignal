@@ -32,9 +32,12 @@ caveats: 'The Arena text board is tight at the top: on the 2 September snapshot 
   the old 83.8% figure from the 2.1 board no longer describes current terminal work.'
 challengers:
 - name: Gemini 4 Carbon (High)
-  note: Tops the 31 Oct Artificial Analysis Intelligence Index on 59 with Fable 5.1
-    out of the top five; still a single board on a single date, and absent from Arena
-    text and Vellum's top ten.
+  note: Tops the most recent Artificial Analysis Intelligence Index on 59, ahead of
+    Claude Opus 5.5 on 58 and GPT-6 Astra (Max) on 57, with the previous holder off
+    the top eight entirely. The lead rests on a single board that has held across
+    two consecutive fetches, so treat it as first-among-equals until Arena text and
+    Vellum refresh. Proprietary and hosted, as the incumbent was, so no licence or
+    availability constraint changes.
 history:
 - name: GPT-4
   from: 2023-08-01
@@ -63,7 +66,7 @@ history:
 - name: Claude Fable 5
   from: 2026-07-01
   to: *id001
-last_reviewed: 2026-10-31
+last_reviewed: 2026-11-01
 watch:
   keywords:
   - llm
