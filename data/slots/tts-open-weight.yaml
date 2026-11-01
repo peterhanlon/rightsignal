@@ -23,22 +23,23 @@ pick:
     7.7 GiB, so 12GB is the practical floor. English and Chinese only, and the weights
     sit under the BreezeBlue Research and Non-Commercial Licence, so commercial self-hosting
     still needs a separate arrangement.
-caveats: 'Open-weight but not open-source: the inference code is Apache-2.0, but the
-  weights, derivatives and self-hosted outputs fall under the BreezeBlue Research
+caveats: 'Open-weight but not open-source: the inference code is Apache-2.0, while
+  the weights, derivatives and self-hosted outputs fall under the BreezeBlue Research
   and Non-Commercial Licence, and a paid breezeblue.ai subscription only covers outputs
-  from the hosted API — not anything you generate locally. That keeps Apache-2.0 Step
-  Audio EditX (1099 Elo on the same board) the pragmatic fallback if you need commercial
-  self-hosting. The lead is also board-specific and language-limited: on Artificial
-  Analysis''s controlled-voices arena Breeze ranks third among open-weight models
-  at 1002, behind Mistral''s Voxtral TTS at 1010, and the model speaks English and
-  Chinese only.'
+  from the hosted API, not anything you generate locally. If you need commercial self-hosting,
+  MIT-licensed Ming-3.0-tts (1187 on the provider-voice board) and Fish Audio Drama
+  3 (Community Licence v1.0, free commercially under US$500k annual revenue, 1278)
+  are now better fallbacks than Apache-2.0 Step Audio EditX at 1099. The standing
+  is board-specific and language-limited too: on the controlled-voice arena Breeze
+  scores 1021, fourth among open-weight models behind Drama 3 (1085), Ming-3.0-tts
+  (1068) and Drama 3 Preview (1063), and the model speaks English and Chinese only.'
 challengers:
 - name: StepFun StepAudio 2.5 TTS (Aug 2026)
-  note: Leads the pick 1207 to 1202 on the Artificial Analysis provider-voice board,
-    seventh overall against ninth. It is proprietary and API-only on StepFun's platform
-    at about $85 per 1M characters, though, with no weights published, so it doesn't
-    displace the pick for self-hosters. StepFun's open-weight audio line remains Step-Audio-EditX
-    and Step-Audio-2-mini.
+  note: Now trails the pick on the Artificial Analysis provider-voice board, 1214
+    to 1228 — 18th against 13th — on the board's current scale. It stays proprietary
+    and API-only on StepFun's platform at about $85 per 1M characters with no weights
+    published, so it is not an option for self-hosters either way. StepFun's open-weight
+    audio line remains Step-Audio-EditX and Step-Audio-2-mini.
 history:
 - name: Bark
   from: 2023-08-01

@@ -24,14 +24,18 @@ pick:
 caveats: GLM-5.3 ships under Z.ai's own glm-5.3 licence rather than MIT or Apache-2.0,
   and providers above $10bn in revenue need a Z.ai security review before commercial
   use, so read the LICENSE file in the repo before deploying. The weights landed on
-  Hugging Face on 28 August, about two weeks after the 14 August API launch, and the
-  reign here is dated from 10 September. Artificial Analysis moved to Intelligence
-  Index v4.3 on 7 September, so any v4.2 scores or cost-per-task figures are no longer
-  comparable.
+  Hugging Face on 28 August, about two weeks after the August API launch, and the
+  reign here is dated from 10 September. Artificial Analysis replaced v4.3 with Intelligence
+  Index v5.0 on 27 October and re-based the whole table — GLM-5.3 (max) now reads
+  32 at $5.01 per Index task, its worst-in-class cost among comparable open-weight
+  models — so any v4.x score or cost figure is no longer comparable.
 challengers:
 - name: DeepSeek-V4.1-Flash-1017
-  note: MIT-licensed, weights out and broadly served in vLLM/SGLang, but no independent
-    index score against GLM-5.3 yet.
+  note: 'MIT-licensed, weights out and widely served in vLLM and SGLang. Artificial
+    Analysis has now benchmarked it independently: 32 on Intelligence Index v5.0,
+    level with GLM-5.3 (max) and joint best among models with released weights, at
+    $0.60 per Index task against GLM-5.3''s $5.01. On the retired v4.3.2 scale it
+    scored 45, a point behind Xiaomi''s MiMo-V2.6-Pro.'
 history:
 - name: Llama 2 70B Chat
   from: 2023-08-01

@@ -14,23 +14,21 @@ pick:
   version: ''
   url: https://huggingface.co/Wan-AI
   licence: not verified in dossier — check Alibaba's release terms
-  why: 'Wan 3.0 is #1 on Artificial Analysis''s text-to-video board (1175, with the
-    previous pick tenth on 1128) and also leads the with-audio and no-audio text-to-video
-    boards and the video editing board. Independent same-seed testing shows 30-second
-    clips in a single job at up to 1080p with audio in the same pass, and strong identity
-    hold for a single subject. Watch for uncommanded camera cuts and identity bleed
-    when two or more characters share the frame, and confirm the licence terms before
-    commercial work.'
-caveats: 'This is a trailing position on most of Artificial Analysis''s boards rather
-  than a hold: Wan 3.0 leads text-to-video both with audio (1242 to the pick''s 1238)
-  and without (1334 to 1325), the pick is fifth on image-to-video with audio (1179),
-  and it has slipped to third on the video editing board (1121) behind Wan 3.0 (1197)
-  and MiniMax H3 (1129), which is awkward given we sell this pick on multi-turn editing.
-  Its only surviving board lead is image-to-video without audio, 1365 to Wan 3.0''s
-  1362, and that sits inside the margin. On output, Gemini Omni 1.1 Flash defaults
-  to 720p with 1080p and 4K served as upscales and extends in 10-second steps to a
-  40-second total, so rivals'' single-pass 30-second or native-2K numbers are not
-  like-for-like.'
+  why: 'Wan 3.0 is #1 on Artificial Analysis''s text-to-video with-audio board (1175,
+    with the previous pick, Gemini Omni Flash 1.1, tenth on 1128) and #1 on the video
+    editing board (1196), though on the silent text-to-video board it is only fourth
+    (1133) behind HeyGen Video 1 (1143). Alibaba''s Model Studio docs confirm 2-30
+    second clips in a single job at up to 1080p and 30fps, with dialogue, sound effects
+    and music generated natively in the same pass. It is hosted-only with no open
+    weights, so confirm Alibaba Cloud''s terms before commercial work.'
+caveats: 'The lead is narrower than it looks: Wan 3.0 tops text-to-video with audio
+  (1175) and video editing (1196) on Artificial Analysis, but sits fourth on the silent
+  text-to-video board (1133, behind HeyGen Video 1 on 1143) and ninth on image-to-video
+  with audio (1111), where Dreamina Seedance 2.5 leads on 1153. Note the boards were
+  re-based for v2.1, with the scale pinned so Kling 3.0 1080p (Pro) sits at 1000,
+  so Elo figures quoted earlier this year are not comparable. There are no open weights
+  either: Wan 3.0 is hosted on Alibaba Cloud Model Studio and listed at $12 per minute,
+  so the Wan-AI Hugging Face org carries only the older Wan 2.x releases.'
 challengers: []
 history:
 - name: Runway Gen-2

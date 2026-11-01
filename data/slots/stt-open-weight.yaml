@@ -32,11 +32,14 @@ caveats: 'NVIDIA''s Parakeet-TDT-0.6B-v3 is still the sensible choice where thro
   leaderboard scorer, lands at 5.13% WER and an overall RTFx of 197.'
 challengers:
 - name: Voxtral Small Transcribe 3
-  note: 'New at #3 (2.1%) on the Artificial Analysis STT board on 1 Nov 2026, but
-    that listing is not a like-for-like WER ordering, the model does not appear on
-    the Open ASR Leaderboard where ARK-ASR-3B holds at 4.76, and the dossier gives
-    no licence, weight availability, throughput or language coverage to check against
-    this slot''s criteria.'
+  note: 'Launched on 20 October 2026 and still #3 on the Artificial Analysis non-streaming
+    board at 2.1% AA-WER with a median speed factor of 62.2, behind Fun-Realtime-ASR-preview
+    (1.7%) and MAI-Transcribe-2 (2.0%). That index averages only three datasets, so
+    it will not line up with the Open ASR Leaderboard''s eight-set mean, where this
+    model does not appear and ARK-ASR-3B holds at 4.76. Artificial Analysis does not
+    count it among its open-weights entries — its best open-weights row is the older
+    Voxtral Small at 2.8% — so despite Mistral''s claimed 50+ languages, the licence
+    and weight availability this slot needs are still unverified.'
 - name: microsoft/VibeVoice-ASR-Streaming-7B
   note: 'Microsoft has now filled in the gaps: the 7B card ships under MIT, and the
     streaming technical report (arXiv 2609.02812) quotes a real-time factor at or
@@ -46,10 +49,15 @@ challengers:
     Worth a look if you need streaming speaker-attributed transcription, but you cannot
     yet compare it like-for-like on WER.'
 - name: Qwen3.5 Omni Flash / Plus
-  note: 'Top two on the Artificial Analysis STT board as of 6 Sep 2026, but the listing
-    gives no licence, weight availability, throughput or language coverage, its percentages
-    do not read as a WER ordering (#1 at 13.5%, #5 at 3.1%), and neither variant appears
-    on the Open ASR Leaderboard where ARK-ASR-3B holds at 4.76.'
+  note: 'Both still appear on the Artificial Analysis non-streaming speech-to-text
+    board, but neither is near the top as of 1 November 2026: Qwen3.5 Omni Flash sits
+    at 13.5% AA-WER and Qwen3.5 Omni Plus at 3.5%, against Fun-Realtime-ASR-preview
+    at 1.7%, MAI-Transcribe-2 at 2.0% and Voxtral Small Transcribe 3 at 2.1%. That
+    board ranks by an AA-WER index built from three datasets (AA-AgentTalk, VoxPopuli-Cleaned-AA,
+    Earnings22-Cleaned-AA), so it is not comparable with the Open ASR Leaderboard''s
+    eight-set mean, and it lists no licence or weight availability for either variant.
+    Neither appears on the Open ASR Leaderboard, which ARK-ASR-3B still heads at 4.76
+    mean WER.'
 history:
 - name: Whisper large-v2
   from: 2023-08-01

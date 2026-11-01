@@ -33,9 +33,14 @@ caveats: 'Microsoft''s card for harrier-oss-v1-27b claims state-of-the-art on Mu
   one aggregates all task types, the other is retrieval only.'
 challengers:
 - name: EmbeddingGemma 2
-  note: Google's open, lightweight multimodal embedding model, announced 6 October
-    2026; no RTEB or MTEB retrieval scores published alongside the launch post yet,
-    so the comparison with Nemotron-3-Embed-8B is untested.
+  note: 'Google''s open, lightweight EmbeddingGemma 2 was announced on 6 October 2026:
+    a 740M form factor with modular encoders that maps text, code, images, video and
+    audio into a single embedding space, aimed squarely at on-device work. It is no
+    longer wholly untested against our pick, as NVIDIA''s 21 October Nemotron 3.5
+    post benchmarks EmbeddingGemma-2 head-to-head on ViDoRe v3, Korean ViDoRe and
+    MIRACL Vision, but those are visual retrieval runs. There is still no like-for-like
+    RTEB or MTEB retrieval comparison against Nemotron-3-Embed-8B, so for pure text
+    retrieval the gap remains unmeasured.'
 - name: Gemini Embedding 2
   note: Google's Gemini Embedding 2 is natively multimodal, mapping text, images,
     video, audio and documents into one vector space; it went to public preview on

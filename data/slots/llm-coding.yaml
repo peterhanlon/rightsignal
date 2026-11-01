@@ -20,21 +20,23 @@ pick:
     It has no independent SWE-bench Verified run — Vals archived that board as saturated
     — and it lists at $10/$50 per million tokens, 2.5x GPT-5.6 Sol, so price the high-volume
     repo-scale batches carefully.
-caveats: 'vals.ai''s Terminal-Bench 2.1 table now has Opus 5 fourth at 84.64%, behind
-  GPT-6 Astra (87.27%), GPT-5.6 Sol (85.77%) and Claude Fable 5.1 (85.02%), and its
-  own figure drops to 81.27% if you count its server-side fallbacks to Opus 4.8 on
-  refused tasks as failures. The SWE-bench Verified lead is thin as well: DeepSeek
-  V4 Pro (0813) sits second at 96.40% against 97.00%, as an open-weight model costing
-  roughly $0.02 per task against $1.29 for Opus 5. Worth knowing that vals has since
-  dropped SWE-bench Verified from its coding index altogether, calling the benchmark
-  saturated, so lean on terminal and repo-scale evidence rather than that one number.'
+caveats: 'Vals'' Terminal-Bench 2.1 table is now archived and superseded by Terminal-Bench
+  4.0 in its coding index: Claude Opus 5.5 leads at 87.64%, GPT-6 Astra is second
+  at 87.27% and Opus 5 has slipped to fifth at 84.64%, or 81.27% once its server-side
+  fallbacks to Opus 4.8 on refused tasks are counted as failures. Vals also archived
+  SWE-bench Verified as saturated in its 1 September 2026 update, where Opus 5 finished
+  top at 97.00% at $1.29 a test and the open-weight DeepSeek V4 Pro 0813 second at
+  96.40% for $0.10 a test. Lean on the Terminal-Bench 4.0 and repo-scale runs rather
+  than either archived board.'
 challengers:
 - name: Claude Opus 5
-  note: Still the leader on Vals.ai's independent SWE-bench Verified run at 97.00%,
-    against the 96.0% Anthropic self-reports in the Opus 5 system card, on a board
-    Vals has now archived as saturated and never ran GPT-6 Astra on. On Vals' Terminal-Bench
-    2.1 it sits fourth at 84.6%, behind Astra, GPT-5.6 Sol and Claude Fable 5.1, and
-    it does not appear in the published Terminal-Bench 4.0 top three.
+  note: Claude Opus 5 still tops Vals' SWE-bench Verified board at 97.00%, but Vals
+    archived that board as saturated in its 1 September 2026 update and never ran
+    GPT-6 Astra on it. On Vals' Terminal-Bench 2.1, itself now archived in favour
+    of 4.0, Opus 5 sits fifth at 84.64%, or 81.27% with its server-side Opus 4.8 fallbacks
+    counted as failures, behind Opus 5.5, Astra, GPT-5.6 Sol and Fable 5.1. On Vals'
+    Terminal-Bench 4.0 it manages 53.53% against Opus 5.5's 61.62%, so treat it as
+    a legacy option rather than a live contender.
 history:
 - name: GPT-4
   from: 2023-08-01

@@ -20,24 +20,26 @@ pick:
     at 1504 inside a 1-6 tie band with the rest of the Anthropic top group. Costs
     more per Index task than GPT-6 Astra ($7.63 against $3.26), so price the alternative
     if volume matters.
-caveats: 'The Arena text board is tight at the top: on the 2 September snapshot Fable
-  5 leads at 1507 with a rank spread of 1-6, with Claude Opus 4.6 (high) on 1505,
-  Claude Fable 5.1 (max) on 1504 and Meta''s Muse Spark 1.2 (xHigh) on 1499, so treat
-  the lead as first-among-equals and read the exact tie band off the live board. Artificial
-  Analysis has re-based its Intelligence Index twice this month, and on v4.3 Claude
-  Fable 5.1 (max) and GPT-6 Astra (max) share first place on 53, ahead of Claude Opus
-  5 on 51 and Fable 5 itself on 50, with Astra costing $3.26 per Index task against
-  Fable 5.1''s $7.63. Terminal-Bench has moved on too: the official board now runs
-  v4.0, where Fable 5.1 leads on 57.9%, Opus 5 scores 51.8% and Fable 5 44.5%, so
-  the old 83.8% figure from the 2.1 board no longer describes current terminal work.'
+caveats: 'Artificial Analysis has re-based again: the live board is Intelligence Index
+  v5, where Gemini 4 Carbon (high) leads on 59, Claude Opus 5.5 (max) is on 58 and
+  GPT-6 Astra (max) on 57, while Claude Fable 5.1 reads 50 (xhigh, $10.85 per task)
+  and 49 (max, $12.99) — so the v4.3 score of 53 and the $7.63 against $3.26 comparison
+  no longer apply. On Terminal-Bench 4.0 the 57.9% figure is a Claude Code max-effort
+  row on the official board, which runs each vendor in its own agent and so cannot
+  rank vendors against each other; Vals AI''s neutral mini-SWE-agent run puts Claude
+  Opus 5.5 first at 65.15%, with Anthropic quoting 66.4% itself. Arena has moved on
+  too: its published 28 October board has Gemini 4 Carbon and Claude Opus 5.5 at the
+  top with Fable 5.1 fourth overall, so ignore the 2 September 1507/1504 snapshot
+  and read the live board.'
 challengers:
 - name: Gemini 4 Carbon (High)
-  note: Tops the most recent Artificial Analysis Intelligence Index on 59, ahead of
-    Claude Opus 5.5 on 58 and GPT-6 Astra (Max) on 57, with the previous holder off
-    the top eight entirely. The lead rests on a single board that has held across
-    two consecutive fetches, so treat it as first-among-equals until Arena text and
-    Vellum refresh. Proprietary and hosted, as the incumbent was, so no licence or
-    availability constraint changes.
+  note: 'Tops the live Artificial Analysis Intelligence Index v5 on 59, ahead of Claude
+    Opus 5.5 (max) on 58 and GPT-6 Astra (max) on 57, with the incumbent down at 50
+    and outside the top eight. It is no longer a single-board lead: Arena''s published
+    28 October data has Carbon first on text and second behind Claude Opus 5.5 on
+    the overall agent board, though Vellum has not refreshed since 28 September. Proprietary
+    and hosted, as the incumbent is, so no licence or availability constraint changes;
+    note it costs $7.76 per Index task.'
 history:
 - name: GPT-4
   from: 2023-08-01

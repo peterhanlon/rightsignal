@@ -24,31 +24,35 @@ pick:
     for laptops, native function calling and image input, rather than raw benchmark
     score.'
 caveats: Qwen3.8 27B is still the quality leader in this size class — on Artificial
-  Analysis's re-based v4.3 index it scores 34 at xhigh (28 medium, 26 low) against
-  this pick's 17, with the non-reasoning variant at 22 — but the only official quantised
-  build is Qwen's FP8 repo, so a 16GB fit remains unproven, and the third-party 4-bit
-  builds that do exist, such as Unsloth's 23.4GB NVFP4, are GPU-oriented and well
-  over a 16GB budget. The pick's QAT int4 GGUF is 14.2GB in Unsloth's dynamic build,
-  about 200MB smaller than a naive Q4_0 conversion of the same checkpoint, and wants
-  roughly 15GB of total memory; that gap is the whole argument for it. The title stays
-  under review because a verified 4-bit Qwen3.8 build with published file sizes would
-  likely take the slot.
+  Analysis's current Intelligence Index v5.0 it scores 20 at xhigh (17 medium, 16
+  low, 10 non-reasoning), while this pick carries no v5.0 score at all — but Qwen's
+  only official quantised build is the FP8 repo, so a 16GB fit remains unproven, and
+  the third-party options that do exist (community GGUF conversions from ggml-org
+  and lmstudio-community, plus GPU-oriented NVFP4 checkpoints) come with no published
+  retention data at a 16GB footprint. The pick's QAT int4 GGUF is 14.2GB in Unsloth's
+  dynamic build, about 200MB smaller than a naive Q4_0 conversion of the same checkpoint
+  — Google's own q4_0 file is 14.4GB — and wants roughly 15GB of total memory; that
+  gap is the whole argument for it. The title stays under review because a verified
+  4-bit Qwen3.8 build with published file sizes and tool-calling numbers would likely
+  take the slot.
 challengers:
 - name: MiniCPM5-2B
-  note: OpenBMB's official GGUF build is now up, tagged for tool-calling and on-device
-    use, and the file sizes are published — 1.56GB at Q4_K_M, 2.68GB at Q8_0, 5.04GB
-    at F16 — so it clears a 16GB budget with room to spare. What is still missing
-    is independent 4-bit retention data and any tool-calling-under-quantisation numbers.
-    On Artificial Analysis's re-based v4.3 index it sits at 13 against this pick's
-    17, so it is a deployability story rather than a quality one.
+  note: 'OpenBMB''s official GGUF build is up, tagged for tool-calling and on-device
+    use, with published file sizes — 1.56GB at Q4_K_M — so it clears a 16GB budget
+    with room to spare. What is still missing is independent 4-bit retention data
+    and any tool-calling-under-quantisation numbers. We have dropped the Artificial
+    Analysis comparison for now: the index has re-based to v5.0 and the pick is unscored
+    on it, so there is no like-for-like quality gap to quote; treat this as a deployability
+    story rather than a quality one.'
 - name: Qwen3.8 27B
-  note: Still the quality leader in this size class — Artificial Analysis's re-based
-    v4.3 index puts it at 34/28/26 across xhigh/medium/low against this pick's 17,
-    with non-reasoning at 22. Qwen's only official quantised build remains the FP8
-    release, a GPU-oriented repo; there is no official 4-bit or GGUF build and nothing
-    published on tool-calling under quantisation. Third-party NVFP4 checkpoints have
-    now appeared with head-to-head comparisons, but Unsloth's is 23.4GB and aimed
-    at datacentre GPUs, so the 16GB fit stays unverified.
+  note: Still the quality leader in this size class — Artificial Analysis's current
+    Intelligence Index v5.0 puts it at 20/17/16 across xhigh/medium/low and 10 non-reasoning,
+    while the pick carries no v5.0 score at all. Qwen's only official quantised build
+    remains the FP8 release, a GPU-oriented repo; there is no official 4-bit or GGUF
+    build and nothing published on tool-calling under quantisation. Community GGUF
+    conversions (ggml-org, lmstudio-community) and third-party NVFP4 checkpoints do
+    exist, but none publishes 4-bit retention data at a verified 16GB footprint, so
+    the on-device fit stays unproven.
 - name: Qwen3.8-Flash-Next
   note: NVIDIA has now published an NVFP4 quantisation on Hugging Face, but it is
     a GPU-oriented format with no listed file size, no independent benchmark placement
