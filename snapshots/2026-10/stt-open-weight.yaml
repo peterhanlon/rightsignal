@@ -1,0 +1,85 @@
+slot: stt-open-weight
+category: speech
+title: Best open-weight STT
+question: What is the best open-weight speech-to-text model right now?
+criteria:
+- WER on independent leaderboards
+- throughput
+- licence
+- language coverage
+provisional: false
+since: 2026-06-22
+pick:
+  name: ARK-ASR-3B
+  version: ''
+  url: https://huggingface.co/Audio8/ARK-ASR-3B
+  licence: Apache-2.0
+  why: 'ARK-ASR-3B heads the Open ASR Leaderboard''s public listing at 4.76 mean WER
+    with an RTFx of 490.98, ahead of MOSS-Transcribe-preview-2B on 4.87, MOSS-Transcribe-Diarize
+    on 5.17 and Cohere Transcribe on 5.42, with per-dataset results filed in the repo
+    and dated 23 June 2026. The 5.04% on the card is the seven-set average that omits
+    TEDLIUM; add TEDLIUM''s 2.79% and you get the board figure. It ships Apache-2.0
+    with 19 languages, but that is not what separates it from MOSS: only the preview-2B
+    is English-only, while MOSS-Transcribe-Diarize is also Apache-2.0 and covers 50+
+    languages, so ARK''s edge there is accuracy rather than licence or reach.'
+caveats: 'NVIDIA''s Parakeet-TDT-0.6B-v3 is still the sensible choice where throughput
+  decides the invoice — 25 European languages, automatic language detection and a
+  6.34% average WER, so you are trading roughly 1.5 WER points for the speed — but
+  note it ships under CC BY 4.0, not Apache-2.0. ARK''s headline is board-verified
+  rather than card-only: the leaderboard records 4.76 mean WER at RTFx 490.98, including
+  TEDLIUM at 2.79%. Do budget for less throughput headroom than that suggests, though:
+  AutoArk''s own rerun of the seven public splits on 8x RTX 4090, scored with the
+  leaderboard scorer, lands at 5.13% WER and an overall RTFx of 197.'
+challengers:
+- name: Voxtral Small Transcribe 3
+  note: 'New at #3 (2.1%) on the Artificial Analysis STT board on 1 Nov 2026, but
+    that listing is not a like-for-like WER ordering, the model does not appear on
+    the Open ASR Leaderboard where ARK-ASR-3B holds at 4.76, and the dossier gives
+    no licence, weight availability, throughput or language coverage to check against
+    this slot''s criteria.'
+- name: microsoft/VibeVoice-ASR-Streaming-7B
+  note: 'Microsoft has now filled in the gaps: the 7B card ships under MIT, and the
+    streaming technical report (arXiv 2609.02812) quotes a real-time factor at or
+    below 0.104 on an A100, with ten languages supported rather than the four originally
+    tagged. The accuracy numbers are still the authors'' own — it does not appear
+    on the Open ASR Leaderboard, which ARK-ASR-3B continues to head at 4.76 mean WER.
+    Worth a look if you need streaming speaker-attributed transcription, but you cannot
+    yet compare it like-for-like on WER.'
+- name: Qwen3.5 Omni Flash / Plus
+  note: 'Top two on the Artificial Analysis STT board as of 6 Sep 2026, but the listing
+    gives no licence, weight availability, throughput or language coverage, its percentages
+    do not read as a WER ordering (#1 at 13.5%, #5 at 3.1%), and neither variant appears
+    on the Open ASR Leaderboard where ARK-ASR-3B holds at 4.76.'
+history:
+- name: Whisper large-v2
+  from: 2023-08-01
+  to: 2023-11-07
+- name: Whisper large-v3
+  from: 2023-11-07
+  to: 2024-02-07
+- name: Canary 1B
+  from: 2024-02-07
+  to: 2025-05-01
+- name: Parakeet TDT 0.6B v2
+  from: 2025-05-01
+  to: 2025-07-17
+- name: Canary Qwen 2.5B
+  from: 2025-07-17
+  to: 2026-04-29
+- name: Granite Speech 4.1 2B
+  from: 2026-04-29
+  to: 2026-06-22
+last_reviewed: 2026-11-01
+watch:
+  keywords:
+  - stt
+  - speech-to-text
+  - asr
+  - transcription
+  - whisper
+  - parakeet
+  - ark-asr
+  - moss
+  - voxtral
+short: Speech → text
+rank: 1

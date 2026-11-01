@@ -1,0 +1,83 @@
+slot: llm-overall
+category: language-models
+title: Best overall LLM
+question: What is the best large language model overall right now?
+criteria:
+- reasoning quality
+- multimodal capability
+- long-context reliability
+- independent benchmarks
+provisional: false
+since: &id001 2026-09-10
+pick:
+  name: Claude Fable 5.1
+  version: ''
+  url: https://www.anthropic.com/claude/fable
+  licence: proprietary
+  why: Joint first on the re-based Artificial Analysis Intelligence Index v4.3 (53,
+    level with GPT-6 Astra), first on the official Terminal-Bench v4.0 board at 57.9%,
+    and first on Vellum's quality/speed/cost composite at 65%. On Arena text it sits
+    at 1504 inside a 1-6 tie band with the rest of the Anthropic top group. Costs
+    more per Index task than GPT-6 Astra ($7.63 against $3.26), so price the alternative
+    if volume matters.
+caveats: 'The Arena text board is tight at the top: on the 2 September snapshot Fable
+  5 leads at 1507 with a rank spread of 1-6, with Claude Opus 4.6 (high) on 1505,
+  Claude Fable 5.1 (max) on 1504 and Meta''s Muse Spark 1.2 (xHigh) on 1499, so treat
+  the lead as first-among-equals and read the exact tie band off the live board. Artificial
+  Analysis has re-based its Intelligence Index twice this month, and on v4.3 Claude
+  Fable 5.1 (max) and GPT-6 Astra (max) share first place on 53, ahead of Claude Opus
+  5 on 51 and Fable 5 itself on 50, with Astra costing $3.26 per Index task against
+  Fable 5.1''s $7.63. Terminal-Bench has moved on too: the official board now runs
+  v4.0, where Fable 5.1 leads on 57.9%, Opus 5 scores 51.8% and Fable 5 44.5%, so
+  the old 83.8% figure from the 2.1 board no longer describes current terminal work.'
+challengers:
+- name: Gemini 4 Carbon (High)
+  note: Tops the most recent Artificial Analysis Intelligence Index on 59, ahead of
+    Claude Opus 5.5 on 58 and GPT-6 Astra (Max) on 57, with the previous holder off
+    the top eight entirely. The lead rests on a single board that has held across
+    two consecutive fetches, so treat it as first-among-equals until Arena text and
+    Vellum refresh. Proprietary and hosted, as the incumbent was, so no licence or
+    availability constraint changes.
+history:
+- name: GPT-4
+  from: 2023-08-01
+  to: 2024-03-26
+- name: Claude 3 Opus
+  from: 2024-03-26
+  to: 2024-05-13
+- name: GPT-4o
+  from: 2024-05-13
+  to: 2024-12-06
+- name: Gemini-Exp-1206
+  from: 2024-12-06
+  to: 2025-03-25
+- name: Gemini 2.5 Pro
+  from: 2025-03-25
+  to: 2025-08-07
+- name: GPT-5
+  from: 2025-08-07
+  to: 2025-11-18
+- name: Gemini 3 Pro
+  from: 2025-11-18
+  to: 2026-02-05
+- name: Claude Opus 4.6
+  from: 2026-02-05
+  to: 2026-07-01
+- name: Claude Fable 5
+  from: 2026-07-01
+  to: *id001
+last_reviewed: 2026-11-01
+watch:
+  keywords:
+  - llm
+  - language model
+  - frontier model
+  - reasoning benchmark
+  - lmarena
+  - gpt
+  - claude
+  - fable
+  - gemini
+  - grok
+short: Overall LLM
+rank: 1

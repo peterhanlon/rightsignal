@@ -1,0 +1,75 @@
+slot: image-gen
+category: image-video
+title: Best image generation
+question: What is the best AI image generation model right now?
+criteria:
+- photoreal quality
+- editability
+- text rendering
+- instruction following
+provisional: false
+since: &id001 2026-10-31
+pick:
+  name: GPT-Image-2.5-Sunburst
+  version: ''
+  url: https://developers.openai.com/api/docs/models/gpt-image-2.5-sunburst
+  licence: proprietary
+  why: Top of Artificial Analysis's text-to-image arena at 1,222, 36 clear of GPT
+    Image 2 (high) on 1,186, and top of that site's editing arena at 1,167 with GPT
+    Image 2 fifth on 1,114. It also leads both Arena boards — text-to-image 1421 v
+    1381 and single-image edit 1520 v 1461 — though those scores are still marked
+    preliminary on a few thousand votes. At $210.70 per 1,000 images it is no dearer
+    than the model it replaces, but MAI-Image-2.6 ($38.90) remains far cheaper for
+    editing at volume.
+caveats: 'Editing is no longer a GPT Image 2 story: on Arena''s single-image edit
+  board it sits third on 1461, behind GPT-Image-2.5-Sunburst (1520) and GPT-Image-2.5-Flare
+  (1491), with Grok Imagine Image 2.0 (low) fourth on 1439 and MAI-Image-2.6 fifth
+  on 1434. Artificial Analysis''s editing arena has it fifth on 1,114, behind Sunburst
+  (1,167), Flare (1,145), MAI-Image-2.6 (1,124) and MAI-Image-2.6-Flash (1,117), with
+  Muse Image a point back on 1,113. On price it is now level with the newer OpenAI
+  models rather than uniquely dear at $211 per 1,000 images against $210.70 for both
+  GPT-Image-2.5 variants, though still far above $67 for Nano Banana 2 and $38.90
+  for MAI-Image-2.6.'
+challengers: []
+history:
+- name: Midjourney v5.2
+  from: 2023-06-22
+  to: 2023-10-01
+- name: DALL-E 3
+  from: 2023-10-01
+  to: 2023-12-21
+- name: Midjourney v6
+  from: 2023-12-21
+  to: 2024-10-30
+- name: Recraft V3
+  from: 2024-10-30
+  to: 2025-03-25
+- name: GPT-4o image generation
+  from: 2025-03-25
+  to: 2025-08-26
+- name: Nano Banana
+  from: 2025-08-26
+  to: 2025-12-16
+- name: GPT Image 1.5
+  from: 2025-12-16
+  to: 2026-02-26
+- name: Nano Banana 2
+  from: 2026-02-26
+  to: 2026-04-21
+- name: GPT Image 2
+  from: 2026-04-21
+  to: *id001
+last_reviewed: 2026-11-01
+watch:
+  keywords:
+  - image generation
+  - text-to-image
+  - image edit
+  - gpt image
+  - nano banana
+  - midjourney
+  - imagen
+  - flux
+  - seedream
+short: Image
+rank: 1

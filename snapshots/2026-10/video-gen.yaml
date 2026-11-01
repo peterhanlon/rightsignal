@@ -1,0 +1,75 @@
+slot: video-gen
+category: image-video
+title: Best video generation
+question: What is the best AI video generation model right now?
+criteria:
+- visual quality
+- character consistency
+- native audio
+- clip length
+provisional: false
+since: &id001 2026-10-31
+pick:
+  name: Alibaba Wan 3.0
+  version: ''
+  url: https://huggingface.co/Wan-AI
+  licence: not verified in dossier — check Alibaba's release terms
+  why: 'Wan 3.0 is #1 on Artificial Analysis''s text-to-video board (1175, with the
+    previous pick tenth on 1128) and also leads the with-audio and no-audio text-to-video
+    boards and the video editing board. Independent same-seed testing shows 30-second
+    clips in a single job at up to 1080p with audio in the same pass, and strong identity
+    hold for a single subject. Watch for uncommanded camera cuts and identity bleed
+    when two or more characters share the frame, and confirm the licence terms before
+    commercial work.'
+caveats: 'This is a trailing position on most of Artificial Analysis''s boards rather
+  than a hold: Wan 3.0 leads text-to-video both with audio (1242 to the pick''s 1238)
+  and without (1334 to 1325), the pick is fifth on image-to-video with audio (1179),
+  and it has slipped to third on the video editing board (1121) behind Wan 3.0 (1197)
+  and MiniMax H3 (1129), which is awkward given we sell this pick on multi-turn editing.
+  Its only surviving board lead is image-to-video without audio, 1365 to Wan 3.0''s
+  1362, and that sits inside the margin. On output, Gemini Omni 1.1 Flash defaults
+  to 720p with 1080p and 4K served as upscales and extends in 10-second steps to a
+  40-second total, so rivals'' single-pass 30-second or native-2K numbers are not
+  like-for-like.'
+challengers: []
+history:
+- name: Runway Gen-2
+  from: 2023-06-07
+  to: 2024-06-17
+- name: Runway Gen-3 Alpha
+  from: 2024-06-17
+  to: 2024-12-16
+- name: Veo 2
+  from: 2024-12-16
+  to: 2025-04-15
+- name: Kling 2.0
+  from: 2025-04-15
+  to: 2025-05-20
+- name: Veo 3
+  from: 2025-05-20
+  to: 2025-09-30
+- name: Sora 2
+  from: 2025-09-30
+  to: 2026-02-12
+- name: Seedance 2.0
+  from: 2026-02-12
+  to: 2026-06-30
+- name: Gemini Omni Flash
+  from: 2026-06-30
+  to: *id001
+last_reviewed: 2026-11-01
+watch:
+  keywords:
+  - video generation
+  - text-to-video
+  - image-to-video
+  - sora
+  - veo
+  - gemini omni
+  - seedance
+  - hailuo
+  - minimax
+  - kling
+  - wan
+short: Video
+rank: 2
