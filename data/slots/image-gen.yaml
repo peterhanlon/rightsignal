@@ -33,7 +33,10 @@ caveats: 'Editing is no longer a GPT Image 2 story: on Arena''s single-image edi
   OpenAI models rather than uniquely dear, at $211 per 1,000 images against $210.70
   for both GPT-Image-2.5 variants, though still far above $67 for Nano Banana 2 and
   $38.90 for MAI-Image-2.6.'
-challengers: []
+challengers:
+- name: GPT Image 2.6 Sunburst (max)
+  note: 'Debuts #1 on Artificial Analysis text-to-image (1259 vs 1227) — single board,
+    single date, no editing data yet.'
 history:
 - name: Midjourney v5.2
   from: 2023-06-22
@@ -62,7 +65,7 @@ history:
 - name: GPT Image 2
   from: 2026-04-21
   to: *id001
-last_reviewed: 2026-11-01
+last_reviewed: 2026-11-08
 watch:
   keywords:
   - image generation

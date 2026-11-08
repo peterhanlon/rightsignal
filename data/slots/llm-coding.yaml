@@ -29,6 +29,10 @@ caveats: 'Vals'' Terminal-Bench 2.1 table is now archived and superseded by Term
   96.40% for $0.10 a test. Lean on the Terminal-Bench 4.0 and repo-scale runs rather
   than either archived board.'
 challengers:
+- name: Claude Opus 5.5
+  note: Leads Vals' Terminal-Bench 4.0 (61.62%) and 2.1 (87.64% v Astra's 87.27%)
+    and AA's Coding Agent Index v2.0 (61.7), but is absent from the official Terminal-Bench
+    top ten where Astra still leads at 87.4%.
 - name: Claude Opus 5
   note: Claude Opus 5 still tops Vals' SWE-bench Verified board at 97.00%, but Vals
     archived that board as saturated in its 1 September 2026 update and never ran
@@ -65,7 +69,7 @@ history:
 - name: Claude Opus 5
   from: 2026-07-24
   to: *id001
-last_reviewed: 2026-11-01
+last_reviewed: 2026-11-08
 watch:
   keywords:
   - coding model

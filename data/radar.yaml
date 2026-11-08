@@ -1,4 +1,34 @@
 radar:
+- name: Images 2.6
+  maker: OpenAI
+  target: best image generation
+  released: 2026-11-04
+  status: in product
+  scored: false
+  note: OpenAI's updated image model, available across ChatGPT, Codex and the API,
+    adding animated GIF output and finer editing controls. The notable addition is
+    generation speed plus new API-side controls, which matters more for production
+    work than for gallery shots. OpenAI has published no side-by-side quality figures
+    against its own GPT-Image-2.5-Sunburst, so whether fidelity improved or merely
+    latency is unclear.
+  sources:
+  - https://openai.com/index/introducing-images-2-6
+  card: Faster OpenAI image model, now with GIF output
+- name: Kimi-K3.1-Pro
+  maker: Moonshot AI
+  target: best open-weight LLM
+  released: 2026-11-02
+  status: weights out
+  scored: true
+  note: Moonshot's latest open-weight flagship, published with vision input alongside
+    text and shipped as compressed-tensors 8-bit checkpoints rather than full-precision
+    weights. The repository carries Moonshot's own eval results and is listed as endpoints-compatible,
+    so it can be served without bespoke glue. No independent reproduction of those
+    numbers yet, and the 8-bit-only release makes like-for-like comparison with other
+    open flagships harder.
+  sources:
+  - https://huggingface.co/moonshotai/Kimi-K3.1-Pro
+  card: Moonshot's new open flagship, 8-bit multimodal
 - name: Gemini 4 Carbon
   maker: Google DeepMind
   target: best overall LLM
@@ -43,34 +73,18 @@ radar:
   - https://huggingface.co/LiquidAI/LFM3-1.7B
   - https://huggingface.co/LiquidAI/LFM3-1.7B-GGUF
   card: Liquid's 1.7B edge model, GGUF from day one
-- name: DeepSeek-V4.1-Flash-1017
-  maker: DeepSeek
+- name: ERNIE-5.5-Flash-Base
+  maker: Baidu
   target: best open-weight LLM
-  released: 2026-10-17
-  status: weights out
-  scored: true
-  note: 'A multimodal MoE from DeepSeek shipped under MIT licence with FP8 weights
-    in the box. Serving frameworks moved quickly: SGLang added a cookbook entry for
-    it and vLLM pins an NVFP4 evaluation against it in CI, so the deployment path
-    is real rather than theoretical. Independent quality comparisons against the current
-    open-weight leaders are still missing.'
-  sources:
-  - https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017
-  - https://github.com/sgl-project/sglang/releases/tag/v0.5.21
-  card: MIT-licensed FP8 MoE, image and text input
-- name: Audio8-TTS-Realistic-0.6b
-  maker: Edge0
-  target: best open-weight TTS
-  released: 2026-10-14
+  released: 2026-10-21
   status: weights out
   scored: false
-  note: 'A compact 0.6B text-to-speech model published with safetensors weights and
-    custom modelling code, advertising zero-shot voice cloning across multiple languages
-    with a Chinese-language focus. The striking part is the size: voice cloning at
-    well under a billion parameters, where most open cloning systems sit several times
-    larger. Nothing independent yet on intelligibility, speaker similarity or how
-    it holds up outside Chinese, and the publisher is unfamiliar, so treat the multilingual
-    claim as unverified.'
+  note: Baidu has released the base (pre-instruction-tuning) weights of its ERNIE
+    5.5 Flash mixture-of-experts model, bilingual in English and Chinese, under its
+    own licence. Publishing a base checkpoint of a current-generation commercial model
+    is unusual and useful for anyone doing their own post-training. Chat behaviour,
+    licence restrictions and real-world quality are untested here, and a base model
+    will not benchmark well against instruction-tuned rivals without work.
   sources:
-  - https://huggingface.co/Edge0/Audio8-TTS-Realistic-0.6b
-  card: 0.6B open TTS claiming zero-shot voice cloning
+  - https://huggingface.co/baidu/ERNIE-5.5-Flash-Base
+  card: Baidu opens the ERNIE 5.5 Flash base weights

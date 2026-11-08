@@ -32,6 +32,11 @@ caveats: 'Microsoft''s card for harrier-oss-v1-27b claims state-of-the-art on Mu
   way an MTEB v2 task mean and our pick''s RTEB NDCG@10 answer different questions:
   one aggregates all task types, the other is retrieval only.'
 challengers:
+- name: Nemotron-3.5-Embed-8B-BF16
+  note: Released 21 October 2026 and now the current generation in NVIDIA's Nemotron
+    Retriever collection, but the vendor states text-only embedding quality is unchanged
+    from Nemotron 3 Embed, so there is no measured text-retrieval gain to move the
+    title on.
 - name: EmbeddingGemma 2
   note: 'Google''s open, lightweight EmbeddingGemma 2 was announced on 6 October 2026:
     a 740M form factor with modular encoders that maps text, code, images, video and
@@ -72,7 +77,7 @@ history:
 - name: voyage-4-large
   from: 2026-01-15
   to: 2026-07-16
-last_reviewed: 2026-11-01
+last_reviewed: 2026-11-08
 watch:
   keywords:
   - embedding
