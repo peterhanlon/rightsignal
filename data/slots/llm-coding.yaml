@@ -20,14 +20,16 @@ pick:
     It has no independent SWE-bench Verified run — Vals archived that board as saturated
     — and it lists at $10/$50 per million tokens, 2.5x GPT-5.6 Sol, so price the high-volume
     repo-scale batches carefully.
-caveats: 'Vals'' Terminal-Bench 2.1 table is now archived and superseded by Terminal-Bench
-  4.0 in its coding index: Claude Opus 5.5 leads at 87.64%, GPT-6 Astra is second
-  at 87.27% and Opus 5 has slipped to fifth at 84.64%, or 81.27% once its server-side
-  fallbacks to Opus 4.8 on refused tasks are counted as failures. Vals also archived
-  SWE-bench Verified as saturated in its 1 September 2026 update, where Opus 5 finished
-  top at 97.00% at $1.29 a test and the open-weight DeepSeek V4 Pro 0813 second at
-  96.40% for $0.10 a test. Lean on the Terminal-Bench 4.0 and repo-scale runs rather
-  than either archived board.'
+caveats: 'Vals'' Terminal-Bench 2.1 table is archived and superseded by Terminal-Bench
+  4.0 in the coding sector of the Vals Index, and the two sit on different scales:
+  on the 5 November 2026 4.0 board Claude Opus 5.5 leads at 65.15%, with Claude Sonnet
+  5.5 (64.14%), Kimi K3.1 Pro (63.64%) and Gemini 4 Carbon (63.13%) all ahead of GPT-6
+  Astra''s 59.60%, and Opus 5 tenth at 53.53%. The 87.64%/87.27%/84.64% figures belong
+  to the archived 2.1 run, and Vals publishes no fallback-adjusted version of them.
+  Vals also archived SWE-bench Verified as saturated in its 1 September 2026 update,
+  where Opus 5 finished top at 97.00% at $1.29 a test and the open-weight DeepSeek
+  V4 Pro 0813 second at 96.40% for $0.10 a test, so lean on the 4.0 and repo-scale
+  runs rather than either archived board.'
 challengers:
 - name: Claude Opus 5.5
   note: Leads Vals' Terminal-Bench 4.0 (61.62%) and 2.1 (87.64% v Astra's 87.27%)

@@ -14,22 +14,24 @@ pick:
   version: ''
   url: https://huggingface.co/Audio8/ARK-ASR-3B
   licence: Apache-2.0
-  why: 'ARK-ASR-3B heads the Open ASR Leaderboard''s public listing at 4.76 mean WER
-    with an RTFx of 490.98, ahead of MOSS-Transcribe-preview-2B on 4.87, MOSS-Transcribe-Diarize
-    on 5.17 and Cohere Transcribe on 5.42, with per-dataset results filed in the repo
-    and dated 23 June 2026. The 5.04% on the card is the seven-set average that omits
-    TEDLIUM; add TEDLIUM''s 2.79% and you get the board figure. It ships Apache-2.0
-    with 19 languages, but that is not what separates it from MOSS: only the preview-2B
-    is English-only, while MOSS-Transcribe-Diarize is also Apache-2.0 and covers 50+
-    languages, so ARK''s edge there is accuracy rather than licence or reach.'
-caveats: 'NVIDIA''s Parakeet-TDT-0.6B-v3 is still the sensible choice where throughput
-  decides the invoice — 25 European languages, automatic language detection and a
-  6.34% average WER, so you are trading roughly 1.5 WER points for the speed — but
-  note it ships under CC BY 4.0, not Apache-2.0. ARK''s headline is board-verified
-  rather than card-only: the leaderboard records 4.76 mean WER at RTFx 490.98, including
-  TEDLIUM at 2.79%. Do budget for less throughput headroom than that suggests, though:
-  AutoArk''s own rerun of the seven public splits on 8x RTX 4090, scored with the
-  leaderboard scorer, lands at 5.13% WER and an overall RTFx of 197.'
+  why: 'ARK-ASR-3B is still listed first on the Open ASR Leaderboard at 4.76 mean
+    WER with an RTFx of 490.98, but that mean covers eight sets including TED-LIUM
+    at 2.79%, whereas MOSS-Transcribe-preview-2B''s 4.87 and the MOSS-Transcribe-Diarize
+    rows'' 5.17 average only the seven sets those rows report. On the seven columns
+    every row shares, ARK sits at 5.04 — behind the MOSS preview model''s 4.87, still
+    ahead of the Diarize pair — so treat the top-two order as unresolved rather than
+    a clear win on accuracy. What keeps it in the slot is the whole package: Apache-2.0
+    weights and 19 languages against an English-only preview model, with per-dataset
+    results filed in the repo from the 22 June 2026 run.'
+caveats: 'Nothing on this board is independently verified: every row is a self-reported
+  .eval_results YAML from a model repo, most still sitting in open pull requests,
+  so read the 4.76 mean WER at RTFx 490.98 (TED-LIUM 2.79%) as the publisher''s own
+  numbers. Budget for less throughput headroom too — AutoArk''s rerun of the seven
+  public splits on 8x RTX 4090, scored with the leaderboard scorer, lands at 5.13%
+  WER and an overall RTFx of 197. NVIDIA''s Parakeet-TDT-0.6B-v3 is still the sensible
+  choice where throughput decides the invoice, with 25 European languages, automatic
+  language detection and 6.34% average WER over the same eight sets, but note it ships
+  under CC BY 4.0, not Apache-2.0.'
 challengers:
 - name: Voxtral Small Transcribe 3
   note: 'Launched on 20 October 2026 and still #3 on the Artificial Analysis non-streaming

@@ -15,14 +15,14 @@ pick:
   url: https://github.com/vllm-project/vllm
   licence: Apache-2.0
   why: 'Spheron''s like-for-like H100 runs on Llama 3.3 70B FP8 (three-engine post
-    published March 2026, two-engine June 2026, both refreshed 19 October 2026) put
-    SGLang roughly 1-5% ahead of vLLM on unique-prompt traffic, a gap Spheron itself
-    calls run-to-run variance. Both stacks are now well out of date: they used vLLM
-    v0.18.0 on the legacy model runner, before Model Runner V2 became the default
-    for all dense models in v0.25.0 (11 July 2026) and for every model in v0.29.0
-    (9 September 2026), and SGLang v0.5.9, before breakable CUDA graphs became SGLang''s
-    default prefill path in v0.5.15. Pick vLLM for breadth, hardware coverage and
-    release discipline rather than for any current throughput number.'
+    published March 2026, two-engine June 2026, both last updated 2 November 2026)
+    put SGLang about 1-4% ahead of vLLM on unique-prompt traffic, a gap Spheron itself
+    calls run-to-run variance. Both runs are already out of date: they used vLLM v0.18.0
+    on the legacy model runner, before Model Runner V2 became the default for all
+    dense models in v0.25.0 (July 2026) and for every model in v0.29.0 (9 September
+    2026), and SGLang v0.5.9, before breakable CUDA graphs became SGLang''s default
+    capture path in v0.5.15. Pick vLLM for breadth, hardware coverage and release
+    discipline rather than for any current throughput number.'
 caveats: 'Less of a two-horse race than it looks: in Spheron''s three-engine H100
   run on Llama 3.3 70B FP8, TensorRT-LLM led vLLM by 8-13% at 1-50 concurrent requests
   and about 16% at 100 once its engine was compiled, but it takes roughly 28 minutes
@@ -33,8 +33,8 @@ caveats: 'Less of a two-horse race than it looks: in Spheron''s three-engine H10
   15-18% at 10 concurrent requests, though at 50 Spheron still puts APC-on vLLM at
   2,100 effective tok/s against SGLang''s 2,550. Measure your own prefix overlap and
   re-run on current releases: those figures predate both vLLM''s Model Runner V2 default
-  (all dense models from v0.25.0, every model from v0.29.0, with v0.32.0 current)
-  and SGLang''s breakable CUDA graph default from v0.5.15.'
+  (all dense models from v0.25.0, every model from v0.29.0, with v0.33.0 current since
+  2 November 2026) and SGLang''s breakable CUDA graph default from v0.5.15.'
 challengers:
 - name: SGLang
   note: Near-parity overall and faster on agentic/structured workloads, with major
