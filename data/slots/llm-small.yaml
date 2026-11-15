@@ -25,22 +25,24 @@ pick:
     score.'
 caveats: 'Qwen3.8 27B no longer has this size class to itself: Artificial Analysis''s
   Intelligence Index v5.0.1 puts it at 20 at xhigh (17 medium, 16 low, 10 non-reasoning),
-  Nanbeige4.3-33B now matches it at 20, and the pick is unscored on that board. Neither
-  challenger has surfaced an official 4-bit or GGUF build with published file sizes
-  in our checks, so a 16GB fit is unproven for both, whereas the pick''s QAT int4
-  GGUF is a measured 14.25GB in Unsloth''s dynamic build against 14.44GB for a naive
-  Q4_0 conversion of the same checkpoint, and wants roughly 15GB of RAM. The title
-  stays under review because a verified 4-bit build from either challenger, with published
-  file sizes and tool-calling numbers, would likely take the slot.'
+  Nanbeige4.3-33B now matches it at 20, and the pick is unscored on that board. The
+  deployability gap has narrowed too - Unsloth now ships Dynamic V3.1 GGUFs of Qwen3.8-27B
+  and puts 4-bit at 16-19GB of total memory, while community GGUFs of Nanbeige4.3-33B
+  publish sizes from 23.5GB at Q5_K_M upwards, so the dense 33B stays out of a 16GB
+  budget. The pick''s QAT int4 GGUF is still the measured fit at 14.25GB in Unsloth''s
+  dynamic build against 14.44GB for a naive Q4_0 conversion of the same checkpoint,
+  wanting roughly 15GB of RAM, but the title is now genuinely contested rather than
+  merely under review.'
 challengers:
 - name: Nanbeige4.3-33B
   note: 'Matches Qwen3.8 27B (xhigh) at 20 on Artificial Analysis''s Intelligence
-    Index v5.0.1 rather than leading it — the earlier 306-vs-303 figures were on the
+    Index v5.0.1 rather than leading it - the earlier 306-vs-303 figures were on the
     pre-v5 scale and no longer apply. The strengths are lopsided: 30% on Terminal-Bench
     4.0 against Qwen''s 6%, but 7% on HLE-Diamond against 15%, and it spends 158K
-    output tokens per index task to Qwen''s 110K. We have found no official 4-bit
-    or GGUF build, no published file sizes to confirm a 16GB fit and no tool-calling-under-quantisation
-    data, so treat it as a quality signal only.'
+    output tokens per index task to Qwen''s 110K. Nanbeige has shipped no quants itself,
+    but release-day community GGUFs publish sizes - 23.5GB at Q5_K_M, 30.1GB at Q6_K
+    - so a dense 33B sits outside a 16GB budget at usable precision, and there are
+    still no tool-calling-under-quantisation numbers.'
 - name: MiniCPM5-2B
   note: 'OpenBMB''s official GGUF build is up, tagged for tool-calling and on-device
     use, with published file sizes — 1.56GB at Q4_K_M — so it clears a 16GB budget
@@ -50,14 +52,15 @@ challengers:
     on it, so there is no like-for-like quality gap to quote; treat this as a deployability
     story rather than a quality one.'
 - name: Qwen3.8 27B
-  note: 'No longer the outright quality leader here: Artificial Analysis''s Intelligence
+  note: 'Still level rather than ahead on quality: Artificial Analysis''s Intelligence
     Index v5.0.1 puts it at 20/17/16 across xhigh/medium/low and 10 non-reasoning,
-    level with Nanbeige4.3-33B at 20, while the pick carries no v5 score at all. Against
-    Nanbeige it wins on knowledge and code — 15% vs 7% on HLE-Diamond, 15% vs 11%
-    on FrontierCode 2.0 — but loses heavily on Terminal-Bench 4.0 at 6% vs 30%. On
-    deployability nothing has moved: we have found no official 4-bit or GGUF build
-    and nothing published on tool-calling under quantisation, so the 16GB fit stays
-    unproven.'
+    matching Nanbeige4.3-33B at 20, while the pick carries no v5 index score at all.
+    Deployability has moved, though - Unsloth refreshed its Qwen3.8-27B GGUFs to Dynamic
+    V3.1 on 11 November 2026, with tool-calling parsing fixes and published quantised
+    benchmark results, and its own guidance puts 4-bit at 16-19GB of total memory
+    (17GB headline) against 12-14GB at 3-bit. Judge it on headroom now rather than
+    on absent quants: 4-bit is a squeeze on a 16GB machine, and a dense 27B decodes
+    far slower than the pick''s 3.8B active parameters.'
 history:
 - name: Llama 2 13B Chat
   from: 2023-08-01

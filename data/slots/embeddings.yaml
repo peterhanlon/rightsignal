@@ -23,13 +23,14 @@ pick:
     30 tasks over 22 languages, ranks by Borda count of per-task ranks rather than
     by mean score, and has had its private column temporarily removed since January
     2026, so the placing rests on a vendor snapshot of an open-task view.'
-caveats: 'Microsoft''s card for harrier-oss-v1-27b claims state-of-the-art on Multilingual
-  MTEB v2 at release on a 74.3 average (0.6b 69.0), without a task count, rival scores
-  or a Borda ranking. That is no longer the only evidence, mind: MTEB leaderboard
-  figures compiled on 1 November 2026 put Harrier-OSS v1 27B top of the field on a
-  74.27 average and 78.27 retrieval, ahead of Tencent''s KaLM-Embedding-Gemma3-12B-2511
-  on 72.3 and 75.7. Either way an MTEB task mean and our pick''s RTEB NDCG@10 answer
-  different questions: one aggregates all task types, the other is retrieval only.'
+caveats: Microsoft's card for harrier-oss-v1-27b claims state-of-the-art on Multilingual
+  MTEB v2 at release on a 74.3 average (0.6b 69.0), with no task count or rival scores
+  given. A third-party compilation dated 1 November 2026 puts Harrier-OSS v1 27B top
+  on a 74.27 average and 78.27 retrieval, ahead of Tencent's KaLM-Embedding-Gemma3-12B-2511
+  on 72.3 and 75.7 - and lists our pick third on retrieval at 75.5, so this is closer
+  to like-for-like than a task-mean comparison would be. Harrier publishes no RTEB
+  figure, so on the retrieval-only board our pick's 78.46 still stands unanswered
+  rather than beaten.
 challengers:
 - name: Nemotron-3.5-Embed-8B-BF16
   note: Released 21 October 2026 and now the current generation in NVIDIA's Nemotron

@@ -26,32 +26,34 @@ pick:
 caveats: 'Open-weight but not open-source: the inference code is Apache-2.0, while
   the weights, derivatives and self-hosted outputs fall under the BreezeBlue Research
   and Non-Commercial Licence, and a paid breezeblue.ai subscription only covers outputs
-  from the hosted platform, not anything you generate locally. If you need commercial
-  self-hosting, MIT-licensed Ming-3.0-tts (1187 on the provider-voice board) and Fish
-  Audio Drama 3 (1275 provider-voice, 1073 controlled-voice) are the stronger fallbacks,
-  though Drama 3''s Community Licence v1.0 is only free commercially below US$500k
-  annual revenue and grants no rights at all to run it as a hosted service for third
-  parties, whatever your revenue; Apache-2.0 Step Audio EditX (1101) remains the no-strings
-  option. The standing is board-specific and language-limited too: on the controlled-voice
-  arena Breeze scores 1019, fourth among open-weight models behind Drama 3 (1073),
-  Ming-3.0-tts (1067) and Drama 3 Preview (1060), and the model speaks English and
-  Chinese only.'
+  from the hosted platform, not anything you generate locally. On the current provider-voice
+  board Breeze sits third among open-weight models at 1229, behind Fish Audio Drama
+  3 (1275) and Drama 3 Preview (1239), so if you need commercial self-hosting the
+  MIT-licensed Ming-3.0-tts (1182) is the cleanest route, while Drama 3''s Community
+  Licence v1.0 is only free commercially below US$500k annual revenue and grants no
+  rights to offer it to third parties as a TTS, voice-cloning or inference service,
+  whatever your revenue. Step Audio EditX (Mar 2026) is the lighter fallback at 1100,
+  and Breeze itself speaks English and Chinese only.'
 challengers:
 - name: Fish Audio Drama 3
-  note: 'Top open-weight model on both Artificial Analysis speech arenas — 1275 on
-    provider-voice (7th overall) and 1073 on controlled-voice — ahead of Drama 3 Preview,
-    Ming-3.0-tts and the former pick Breeze TTS 2. The catch is hardware and licence
-    rather than quality: it is a 35B-parameter MoE with about 3B active per token,
-    with self-hosting reports around 39-48 GB of VRAM (roughly 32 GB on community
-    4-bit builds), and the Community Licence grants no rights to run it as a hosted
-    service for third parties. Benchmark on your own cards, and get a written agreement
-    from Fish Audio before building an API product on it.'
+  note: 'Now the top open-weight model on the Artificial Analysis provider-voice arena
+    at 1275, ahead of Drama 3 Preview (1239), the current pick Breeze TTS 2 (1229)
+    and Ming-3.0-tts (1182); on the controlled-voice arena Ant''s Ming-3.0-tts was
+    Artificial Analysis'' stated open-weight leader as of late October, so treat Drama
+    3''s lead as board-specific. The catch is hardware and licence rather than quality:
+    it is a 35B-parameter MoE with about 3B active per token, roughly 40 GB of weights
+    on disk and self-hosting guidance of around 48 GB of VRAM, and the Fish Audio
+    Community Licence v1.0 is only free commercially below US$500k annual revenue
+    and gives no right to offer it to others as a TTS, voice-cloning or inference
+    service. Benchmark it on your own cards, and get a written agreement from Fish
+    Audio before building an API product on it.'
 - name: StepFun StepAudio 2.5 TTS (Aug 2026)
-  note: Now trails the pick on the Artificial Analysis provider-voice board, 1214
-    to 1228 — 18th against 13th — on the board's current scale. It stays proprietary
-    and API-only on StepFun's platform at about $85 per 1M characters with no weights
-    published, so it is not an option for self-hosters either way. StepFun's open-weight
-    audio line remains Step-Audio-EditX and Step-Audio-2-mini.
+  note: Still trails the pick on the Artificial Analysis provider-voice board, which
+    currently has Breeze TTS 2 at 1229 on its re-based scale, with Fish Audio Drama
+    3 (1275) and Drama 3 Preview (1239) ahead of both. It stays proprietary and API-only
+    on StepFun's platform with no weights published, so it is not an option for self-hosters
+    either way. StepFun's open-weight audio line remains Step-Audio-EditX, which sits
+    at 1100 among open weights on the same board, plus Step-Audio-2-mini.
 history:
 - name: Bark
   from: 2023-08-01
