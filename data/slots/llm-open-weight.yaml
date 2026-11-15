@@ -26,7 +26,10 @@ caveats: GLM-5.3 ships under Z.ai's own glm-5.3 licence rather than MIT or Apach
   Index v5.0 on 27 October and re-based the whole table — GLM-5.3 (max) now reads
   32 at $5.01 per Index task, its worst-in-class cost among comparable open-weight
   models — so any v4.x score or cost figure is no longer comparable.
-challengers: []
+challengers:
+- name: Kimi K3.1 Pro
+  note: Scores 46 on AA's Intelligence Index against the pick's 33, but weights, licence
+    and serving cost are unconfirmed.
 history:
 - name: Llama 2 70B Chat
   from: 2023-08-01
@@ -67,7 +70,7 @@ history:
 - name: GLM-5.3
   from: *id001
   to: *id002
-last_reviewed: *id002
+last_reviewed: 2026-11-15
 watch:
   keywords:
   - open weight

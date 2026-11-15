@@ -31,7 +31,10 @@ caveats: 'Artificial Analysis has re-based again: the live board is Intelligence
   too: its published 28 October board has Gemini 4 Carbon and Claude Opus 5.5 at the
   top with Fable 5.1 fourth overall, so ignore the 2 September 1507/1504 snapshot
   and read the live board.'
-challengers: []
+challengers:
+- name: Claude Fable 5.2 (Max)
+  note: 'Entered Artificial Analysis at #1 on 65 against Gemini 4 Carbon''s 60 — single
+    board, first fetch, no corroboration yet.'
 history:
 - name: GPT-4
   from: 2023-08-01
@@ -63,7 +66,7 @@ history:
 - name: Claude Fable 5.1
   from: *id001
   to: *id002
-last_reviewed: *id002
+last_reviewed: 2026-11-15
 watch:
   keywords:
   - llm

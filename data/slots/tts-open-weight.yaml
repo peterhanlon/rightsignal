@@ -38,15 +38,14 @@ caveats: 'Open-weight but not open-source: the inference code is Apache-2.0, whi
   Chinese only.'
 challengers:
 - name: Fish Audio Drama 3
-  note: 'Currently the top open-weight model on both Artificial Analysis boards —
-    1275 on provider-voice and 1073 on controlled-voice — ahead of Drama 3 Preview,
-    Ming-3.0-tts and Breeze TTS 2. Its Community Licence v1.0 is free commercially
-    below US$500k annual revenue, but it grants no rights to offer a hosted service
-    to third parties at any revenue level, so an API product still needs a separate
-    agreement with Fish Audio. Hardware is the real cost: it is a 35B-parameter mixture-of-experts
-    model with about 3B active per token, and launch-day self-hosting reports cluster
-    around 39-48 GB of VRAM, or roughly 32 GB on community 4-bit builds, so benchmark
-    on your own cards before committing.'
+  note: 'Top open-weight model on both Artificial Analysis speech arenas — 1275 on
+    provider-voice (7th overall) and 1073 on controlled-voice — ahead of Drama 3 Preview,
+    Ming-3.0-tts and the former pick Breeze TTS 2. The catch is hardware and licence
+    rather than quality: it is a 35B-parameter MoE with about 3B active per token,
+    with self-hosting reports around 39-48 GB of VRAM (roughly 32 GB on community
+    4-bit builds), and the Community Licence grants no rights to run it as a hosted
+    service for third parties. Benchmark on your own cards, and get a written agreement
+    from Fish Audio before building an API product on it.'
 - name: StepFun StepAudio 2.5 TTS (Aug 2026)
   note: Now trails the pick on the Artificial Analysis provider-voice board, 1214
     to 1228 — 18th against 13th — on the board's current scale. It stays proprietary
@@ -75,7 +74,7 @@ history:
 - name: Fish Audio S2 Pro
   from: 2026-03-09
   to: *id001
-last_reviewed: 2026-11-08
+last_reviewed: 2026-11-15
 watch:
   keywords:
   - tts

@@ -1,4 +1,60 @@
 radar:
+- name: Gemini 4 Hydrogen
+  maker: Google DeepMind
+  target: best overall LLM
+  released: 2026-11-12
+  status: preview
+  scored: false
+  note: 'A new member of the Gemini 4 family, announced two days after Carbon became
+    generally available. The only verified fact so far is the announcement itself:
+    DeepMind has published nothing in the way of benchmark detail, pricing or availability
+    tiers alongside it. Whether Hydrogen sits above or beside Carbon, and how it behaves
+    on long-horizon reasoning, is entirely unproven.'
+  sources:
+  - https://deepmind.google/blog/introducing-gemini-4-hydrogen/
+  card: New Gemini 4 tier, announced with no numbers yet
+- name: ZONOS3-Mini
+  maker: Zyphra
+  target: best open-weight TTS
+  released: 2026-11-09
+  status: weights out
+  scored: false
+  note: 'The small member of Zyphra''s third-generation Zonos speech synthesis line,
+    with multilingual voice cloning and both safetensors and GGUF weights at launch.
+    Shipping quantised GGUF on day one is the striking part: it is aimed squarely
+    at local, CPU-friendly deployment. Intelligibility and speaker-similarity scores
+    against the incumbent open models have not been published or independently measured.'
+  sources:
+  - https://huggingface.co/Zyphra/ZONOS3-Mini
+  card: Zonos 3 in a small size, GGUF weights from day one
+- name: Inkling-2-Small
+  maker: Thinking Machines
+  target: best small / on-device LLM
+  released: 2026-11-04
+  status: weights out
+  scored: false
+  note: Thinking Machines' second-generation Inkling, a compact mixture-of-experts
+    model with vision input, released under Apache 2.0. The permissive licence on
+    a multimodal MoE is unusual at this size, and the repository ships 8-bit ModelOpt
+    weights alongside the full checkpoint. Parameter counts, active-expert budget
+    and real on-device latency remain unverified by anyone outside the lab.
+  sources:
+  - https://huggingface.co/thinkingmachines/Inkling-2-Small
+  card: Apache-2.0 multimodal MoE aimed at small deployments
+- name: LongCat-2.5
+  maker: Meituan
+  target: best open-weight LLM
+  released: 2026-11-04
+  status: weights out
+  scored: false
+  note: Meituan's latest LongCat release, an MIT-licensed mixture-of-experts model
+    with multimodal input and an explicitly agentic framing. An MIT licence on a flagship-scale
+    MoE is the most concrete thing here, leaving redistribution and commercial use
+    unencumbered. Agentic and tool-use claims rest on the accompanying papers; no
+    third-party evaluation has appeared.
+  sources:
+  - https://huggingface.co/meituan-longcat/LongCat-2.5
+  card: MIT-licensed multimodal MoE with an agentic pitch
 - name: Images 2.6
   maker: OpenAI
   target: best image generation
@@ -14,6 +70,21 @@ radar:
   sources:
   - https://openai.com/index/introducing-images-2-6
   card: Faster OpenAI image model, now with GIF output
+- name: MiniMax-H3-Image
+  maker: MiniMax
+  target: best image generation
+  released: 2026-11-03
+  status: weights out
+  scored: false
+  note: An open-weight text-to-image and image-editing model built on MiniMax's H3
+    base, shipped in diffusers format under a custom licence. Notably it covers generation,
+    image-to-image and editing in one checkpoint, and ComfyUI packaging and GGUF conversions
+    appeared within a week. No independent comparison against the current closed leaders
+    on prompt adherence or text rendering yet exists.
+  sources:
+  - https://huggingface.co/MiniMaxAI/MiniMax-H3-Image
+  - https://huggingface.co/Comfy-Org/MiniMax-H3-Image
+  card: 'MiniMax''s open image model: generate and edit in one'
 - name: Kimi-K3.1-Pro
   maker: Moonshot AI
   target: best open-weight LLM
@@ -58,33 +129,3 @@ radar:
   sources:
   - https://openai.com/index/introducing-gpt-6-1-terra
   card: OpenAI's computer-use model, now broadly offered
-- name: LFM3-1.7B
-  maker: Liquid AI
-  target: best small / on-device LLM
-  released: 2026-10-23
-  status: weights out
-  scored: false
-  note: The text model at the centre of Liquid's new LFM3 edge family, with GGUF builds
-    published alongside the safetensors release and multilingual coverage spanning
-    English, Arabic, Chinese and French. It arrives with sibling vision, audio and
-    omni 2B variants, which is a broad edge line-up to ship at once. Quality against
-    the established sub-3B open models, and real device throughput, remain unverified.
-  sources:
-  - https://huggingface.co/LiquidAI/LFM3-1.7B
-  - https://huggingface.co/LiquidAI/LFM3-1.7B-GGUF
-  card: Liquid's 1.7B edge model, GGUF from day one
-- name: ERNIE-5.5-Flash-Base
-  maker: Baidu
-  target: best open-weight LLM
-  released: 2026-10-21
-  status: weights out
-  scored: false
-  note: Baidu has released the base (pre-instruction-tuning) weights of its ERNIE
-    5.5 Flash mixture-of-experts model, bilingual in English and Chinese, under its
-    own licence. Publishing a base checkpoint of a current-generation commercial model
-    is unusual and useful for anyone doing their own post-training. Chat behaviour,
-    licence restrictions and real-world quality are untested here, and a base model
-    will not benchmark well against instruction-tuned rivals without work.
-  sources:
-  - https://huggingface.co/baidu/ERNIE-5.5-Flash-Base
-  card: Baidu opens the ERNIE 5.5 Flash base weights
