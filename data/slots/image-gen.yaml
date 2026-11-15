@@ -8,21 +8,17 @@ criteria:
 - text rendering
 - instruction following
 provisional: false
-since: &id001 2026-10-31
+since: &id002 2026-11-15
 pick:
-  name: GPT-Image-2.5-Sunburst
+  name: GPT Image 2.6 Sunburst (max)
   version: ''
-  url: https://developers.openai.com/api/docs/models/gpt-image-2.5-sunburst
+  url: https://developers.openai.com/api/docs/models/gpt-image-2.6-sunburst
   licence: proprietary
-  why: Top of Artificial Analysis's text-to-image board at 1,222, fifteen clear of
-    stablemate GPT Image 2.5 Flare on 1,207 and 36 clear of GPT Image 2 (high) on
-    1,186, and top of the same site's editing board at 1,199 — though MAI-Image-2.7-Preview
-    is only six points back on 1,193 and statistically tied with it. It also leads
-    both Arena boards, text-to-image 1,425 against Flare's 1,398 and single-image
-    edit 1,517 against Flare's 1,482, with both entries still flagged preliminary
-    despite tens of thousands of votes. At $210.70 per 1,000 images it is no dearer
-    than the model it replaces, but MAI-Image-2.6 ($38.90) remains far cheaper for
-    editing at volume.
+  why: 'Tops Artificial Analysis''s text-to-image board on 1,261, 32 clear of GPT-Image-2.5-Sunburst
+    on 1,229, and now also leads AA''s editing board on 1,209 from 6,226 votes. Generally
+    available at $210.72 per 1,000 images, the same as the 2.5 variants it displaces.
+    Arena is the holdout: its single-image edit row is still preliminary at 1,476,
+    behind the settled 2.5 Sunburst on 1,517.'
 caveats: 'Editing is no longer a GPT Image 2 story: on Artificial Analysis''s editing
   board it now sits tenth on 1,136, behind both 2.6 models (Sunburst 1,209, Flare
   1,206), GPT-Image-2.5-Sunburst (1,199), MAI-Image-2.7-Preview (1,195), GPT-Image-2.5-Flare
@@ -34,14 +30,7 @@ caveats: 'Editing is no longer a GPT Image 2 story: on Artificial Analysis''s ed
   rather than uniquely dear, at $211.00 per 1,000 images against $210.72 for every
   2.5 and 2.6 variant, though still far above $67.00 for Nano Banana 2 and $38.91
   for MAI-Image-2.6.'
-challengers:
-- name: GPT Image 2.6 Sunburst (max)
-  note: 'Now tops Artificial Analysis''s text-to-image board on 1,259, the only model
-    with a rank range of 1, and 32 clear of GPT Image 2.5 Sunburst (max) on 1,227.
-    It also leads AA''s editing board on 1,209 from 6,226 votes, though its 1–3 rank
-    range overlaps GPT Image 2.6 Flare (max) on 1,206 and the 2.5 Sunburst on 1,199.
-    Arena is less settled: its single-image edit entry is still flagged preliminary
-    at 1,476 on under 4,000 comparisons, third behind both 2.5 models.'
+challengers: []
 history:
 - name: Midjourney v5.2
   from: 2023-06-22
@@ -69,8 +58,11 @@ history:
   to: 2026-04-21
 - name: GPT Image 2
   from: 2026-04-21
-  to: *id001
-last_reviewed: 2026-11-15
+  to: &id001 2026-10-31
+- name: GPT-Image-2.5-Sunburst
+  from: *id001
+  to: *id002
+last_reviewed: *id002
 watch:
   keywords:
   - image generation
