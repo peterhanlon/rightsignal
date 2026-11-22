@@ -8,16 +8,20 @@ criteria:
 - licence
 - weights actually released
 provisional: false
-since: &id002 2026-11-08
+since: &id003 2026-11-22
 pick:
-  name: DeepSeek-V4.1-Flash-1017
+  name: Kimi K3.1 Pro
   version: ''
-  url: https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017
-  licence: MIT
-  why: Joint best score among released-weight models on Artificial Analysis's Intelligence
-    Index v5.0 (32, level with GLM-5.3 max), but at about $0.60 per Index task against
-    GLM-5.3's $5.01. MIT-licensed with no commercial-use review clause, weights on
-    Hugging Face and broadly served in vLLM and SGLang.
+  url: https://huggingface.co/moonshotai/Kimi-K3.1-Pro
+  licence: Kimi K3.1 Pro Licence (MIT-style, with a model-as-a-service revenue gate
+    above $20m and attribution above 100m MAU)
+  why: 'Top released-weight score on Artificial Analysis''s Intelligence Index v5.0.1
+    at 46, against 33 for DeepSeek V4.1 Flash 1017 (max), and the weights are genuinely
+    out: ungated on Hugging Face since 4 November 2026 at roughly 1.56TB, with vLLM
+    and SGLang recipes on the card. The costs are the trade-off — $3.68 per Index
+    task against DeepSeek''s $0.60 — and at 2.8T parameters it is a multi-node serve,
+    so most teams will rent rather than host. Read the licence if you run a model-as-a-service
+    business above $20m revenue.'
 caveats: 'GLM-5.3 ships under Z.ai''s own glm-5.3 licence rather than MIT or Apache-2.0,
   and model-as-a-service operators above $10bn in trailing-twelve-month revenue must
   pass a Z.ai security review before commercial use, so read the LICENSE file in the
@@ -28,16 +32,7 @@ caveats: 'GLM-5.3 ships under Z.ai''s own glm-5.3 licence rather than MIT or Apa
   the current v5.0.1 run DeepSeek V4.1 Flash 1017 (max) reads 33 at $0.60 per Index
   task against GLM-5.3 (max) at 32 and $5.01 — so no v4.x score or cost figure is
   comparable.'
-challengers:
-- name: Kimi K3.1 Pro
-  note: 'Tops Artificial Analysis''s Intelligence Index v5.0.1 at 46 against the pick''s
-    33, and the weights are no longer hypothetical: Moonshot put moonshotai/Kimi-K3.1-Pro
-    on Hugging Face on 4 November 2026, ungated, at roughly 1.56TB, with vLLM and
-    SGLang recipes on the card. The costs are the catch — AA measures $3.68 per Index
-    task against the pick''s $0.60, and the bespoke Kimi K3.1 Pro licence needs a
-    separate Moonshot agreement if you run a model-as-a-service business above $20m
-    revenue. At 2.8T parameters it is a multi-node serve, so most teams will be renting
-    it rather than hosting it.'
+challengers: []
 history:
 - name: Llama 2 70B Chat
   from: 2023-08-01
@@ -77,8 +72,11 @@ history:
   to: &id001 2026-09-10
 - name: GLM-5.3
   from: *id001
-  to: *id002
-last_reviewed: 2026-11-22
+  to: &id002 2026-11-08
+- name: DeepSeek-V4.1-Flash-1017
+  from: *id002
+  to: *id003
+last_reviewed: *id003
 watch:
   keywords:
   - open weight
