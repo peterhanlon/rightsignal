@@ -7,19 +7,19 @@ criteria:
 - repo-scale task performance
 - tool-calling reliability
 provisional: false
-since: &id001 2026-09-09
+since: &id002 2026-11-22
 pick:
-  name: GPT-6 Astra
+  name: Claude Opus 5.5
   version: ''
-  url: https://developers.openai.com/api/docs/models/gpt-6-astra
+  url: https://www.anthropic.com/claude/opus
   licence: proprietary
-  why: GPT-6 Astra tops Artificial Analysis's independent Terminal-Bench v4.0 run
-    at 59.6% on xhigh and 59.1% on max, with Claude Fable 5.1 next at 55.1% and Opus
-    5 absent from the published top three. Vals.ai has it first on Terminal-Bench
-    2.1 too, at 87.3% ahead of GPT-5.6 Sol (85.8%), Fable 5.1 (85.0%) and Opus 5 (84.6%).
-    It has no independent SWE-bench Verified run — Vals archived that board as saturated
-    — and it lists at $10/$50 per million tokens, 2.5x GPT-5.6 Sol, so price the high-volume
-    repo-scale batches carefully.
+  why: Opus 5.5 tops the official Terminal-Bench 4.1 table at 65.76% with GPT-6 Astra
+    fourth at 60.30%, ties Claude Fable 5.2 for first on Vals' 11 November Terminal-Bench
+    4.0 board at 65.15%, and shares the lead on Artificial Analysis's Coding Agent
+    Index v2.1 at 58. It is not the agentic leader everywhere — Kimi K3.1 Pro via
+    Kimi Code CLI tops AA's Terminal-Bench 4.1 harness run at 68% — and Vals' fallback-adjusted
+    view drops Opus 5.5 to 53.54% on 4.0, so check how much your harness leans on
+    retries.
 caveats: 'Vals'' Terminal-Bench 2.1 table is archived and superseded by Terminal-Bench
   4.0 in the coding sector of the Vals Index, and the two sit on different scales:
   on the 11 November 2026 4.0 board Claude Fable 5.2 and Claude Opus 5.5 tie for first
@@ -30,19 +30,7 @@ caveats: 'Vals'' Terminal-Bench 2.1 table is archived and superseded by Terminal
   as failures takes Opus 5.5 from 87.64% to 79.77% on 2.1 and from 61.62% to 53.54%
   on 4.0. Lean on the current 4.0 and repo-scale runs rather than the archived 2.1
   numbers.'
-challengers:
-- name: Claude Opus 5.5
-  note: Leads Vals' Terminal-Bench 4.0 (61.62%) and 2.1 (87.64% v Astra's 87.27%)
-    and AA's Coding Agent Index v2.0 (61.7), but is absent from the official Terminal-Bench
-    top ten where Astra still leads at 87.4%.
-- name: Claude Opus 5
-  note: Claude Opus 5 still tops Vals' SWE-bench Verified board at 97.00%, but Vals
-    archived that board as saturated in its 1 September 2026 update and never ran
-    GPT-6 Astra on it. On Vals' Terminal-Bench 2.1, itself now archived in favour
-    of 4.0, Opus 5 sits fifth at 84.64%, or 81.27% with its server-side Opus 4.8 fallbacks
-    counted as failures, behind Opus 5.5, Astra, GPT-5.6 Sol and Fable 5.1. On Vals'
-    Terminal-Bench 4.0 it manages 53.53% against Opus 5.5's 61.62%, so treat it as
-    a legacy option rather than a live contender.
+challengers: []
 history:
 - name: GPT-4
   from: 2023-08-01
@@ -70,8 +58,11 @@ history:
   to: 2026-07-24
 - name: Claude Opus 5
   from: 2026-07-24
-  to: *id001
-last_reviewed: 2026-11-22
+  to: &id001 2026-09-09
+- name: GPT-6 Astra
+  from: *id001
+  to: *id002
+last_reviewed: *id002
 watch:
   keywords:
   - coding model
