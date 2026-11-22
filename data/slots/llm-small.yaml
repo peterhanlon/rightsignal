@@ -34,6 +34,11 @@ caveats: 'Qwen3.8 27B no longer has this size class to itself: Artificial Analys
   wanting roughly 15GB of RAM, but the title is now genuinely contested rather than
   merely under review.'
 challengers:
+- name: Qwen3.8 27B
+  note: Ahead on the AA small open board (303 Xhigh vs the pick unscored) and now
+    has Unsloth Dynamic V3.1 GGUFs with tool-calling parsing fixes, but 4-bit wants
+    16-19GB total memory (17GB headline) — over the slot's 16GB budget — and a dense
+    27B decodes far slower than the pick's 3.8B active parameters.
 - name: Nanbeige4.3-33B
   note: 'Matches Qwen3.8 27B (xhigh) at 20 on Artificial Analysis''s Intelligence
     Index v5.0.1 rather than leading it - the earlier 306-vs-303 figures were on the
@@ -51,16 +56,6 @@ challengers:
     Analysis comparison for now: the index has re-based to v5.0 and the pick is unscored
     on it, so there is no like-for-like quality gap to quote; treat this as a deployability
     story rather than a quality one.'
-- name: Qwen3.8 27B
-  note: 'Still level rather than ahead on quality: Artificial Analysis''s Intelligence
-    Index v5.0.1 puts it at 20/17/16 across xhigh/medium/low and 10 non-reasoning,
-    matching Nanbeige4.3-33B at 20, while the pick carries no v5 index score at all.
-    Deployability has moved, though - Unsloth refreshed its Qwen3.8-27B GGUFs to Dynamic
-    V3.1 on 11 November 2026, with tool-calling parsing fixes and published quantised
-    benchmark results, and its own guidance puts 4-bit at 16-19GB of total memory
-    (17GB headline) against 12-14GB at 3-bit. Judge it on headroom now rather than
-    on absent quants: 4-bit is a squeeze on a 16GB machine, and a dense 27B decodes
-    far slower than the pick''s 3.8B active parameters.'
 history:
 - name: Llama 2 13B Chat
   from: 2023-08-01
@@ -89,7 +84,7 @@ history:
 - name: Qwen3.5-9B
   from: 2026-03-02
   to: 2026-04-02
-last_reviewed: 2026-11-15
+last_reviewed: 2026-11-22
 watch:
   keywords:
   - small model

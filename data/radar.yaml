@@ -1,4 +1,76 @@
 radar:
+- name: Gemini 4 Neon
+  maker: Google DeepMind
+  target: best overall LLM
+  released: 2026-11-18
+  status: in product
+  scored: false
+  note: A further member of the Gemini 4 family, announced the same day as Genie 4
+    and following Carbon and Hydrogen. The announcement carries no published specification
+    or benchmark detail in the material available, so even its positioning relative
+    to Gemini 4 Carbon is unclear. Worth watching only until someone runs it independently.
+  sources:
+  - https://deepmind.google/blog/introducing-gemini-4-neon/
+  card: Another Gemini 4 variant, details still thin
+- name: GPT-6.2 Astra
+  maker: OpenAI
+  target: best overall LLM
+  released: 2026-11-17
+  status: in product
+  scored: true
+  note: A point upgrade to OpenAI's frontier line, launched alongside a sibling named
+    Sol and rolled out across ChatGPT Work, Codex and the API. The claimed combination
+    is better professional output, coding and computer use at lower cost than GPT-6
+    Astra, and a companion post places an Astra for Law variant first in a 24-area
+    legal evaluation run by OpenAI itself. No third-party measurement of the coding
+    or agentic gains has appeared yet, and the division of labour between Astra and
+    Sol is not spelled out.
+  sources:
+  - https://openai.com/index/introducing-gpt-6-2-astra-sol
+  - https://openai.com/index/astra-law-6-2
+  card: OpenAI's point upgrade to the Astra line
+- name: Inkling-2-Mini
+  maker: Thinking Machines
+  target: best small / on-device LLM
+  released: 2026-11-17
+  status: weights out
+  scored: false
+  note: 'The smaller sibling to Inkling-2-Small: a mixture-of-experts model that takes
+    image and text input, shipped under Apache-2.0 with 8-bit checkpoints. Community
+    GGUF conversions appeared within three days, which says something about how readily
+    it runs locally. Nothing independent yet on quality per watt or how it holds up
+    against the current small-model field.'
+  sources:
+  - https://huggingface.co/thinkingmachines/Inkling-2-Mini
+  card: Apache-2.0 vision-capable MoE, built to run local
+- name: Hy4-flash
+  maker: Tencent
+  target: best open-weight LLM
+  released: 2026-11-17
+  status: weights out
+  scored: false
+  note: Tencent's fast Hunyuan 4 variant, a multimodal instruct MoE with safetensors
+    weights on Hugging Face. Notably it is a full fourth-generation Hunyuan release
+    put out as open weights rather than held back behind an API, though under a bespoke
+    licence rather than a standard permissive one. No published evaluations yet, and
+    the licence terms will matter as much as the scores for anyone deploying it.
+  sources:
+  - https://huggingface.co/tencent/Hy4-flash
+  card: Hunyuan 4's fast variant, weights on a custom licence
+- name: SenseNova-Loop-9B
+  maker: SenseTime
+  target: best small / on-device LLM
+  released: 2026-11-17
+  status: weights out
+  scored: false
+  note: 'A 9B bilingual multimodal model built as a looped transformer, reusing layers
+    at inference instead of adding depth. The architecture is the interesting part:
+    parameter count stays small while effective compute can be dialled up per query.
+    Whether that trades favourably against a conventional dense model of the same
+    size is entirely untested outside SenseTime.'
+  sources:
+  - https://huggingface.co/sensenova/SenseNova-Loop-9B
+  card: 9B looped transformer, depth traded for recompute
 - name: Gemini 4 Hydrogen
   maker: Google DeepMind
   target: best overall LLM
@@ -100,32 +172,3 @@ radar:
   sources:
   - https://huggingface.co/moonshotai/Kimi-K3.1-Pro
   card: Moonshot's new open flagship, 8-bit multimodal
-- name: Gemini 4 Carbon
-  maker: Google DeepMind
-  target: best overall LLM
-  released: 2026-10-28
-  status: API only
-  scored: true
-  note: Google's new frontier model, announced on the DeepMind blog days after the
-    Gemini 4 Argon launch. It has already taken the top spot on Artificial Analysis's
-    headline index at 59, a point above Claude Opus 5.5. Whether that lead holds on
-    coding, long-context and agentic work, and at what latency and price, is not yet
-    clear.
-  sources:
-  - https://deepmind.google/blog/gemini-4-carbon-our-next-frontier-model/
-  - https://artificialanalysis.ai/models
-  card: 'New Google frontier model, straight to AA #1'
-- name: GPT-6.1 Terra
-  maker: OpenAI
-  target: best overall LLM
-  released: 2026-10-26
-  status: API only
-  scored: false
-  note: 'A GPT-6.1 variant aimed squarely at computer use, pitched as fast enough
-    to put browser and desktop control in everyday hands. The striking part is positioning
-    rather than scores: OpenAI frames it as general availability for computer use
-    rather than a research preview. No independent numbers on task success, cost per
-    completed task or safety under adversarial pages yet.'
-  sources:
-  - https://openai.com/index/introducing-gpt-6-1-terra
-  card: OpenAI's computer-use model, now broadly offered

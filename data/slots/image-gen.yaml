@@ -62,7 +62,7 @@ history:
 - name: GPT-Image-2.5-Sunburst
   from: *id001
   to: *id002
-last_reviewed: *id002
+last_reviewed: 2026-11-22
 watch:
   keywords:
   - image generation

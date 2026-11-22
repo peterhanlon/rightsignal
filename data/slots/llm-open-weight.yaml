@@ -78,7 +78,7 @@ history:
 - name: GLM-5.3
   from: *id001
   to: *id002
-last_reviewed: 2026-11-15
+last_reviewed: 2026-11-22
 watch:
   keywords:
   - open weight
