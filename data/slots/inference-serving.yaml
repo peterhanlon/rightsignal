@@ -24,17 +24,18 @@ pick:
     capture path in v0.5.15. Pick vLLM for breadth, hardware coverage and release
     discipline rather than for any current throughput number.'
 caveats: 'Less of a two-horse race than it looks: in Spheron''s three-engine H100
-  run on Llama 3.3 70B FP8, TensorRT-LLM led vLLM by 8-13% at 1-50 concurrent requests
-  and about 16% at 100 once its engine was compiled, but it takes roughly 28 minutes
-  to first request against about a minute for vLLM and SGLang. SGLang''s edge is prefix-driven
-  rather than general: with an 80% shared 512-token prefix it cut TTFT p50 by 37%
-  at 50 concurrent requests, while on unique prompts the two sat within a few per
-  cent, and enabling vLLM''s --enable-prefix-caching narrowed the TTFT gap to roughly
-  15-18% at 10 concurrent requests, though at 50 Spheron still puts APC-on vLLM at
-  2,100 effective tok/s against SGLang''s 2,550. Measure your own prefix overlap and
-  re-run on current releases: those figures predate both vLLM''s Model Runner V2 default
-  (all dense models from v0.25.0, every model from v0.29.0, with v0.33.0 current since
-  2 November 2026) and SGLang''s breakable CUDA graph default from v0.5.15.'
+  run on Llama 3.3 70B FP8, TensorRT-LLM led vLLM by 8-13% from 1 to 50 concurrent
+  requests and about 16% at 100 once its engine was compiled, but it takes roughly
+  28 minutes to first request against about a minute for vLLM and SGLang. SGLang''s
+  edge is prefix-driven rather than general: with 80% of requests sharing a 512-token
+  prefix it cut TTFT p50 by 37% at 50 concurrent requests, while on unique prompts
+  the two sat within a few per cent, and enabling vLLM''s --enable-prefix-caching
+  narrowed the TTFT gap to roughly 15-18% at 10 concurrent requests, though at 50
+  Spheron still puts APC-on vLLM at 2,100 effective tok/s against SGLang''s 2,550.
+  Measure your own prefix overlap and re-run on current releases: those figures predate
+  vLLM''s Model Runner V2 default (all dense models from v0.25.0, all models from
+  v0.29.0) and SGLang''s breakable CUDA graph default from v0.5.15, and vLLM has since
+  moved on to v0.34.0 (16 November 2026), which drops Model Runner V1 altogether.'
 challengers:
 - name: SGLang
   note: Near-parity overall and faster on agentic/structured workloads, with major

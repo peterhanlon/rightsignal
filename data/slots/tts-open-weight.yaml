@@ -37,19 +37,20 @@ caveats: 'Open-weight but not open-source: the inference code is Apache-2.0, whi
 challengers:
 - name: Fish Audio Drama 3
   note: 'Top open-weight model on the Artificial Analysis provider-voice arena at
-    1275–1277, ahead of Drama 3 Preview (1239) and the former pick Breeze TTS 2 (1229),
+    1277, ahead of Drama 3 Preview (1237) and the current pick Breeze TTS 2 (1228),
     and inside the overall top ten at #8. Its Community Licence v1.0 is more permissive
-    than Breeze''s research-only weights, but it grants no right to resell the model
-    as a hosted TTS or inference service. The catch is hardware: a 35B MoE with ~3B
-    active per token, around 40 GB of weights and self-hosting guidance near 48 GB
-    of VRAM.'
+    than Breeze''s research-only weights, free commercially below US$500k annual revenue,
+    but it grants no right to offer the model to third parties as a hosted TTS or
+    inference service. The catch is hardware: a 35B MoE with roughly 3B active per
+    token whose default FP8 checkpoint needs 37.0 GB of engine weights before KV cache
+    and vocoder, though the official int4 build brings that down to 20.8 GB.'
 - name: StepFun StepAudio 2.5 TTS (Aug 2026)
-  note: Still trails the pick on the Artificial Analysis provider-voice board, which
-    currently has Breeze TTS 2 at 1229 on its re-based scale, with Fish Audio Drama
-    3 (1275) and Drama 3 Preview (1239) ahead of both. It stays proprietary and API-only
-    on StepFun's platform with no weights published, so it is not an option for self-hosters
-    either way. StepFun's open-weight audio line remains Step-Audio-EditX, which sits
-    at 1100 among open weights on the same board, plus Step-Audio-2-mini.
+  note: Still trails the pick on the Artificial Analysis provider-voice board, sitting
+    at 1214 against Breeze TTS 2 on 1228, with Fish Audio Drama 3 (1277) and Drama
+    3 Preview (1237) ahead of both. StepFun's newer StepAudio 3 TTS has since taken
+    third place overall at 1307, but like 2.5 it is proprietary and API-only with
+    no weights published, so neither helps self-hosters. StepFun's open-weight audio
+    line remains Step-Audio-EditX, at 1100 on the same board, plus Step-Audio-2-mini.
 history:
 - name: Bark
   from: 2023-08-01

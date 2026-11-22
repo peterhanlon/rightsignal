@@ -23,22 +23,26 @@ pick:
     full 256K. The pick is about deployability: Apache-2.0 weights, QAT builds sized
     for laptops, native function calling and image input, rather than raw benchmark
     score.'
-caveats: 'Qwen3.8 27B no longer has this size class to itself: Artificial Analysis''s
-  Intelligence Index v5.0.1 puts it at 20 at xhigh (17 medium, 16 low, 10 non-reasoning),
-  Nanbeige4.3-33B now matches it at 20, and the pick is unscored on that board. The
-  deployability gap has narrowed too - Unsloth now ships Dynamic V3.1 GGUFs of Qwen3.8-27B
-  and puts 4-bit at 16-19GB of total memory, while community GGUFs of Nanbeige4.3-33B
-  publish sizes from 23.5GB at Q5_K_M upwards, so the dense 33B stays out of a 16GB
-  budget. The pick''s QAT int4 GGUF is still the measured fit at 14.25GB in Unsloth''s
-  dynamic build against 14.44GB for a naive Q4_0 conversion of the same checkpoint,
-  wanting roughly 15GB of RAM, but the title is now genuinely contested rather than
-  merely under review.'
+caveats: 'Qwen3.8 27B no longer has this size class to itself: on Artificial Analysis''s
+  Intelligence Index v5 it scores 20 at xhigh (17 medium, 16 low, 10 non-reasoning),
+  with Nanbeige4.3-33B and Thinking Machines'' Apache-2.0 Inkling 2 Mini also at 20,
+  while the pick remains unscored on that board. None of the three is an easier fit
+  on a 16GB machine, though — Unsloth puts 4-bit Qwen3.8-27B at 16-19GB of total memory
+  even with its new Dynamic V3.1 GGUFs, the dense Nanbeige4.3-33B needs well over
+  20GB at usable precision, and Inkling 2 Mini carries a roughly 20GB footprint that
+  its makers pair with a 32GB Mac recommendation. The pick''s QAT int4 GGUF is still
+  the measured fit at 14.25GB in Unsloth''s dynamic build against 14.44GB for a naive
+  Q4_0 conversion of the same checkpoint, wanting about 15GB at modest context, but
+  the title is now genuinely contested rather than merely under review.'
 challengers:
 - name: Qwen3.8 27B
-  note: Ahead on the AA small open board (303 Xhigh vs the pick unscored) and now
-    has Unsloth Dynamic V3.1 GGUFs with tool-calling parsing fixes, but 4-bit wants
-    16-19GB total memory (17GB headline) — over the slot's 16GB budget — and a dense
-    27B decodes far slower than the pick's 3.8B active parameters.
+  note: Scores 20 at xhigh on Artificial Analysis's Intelligence Index v5 (17 medium,
+    16 low, 10 non-reasoning), level with Nanbeige4.3-33B and Inkling 2 Mini, while
+    the pick is unscored there — so there is no like-for-like quality gap to quote,
+    and the older 300-odd point figures were on the pre-v5 scale. Unsloth now ships
+    Dynamic V3.1 GGUFs of it, but puts the 4-bit build at 16-19GB of total memory,
+    over the slot's 16GB budget. A dense 27B also decodes far slower than the pick's
+    3.8B active parameters.
 - name: Nanbeige4.3-33B
   note: 'Matches Qwen3.8 27B (xhigh) at 20 on Artificial Analysis''s Intelligence
     Index v5.0.1 rather than leading it - the earlier 306-vs-303 figures were on the

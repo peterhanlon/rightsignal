@@ -20,24 +20,26 @@ pick:
     Proprietary and hosted, at about $7.76 per Index task, and Claude Opus 5.5 still
     leads Vellum's HLE board and the neutral Terminal-Bench 4.0 run, so check the
     agentic coding case separately.
-caveats: Artificial Analysis now runs Intelligence Index v5.0.1, and the live board
-  is led by Claude Fable 5.2 (max) on 65, with Fable 5.2 at high and xhigh on 62,
-  Gemini 4 Carbon (high) fourth on 60 at $7.76 per task, Claude Opus 5.5 (max) on
-  59 and GPT-6 Astra (max) on 57 — the v5.0 launch figures of 59, 58 and 57 no longer
-  apply. On Terminal-Bench 4.0 the 57.9% figure is a Claude Code max-effort row for
-  Fable 5.1 on the official board, which runs each vendor in its own agent and so
-  cannot rank vendors against each other; Vals AI's neutral mini-SWE-agent run now
-  has Claude Fable 5.2 and Claude Opus 5.5 tied at the top on 65.15%. Arena is the
-  one board Carbon still leads, first on text at about 1526 as read on 6 November,
-  though that entry is still flagged preliminary on only a few thousand votes.
+caveats: 'Artificial Analysis v5.0.1 has moved again: read on 22 November the board
+  runs Claude Fable 5.2 (max) 65 at $26.54 per task, GPT-6.2 Astra (max) 62 at $4.00,
+  Gemini 4 Neon (xhigh) 61 at $6.44, Gemini 4 Carbon (high) fourth on 60 at $7.76
+  and Claude Opus 5.5 (max) 59 at $10.04 — Astra and Neon only landed on 17 and 18
+  November, so anything quoting the v5.0 launch figures of 59, 58 and 57 is two releases
+  behind. Carbon does not lead the agentic board either: Vals AI''s neutral mini-SWE-agent
+  run of Terminal-Bench 4.0 had Claude Fable 5.2 and Claude Opus 5.5 tied on 65.15%
+  as of 19 November, with Carbon absent from the top rows. Arena text is the one board
+  Carbon still holds, first at 1539 on the board published 19 November, but on roughly
+  4,300 votes against tens of thousands for the models below it, so treat it as provisional.'
 challengers:
 - name: Claude Fable 5.2 (Max)
-  note: 'Tops Artificial Analysis Intelligence Index v5.0.1 on 65 since its 9 November
-    release, five points clear of Gemini 4 Carbon''s 60, but at $26.54 per index task
-    it is comfortably the most expensive entry on that board. It is no longer a single-board
-    result: Vals AI''s neutral mini-SWE-agent run has it tied with Claude Opus 5.5
-    at the top of Terminal-Bench 4.0 on 65.15%. It has not taken Arena text, where
-    Gemini 4 Carbon still leads.'
+  note: 'Still tops Artificial Analysis Intelligence Index v5.0.1 on 65, held since
+    its 9 November release, but it is no longer measured against Carbon directly:
+    GPT-6.2 Astra (max) on 62 and Gemini 4 Neon (xhigh) on 61 now sit between them,
+    and at $26.54 per index task Fable 5.2 is the dearest entry on the board against
+    $4.00 for Astra. It is not a one-board result — Vals AI''s neutral mini-SWE-agent
+    run has it tied with Claude Opus 5.5 at the top of Terminal-Bench 4.0 on 65.15%,
+    and it leads WebDev Arena on 1824. It has still not taken Arena text, where Gemini
+    4 Carbon leads at 1539.'
 history:
 - name: GPT-4
   from: 2023-08-01

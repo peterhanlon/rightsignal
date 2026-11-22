@@ -33,15 +33,16 @@ caveats: 'Nothing on this board is independently verified: all 65 rows are self-
   sets, but note it ships under CC BY 4.0, not Apache-2.0.'
 challengers:
 - name: Voxtral Small Transcribe 3
-  note: Launched on 20 October 2026, it now sits fifth on the Artificial Analysis
-    non-streaming board at 2.1% AA-WER with a median speed factor of about 60, behind
-    Fun-Realtime-ASR-preview (1.7%), ElevenLabs Scribe v3 (1.9%), MAI-Transcribe-2
-    (2.0%) and Zoom Scribe V2.1 Pro (2.1%). That index averages only three datasets,
-    so it will not line up with the Open ASR Leaderboard's eight-set mean, where this
-    model does not appear and ARK-ASR-3B still leads at 4.76. Artificial Analysis
-    does not count it among its 16 open-weights entries, the most accurate of those
-    being Salesforce's SOV-Transcribe-1 at 2.3%, so despite Mistral's claimed broad
-    language coverage the licence and weight availability this slot needs remain unverified.
+  note: Launched on 20 October 2026, it now sits sixth on the Artificial Analysis
+    non-streaming board at 2.1% AA-WER with a median speed factor of 43.2, behind
+    Fun-Realtime-ASR-preview (1.7%), ElevenLabs Scribe v3 (1.9%), Xing-Audio4.0-ASR-Preview
+    and MAI-Transcribe-2 (both 2.0%) and Zoom Scribe V2.1 Pro (2.1%). That index averages
+    only three datasets, so it will not line up with the Open ASR Leaderboard's eight-set
+    mean, where this model does not appear and ARK-ASR-3B still leads at 4.76. Artificial
+    Analysis does not count it among its 16 open-weights entries, the most accurate
+    of those being Salesforce's SOV-Transcribe-1 at 2.3%, so despite Mistral's claimed
+    broad language coverage the licence and weight availability this slot needs remain
+    unverified.
 - name: microsoft/VibeVoice-ASR-Streaming-7B
   note: 'Microsoft has now filled in the gaps: the 7B card ships under MIT, and the
     streaming technical report (arXiv 2609.02812) quotes a real-time factor at or

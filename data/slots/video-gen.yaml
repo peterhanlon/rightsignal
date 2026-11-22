@@ -15,24 +15,24 @@ pick:
   url: https://huggingface.co/Wan-AI
   licence: not verified in dossier — check Alibaba's release terms
   why: 'Wan 3.0 is #1 on Artificial Analysis''s AA-Video-T2V v2.1 with-audio board
-    (1175, just three Elo clear of Utopai X on 1172, with the confidence intervals
-    overlapping) and #1 on the video editing board (1196), where Google''s newer Gemini
-    Omni Flash 1.2 is the nearest challenger on 1164. Alibaba''s Model Studio documentation
-    confirms clips of up to 30 seconds in a single job at 480p, 720p or 1080p, with
-    voice dialogue, ambient sound effects and background music generated natively
-    rather than dubbed in post. It is hosted-only with no Wan 3.0 weights on the Wan-AI
-    Hugging Face org, so check Alibaba Cloud''s terms before commercial work.'
+    (1175, five Elo clear of Utopai X on 1170, with the confidence intervals overlapping)
+    and #1 on AA-Video-Editing v1.1 (1197), where Google''s newer Gemini Omni Flash
+    1.2 is the nearest challenger on 1166. Alibaba''s Model Studio documentation confirms
+    clips of up to 30 seconds in a single job at 480p, 720p or 1080p, with dialogue,
+    sound effects and music generated in the same pass rather than dubbed in post.
+    It is hosted-only, with no Wan 3.0 weights on the Wan-AI Hugging Face org, so
+    check Alibaba Cloud''s terms before any commercial work.'
 caveats: 'The lead is narrower than it looks: Wan 3.0 tops text-to-video with audio
-  (1175) by only three Elo over Utopai X (1172), with the two confidence intervals
-  overlapping, and tops video editing (1196), but it has slipped to fifth on the silent
-  text-to-video board (1136, behind HeyGen Video 1 on 1146, MiniMax H3 Max, FLUX 3
-  Max and Utopai X) and sits eleventh on image-to-video with audio (1109), where Dreamina
-  Seedance 2.5 leads on 1161. The boards were re-based for v2.1, with the scale pinned
-  so Kling 3.0 1080p (Pro) sits at exactly 1000, so Elo figures quoted earlier this
-  year are not comparable. There are no open weights - the Wan-AI Hugging Face org
-  still stops at the Wan 2.x releases - and the $12 per minute Artificial Analysis
-  lists is the 1080p tier at $0.20 per second; 480p runs at $0.05 per second, and
-  non-Singapore regions are billed lower.'
+  on 1175, only five Elo above Utopai X on 1170 with the two intervals overlapping,
+  and tops video editing on 1197, but it has dropped out of the top five on the silent
+  text-to-video board - HeyGen Video 1 leads that one on 1149, ahead of FLUX 3 Max,
+  MiniMax H3 Max, Hyperflow H3 and Utopai X - and sits twelfth on image-to-video with
+  audio (1110), where Dreamina Seedance 2.5 leads on 1162. The v2.1 boards are re-based
+  with Kling 3.0 1080p (Pro) pinned at exactly 1000, so Elo figures quoted earlier
+  this year are not comparable. There are still no open weights - Alibaba''s open
+  Wan line stops at the 2.x releases - and the $12 per minute Artificial Analysis
+  lists is the 1080p tier at $0.20 per second; 480p runs at $0.05 per second, with
+  lower rates in some regions.'
 challengers: []
 history:
 - name: Runway Gen-2
